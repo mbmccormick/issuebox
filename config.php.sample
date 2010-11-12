@@ -1,0 +1,9 @@
+<?php
+
+    // database configuration
+    $Server = "yourserver.com";
+    $Username = "youruser";
+    $Password = "yourpass";
+    $Database = "yourdatabase";
+    
+?>
