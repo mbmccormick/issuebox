@@ -49,6 +49,7 @@ a
 {
     padding: 0px;
     margin: 0px;
+    line-height: 1.5em;
 }
 
 .list-item h3
@@ -84,4 +85,37 @@ a
     padding: 5px;
     border-radius: 5px;
     width: 150px;
+}
+
+.button
+{
+    -webkit-box-shadow: rgba(0, 0, 0, 0.296875) 0px 1px 4px;
+    -webkit-font-smoothing: subpixel-antialiased !important;
+    background: -webkit-gradient(linear, 0% 0, 0% 100%, from(white), to(#E1E1E1));
+    border-bottom: 1px solid #EBEBEB;
+    border-bottom-left-radius: 4px 4px;
+    border-bottom-right-radius: 4px 4px;
+    border: none;
+    border-top-left-radius: 4px 4px;
+    border-top-right-radius: 4px 4px;
+    color: #333;
+    cursor: pointer;
+    font-family: helvetica, arial, freesans, clean, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    height: 34px;
+    overflow: visible;
+    padding: 0px;
+    position: relative;
+    text-shadow: white 1px 1px 0px;
+    top: 1px;
+    white-space: nowrap;
+}
+
+.button span
+{
+    display: block;
+    height: 34px;
+    line-height: 36px;
+    padding: 0px 13px;
 }

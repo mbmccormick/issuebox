@@ -28,24 +28,30 @@
                 $result = mysql_query("SELECT * FROM project ORDER BY name ASC");
                 while($row = mysql_fetch_array($result))
                 {
-                    echo "<div class='list-item'>\n";
+                    $sql = mysql_query("SELECT * FROM issue WHERE projectid = '$row[id]' AND isopen = '1'");
+                    $open = mysql_num_rows($sql);
+                    
+                    $sql = mysql_query("SELECT * FROM issue WHERE projectid = '$row[id]' AND isopen = '0'");
+                    $closed = mysql_num_rows($sql);
+                                        
+                    echo "<div class='list-item project'>\n";
                     echo "<table cellpadding='0' cellspacing='0' style='width: 100%;'><tr>\n";
                     
                     echo "<td width='100%'>\n";
-                    echo "<h3><a href='list.php?project=$row[id]'>" . $row[name] . "</a></h3><br />\n";
+                    echo "<h3><a href='project.php?id=$row[id]'>" . $row[name] . "</a></h3><br />\n";
                     echo "<p>" . $row[description] . "</p>\n";
                     echo "</td>\n";
                     
                     echo "<td>\n";
                     echo "<div class='counter'>\n";
-                    echo "<big>8</big>\n";
+                    echo "<big>$open</big>\n";
                     echo "Open Issues\n";
                     echo "</div>\n";
                     echo "</td>\n";
                     
                     echo "<td>\n";
                     echo "<div class='counter'>\n";
-                    echo "<big>22</big>\n";
+                    echo "<big>$closed</big>\n";
                     echo "Closed Issues\n";
                     echo "</div>\n";
                     echo "</td>\n";    
@@ -57,9 +63,9 @@
             ?>
         </div>
         <br />
-        <div class="create">
-            <img src="add.png" alt="add" style="margin-bottom: -2px;" />&nbsp;Create New Project
-        </div>
+        <button type="submit" class="button">
+            <span>New Project</span>
+        </button>
     </div>
     <div class="footer">
         Copyright &copy; 2010 McCormick Technologies LLC. All rights reserved.
