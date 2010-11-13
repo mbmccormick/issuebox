@@ -66,10 +66,9 @@
             ?>
         </div>
         <br />
-        <button type="submit" class="button">
+        <button type="submit" class="button" onclick="location.href='project-add.php';">
             <span>New Project</span>
         </button>
-        &nbsp;
         <button type="submit" class="button">
             <span>Settings</span>
         </button>
