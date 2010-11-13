@@ -20,6 +20,11 @@ a
     font-weight: bold;
 }
 
+.header a
+{
+    color: #333;
+}
+
 .footer
 {
     font-size: 12px;
@@ -55,6 +60,11 @@ a
 .list-item h3
 {
     font-size: 18px;
+}
+
+.comment
+{
+    background-color: #ffffff;
 }
 
 .counter
@@ -118,4 +128,82 @@ a
     height: 34px;
     line-height: 36px;
     padding: 0px 13px;
+}
+
+.minibutton
+{
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(white), to(#E1E1E1));
+    border: 1px solid #D4D4D4;
+    border-bottom-left-radius: 3px 3px;
+    border-bottom-right-radius: 3px 3px;
+    border-top-left-radius: 3px 3px;
+    border-top-right-radius: 3px 3px;
+    color: #333;
+    cursor: pointer;
+    display: inline-block;
+    font-family: helvetica, arial, freesans, clean, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    height: 21px;
+    overflow: visible;
+    padding: 0px 0px 0px 3px;
+    text-shadow: white 1px 1px 0px;
+    white-space: nowrap;
+}
+
+.minibutton span
+{
+    display: block;
+    height: 21px;
+    line-height: 21px;
+    padding: 0px 9px 0px 7px;
+}
+
+.options
+{
+    color: #999999;
+    padding-top: 10px;
+}
+
+.options .date
+{
+    margin-bottom: -2px;
+}
+
+.navigation
+{
+    font-weight: bold;
+    padding-bottom: 20px;
+}
+
+.filter-on
+{
+    border: solid 2px #888888;
+    background-color: #888888;
+    padding: 2px;
+    border-radius: 5px;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #ffffff;
+}
+
+a.filter-on
+{
+    color: #ffffff;
+}
+
+.filter-off
+{
+    border: solid 2px #dddddd;
+    background-color: #dddddd;
+    padding: 2px;
+    border-radius: 5px;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #333;
+}
+
+a.filter-off
+{
+    color: #333;
 }

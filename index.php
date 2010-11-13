@@ -11,9 +11,12 @@
 </head> 
 <body> 
     <div class="header">
-        Issue Tracker
+        <a href="index.php">Issue Tracker</a>
     </div>
     <div class="content">
+        <div class="navigation">
+            <a href="index.php">Projects</a>
+        </div>
         <div class="list">
             <?php
 
