@@ -14,25 +14,15 @@
     $now = date("Y-m-d H:i:s");
     $nowlcl = date("Y-m-d H:i:s", strtotime("+3 hour", strtotime($now)));
 
-    $sql = "INSERT INTO comment (issueid, body, createddate) VALUES
-            ('$_GET[issueid]', '" . mysql_real_escape_string($_POST[body]) . "', '" . $nowlcl . "')";
+    $sql = "UPDATE issue SET title = '" . mysql_real_escape_string($_POST[title]) . "', body = '" . mysql_real_escape_string($_POST[body]) . "' WHERE id = '$_GET[id]'";
     if (!mysql_query($sql,$con))
     {
         die('Error: ' . mysql_error());
     }
     
-    if ($_GET[close] == "1")
-    {
-        $sql = "UPDATE issue SET isclosed = '1' WHERE id='$_GET[issueid]'";
-        if (!mysql_query($sql,$con))
-        {
-            die('Error: ' . mysql_error());
-        }
-    }
-    
     mysql_close($con);
     
-    header("Location: issue.php?id=$_GET[issueid]");
+    header("Location: issue.php?id=$_GET[id]");
     exit;
     
 ?>

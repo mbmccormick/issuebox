@@ -41,7 +41,7 @@
                         <td valign="middle" align="right">
                             <?php
                             
-                                if ($issue[isopen] == "1")
+                                if ($issue[isclosed] == "0")
                                     echo "<span class='filter-on'>Open</span>";
                                 else
                                     echo "<span class='filter-on'>Closed</span>";
@@ -75,6 +75,7 @@
                 }
 
             ?>
+            <?php if ($issue[isclosed] == "0") { ?>
             <div class="list-item comment">
                 <h3>New Comment</h3>
                 <br />
@@ -90,6 +91,11 @@
                     </button>
                 </form>
             </div>
+            <?php } else { ?>
+            <div class="list-item comment">
+                <p>This issue is closed, and no more comments can be added.</p>
+            </div>
+            <?php } ?>
         </div>        
     </div>
     <div class="footer">

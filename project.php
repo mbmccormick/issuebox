@@ -55,14 +55,14 @@
             <?php
                 
                 if ($_GET[open] == "1")
-                    $result = mysql_query("SELECT * FROM issue WHERE projectid = '$_GET[id]' AND isopen='1' ORDER BY number ASC");
+                    $result = mysql_query("SELECT * FROM issue WHERE projectid = '$_GET[id]' AND isclosed='0' ORDER BY number ASC");
                 if ($_GET[open] == "0")
-                    $result = mysql_query("SELECT * FROM issue WHERE projectid = '$_GET[id]' AND isopen='0' ORDER BY number ASC");
+                    $result = mysql_query("SELECT * FROM issue WHERE projectid = '$_GET[id]' AND isclosed='1' ORDER BY number ASC");
                 if ($_GET[open] == "1" && $_GET[closed] == "1")
-                    $result = mysql_query("SELECT * FROM issue WHERE projectid = '$_GET[id]' AND (isopen='0' OR isopen='1') ORDER BY number ASC");  
+                    $result = mysql_query("SELECT * FROM issue WHERE projectid = '$_GET[id]' AND (isclosed='1' OR isclosed='0') ORDER BY number ASC");  
                     
                 if ($_GET[open] == "0" && $_GET[closed] == "0")
-                    $result = mysql_query("SELECT * FROM issue WHERE projectid = '$_GET[id]' AND (isopen='0' AND isopen='1') ORDER BY number ASC");  
+                    $result = mysql_query("SELECT * FROM issue WHERE projectid = '$_GET[id]' AND (isclosed='1' AND isclosed='0') ORDER BY number ASC");  
                    
                 while($row = mysql_fetch_array($result))
                 {
@@ -76,7 +76,7 @@
                     echo "<h3>#$row[number]&nbsp;&nbsp;<a href='issue.php?id=$row[id]'>" . $row[title] . "</a></h3>";
                     echo "</td>\n";
                     echo "<td valign='middle' align='right'>\n";
-                    if ($row[isopen] == "1")
+                    if ($row[isclosed] == "0")
                         echo "<span class='filter-on'>Open</span>";
                     else
                         echo "<span class='filter-on'>Closed</span>";

@@ -31,10 +31,10 @@
                 $result = mysql_query("SELECT * FROM project ORDER BY name ASC");
                 while($row = mysql_fetch_array($result))
                 {
-                    $sql = mysql_query("SELECT * FROM issue WHERE projectid = '$row[id]' AND isopen = '1'");
+                    $sql = mysql_query("SELECT * FROM issue WHERE projectid = '$row[id]' AND isclosed = '0'");
                     $open = mysql_num_rows($sql);
                     
-                    $sql = mysql_query("SELECT * FROM issue WHERE projectid = '$row[id]' AND isopen = '0'");
+                    $sql = mysql_query("SELECT * FROM issue WHERE projectid = '$row[id]' AND isclosed = '1'");
                     $closed = mysql_num_rows($sql);
                                         
                     echo "<div class='list-item project'>\n";
