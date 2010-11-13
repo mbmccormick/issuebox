@@ -11,9 +11,9 @@
     mysql_select_db($Database, $con);
     
     
-    $result = mysql_query("SELECT MAX(number) FROM issue WHERE projectid = '$_GET[projectid]'");
+    $result = mysql_query("SELECT MAX(number) AS maxnum FROM issue WHERE projectid = '$_GET[projectid]'");
     $row = mysql_fetch_array($result);
-    $next_num = $row[number] > 0 ? $row[number] : 1;
+    $next_num = $row[maxnum] + 1;
     
     
     $now = date("Y-m-d H:i:s");

@@ -66,6 +66,10 @@
         <button type="submit" class="button">
             <span>New Project</span>
         </button>
+        &nbsp;
+        <button type="submit" class="button">
+            <span>Settings</span>
+        </button>
     </div>
     <div class="footer">
         Copyright &copy; 2010 McCormick Technologies LLC. All rights reserved.
