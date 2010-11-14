@@ -1,0 +1,3 @@
+[submodule "js/css_browser_selector"]
+	path = js/css_browser_selector
+	url = git://github.com/rafaelp/css_browser_selector.git
