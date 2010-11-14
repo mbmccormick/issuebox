@@ -13,20 +13,14 @@
     $result = mysql_query("SELECT * FROM project WHERE id = '$_GET[id]'");
     $project = mysql_fetch_array($result);
     
-    if (!isset($_GET[open]))
+    if (!isset($_GET[open]) || $_GET[open] == null)
         $_GET[open] = "1";
+        
+    if (!isset($_GET[closed]) || $_GET[closed] == null)
+        $_GET[closed] = "0";
     
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
-<html xmlns="http://www.w3.org/1999/xhtml" dir=ltr lang=en-US> 
-<head> 
-  <title>Issue Tracker</title> 
-  <link rel="stylesheet" type="text/css" media="screen,projection" href="stylesheet.css" />
-</head> 
-<body> 
-    <div class="header">
-        <a href="index.php">Issue Tracker</a>
-    </div>
+<?php include "header.php"; ?>
     <div class="content">
         <table cellpadding="0" cellspacing="0" style="width: 100%; padding-bottom: 20px;">
             <tr>
@@ -38,14 +32,14 @@
                 <td valign="middle" align="right">
                     <div class="filter">
                         <?php if ($_GET[open] == "1") { ?>
-                            <a class="filter-on" href="project.php?id=<?php echo $project[id]; ?>&open=0&closed=<?php echo $_GET[closed]; ?>">Open</a>
+                            <a class="filter-on" title="Click here to hide open issues." href="project.php?id=<?php echo $project[id]; ?>&open=0&closed=<?php echo $_GET[closed]; ?>">Open</a>
                         <?php } else { ?>
-                            <a class="filter-off" href="project.php?id=<?php echo $project[id]; ?>&open=1&closed=<?php echo $_GET[closed]; ?>">Open</a>
+                            <a class="filter-off" title="Click here to show open issues." href="project.php?id=<?php echo $project[id]; ?>&open=1&closed=<?php echo $_GET[closed]; ?>">Open</a>
                         <?php } ?>
                         <?php if ($_GET[closed] == "1") { ?>
-                            <a class="filter-on" href="project.php?id=<?php echo $project[id]; ?>&closed=0&open=<?php echo $_GET[open]; ?>">Closed</a>
+                            <a class="filter-on" title="Click here to hide closed issues." href="project.php?id=<?php echo $project[id]; ?>&closed=0&open=<?php echo $_GET[open]; ?>">Closed</a>
                         <?php } else { ?>
-                            <a class="filter-off" href="project.php?id=<?php echo $project[id]; ?>&closed=1&open=<?php echo $_GET[open]; ?>">Closed</a>
+                            <a class="filter-off" title="Click here to show closed issues." href="project.php?id=<?php echo $project[id]; ?>&closed=1&open=<?php echo $_GET[open]; ?>">Closed</a>
                         <?php } ?>
                     </div>
                 </td>
@@ -126,8 +120,4 @@
             </button>
         </div>        
     </div>
-    <div class="footer">
-        Copyright &copy; 2010 McCormick Technologies LLC. All rights reserved.
-    </div>
-</body> 
-</html>
+<?php include "footer.php"; ?>

@@ -3,16 +3,7 @@
     require "config.php";
 
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
-<html xmlns="http://www.w3.org/1999/xhtml" dir=ltr lang=en-US> 
-<head> 
-  <title>Issue Tracker</title> 
-  <link rel="stylesheet" type="text/css" media="screen,projection" href="stylesheet.css" />
-</head> 
-<body> 
-    <div class="header">
-        <a href="index.php">Issue Tracker</a>
-    </div>
+<?php include "header.php"; ?>
     <div class="content">
         <div class="navigation">
             <a href="index.php">Projects</a>
@@ -73,8 +64,4 @@
             <span>Settings</span>
         </button>
     </div>
-    <div class="footer">
-        Copyright &copy; 2010 McCormick Technologies LLC. All rights reserved.
-    </div>
-</body> 
-</html>
+<?php include "footer.php"; ?>
