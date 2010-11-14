@@ -3,7 +3,7 @@
 <head> 
   <title>Issue Tracker</title> 
   <link rel="stylesheet" type="text/css" media="screen,projection" href="css/stylesheet.css" />
-  <script type="text/javascript" src="js/css_browser_selector.js" />
+  <script type="text/javascript" src="js/css_browser_selector.js"></script>
 </head> 
 <body> 
     <div class="header">

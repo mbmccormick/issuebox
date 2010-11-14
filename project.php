@@ -30,7 +30,7 @@
                     </div>
                 </td>
                 <td valign="middle" align="right">
-                    <?php include "issue.php"; ?>
+                    <?php include "filter.php"; ?>
                 </td>
             </tr>
         </table>
