@@ -126,6 +126,11 @@ a
     white-space: nowrap;
 }
 
+.gecko .button
+{
+    background: -moz-linear-gradient(linear, 0% 0, 0% 100%, from(white), to(#E1E1E1));
+}
+
 .button span
 {
     display: block;
@@ -154,6 +159,11 @@ a
     padding: 0px 0px 0px 3px;
     text-shadow: white 1px 1px 0px;
     white-space: nowrap;
+}
+
+.gecko .minibutton
+{
+    background: -moz-linear-gradient(linear, 0% 0%, 0% 100%, from(white), to(#E1E1E1));
 }
 
 .minibutton span
