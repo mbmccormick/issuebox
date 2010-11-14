@@ -48,6 +48,7 @@ a
     background-color: whiteSmoke;
     padding: 15px;
     border-radius: 8px;
+    -moz-border-radius: 8px;
     margin-bottom: 20px;
 }
 
@@ -75,6 +76,7 @@ a
     text-transform: uppercase;
     padding: 8px;
     border-radius: 8px;
+    -moz-border-radius: 8px;
     width: 80px;
     text-align: center;
     font-size: 9px;
@@ -95,6 +97,7 @@ a
     color: #555;
     padding: 5px;
     border-radius: 5px;
+    -moz-border-radius: 5px;
     width: 150px;
 }
 
@@ -106,6 +109,7 @@ a
     border-bottom: 1px solid #EBEBEB;
     border-bottom-left-radius: 4px 4px;
     border-bottom-right-radius: 4px 4px;
+    -moz-border-radius: 4px;
     border: none;
     border-top-left-radius: 4px 4px;
     border-top-right-radius: 4px 4px;
@@ -139,6 +143,7 @@ a
     border-bottom-right-radius: 3px 3px;
     border-top-left-radius: 3px 3px;
     border-top-right-radius: 3px 3px;
+    -moz-border-radius: 3px;
     color: #333;
     cursor: pointer;
     display: inline-block;
@@ -183,6 +188,7 @@ a
     background-color: #888888;
     padding: 2px;
     border-radius: 5px;
+    -moz-border-radius: 5px;
     font-size: 12px;
     text-transform: uppercase;
     color: #ffffff;
@@ -199,6 +205,7 @@ a.filter-on
     background-color: #dddddd;
     padding: 2px;
     border-radius: 5px;
+    -moz-border-radius: 5px;
     font-size: 12px;
     text-transform: uppercase;
     color: #333;
