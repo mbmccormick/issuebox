@@ -22,7 +22,10 @@
         <div class="navigation">
             <a href="index.php">Projects</a> / <a href="project.php?id=<?php echo $project[id]; ?>"><?php echo $project[name]; ?></a> / <a href="issue.php?id=<?php echo $issue[id]; ?>">Issue #<?php echo $issue[number]; ?></a>
         </div>
-        <div class="list">            
+        <div class="list"> 
+            <script type="text/javascript">            
+                var converter = new Showdown.converter();            
+            </script>
             <div class="list-item issue">
                 <table cellpadding="0" cellspacing="0" style="width: 100%;">
                     <tr>
@@ -42,13 +45,16 @@
                     </tr>
                 </table>
                 <br />
-                <p><?php echo $issue[body]; ?></p>
+                <div id="issue<?php echo $issue[number]; ?>"><?php echo $issue[body]; ?></div>
                 <br />
                 <div class="options">
                     <a class="minibutton" href='issue-edit.php?id=<?php echo $issue[id]; ?>'><span>Edit</span></a>
                     <a class="minibutton" onclick="return confirm('Are you sure you want to delete this issue and all of its comments?');" href='issue-delete.php?id=<?php echo $issue[id]; ?>&projectid=<?php echo $issue[projectid]; ?>'><span>Delete</span></a>
                     &nbsp;&nbsp;<span class="date"><?php echo date("m/d/Y g:ia", strtotime($issue[createddate])); ?></span>
                 </div>
+                <script type="text/javascript">
+                    document.getElementById("issue<?php echo $issue[number]; ?>").innerHTML = converter.makeHtml(document.getElementById("issue<?php echo $issue[number]; ?>").innerHTML);
+                </script>
             </div>
             <?php
 
@@ -56,12 +62,18 @@
                 while($row = mysql_fetch_array($result))
                 {
                     echo "<div class='list-item comment'>\n";
-                    echo "<p>" . $row[body] . "</p>\n";
+                    
+                    echo "<div id='comment$row[id]'>" . $row[body] . "</div>\n";
                     echo "<br />\n";
                     echo "<div class='options'>\n";
                     echo "<a class='minibutton' onclick=\"return confirm('Are you sure you want to delete this comment?');\" href='comment-delete.php?id=$row[id]&issueid=$row[issueid]'><span>Delete</span></a>\n";
                     echo "&nbsp;&nbsp;" . date("m/d/Y g:ia", strtotime($row[createddate]));
                     echo "</div>\n";
+                    
+                    echo "<script type='text/javascript'>\n";
+                    echo "document.getElementById('comment$row[id]').innerHTML = converter.makeHtml(document.getElementById('comment$row[id]').innerHTML);\n";
+                    echo "</script>\n";
+                    
                     echo "</div>\n";
                 }
 

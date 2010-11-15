@@ -35,10 +35,8 @@
             </tr>
         </table>
         <div class="list">
-            <script type="text/javascript">
-            
-                var converter = new Showdown.converter();
-            
+            <script type="text/javascript">            
+                var converter = new Showdown.converter();            
             </script>
             <?php
                 
