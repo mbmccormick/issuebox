@@ -86,9 +86,7 @@
                             <h3>New Comment</h3>
                         </td>
                         <td valign="middle" align="right">
-                            <small>Comments are parsed with <a target="_blank" hre
-f="https://github.com/github/github-flavored-markdown">GitHub Flavored Markdown<
-/a></small>
+                            <small>Comments are parsed with <a target="_blank" href="https://github.com/github/github-flavored-markdown">GitHub Flavored Markdown</a></small>
                         </td>
                     </tr>
                 </table>

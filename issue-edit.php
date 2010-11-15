@@ -30,9 +30,7 @@
                             <h3>Edit Issue</h3>
                         </td>
                         <td valign="middle" align="right">
-                            <small>Issues are parsed with <a target="_blank" hre
-f="https://github.com/github/github-flavored-markdown">GitHub Flavored Markdown<
-/a></small>
+                            <small>Issues are parsed with <a target="_blank" href="https://github.com/github/github-flavored-markdown">GitHub Flavored Markdown</a></small>
                         </td>
                     </tr>
                 </table>
