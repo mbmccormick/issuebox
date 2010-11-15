@@ -62,6 +62,7 @@ a
 {
     white-space: nowrap;
     overflow: hidden;
+    max-width: 540px;
 }
 
 .list-item h3
