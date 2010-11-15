@@ -4,7 +4,7 @@
   <title>Issue Tracker</title> 
   <link rel="stylesheet" type="text/css" media="screen,projection" href="css/stylesheet.css" />
   <script type="text/javascript" src="js/css_browser_selector/css_browser_selector.js"></script>
-  <script type="text/javascript" src="js/showdown/src/showdown.js"></script>
+  <script type="text/javascript" src="js/github-flavored-markdown/scripts/showdown.js"></script>
 </head> 
 <body> 
     <div class="header">
