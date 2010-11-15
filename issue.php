@@ -80,7 +80,7 @@
             ?>
             <?php if ($issue[isclosed] == "0") { ?>
             <div class="list-item comment">
-                <table cellpadding="0" cellspacing="0" style="width: 100%;">
+                <table cellpadding="0" cellspacing="0" style="width: 760px;">
                     <tr>
                         <td valign="middle">
                             <h3>New Comment</h3>
@@ -92,7 +92,7 @@
                 </table>
                 <br />
                 <form action="comment-add.php?issueid=<?php echo $_GET[id]; ?>" method="post">
-                    <textarea name="body" style="width: 762px;" rows="8"></textarea>
+                    <textarea name="body" style="width: 760px;" rows="8"></textarea>
                     <br />
                     <br />
                     <button onclick="this.form.action = this.form.action + '&close=1';" type="submit" name="commentandclose" class="button">

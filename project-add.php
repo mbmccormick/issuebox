@@ -14,10 +14,10 @@
                 <br />
                 <form action="project-add-post.php" method="post">
                     <b>Name</b><br />
-                    <input type="text" name="name" style="width: 100%;" /><br />
+                    <input type="text" name="name" style="width: 760px;" /><br />
                     <br />
                     <b>Description</b><br />                    
-                    <textarea name="description" style="width: 762px;" rows="5"></textarea>
+                    <textarea name="description" style="width: 760px;" rows="5"></textarea>
                     <br />
                     <br />
                     <button type="submit" class="button">

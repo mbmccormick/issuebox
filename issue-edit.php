@@ -37,10 +37,10 @@
                 <br />
                 <form action="issue-edit-post.php?id=<?php echo $_GET[id]; ?>" method="post">
                     <b>Title</b><br />
-                    <input type="text" name="title" style="width: 100%;" value="<?php echo $issue[title]; ?>" /><br />
+                    <input type="text" name="title" style="width: 760px;" value="<?php echo $issue[title]; ?>" /><br />
                     <br />
                     <b>Body</b><br />                    
-                    <textarea name="body" style="width: 762px;" rows="8"><?php echo $issue[body]; ?></textarea>
+                    <textarea name="body" style="width: 760px;" rows="8"><?php echo $issue[body]; ?></textarea>
                     <br />
                     <br />
                     <button type="submit" class="button">

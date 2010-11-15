@@ -25,10 +25,10 @@
                 <br />
                 <form action="project-edit-post.php?id=<?php echo $_GET[id]; ?>" method="post">
                     <b>Name</b><br />
-                    <input type="text" name="name" style="width: 100%;" value="<?php echo $project[name]; ?>" /><br />
+                    <input type="text" name="name" style="width: 760px;" value="<?php echo $project[name]; ?>" /><br />
                     <br />
                     <b>Description</b><br />                    
-                    <textarea name="description" style="width: 762px;" rows="5"><?php echo $project[description]; ?></textarea>
+                    <textarea name="description" style="width: 760px;" rows="5"><?php echo $project[description]; ?></textarea>
                     <br />
                     <br />
                     <button type="submit" class="button">

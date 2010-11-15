@@ -97,7 +97,7 @@
 
             ?>
             <div class="list-item issue">
-                <table cellpadding="0" cellspacing="0" style="width: 100%;">
+                <table cellpadding="0" cellspacing="0" style="width: 760px;">
                     <tr>
                         <td valign="middle">
                             <h3>New Issue</h3>
@@ -113,7 +113,7 @@
                     <input type="text" name="title" style="width: 100%;" /><br />
                     <br />
                     <b>Body</b><br />                    
-                    <textarea name="body" style="width: 762px;" rows="8"></textarea>
+                    <textarea name="body" style="width: 760px;" rows="8"></textarea>
                     <br />
                     <br />
                     <button type="submit" class="button">
