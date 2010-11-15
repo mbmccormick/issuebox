@@ -97,7 +97,16 @@
 
             ?>
             <div class="list-item issue">
-                <h3>New Issue</h3>
+                <table cellpadding="0" cellspacing="0" style="width: 100%;">
+                    <tr>
+                        <td valign="middle">
+                            <h3>New Issue</h3>
+                        </td>
+                        <td valign="middle" align="right">
+                            <small>Issues are parsed with <a target="_blank" href="https://github.com/github/github-flavored-markdown">GitHub Flavored Markdown</a></small>
+                        </td>
+                    </tr>
+                </table>
                 <br />
                 <form action="issue-add.php?projectid=<?php echo $_GET[id]; ?>" method="post">
                     <b>Title</b><br />

@@ -80,7 +80,18 @@
             ?>
             <?php if ($issue[isclosed] == "0") { ?>
             <div class="list-item comment">
-                <h3>New Comment</h3>
+                <table cellpadding="0" cellspacing="0" style="width: 100%;">
+                    <tr>
+                        <td valign="middle">
+                            <h3>New Comment</h3>
+                        </td>
+                        <td valign="middle" align="right">
+                            <small>Comments are parsed with <a target="_blank" hre
+f="https://github.com/github/github-flavored-markdown">GitHub Flavored Markdown<
+/a></small>
+                        </td>
+                    </tr>
+                </table>
                 <br />
                 <form action="comment-add.php?issueid=<?php echo $_GET[id]; ?>" method="post">
                     <textarea name="body" style="width: 762px;" rows="8"></textarea>
