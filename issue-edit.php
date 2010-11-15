@@ -10,7 +10,7 @@
 
     mysql_select_db($Database, $con);   
     
-    $result = mysql_query("SELECT * FROM issue WHERE id = '$_GET[id]' ORDER BY id ASC");
+    $result = mysql_query("SELECT * FROM issue WHERE id = '$_GET[id]'");
     $issue = mysql_fetch_array($result);
 
     $result = mysql_query("SELECT * FROM project WHERE id = '$issue[projectid]'");
@@ -35,7 +35,7 @@
                     <br />
                     <br />
                     <button type="submit" class="button">
-                        <span>Update Issue</span>
+                        <span>Save</span>
                     </button>
                 </form>
             </div>

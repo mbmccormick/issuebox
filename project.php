@@ -104,6 +104,9 @@
                 </form>
             </div>
             <br />
+            <button type="submit" class="button" onclick="location.href='project-edit.php?id=<?php echo $_GET[id]; ?>';">
+                <span>Edit</span>
+            </button>
             <button type="submit" class="button" onclick="confirm('Are you sure you want to delete this project and all of its issues?') ? location.href='project-delete.php?id=<?php echo $_GET[id]; ?>' : false;">
                 <span>Delete Project</span>
             </button>
