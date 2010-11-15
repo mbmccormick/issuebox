@@ -73,7 +73,7 @@
                     echo "</tr>\n";
                     echo "</table>\n";
                     echo "<br />\n";
-                    echo "<p id='issue$row[number]'>" . $row[body] . "</div>\n";
+                    echo "<div id='issue$row[number]'>" . $row[body] . "</div>\n";
                     echo "<br />\n";
                     echo "<div class='options'>\n";
                     echo date("m/d/Y g:ia", strtotime($row[createddate])) . "&nbsp;&nbsp;";
