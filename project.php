@@ -35,6 +35,11 @@
             </tr>
         </table>
         <div class="list">
+            <script type="text/javascript">
+            
+                var converter = new Showdown.converter();
+            
+            </script>
             <?php
                 
                 if ($_GET[open] == "1")
@@ -53,6 +58,7 @@
                     $count = mysql_num_rows($sql);
                                     
                     echo "<div class='list-item issue'>\n";
+                    
                     echo "<table cellpadding='0' cellspacing='0' style='width: 100%;'>\n";
                     echo "<tr>\n";
                     echo "<td valign='middle'>\n";
@@ -67,7 +73,7 @@
                     echo "</tr>\n";
                     echo "</table>\n";
                     echo "<br />\n";
-                    echo "<p>" . $row[body] . "</p>\n";
+                    echo "<p id='issue$row[number]'>" . $row[body] . "</div>\n";
                     echo "<br />\n";
                     echo "<div class='options'>\n";
                     echo date("m/d/Y g:ia", strtotime($row[createddate])) . "&nbsp;&nbsp;";
@@ -76,6 +82,11 @@
                     else
                         echo "<a href='issue.php?id=$row[id]'>$count comments</a>\n";
                     echo "</div>\n";
+                    
+                    echo "<script type='text/javascript'>\n";
+                    echo "document.getElementById('issue$row[number]').innerHtml = converter.makeHtml(document.getElementById('issue$row[number]').innerHtml);\n";
+                    echo "</script>\n";
+                    
                     echo "</div>\n";
                 }
                 
