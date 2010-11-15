@@ -1,3 +1,6 @@
 [submodule "js/css_browser_selector"]
 	path = js/css_browser_selector
 	url = git://github.com/rafaelp/css_browser_selector.git
+[submodule "js/showdown"]
+	path = js/showdown
+	url = git://github.com/coreyti/showdown.git
