@@ -58,6 +58,12 @@ a
     line-height: 1.5em;
 }
 
+.project p
+{
+    white-space: nowrap;
+    overflow: hidden;
+}
+
 .list-item h3
 {
     font-size: 18px;
