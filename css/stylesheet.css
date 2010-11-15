@@ -51,7 +51,7 @@ a
     margin-bottom: 20px;
 }
 
-.list-item h3, .list-item p, .list-item div
+.list-item h3, .list-item p, .issue div, .comment div
 {
     padding: 0px;
     margin: 0px;
@@ -68,7 +68,7 @@ a
     background-color: #ffffff;
 }
 
-.list-item .counter
+.counter
 {
     background-color: #888;
     color: #ffffff;
@@ -82,7 +82,7 @@ a
     margin-left: 5px;
 }
 
-.list-item .counter big
+.counter big
 {
     display: block;
     font-size: 26px;
