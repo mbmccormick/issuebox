@@ -84,7 +84,7 @@
                     echo "</div>\n";
                     
                     echo "<script type='text/javascript'>\n";
-                    echo "document.getElementById('issue$row[number]').innerHtml = converter.makeHtml(document.getElementById('issue$row[number]').innerHtml);\n";
+                    echo "document.getElementById('issue$row[number]').innerHTML = converter.makeHtml(document.getElementById('issue$row[number]').innerHTML);\n";
                     echo "</script>\n";
                     
                     echo "</div>\n";
