@@ -4,3 +4,6 @@
 [submodule "js/showdown"]
 	path = js/showdown
 	url = git://github.com/coreyti/showdown.git
+[submodule "js/github-flavored-markdown"]
+	path = js/github-flavored-markdown
+	url = git://github.com/github/github-flavored-markdown.git
