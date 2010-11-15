@@ -80,7 +80,7 @@
             ?>
             <?php if ($issue[isclosed] == "0") { ?>
             <div class="list-item comment">
-                <table cellpadding="0" cellspacing="0" style="width: 760px;">
+                <table cellpadding="0" cellspacing="0" style="width: 100%;">
                     <tr>
                         <td valign="middle">
                             <h3>New Comment</h3>

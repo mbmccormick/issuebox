@@ -97,7 +97,7 @@
 
             ?>
             <div class="list-item issue">
-                <table cellpadding="0" cellspacing="0" style="width: 760px;">
+                <table cellpadding="0" cellspacing="0" style="width: 100%;">
                     <tr>
                         <td valign="middle">
                             <h3>New Issue</h3>
@@ -110,7 +110,7 @@
                 <br />
                 <form action="issue-add.php?projectid=<?php echo $_GET[id]; ?>" method="post">
                     <b>Title</b><br />
-                    <input type="text" name="title" style="width: 100%;" /><br />
+                    <input type="text" name="title" style="width: 760px;" /><br />
                     <br />
                     <b>Body</b><br />                    
                     <textarea name="body" style="width: 760px;" rows="8"></textarea>
