@@ -58,11 +58,25 @@ a
     line-height: 1.5em;
 }
 
+.project h3
+{
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 540px;
+}
+
 .project p
 {
     white-space: nowrap;
     overflow: hidden;
     max-width: 540px;
+}
+
+.issue h3
+{
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 640px;
 }
 
 .list-item h3
