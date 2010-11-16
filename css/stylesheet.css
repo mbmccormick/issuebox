@@ -251,3 +251,9 @@ a.filter-off
 {
     color: #333;
 }
+
+small
+{
+    color: #999;
+    font-size: 12px;
+}
