@@ -53,6 +53,13 @@
                     echo "</tr></table>\n";
                     echo "</div>\n";
                 }
+                
+                if (mysql_num_rows($result) == 0)
+                {
+                    echo "<div class='list-item project'>\n";
+                    echo "<p>There are currently no projects setup.</p>\n";
+                    echo "</div>\n";
+                }
 
             ?>
         </div>
