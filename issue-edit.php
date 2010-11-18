@@ -44,7 +44,7 @@
                     <br />
                     <br />
                     <button type="submit" class="button">
-                        <span>Save</span>
+                        <span>Save Issue</span>
                     </button>
                 </form>
             </div>
