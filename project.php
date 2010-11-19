@@ -10,7 +10,7 @@
 
     mysql_select_db($Database, $con);
 
-    $result = mysql_query("SELECT * FROM project WHERE id = '$_GET[id]'");
+    $result = mysql_query("SELECT id, name FROM project WHERE id = '$_GET[id]'");
     $project = mysql_fetch_array($result);
     
     if (!isset($_GET[open]) || $_GET[open] == null)
@@ -46,14 +46,14 @@
                     $result = mysql_query("SELECT * FROM issue WHERE projectid = '$_GET[id]' AND isclosed='1' ORDER BY number ASC");
                 if ($_GET[open] == "1" && $_GET[closed] == "1")
                     $result = mysql_query("SELECT * FROM issue WHERE projectid = '$_GET[id]' AND (isclosed='1' OR isclosed='0') ORDER BY number ASC");  
-                    
                 if ($_GET[open] == "0" && $_GET[closed] == "0")
                     $result = mysql_query("SELECT * FROM issue WHERE projectid = '$_GET[id]' AND (isclosed='1' AND isclosed='0') ORDER BY number ASC");  
                    
                 while($row = mysql_fetch_array($result))
                 {
-                    $sql = mysql_query("SELECT * FROM comment WHERE issueid = '$row[id]'");
-                    $count = mysql_num_rows($sql);
+                    $sql = mysql_query("SELECT COUNT(*) AS rowcount FROM comment WHERE issueid = '$row[id]'");
+                    $return = mysql_fetch_array($sql);
+                    $count = $return[rowcount];
                                     
                     echo "<div class='list-item issue'>\n";
                     

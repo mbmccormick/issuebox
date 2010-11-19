@@ -13,7 +13,7 @@
     $result = mysql_query("SELECT * FROM issue WHERE id = '$_GET[id]' ORDER BY id ASC");
     $issue = mysql_fetch_array($result);
 
-    $result = mysql_query("SELECT * FROM project WHERE id = '$issue[projectid]'");
+    $result = mysql_query("SELECT id, name FROM project WHERE id = '$issue[projectid]'");
     $project = mysql_fetch_array($result);
     
 ?>

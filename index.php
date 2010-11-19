@@ -22,11 +22,13 @@
                 $result = mysql_query("SELECT * FROM project ORDER BY name ASC");
                 while($row = mysql_fetch_array($result))
                 {
-                    $sql = mysql_query("SELECT * FROM issue WHERE projectid = '$row[id]' AND isclosed = '0'");
-                    $open = mysql_num_rows($sql);
+                    $sql = mysql_query("SELECT COUNT(*) AS rowcount FROM issue WHERE projectid = '$row[id]' AND isclosed = '0'");
+                    $return = mysql_fetch_array($sql);
+                    $open = $return[rowcount];
                     
-                    $sql = mysql_query("SELECT * FROM issue WHERE projectid = '$row[id]' AND isclosed = '1'");
-                    $closed = mysql_num_rows($sql);
+                    $sql = mysql_query("SELECT COUNT(*) AS rowcount FROM issue WHERE projectid = '$row[id]' AND isclosed = '1'");
+                    $return = mysql_fetch_array($sql);
+                    $closed = $return[rowcount];
                                         
                     echo "<div class='list-item project'>\n";
                     echo "<table cellpadding='0' cellspacing='0' style='width: 100%;'><tr>\n";
