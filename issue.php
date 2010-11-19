@@ -13,7 +13,7 @@
     $result = mysql_query("SELECT * FROM issue WHERE id = '$_GET[id]' ORDER BY id ASC");
     $issue = mysql_fetch_array($result);
 
-    $result = mysql_query("SELECT id, name FROM project WHERE id = '$issue[projectid]'");
+    $result = mysql_query("SELECT * FROM project WHERE id = '$issue[projectid]'");
     $project = mysql_fetch_array($result);
     
 ?>
@@ -49,7 +49,7 @@
                 <br />
                 <div class="options">
                     <a class="minibutton" href='issue-edit.php?id=<?php echo $issue[id]; ?>'><span>Edit</span></a>
-                    <a class="minibutton" onclick="return confirm('Are you sure you want to delete this issue and all of its comments?');" href='issue-delete.php?id=<?php echo $issue[id]; ?>&projectid=<?php echo $issue[projectid]; ?>'><span>Delete</span></a>
+                    <a class="minibutton" onclick="return confirm('Are you sure you want to delete this issue and all of its comments?');" href='issue-delete_post.php?id=<?php echo $issue[id]; ?>&projectid=<?php echo $issue[projectid]; ?>'><span>Delete</span></a>
                     &nbsp;&nbsp;<span class="date"><?php echo date("m/d/Y g:ia", strtotime($issue[createddate])); ?></span>
                 </div>
                 <script type="text/javascript">
@@ -58,7 +58,7 @@
             </div>
             <?php
 
-                $result = mysql_query("SELECT * FROM comment WHERE issueid = '$_GET[id]' ORDER BY id ASC");
+                $result = mysql_query("SELECT * FROM comment WHERE issueid = '$issue[id]' ORDER BY id ASC");
                 while($row = mysql_fetch_array($result))
                 {
                     echo "<div class='list-item comment'>\n";
@@ -66,7 +66,7 @@
                     echo "<div id='comment$row[id]'>" . $row[body] . "</div>\n";
                     echo "<br />\n";
                     echo "<div class='options'>\n";
-                    echo "<a class='minibutton' onclick=\"return confirm('Are you sure you want to delete this comment?');\" href='comment-delete.php?id=$row[id]&issueid=$row[issueid]'><span>Delete</span></a>\n";
+                    echo "<a class='minibutton' onclick=\"return confirm('Are you sure you want to delete this comment?');\" href='comment-delete_post.php?id=$row[id]&issueid=$row[issueid]'><span>Delete</span></a>\n";
                     echo "&nbsp;&nbsp;" . date("m/d/Y g:ia", strtotime($row[createddate]));
                     echo "</div>\n";
                     
@@ -91,7 +91,7 @@
                     </tr>
                 </table>
                 <br />
-                <form action="comment-add.php?issueid=<?php echo $_GET[id]; ?>" method="post">
+                <form action="comment-add_post.php?issueid=<?php echo $issue[id]; ?>" method="post">
                     <textarea name="body" style="width: 760px;" rows="8"></textarea>
                     <br />
                     <br />

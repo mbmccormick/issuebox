@@ -14,15 +14,16 @@
     $now = date("Y-m-d H:i:s");
     $nowlcl = date("Y-m-d H:i:s", strtotime("+3 hour", strtotime($now)));
 
-    $sql = "DELETE FROM comment WHERE id = '$_GET[id]'";    
+    $sql = "INSERT INTO user (username, password, email, createddate) VALUES
+            ('" . mysql_real_escape_string($_POST[username]) . "', '" . mysql_real_escape_string($_POST[password]) . "', '" . mysql_real_escape_string($_POST[email]) . "', '" . $nowlcl . "')";
     if (!mysql_query($sql,$con))
     {
         die('Error: ' . mysql_error());
     }
-
+    
     mysql_close($con);
     
-    header("Location: issue.php?id=$_GET[issueid]");
+    header("Location: user.php");
     exit;
     
 ?>

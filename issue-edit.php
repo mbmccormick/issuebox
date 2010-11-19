@@ -35,7 +35,7 @@
                     </tr>
                 </table>
                 <br />
-                <form action="issue-edit-post.php?id=<?php echo $_GET[id]; ?>" method="post">
+                <form action="issue-edit_post.php?id=<?php echo $_GET[id]; ?>" method="post">
                     <b>Title</b><br />
                     <input type="text" name="title" style="width: 760px;" value="<?php echo $issue[title]; ?>" /><br />
                     <br />
@@ -45,6 +45,9 @@
                     <br />
                     <button type="submit" class="button">
                         <span>Save Issue</span>
+                    </button>
+                    <button type="button" class="button" onclick="confirm('Are you sure you want to delete this issue and all of its comments?') ? location.href='issue-delete_post.php?id=<?php echo $_GET[id]; ?>' : false;">
+                        <span>Delete</span>
                     </button>
                 </form>
             </div>

@@ -12,7 +12,7 @@
             <div class="list-item issue">
                 <h3>New Project</h3>
                 <br />
-                <form action="project-add-post.php" method="post">
+                <form action="project-add_post.php" method="post">
                     <b>Name</b><br />
                     <input type="text" name="name" style="width: 760px;" /><br />
                     <br />

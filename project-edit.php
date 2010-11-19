@@ -23,7 +23,7 @@
             <div class="list-item project">
                 <h3>Edit Project</h3>
                 <br />
-                <form action="project-edit-post.php?id=<?php echo $_GET[id]; ?>" method="post">
+                <form action="project-edit_post.php?id=<?php echo $_GET[id]; ?>" method="post">
                     <b>Name</b><br />
                     <input type="text" name="name" style="width: 760px;" value="<?php echo $project[name]; ?>" /><br />
                     <br />
@@ -33,6 +33,9 @@
                     <br />
                     <button type="submit" class="button">
                         <span>Save Project</span>
+                    </button>
+                    <button type="button" class="button" onclick="confirm('Are you sure you want to delete this project and all of its issues?') ? location.href='issue-delete_post.php?id=<?php echo $_GET[id]; ?>' : false;">
+                        <span>Delete</span>
                     </button>
                 </form>
             </div>

@@ -10,7 +10,7 @@
 
     mysql_select_db($Database, $con);
 
-    $result = mysql_query("SELECT id, name FROM project WHERE id = '$_GET[id]'");
+    $result = mysql_query("SELECT * FROM project WHERE id = '$_GET[id]'");
     $project = mysql_fetch_array($result);
     
     if (!isset($_GET[open]) || $_GET[open] == null)
@@ -41,13 +41,13 @@
             <?php
                 
                 if ($_GET[open] == "1")
-                    $result = mysql_query("SELECT * FROM issue WHERE projectid = '$_GET[id]' AND isclosed='0' ORDER BY number ASC");
+                    $result = mysql_query("SELECT * FROM issue WHERE projectid = '$project[id]' AND isclosed='0' ORDER BY number ASC");
                 if ($_GET[open] == "0")
-                    $result = mysql_query("SELECT * FROM issue WHERE projectid = '$_GET[id]' AND isclosed='1' ORDER BY number ASC");
+                    $result = mysql_query("SELECT * FROM issue WHERE projectid = '$project[id]' AND isclosed='1' ORDER BY number ASC");
                 if ($_GET[open] == "1" && $_GET[closed] == "1")
-                    $result = mysql_query("SELECT * FROM issue WHERE projectid = '$_GET[id]' AND (isclosed='1' OR isclosed='0') ORDER BY number ASC");  
+                    $result = mysql_query("SELECT * FROM issue WHERE projectid = '$project[id]' AND (isclosed='1' OR isclosed='0') ORDER BY number ASC");  
                 if ($_GET[open] == "0" && $_GET[closed] == "0")
-                    $result = mysql_query("SELECT * FROM issue WHERE projectid = '$_GET[id]' AND (isclosed='1' AND isclosed='0') ORDER BY number ASC");  
+                    $result = mysql_query("SELECT * FROM issue WHERE projectid = '$project[id]' AND (isclosed='1' AND isclosed='0') ORDER BY number ASC");  
                    
                 while($row = mysql_fetch_array($result))
                 {
@@ -108,7 +108,7 @@
                     </tr>
                 </table>
                 <br />
-                <form action="issue-add.php?projectid=<?php echo $_GET[id]; ?>" method="post">
+                <form action="issue-add_post.php?projectid=<?php echo $project[id]; ?>" method="post">
                     <b>Title</b><br />
                     <input type="text" name="title" style="width: 760px;" /><br />
                     <br />
@@ -122,10 +122,10 @@
                 </form>
             </div>
             <br />
-            <button type="submit" class="button" onclick="location.href='project-edit.php?id=<?php echo $_GET[id]; ?>';">
+            <button type="button" class="button" onclick="location.href='project-edit.php?id=<?php echo $project[id]; ?>';">
                 <span>Edit Project</span>
             </button>
-            <button type="submit" class="button" onclick="confirm('Are you sure you want to delete this project and all of its issues?') ? location.href='project-delete.php?id=<?php echo $_GET[id]; ?>' : false;">
+            <button type="button" class="button" onclick="confirm('Are you sure you want to delete this project and all of its issues?') ? location.href='project-delete_post.php?id=<?php echo $_GET[id]; ?>' : false;">
                 <span>Delete</span>
             </button>
         </div>        

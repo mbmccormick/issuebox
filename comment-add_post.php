@@ -14,15 +14,25 @@
     $now = date("Y-m-d H:i:s");
     $nowlcl = date("Y-m-d H:i:s", strtotime("+3 hour", strtotime($now)));
 
-    $sql = "DELETE FROM project WHERE id = '$_GET[id]'";    
+    $sql = "INSERT INTO comment (issueid, body, createddate) VALUES
+            ('$_GET[issueid]', '" . mysql_real_escape_string($_POST[body]) . "', '" . $nowlcl . "')";
     if (!mysql_query($sql,$con))
     {
         die('Error: ' . mysql_error());
     }
-
+    
+    if ($_GET[close] == "1")
+    {
+        $sql = "UPDATE issue SET isclosed = '1' WHERE id='$_GET[issueid]'";
+        if (!mysql_query($sql,$con))
+        {
+            die('Error: ' . mysql_error());
+        }
+    }
+    
     mysql_close($con);
     
-    header("Location: index.php");
+    header("Location: issue.php?id=$_GET[issueid]");
     exit;
     
 ?>

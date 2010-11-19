@@ -1,6 +1,14 @@
 <?php
 
     require "config.php";
+    
+    $con = mysql_connect($Server, $Username, $Password);
+    if (!$con)
+    {
+        die("Could not connect: " . mysql_error());
+    }
+
+    mysql_select_db($Database, $con);   
 
 ?>
 <?php include "header.php"; ?>
@@ -10,14 +18,6 @@
         </div>
         <div class="list">
             <?php
-
-                $con = mysql_connect($Server, $Username, $Password);
-                if (!$con)
-                {
-                    die("Could not connect: " . mysql_error());
-                }
-
-                mysql_select_db($Database, $con);
 
                 $result = mysql_query("SELECT * FROM project ORDER BY name ASC");
                 while($row = mysql_fetch_array($result))
@@ -66,10 +66,10 @@
             ?>
         </div>
         <br />
-        <button type="submit" class="button" onclick="location.href='project-add.php';">
+        <button type="button" class="button" onclick="location.href='project-add.php';">
             <span>New Project</span>
         </button>
-        <button type="submit" class="button">
+        <button type="button" class="button">
             <span>Settings</span>
         </button>
     </div>
