@@ -17,8 +17,8 @@
     $now = date("Y-m-d H:i:s");
     $nowlcl = date("Y-m-d H:i:s", strtotime("+3 hour", strtotime($now)));
 
-    $sql = "INSERT INTO comment (issueid, body, createddate) VALUES
-            ('$_GET[issueid]', '" . mysql_real_escape_string($_POST[body]) . "', '" . $nowlcl . "')";
+    $sql = "INSERT INTO comment (issueid, body, createdby, createddate) VALUES
+            ('$_GET[issueid]', '" . mysql_real_escape_string($_POST[body]) . "', '$CurrentUser_ID', '" . $nowlcl . "')";
     if (!mysql_query($sql,$con))
     {
         die('Error: ' . mysql_error());

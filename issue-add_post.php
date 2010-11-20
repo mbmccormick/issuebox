@@ -22,8 +22,8 @@
     $now = date("Y-m-d H:i:s");
     $nowlcl = date("Y-m-d H:i:s", strtotime("+3 hour", strtotime($now)));
 
-    $sql = "INSERT INTO issue (projectid, number, title, body, isclosed, createddate) VALUES
-            ('$_GET[projectid]', '$next_num', '" . mysql_real_escape_string($_POST[title]) . "', '" . mysql_real_escape_string($_POST[body]) . "', '0', '" . $nowlcl . "')";
+    $sql = "INSERT INTO issue (projectid, number, title, body, isclosed, createdby, createddate) VALUES
+            ('$_GET[projectid]', '$next_num', '" . mysql_real_escape_string($_POST[title]) . "', '" . mysql_real_escape_string($_POST[body]) . "', '0', '$CurrentUser_ID', '" . $nowlcl . "')";
     
     if (!mysql_query($sql,$con))
     {
