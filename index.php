@@ -72,7 +72,7 @@
         <button type="button" class="button" onclick="location.href='project-add.php';">
             <span>New Project</span>
         </button>
-        <button type="button" class="button">
+        <button type="button" class="button" onclick="location.href='settings.php';">
             <span>Settings</span>
         </button>
     </div>
