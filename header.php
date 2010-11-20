@@ -22,10 +22,10 @@
         <table class="toolbar-menu" cellpadding="0" cellspacing="0">
             <tr>
                 <td valign="middle">
-                    <img src="http://www.gravatar.com/avatar/<?php echo md5($CurrentUser_Email); ?>?s=15" />&nbsp;
+                    <img src="http://www.gravatar.com/avatar/<?php echo md5($CurrentUser_Email); ?>?s=20" />&nbsp;
                 </td>
                 <td valign="middle">
-                    <?php echo $CurrentUser_Username; ?>&nbsp;<a href="logout.php">Logout</a>
+                    <?php echo $CurrentUser_Username; ?>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="logout.php">Logout</a>
                 </td>
             </tr>
         </table>
