@@ -14,7 +14,7 @@
     $now = date("Y-m-d H:i:s");
     $nowlcl = date("Y-m-d H:i:s", strtotime("+3 hour", strtotime($now)));
 
-    $sql = "UPDATE user SET username = '" . mysql_real_escape_string($_POST[username]) . "', password = '" . mysql_real_escape_string($_POST[password]) . "', email = '" . mysql_real_escape_string($_POST[email]) . "' WHERE id = '$_GET[id]'";
+    $sql = "UPDATE user SET username = '" . mysql_real_escape_string($_POST[username]) . "', password = '" . md5(mysql_real_escape_string($_POST[password])) . "', email = '" . mysql_real_escape_string($_POST[email]) . "' WHERE id = '$_GET[id]'";
     if (!mysql_query($sql,$con))
     {
         die('Error: ' . mysql_error());

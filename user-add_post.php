@@ -15,7 +15,7 @@
     $nowlcl = date("Y-m-d H:i:s", strtotime("+3 hour", strtotime($now)));
 
     $sql = "INSERT INTO user (username, password, email, createddate) VALUES
-            ('" . mysql_real_escape_string($_POST[username]) . "', '" . mysql_real_escape_string($_POST[password]) . "', '" . mysql_real_escape_string($_POST[email]) . "', '" . $nowlcl . "')";
+            ('" . mysql_real_escape_string($_POST[username]) . "', '" . md5(mysql_real_escape_string($_POST[password])) . "', '" . mysql_real_escape_string($_POST[email]) . "', '" . $nowlcl . "')";
     if (!mysql_query($sql,$con))
     {
         die('Error: ' . mysql_error());
