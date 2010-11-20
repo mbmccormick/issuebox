@@ -1,6 +1,9 @@
 <?php
 
     require "config.php";
+    require_once "security.php";
+    
+    authorize();
     
 ?>
 <?php include "header.php"; ?>

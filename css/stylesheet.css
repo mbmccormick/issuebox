@@ -333,3 +333,52 @@ small
     color: #999;
     font-size: 12px;
 }
+
+.standard_form
+{
+    background-color: #EAF2F5;
+    border: 20px solid #DDD;
+    padding: 2em 2em 1em;
+}
+
+#login
+{
+    width: 31em;
+}
+
+#login h3
+{
+    margin: 0px;
+    padding: 0px;
+}
+
+.standard_form form input.text, .standard_form form textarea
+{
+    border: 1px solid #888;
+    padding: 5px;
+}
+
+.standard_form form label, .standard_form form .label, label.standard
+{
+    color: #666;
+    display: block;
+    font-size: 110%;
+    margin: 1em 0px 0px;
+    margin-top: 1em;
+}
+
+.toolbar
+{
+    
+}
+
+.toolbar-menu
+{
+    float: right;
+    margin-top: -20px;
+    padding: 7px 10px 7px 10px;
+    border: solid 1px #E4E4E4;
+    background-color: #whiteSmoke;
+    border-radius: 8px;
+    -moz-border-radius: 8px;
+}

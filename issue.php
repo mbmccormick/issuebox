@@ -1,6 +1,9 @@
 <?php
 
     require "config.php";
+    require_once "security.php";
+    
+    authorize();
     
     $con = mysql_connect($Server, $Username, $Password);
     if (!$con)

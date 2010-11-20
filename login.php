@@ -7,7 +7,7 @@
     <div class="content">
         <div id="login" class="standard_form">
             <form action="login_post.php" method="post">
-                <h1>Log in</h1>
+                <h3>Log in</h3>
                 <label for="Username">
                     Username<br />
                     <input class="text" name="username" style="width: 25em;" type="text">

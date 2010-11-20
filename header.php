@@ -12,9 +12,6 @@
   <script type="text/javascript" src="js/github-flavored-markdown/scripts/showdown.js"></script>
 </head> 
 <body> 
-    <div class="header">
-        <a href="index.php">Issue Tracker</a>
-    </div>
     <?php 
     
         if ($CurrentUser_ID != null)
@@ -22,10 +19,22 @@
         
     ?>
     <div class="toolbar">
-        <img src="http://www.gravatar.com/avatar/<?php echo md5($CurrentUser_Email); ?>?s=15" />&nbsp;<?php echo $CurrentUser_Username; ?>&nbsp;<a href="logout.php">Logout</a>
+        <table class="toolbar-menu" cellpadding="0" cellspacing="0">
+            <tr>
+                <td valign="middle">
+                    <img src="http://www.gravatar.com/avatar/<?php echo md5($CurrentUser_Email); ?>?s=15" />&nbsp;
+                </td>
+                <td valign="middle">
+                    <?php echo $CurrentUser_Username; ?>&nbsp;<a href="logout.php">Logout</a>
+                </td>
+            </tr>
+        </table>
     </div>
     <?php
     
         }
         
     ?>
+    <div class="header">
+        <a href="index.php">Issue Tracker</a>
+    </div>
