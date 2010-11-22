@@ -32,8 +32,8 @@
                     <br />
                     <b>Email</b><br />                    
                     <input type="text" name="email" style="width: 760px;" value="<?php echo $user[email]; ?>" /><br />
-                </div>
-                <div class="list-item user-password">
+                    <br />
+                    <br />
                     <b>Current Password</b><br />                    
                     <input type="password" name="currentpassword" style="width: 760px;" /><br />
                     <br />

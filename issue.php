@@ -1,6 +1,7 @@
 <?php
 
     require "config.php";
+    require "utils.php";
     require_once "security.php";
     
     authorize();
@@ -18,7 +19,10 @@
 
     $result = mysql_query("SELECT * FROM project WHERE id = '$issue[projectid]'");
     $project = mysql_fetch_array($result);
-    
+   
+    $result = mysql_query("SELECT * FROM user WHERE id = '$issue[createdby]'");
+    $user = mysql_fetch_array($result);
+ 
 ?>
 <?php include "header.php"; ?>
     <div class="content">
@@ -53,7 +57,7 @@
                 <div class="options">
                     <a class="minibutton" href='issue-edit.php?id=<?php echo $issue[id]; ?>'><span>Edit</span></a>
                     <a class="minibutton" onclick="return confirm('Are you sure you want to delete this issue and all of its comments?');" href='issue-delete_post.php?id=<?php echo $issue[id]; ?>&projectid=<?php echo $issue[projectid]; ?>'><span>Delete</span></a>
-                    &nbsp;&nbsp;<span class="date"><?php echo date("m/d/Y g:ia", strtotime($issue[createddate])); ?></span>
+                    &nbsp;&nbsp;<span class="date">Created <?php echo FriendlyDate(1, strtotime($issue[createddate])); ?></span> by <a href="user-edit.php?id=<?php echo $user[id]; ?>"><?php echo $user[username]; ?></a>
                 </div>
                 <script type="text/javascript">
                     document.getElementById("issue<?php echo $issue[number]; ?>").innerHTML = converter.makeHtml(document.getElementById("issue<?php echo $issue[number]; ?>").innerHTML);
