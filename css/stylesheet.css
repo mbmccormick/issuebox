@@ -99,6 +99,7 @@ a:hover
 .comment
 {
     background-color: #ffffff;
+    padding-top: 3px;
 }
 
 .user-password
@@ -400,4 +401,10 @@ small
 {
     margin: 0px auto;
     text-align: center;
+}
+
+.wikiStyle p
+{
+    line-height:1.5em !important;
+    margin:1em 0 !important;
 }

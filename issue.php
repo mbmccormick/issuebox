@@ -51,8 +51,7 @@
                         </td>
                     </tr>
                 </table>
-                <br />
-                <div id="issue<?php echo $issue[number]; ?>"><?php echo $issue[body]; ?></div>
+                <div id="issue<?php echo $issue[number]; ?>" class="wikiStyle"><?php echo $issue[body]; ?></div>
                 <br />
                 <div class="options">
                     <a class="minibutton" href='issue-edit.php?id=<?php echo $issue[id]; ?>'><span>Edit</span></a>
@@ -73,7 +72,7 @@
                     
                     echo "<div class='list-item comment'>\n";
                     
-                    echo "<div id='comment$row[id]'>" . $row[body] . "</div>\n";
+                    echo "<div id='comment$row[id]' class='wikiStyle'>" . $row[body] . "</div>\n";
                     echo "<br />\n";
                     echo "<div class='options'>\n";
                     echo "<a class='minibutton' onclick=\"return confirm('Are you sure you want to delete this comment?');\" href='comment-delete_post.php?id=$row[id]&issueid=$row[issueid]'><span>Delete</span></a>\n";

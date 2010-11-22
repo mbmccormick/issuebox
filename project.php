@@ -77,8 +77,7 @@
                     echo "</td>\n";
                     echo "</tr>\n";
                     echo "</table>\n";
-                    echo "<br />\n";
-                    echo "<div id='issue$row[number]'>" . $row[body] . "</div>\n";
+                    echo "<div id='issue$row[number]' class='wikiStyle'>" . $row[body] . "</div>\n";
                     echo "<br />\n";
                     echo "<div class='options'>\n";
                     if ($count == 1)
