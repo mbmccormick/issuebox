@@ -22,7 +22,7 @@
         <table class="toolbar-menu" cellpadding="0" cellspacing="0">
             <tr>
                 <td valign="middle">
-                    <img src="http://www.gravatar.com/avatar/<?php echo md5($CurrentUser_Email); ?>?s=20" />&nbsp;
+                    <img src="http://www.gravatar.com/avatar/<?php echo md5($CurrentUser_Email); ?>?s=20" style="border: 1px solid white; margin-right: 3px; margin-top: 3px;" />&nbsp;
                 </td>
                 <td valign="middle">
                     <?php echo $CurrentUser_Username; ?>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="logout.php">Logout</a>

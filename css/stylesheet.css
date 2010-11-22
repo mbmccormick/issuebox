@@ -369,16 +369,16 @@ small
 
 .toolbar
 {
-    
+    font-size: 12px;
 }
 
 .toolbar-menu
 {
     float: right;
-    margin-top: -20px;
-    padding: 7px 10px 7px 10px;
-    border: solid 1px #E4E4E4;
+    margin-top: -40px;
+    padding: 10px 7px 3px 5px;
+    border: solid 2px #E4E4E4;
     background-color: #whiteSmoke;
-    border-radius: 8px;
-    -moz-border-radius: 8px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
 }

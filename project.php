@@ -1,6 +1,7 @@
 <?php
 
     require "config.php";
+    require "utils.php";
     require_once "security.php";
     
     authorize();
@@ -57,6 +58,9 @@
                     $sql = mysql_query("SELECT COUNT(*) AS rowcount FROM comment WHERE issueid = '$row[id]'");
                     $return = mysql_fetch_array($sql);
                     $count = $return[rowcount];
+                    
+                    $sql = mysql_query("SELECT id, username FROM user WHERE id = '$row[createdby]'");
+                    $user = mysql_fetch_array($sql);
                                     
                     echo "<div class='list-item issue'>\n";
                     
@@ -77,11 +81,11 @@
                     echo "<div id='issue$row[number]'>" . $row[body] . "</div>\n";
                     echo "<br />\n";
                     echo "<div class='options'>\n";
-                    echo date("m/d/Y g:ia", strtotime($row[createddate])) . "&nbsp;&nbsp;";
                     if ($count == 1)
                         echo "<a href='issue.php?id=$row[id]'>$count comment</a>\n";
                     else
                         echo "<a href='issue.php?id=$row[id]'>$count comments</a>\n";
+                    echo "&nbsp;Created " . FriendlyDate(1, strtotime($row[createddate])) . " by <a href='user.php?id=$user[id]'>$user[username]</a>";
                     echo "</div>\n";
                     
                     echo "<script type='text/javascript'>\n";
@@ -128,7 +132,7 @@
             <button type="button" class="button" onclick="location.href='project-edit.php?id=<?php echo $project[id]; ?>';">
                 <span>Edit Project</span>
             </button>
-            <button type="button" class="button" onclick="confirm('Are you sure you want to delete this project and all of its issues?') ? location.href='project-delete_post.php?id=<?php echo $_GET[id]; ?>' : false;">
+            <button type="button" class="button" onclick="confirm('Are you sure you want to delete this project and all of its issues?') ? location.href='project-delete_post.php?id=<?php echo $project[id]; ?>' : false;">
                 <span>Delete</span>
             </button>
         </div>        

@@ -64,13 +64,17 @@
                 $result = mysql_query("SELECT * FROM comment WHERE issueid = '$issue[id]' ORDER BY id ASC");
                 while($row = mysql_fetch_array($result))
                 {
+                    $sql = mysql_query("SELECT id, username FROM user WHERE id = '$row[createdby]'");
+                    $user = mysql_fetch_array($sql);
+                    
                     echo "<div class='list-item comment'>\n";
                     
                     echo "<div id='comment$row[id]'>" . $row[body] . "</div>\n";
                     echo "<br />\n";
                     echo "<div class='options'>\n";
                     echo "<a class='minibutton' onclick=\"return confirm('Are you sure you want to delete this comment?');\" href='comment-delete_post.php?id=$row[id]&issueid=$row[issueid]'><span>Delete</span></a>\n";
-                    echo "&nbsp;&nbsp;" . date("m/d/Y g:ia", strtotime($row[createddate]));
+                    echo "&nbsp;&nbsp;" . date("F j, Y", strtotime($row[createddate]));
+                    echo " by <a href='user.php?id=$user[id]'>$user[username]</a>";
                     echo "</div>\n";
                     
                     echo "<script type='text/javascript'>\n";
