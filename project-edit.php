@@ -23,25 +23,24 @@
             <a href="index.php">Projects</a> / <a href="project-edit.php?id=<?php echo $_GET[id]; ?>">Edit Project</a>
         </div>
         <div class="list">
-            <div class="list-item project">
-                <h3>Edit Project</h3>
-                <br />
-                <form action="project-edit_post.php?id=<?php echo $_GET[id]; ?>" method="post">
+            <form action="project-edit_post.php?id=<?php echo $_GET[id]; ?>" method="post">
+                <div class="list-item project">
+                    <h3>Edit Project</h3>
+                    <br />                    
                     <b>Name</b><br />
                     <input type="text" name="name" style="width: 760px;" value="<?php echo $project[name]; ?>" /><br />
                     <br />
                     <b>Description</b><br />                    
-                    <textarea name="description" style="width: 760px;" rows="5"><?php echo $project[description]; ?></textarea>
-                    <br />
-                    <br />
-                    <button type="submit" class="button">
-                        <span>Save Project</span>
-                    </button>
-                    <button type="button" class="button" onclick="confirm('Are you sure you want to delete this project and all of its issues?') ? location.href='issue-delete_post.php?id=<?php echo $_GET[id]; ?>' : false;">
-                        <span>Delete</span>
-                    </button>
-                </form>
-            </div>
+                    <textarea name="description" style="width: 760px;" rows="5"><?php echo $project[description]; ?></textarea>                        
+                </div>
+                <br />
+                <button type="submit" class="button">
+                    <span>Save Project</span>
+                </button>
+                <button type="button" class="button" onclick="confirm('Are you sure you want to delete this project and all of its issues?') ? location.href='issue-delete_post.php?id=<?php echo $_GET[id]; ?>' : false;">
+                    <span>Delete</span>
+                </button>
+            </form>
         </div>
     </div>
 <?php include "footer.php"; ?>

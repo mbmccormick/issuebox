@@ -26,34 +26,33 @@
             <a href="index.php">Projects</a> / <a href="project.php?id=<?php echo $project[id]; ?>"><?php echo $project[name]; ?></a> / <a href="issue.php?id=<?php echo $issue[id]; ?>">Issue #<?php echo $issue[number]; ?></a>
         </div>
         <div class="list">
-            <div class="list-item issue">
-                <table cellpadding="0" cellspacing="0" style="width: 100%;">
-                    <tr>
-                        <td valign="middle">
-                            <h3>Edit Issue</h3>
-                        </td>
-                        <td valign="middle" align="right">
-                            <small>Issues are parsed with <a target="_blank" href="https://github.com/github/github-flavored-markdown">GitHub Flavored Markdown</a></small>
-                        </td>
-                    </tr>
-                </table>
-                <br />
-                <form action="issue-edit_post.php?id=<?php echo $_GET[id]; ?>" method="post">
+            <form action="issue-edit_post.php?id=<?php echo $_GET[id]; ?>" method="post">
+                <div class="list-item issue">
+                    <table cellpadding="0" cellspacing="0" style="width: 100%;">
+                        <tr>
+                            <td valign="middle">
+                                <h3>Edit Issue</h3>
+                            </td>
+                            <td valign="middle" align="right">
+                                <small>Issues are parsed with <a target="_blank" href="https://github.com/github/github-flavored-markdown">GitHub Flavored Markdown</a></small>
+                            </td>
+                        </tr>
+                    </table>
+                    <br />
                     <b>Title</b><br />
                     <input type="text" name="title" style="width: 760px;" value="<?php echo $issue[title]; ?>" /><br />
                     <br />
                     <b>Body</b><br />                    
                     <textarea name="body" style="width: 760px;" rows="8"><?php echo $issue[body]; ?></textarea>
-                    <br />
-                    <br />
-                    <button type="submit" class="button">
-                        <span>Save Issue</span>
-                    </button>
-                    <button type="button" class="button" onclick="confirm('Are you sure you want to delete this issue and all of its comments?') ? location.href='issue-delete_post.php?id=<?php echo $_GET[id]; ?>' : false;">
-                        <span>Delete</span>
-                    </button>
-                </form>
-            </div>
+                </div>
+                <br />
+                <button type="submit" class="button">
+                    <span>Save Issue</span>
+                </button>
+                <button type="button" class="button" onclick="confirm('Are you sure you want to delete this issue and all of its comments?') ? location.href='issue-delete_post.php?id=<?php echo $_GET[id]; ?>' : false;">
+                    <span>Delete</span>
+                </button>
+            </form>
         </div>
     </div>
 <?php include "footer.php"; ?>
