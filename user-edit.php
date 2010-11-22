@@ -35,14 +35,14 @@
                 </div>
                 <div class="list-item user-password">
                     <b>Current Password</b><br />                    
-                    <input type="text" name="currentpassword" style="width: 760px;" /><br />
+                    <input type="password" name="currentpassword" style="width: 760px;" /><br />
                     <br />
                     <br />
                     <b>New Password</b><br />                    
-                    <input type="text" name="newpassword" style="width: 760px;" /><br />
+                    <input type="password" name="newpassword" style="width: 760px;" /><br />
                     <br />
                     <b>Confirm New Password</b><br />                    
-                    <input type="text" name="newpasswordconfirm" style="width: 760px;" /><br />
+                    <input type="password" name="newpasswordconfirm" style="width: 760px;" /><br />
                 </div>
                 <br />
                 <button type="submit" class="button">
