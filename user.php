@@ -30,14 +30,14 @@
                     echo "<table cellpadding='0' cellspacing='0' style='width: 100%;'>\n";
                     echo "<tr>\n";
                     echo "<td valign='middle'>\n";
-                    echo "<img src='http://www.gravatar.com/avatar/" . md5($row[email]) . "?s=45' />";
+                    echo "<img src='http://www.gravatar.com/avatar/" . md5($row[email]) . "?s=45' style='background-color: #ffffff; padding: 2px; border: solid 1px #dddddd;' />";
                     echo "</td>";
                     echo "<td>\n";
                     echo "&nbsp;&nbsp;\n";
                     echo "</td>\n";
                     echo "<td valign='middle' style='width: 100%;'>\n";
                     echo "<h3><a href='user-edit.php?id=$row[id]'>" . $row[username] . "</a></h3>\n";
-                    echo "<p>Created Date: " . $row[createddate] . "</p>\n";                    
+                    echo "<p>Created on " . date("F j, Y", strtotime($row[createddate])) . "</p>\n";                    
                     echo "</tr>\n";
                     echo "</table>\n";
                     

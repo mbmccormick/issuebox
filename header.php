@@ -25,7 +25,7 @@
                     <img src="http://www.gravatar.com/avatar/<?php echo md5($CurrentUser_Email); ?>?s=20" style="border: 1px solid white; margin-right: 3px; margin-top: 3px;" />&nbsp;
                 </td>
                 <td valign="middle">
-                    <a href="user.php?id=<?php echo $CurrentUser_ID; ?>" style="color: #000000;"><?php echo $CurrentUser_Username; ?></a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="logout.php">Logout</a>
+                    <a href="user-edit.php?id=<?php echo $CurrentUser_ID; ?>" style="color: #000000;"><?php echo $CurrentUser_Username; ?></a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="logout.php">Logout</a>
                 </td>
             </tr>
         </table>

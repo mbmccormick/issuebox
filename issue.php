@@ -74,7 +74,7 @@
                     echo "<div class='options'>\n";
                     echo "<a class='minibutton' onclick=\"return confirm('Are you sure you want to delete this comment?');\" href='comment-delete_post.php?id=$row[id]&issueid=$row[issueid]'><span>Delete</span></a>\n";
                     echo "&nbsp;&nbsp;" . date("F j, Y", strtotime($row[createddate]));
-                    echo " by <a href='user.php?id=$user[id]'>$user[username]</a>";
+                    echo " by <a href='user-edit.php?id=$user[id]'>$user[username]</a>";
                     echo "</div>\n";
                     
                     echo "<script type='text/javascript'>\n";
