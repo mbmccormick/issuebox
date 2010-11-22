@@ -30,11 +30,18 @@
                     <b>Username</b><br />
                     <input type="text" name="username" style="width: 760px;" value="<?php echo $user[username]; ?>" /><br />
                     <br />
-                    <b>Password</b><br />                    
-                    <input type="text" name="password" style="width: 760px;" value="<?php echo $user[password]; ?>" /><br />
-                    <br />
                     <b>Email</b><br />                    
                     <input type="text" name="email" style="width: 760px;" value="<?php echo $user[email]; ?>" /><br />
+                </div>
+                <div class="list-item user-password">
+                    <b>Current Password</b><br />                    
+                    <input type="text" name="currentpassword" style="width: 760px;" /><br />
+                    <br />
+                    <b>New Password</b><br />                    
+                    <input type="text" name="newpassword" style="width: 760px;" /><br />
+                    <br />
+                    <b>Confirm New Password</b><br />                    
+                    <input type="text" name="newpasswordconfirm" style="width: 760px;" /><br />
                 </div>
                 <br />
                 <button type="submit" class="button">
