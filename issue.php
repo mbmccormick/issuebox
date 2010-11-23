@@ -46,7 +46,7 @@
                                     echo "<span class='filter-on'>Open</span>";
                                 else
                                     echo "<span class='filter-on'>Closed</span>";
-                                    
+                            
                             ?>
                         </td>
                     </tr>
