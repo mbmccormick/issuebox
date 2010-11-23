@@ -114,7 +114,7 @@
                 </form>
             </div>
             <?php } else { ?>
-            <div class="list-item comment">
+            <div class="list-item comment-new">
                 <p>This issue is closed, and no more comments can be added.</p>
             </div>
             <?php } ?>
