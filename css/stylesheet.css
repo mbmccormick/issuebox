@@ -96,6 +96,11 @@ a:hover
     font-size: 18px;
 }
 
+.comment-new
+{
+    background-color: #ffffff;
+}
+
 .comment
 {
     background-color: #ffffff;
