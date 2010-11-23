@@ -23,6 +23,7 @@ a:hover
 {
     font-size: 36px;
     font-weight: bold;
+    padding-top: 10px;
 }
 
 .header a
@@ -41,7 +42,7 @@ a:hover
 {
     font-size: 12px;
     padding-top: 30px;
-    padding-bottom: 20px;
+    padding-bottom: 30px;
 }
 
 .content
