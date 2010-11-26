@@ -1,5 +1,12 @@
 <?php
 
+    function SetPageTitle($title)
+    {
+        echo "<script type='text/javascript'>\n";
+        echo "document.title = '$title';\n";
+        echo "</script>\n";
+    }
+
     function FriendlyDate($levels = 2, $date1)
     { 
         $blocks = array( 
