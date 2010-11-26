@@ -28,21 +28,21 @@
                     <h3>Edit User</h3>
                     <br />
                     <b>Username</b><br />
-                    <input type="text" name="username" style="width: 760px;" value="<?php echo $user[username]; ?>" /><br />
+                    <input type="text" name="username" style="width: 750px;" value="<?php echo $user[username]; ?>" /><br />
                     <br />
                     <b>Email</b><br />                    
-                    <input type="text" name="email" style="width: 760px;" value="<?php echo $user[email]; ?>" /><br />
+                    <input type="text" name="email" style="width: 750px;" value="<?php echo $user[email]; ?>" /><br />
                     <br />
                     <br />
                     <b>Current Password</b><br />                    
-                    <input type="password" name="currentpassword" style="width: 760px;" /><br />
+                    <input type="password" name="currentpassword" style="width: 750px;" /><br />
                     <br />
                     <br />
                     <b>New Password</b><br />                    
-                    <input type="password" name="newpassword" style="width: 760px;" /><br />
+                    <input type="password" name="newpassword" style="width: 750px;" /><br />
                     <br />
                     <b>Confirm New Password</b><br />                    
-                    <input type="password" name="newpasswordconfirm" style="width: 760px;" /><br />
+                    <input type="password" name="newpasswordconfirm" style="width: 750px;" /><br />
                 </div>
                 <br />
                 <button type="submit" class="button">

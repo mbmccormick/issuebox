@@ -17,10 +17,10 @@
                     <h3>New Project</h3>
                     <br />
                     <b>Name</b><br />
-                    <input type="text" name="name" style="width: 760px;" /><br />
+                    <input type="text" name="name" style="width: 750px;" /><br />
                     <br />
                     <b>Description</b><br />                    
-                    <textarea name="description" style="width: 760px;" rows="5"></textarea>
+                    <textarea name="description" style="width: 750px;" rows="5"></textarea>
                 </div>        
                 <br />
                 <button type="submit" class="button">
