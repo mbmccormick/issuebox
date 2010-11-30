@@ -26,7 +26,7 @@
                 </td>
                 <td valign="middle" align="right">
                     <div class="filter">
-                        <a class="filter-on" title="Click here to go to projects." href="list.php">Projects →</a>
+                        <a class="filter-on" title="Click here to go to projects." href="list.php">Projects &rarr;</a>
                     </div>
                 </td>
             </tr>
