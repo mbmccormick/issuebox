@@ -52,7 +52,7 @@
         try
         {
             include "config.php";
-            include "security.php";
+            require_once "security.php";
 
             $con = mysql_connect($Server, $Username, $Password);
             if (!$con)
