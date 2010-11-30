@@ -378,21 +378,12 @@ a:hover
 
 .filter-on
 {
-    border-bottom-color: #919191;
-    border-color: #919191 #919191 #919191;
-    color: white;
-    text-decoration: none;
-    text-shadow: rgba(0, 0, 0, 0.296875) -1px -1px 0px;
-}
-
-.filter-on:hover
-{
-    border: 1px solid #D4D4D4;
+    border: 1px solid #919191;
     border-bottom-left-radius: 3px 3px;
     border-bottom-right-radius: 3px 3px;
     border-top-left-radius: 3px 3px;
     border-top-right-radius: 3px 3px;
-    color: #333;
+    color: white;
     cursor: pointer;
     display: inline-block;
     font-family: helvetica, arial, freesans, clean, sans-serif;
@@ -401,8 +392,17 @@ a:hover
     height: 21px;
     overflow: visible;
     padding: 2px 0px 1px 3px;
-    text-shadow: white 1px 1px 0px;
+    text-shadow: rgba(0, 0, 0, 0.296875) -1px -1px 0px;
     white-space: nowrap;
+}
+
+.filter-on:hover
+{
+    border-bottom-color: #D4D4D4;
+    border-color: #D4D4D4 #D4D4D4 #D4D4D4;
+    color: #333;
+    text-decoration: none;
+    text-shadow: white 1px 1px 0px;
 }
 
 .webkit .filter-on
