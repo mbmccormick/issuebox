@@ -329,8 +329,8 @@ a:hover
 
 .filterbutton:hover
 {
-    border-bottom-color: #2A65A0;
-    border-color: #518CC6 #518CC6 #2A65A0;
+    border-bottom-color: #E4E4E4;
+    border-color: #E4E4E4 #E4E4E4 #E4E4E4;
     color: white;
     text-decoration: none;
     text-shadow: rgba(0, 0, 0, 0.296875) -1px -1px 0px;
