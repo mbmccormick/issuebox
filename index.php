@@ -25,9 +25,7 @@
                     </div>
                 </td>
                 <td valign="middle" align="right">
-                    <div class="filter">
-                        <a class="filter-on" title="Click here to go to projects." href="list.php">Projects &rarr;</a>
-                    </div>
+                    <a class="minibutton" title="Click here to go to projects." href="list.php"><span>Projects &rarr;</span></a>
                 </td>
             </tr>
         </table>
