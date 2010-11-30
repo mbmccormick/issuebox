@@ -44,7 +44,7 @@
         if (strlen($string) > $length)
             return substr($string, 0, ($length - 3)) . "...";
         else
-            return substr($string);
+            return $string;
     }
     
     function LogActivity($itemtype = 0, $itemid = 0, $actiontype = 0)
