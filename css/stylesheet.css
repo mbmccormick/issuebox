@@ -307,6 +307,11 @@ a:hover
     padding: 5px 0px 25px 0px;
 }
 
+.activity .description
+{
+    color: #666;
+}
+
 .filter-off
 {
     border: 1px solid #D4D4D4;
