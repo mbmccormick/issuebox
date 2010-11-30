@@ -38,7 +38,7 @@
                         $project = mysql_fetch_array($sql);
                         
                         echo "<tr>\n";
-                        echo "<td rowspan='2' valign='top' style='width: 20px;'>\n";
+                        echo "<td rowspan='2' valign='top' style='width: 25px;'>\n";
                         echo "<img src='img/project" . $row[actiontype] . ".png' alt='$row[actiontype]' />\n";
                         echo "</td>\n";
                         echo "<td colspan='2'>\n";
@@ -79,7 +79,7 @@
                         $project = mysql_fetch_array($sql);
                         
                         echo "<tr>\n";
-                        echo "<td rowspan='2' valign='top' style='width: 20px;'>\n";
+                        echo "<td rowspan='2' valign='top' style='width: 25px;'>\n";
                         echo "<img src='img/issue" . $row[actiontype] . ".png' alt='$row[actiontype]' />\n";
                         echo "</td>\n";
                         echo "<td colspan='2'>\n";
@@ -120,7 +120,7 @@
                         $issue = mysql_fetch_array($sql);
                         
                         echo "<tr>\n";
-                        echo "<td rowspan='2' valign='top' style='width: 20px;'>\n";
+                        echo "<td rowspan='2' valign='top' style='width: 25px;'>\n";
                         echo "<img src='img/comment" . $row[actiontype] . ".png' alt='$row[actiontype]' />\n";
                         echo "</td>\n";
                         echo "<td colspan='2'>\n";
