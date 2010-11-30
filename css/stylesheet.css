@@ -237,7 +237,7 @@ a:hover
     font-weight: bold;
     height: 21px;
     overflow: visible;
-    padding: 0px 0px 0px 3px;
+    padding: 1px 0px 0px 3px;
     text-shadow: white 1px 1px 0px;
     white-space: nowrap;
 }
@@ -322,7 +322,7 @@ a:hover
     font-weight: bold;
     height: 21px;
     overflow: visible;
-    padding: 0px 0px 0px 3px;
+    padding: 2px 0px 1px 3px;
     text-shadow: white 1px 1px 0px;
     white-space: nowrap;
 }
@@ -343,7 +343,7 @@ a:hover
 
 .webkit .filterbutton:hover
 {
-    background: -webkit-gradient(linear, 0% 100%, 0% 0%, from(#3072B3), to(#599BDC));
+    background: -webkit-gradient(linear, 0% 100%, 0% 0%, from(#808080), to(#BABABA));
 }
 
 .gecko .filterbutton
@@ -354,7 +354,7 @@ a:hover
 
 .gecko .filterbutton:hover
 {
-    background: -moz-linear-gradient(center bottom, #3072B3 0%, #599BDC 100%);
+    background: -moz-linear-gradient(center bottom, #808080 0%, #BABABA 100%);
 }
 
 .ie .filterbutton
@@ -364,7 +364,7 @@ a:hover
 
 .ie .filterbutton:hover
 {
-    filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#599BDC', EndColorStr='#3072B3', GradientType=0);
+    filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#BABABA', EndColorStr='#808080', GradientType=0);
 }
 
 .filterbutton span
