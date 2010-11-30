@@ -25,7 +25,7 @@
                     </div>
                 </td>
                 <td valign="middle" align="right">
-                    <a class="minibutton" title="Click here to go to projects." href="list.php"><span>Projects &rarr;</span></a>
+                    <a class="minibutton" title="Click here to go to projects." href="list.php" style="padding: 2px 0px 1px 3px;"><span>Projects &rarr;</span></a>
                 </td>
             </tr>
         </table>
