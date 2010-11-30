@@ -26,7 +26,7 @@
                 $result = mysql_query("SELECT * FROM activity ORDER BY createddate DESC");
                 while($row = mysql_fetch_array($result))
                 {
-                    $sql = mysql_query("SELECT id, username FROM user WHERE id = '$row[createdby]'");
+                    $sql = mysql_query("SELECT * FROM user WHERE id = '$row[createdby]'");
                     $user = mysql_fetch_array($sql);
                     
                     echo "<div class='list-item activity'>\n";
