@@ -1,6 +1,7 @@
 <?php
 
     require "config.php";
+    require "utils.php";
     require_once "security.php";
     
     authorize();
@@ -21,6 +22,8 @@
     }
 
     mysql_close($con);
+    
+    LogActivity(3, $_GET[id], 3);
     
     header("Location: issue.php?id=$_GET[issueid]");
     exit;

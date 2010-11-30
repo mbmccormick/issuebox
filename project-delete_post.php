@@ -22,6 +22,8 @@
 
     mysql_close($con);
     
+    LogActivity(1, $_GET[id], 3);
+    
     header("Location: index.php");
     exit;
     

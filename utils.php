@@ -39,4 +39,32 @@
         return implode(' ',$result).' ago'; 
     } 
     
+    function LogActivity($itemtype = 0, $itemid = 0, $actiontype = 0)
+    {
+        try
+        {
+            require_once "config.php";
+            require_once "security.php";
+
+            $con = mysql_connect($Server, $Username, $Password);
+            if (!$con)
+            {
+                die("Could not connect to $Server: " . mysql_error());
+            }
+
+            mysql_select_db($Database, $con);
+        }
+        catch (Exception $e)
+        {
+        }
+
+        $now = date("Y-m-d H:i:s");
+        $sql = "INSERT INTO activity (itemtype, itemid, actiontype, createdby, createddate) VALUES
+                    ('$itemtype', '$itemid', '$actiontype', '$CurrentUser_ID', '$now')";
+        if (!mysql_query($sql,$con))
+        {
+            die('Error: ' . mysql_error());
+        }
+    }
+    
 ?>

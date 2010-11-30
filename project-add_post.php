@@ -1,6 +1,7 @@
 <?php
 
     require "config.php";
+    require "utils.php";
     require_once "security.php";
     
     authorize();
@@ -24,7 +25,12 @@
         die('Error: ' . mysql_error());
     }
     
+    $sql = "SELECT * FROM project ORDER BY createddate DESC LIMIT 1";
+    $result = mysql_fetch_array($sql);
+    
     mysql_close($con);
+    
+    LogActivity(1, $result[id], 1);
     
     header("Location: index.php");
     exit;

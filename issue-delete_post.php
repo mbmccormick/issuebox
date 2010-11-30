@@ -28,6 +28,8 @@
 
     mysql_close($con);
     
+    LogActivity(2, $_GET[id], 3);
+    
     header("Location: project.php?id=$_GET[projectid]");
     exit;
     

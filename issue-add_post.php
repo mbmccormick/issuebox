@@ -1,6 +1,7 @@
 <?php
 
     require "config.php";
+    require "utils.php";
     require_once "security.php";
     
     authorize();
@@ -30,7 +31,12 @@
         die('Error: ' . mysql_error());
     }
 
+    $sql = "SELECT * FROM issue ORDER BY createddate DESC LIMIT 1";
+    $result = mysql_fetch_array($sql);
+    
     mysql_close($con);
+    
+    LogActivity(2, $result[id], 1);
     
     header("Location: project.php?id=$_GET[projectid]");
     exit;

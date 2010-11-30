@@ -1,6 +1,7 @@
 <?php
 
     require "config.php";
+    require "utils.php";
     require_once "security.php";
     
     authorize();
@@ -24,6 +25,8 @@
     }
     
     mysql_close($con);
+    
+    LogActivity(1, $_GET[id], 2);
     
     header("Location: project.php?id=$_GET[id]");
     exit;
