@@ -31,17 +31,18 @@
                     
                     echo "<div class='list-item activity'>\n";
                     echo "<table cellpadding='0' cellspacing='0' style='width: 100%;'>\n";
-                    echo "<tr>\n";
-                    echo "<td valign='middle' style='width: 45px;'>\n";
-                    echo "<img src='http://www.gravatar.com/avatar/" . md5($user[email]) . "?s=30' style='padding: 2px; border: 1px solid #D0D0D0; background-color: #ffffff;' />\n";
-                    echo "</td>\n";
-                    echo "<td valign='middle'>\n";
-                    echo "<b><a href='user-edit.php?id=" . $user[id] . "'>" . $user[username] . "</a> ";
                     
                     if ($row[itemtype] == "1")
                     {
                         $sql = mysql_query("SELECT * FROM project WHERE id = '$row[itemid]'");
                         $project = mysql_fetch_array($sql);
+                        
+                        echo "<tr>\n";
+                        echo "<td rowspan='2' valign='top' style='width: 20px;'>\n";
+                        echo "<img src='img/project" . $row[actiontype] . ".png' alt='$row[actiontype]' />\n";
+                        echo "</td>\n";
+                        echo "<td colspan='2'>\n";
+                        echo "<b><a href='user-edit.php?id=" . $user[id] . "'>" . $user[username] . "</a> ";
                         
                         if ($row[actiontype] == "1")
                         {
@@ -57,6 +58,17 @@
                         }
                         
                         echo "project <a href='project-edit.php?id=$project[id]'>" . $project[name] . "</a> about " . FriendlyDate(1, strtotime($row[createddate]));
+                        echo "</b>\n";
+                        echo "</td>\n";
+                        echo "</tr>\n";
+                        echo "<tr>\n";
+                        echo "<td valign='top' style='width: 45px;'>\n";
+                        echo "<img src='http://www.gravatar.com/avatar/" . md5($user[email]) . "?s=30' style='padding: 2px; border: 1px solid #D0D0D0; background-color: #ffffff;' />\n";
+                        echo "</td>\n";
+                        echo "<td valign='top'>\n";
+                        echo "<span class='description'>" . FriendlyString($project[description]) . "</span>\n";
+                        echo "</td>\n";
+                        echo "</tr>\n";
                     }
                     else if ($row[itemtype] == "2")
                     {
@@ -65,6 +77,13 @@
                         
                         $sql = mysql_query("SELECT * FROM project WHERE id = '$issue[projectid]'");
                         $project = mysql_fetch_array($sql);
+                        
+                        echo "<tr>\n";
+                        echo "<td rowspan='2' valign='top' style='width: 20px;'>\n";
+                        echo "<img src='img/issue" . $row[actiontype] . ".png' alt='$row[actiontype]' />\n";
+                        echo "</td>\n";
+                        echo "<td colspan='2'>\n";
+                        echo "<b><a href='user-edit.php?id=" . $user[id] . "'>" . $user[username] . "</a> ";
                         
                         if ($row[actiontype] == "1")
                         {
@@ -80,6 +99,17 @@
                         }
                                                 
                         echo "<a href='issue-edit.php?id=$issue[id]'>issue " . $issue[number] . "</a> on <a href='project-edit.php?id=$project[id]'>" . $project[name] . "</a> about " . FriendlyDate(1, strtotime($row[createddate]));
+                        echo "</b>\n";
+                        echo "</td>\n";
+                        echo "</tr>\n";
+                        echo "<tr>\n";
+                        echo "<td valign='top' style='width: 45px;'>\n";
+                        echo "<img src='http://www.gravatar.com/avatar/" . md5($user[email]) . "?s=30' style='padding: 2px; border: 1px solid #D0D0D0; background-color: #ffffff;' />\n";
+                        echo "</td>\n";
+                        echo "<td valign='top'>\n";
+                        echo "<span class='description'>" . FriendlyString($issue[body]) . "</span>\n";
+                        echo "</td>\n";
+                        echo "</tr>\n";
                     }
                     else if ($row[itemtype] == "3")
                     {
@@ -88,6 +118,13 @@
                         
                         $sql = mysql_query("SELECT * FROM issue WHERE id = '$comment[issueid]'");
                         $issue = mysql_fetch_array($sql);
+                        
+                        echo "<tr>\n";
+                        echo "<td rowspan='2' valign='top' style='width: 20px;'>\n";
+                        echo "<img src='img/comment" . $row[actiontype] . ".png' alt='$row[actiontype]' />\n";
+                        echo "</td>\n";
+                        echo "<td colspan='2'>\n";
+                        echo "<b><a href='user-edit.php?id=" . $user[id] . "'>" . $user[username] . "</a> ";
                         
                         if ($row[actiontype] == "1")
                         {
@@ -103,11 +140,19 @@
                         }
                         
                         echo "<a href='issue-edit.php?id=$issue[id]'>issue " . $issue[number] . "</a> about " . FriendlyDate(1, strtotime($row[createddate]));
+                        echo "</b>\n";
+                        echo "</td>\n";
+                        echo "</tr>\n";
+                        echo "<tr>\n";
+                        echo "<td valign='top' style='width: 45px;'>\n";
+                        echo "<img src='http://www.gravatar.com/avatar/" . md5($user[email]) . "?s=30' style='padding: 2px; border: 1px solid #D0D0D0; background-color: #ffffff;' />\n";
+                        echo "</td>\n";
+                        echo "<td valign='top'>\n";
+                        echo "<span class='description'>" . FriendlyString($comment[body]) . "</span>\n";
+                        echo "</td>\n";
+                        echo "</tr>\n";
                     }
                     
-                    echo "</b>\n";
-                    echo "</td>\n";
-                    echo "</tr>\n";
                     echo "</table>\n";
                     echo "</div>\n";
                 }

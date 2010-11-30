@@ -37,7 +37,12 @@
                 } 
             } 
         return implode(' ',$result).' ago'; 
-    } 
+    }
+    
+    function FriendlyString($string, $length = 160)
+    {
+        return substr($string, 0, ($length - 3)) . "...";
+    }
     
     function LogActivity($itemtype = 0, $itemid = 0, $actiontype = 0)
     {
