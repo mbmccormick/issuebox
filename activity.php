@@ -23,7 +23,7 @@
         <div class="list">
             <?php
 
-                $result = mysql_query("SELECT * FROM activity ORDER BY createddate DESC");
+                $result = mysql_query("SELECT * FROM activity ORDER BY createddate DESC LIMIT 20");
                 while($row = mysql_fetch_array($result))
                 {
                     $sql = mysql_query("SELECT * FROM user WHERE id = '$row[createdby]'");
