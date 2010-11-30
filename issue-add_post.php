@@ -31,7 +31,7 @@
         die('Error: ' . mysql_error());
     }
 
-    $sql = "SELECT * FROM issue ORDER BY createddate DESC LIMIT 1";
+    $sql = mysql_query("SELECT * FROM issue ORDER BY createddate DESC LIMIT 1");
     $result = mysql_fetch_array($sql);
     
     mysql_close($con);
