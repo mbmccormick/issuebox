@@ -68,7 +68,7 @@
                             echo "deleted ";
                         }
                         
-                        echo "project <a href='project-edit.php?id=$project[id]'>" . $project[name] . "</a> about " . FriendlyDate(1, strtotime($row[createddate]));
+                        echo "project <a href='project.php?id=$project[id]'>" . $project[name] . "</a> about " . FriendlyDate(1, strtotime($row[createddate]));
                         echo "</b>\n";
                         echo "</td>\n";
                         echo "</tr>\n";
@@ -109,7 +109,7 @@
                             echo "deleted ";
                         }
                                                 
-                        echo "<a href='issue-edit.php?id=$issue[id]'>issue " . $issue[number] . "</a> on <a href='project-edit.php?id=$project[id]'>" . $project[name] . "</a> about " . FriendlyDate(1, strtotime($row[createddate]));
+                        echo "<a href='issue.php?id=$issue[id]'>issue " . $issue[number] . "</a> on <a href='project-edit.php?id=$project[id]'>" . $project[name] . "</a> about " . FriendlyDate(1, strtotime($row[createddate]));
                         echo "</b>\n";
                         echo "</td>\n";
                         echo "</tr>\n";
@@ -150,7 +150,7 @@
                             echo "deleted a comment on ";
                         }
                         
-                        echo "<a href='issue-edit.php?id=$issue[id]'>issue " . $issue[number] . "</a> about " . FriendlyDate(1, strtotime($row[createddate]));
+                        echo "<a href='issue.php?id=$issue[id]'>issue " . $issue[number] . "</a> about " . FriendlyDate(1, strtotime($row[createddate]));
                         echo "</b>\n";
                         echo "</td>\n";
                         echo "</tr>\n";
