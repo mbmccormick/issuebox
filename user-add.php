@@ -9,7 +9,7 @@
 <?php include "header.php"; ?>
     <div class="content">
         <div class="navigation">
-            <a href="settings.php">Settings</a> / <a href="user.php">Users</a> / <a href="user-add.php">New User</a>
+            <a href="index.php">Home</a> / <a href="settings.php">Settings</a> / <a href="user.php">Users</a> / <a href="user-add.php">New User</a>
         </div>
         <div class="list">
             <form action="user-add_post.php" method="post">

@@ -30,7 +30,7 @@
             <tr>
                 <td valign="middle">
                     <div class="navigation" style="padding: 0px;">
-                        <a href="index.php">Projects</a> / <a href="project.php?id=<?php echo $project[id]; ?>"><?php echo $project[name]; ?></a>
+                        <a href="index.php">Home</a> / <a href="list.php">Projects</a> / <a href="project.php?id=<?php echo $project[id]; ?>"><?php echo $project[name]; ?></a>
                     </div>
                 </td>
                 <td valign="middle" align="right">

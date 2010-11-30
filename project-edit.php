@@ -20,7 +20,7 @@
 <?php include "header.php"; ?>
     <div class="content">
         <div class="navigation">
-            <a href="index.php">Projects</a> / <a href="project-edit.php?id=<?php echo $_GET[id]; ?>">Edit Project</a>
+            <a href="index.php">Home</a> / <a href="list.php">Projects</a> / <a href="project-edit.php?id=<?php echo $_GET[id]; ?>">Edit Project</a>
         </div>
         <div class="list">
             <form action="project-edit_post.php?id=<?php echo $_GET[id]; ?>" method="post">

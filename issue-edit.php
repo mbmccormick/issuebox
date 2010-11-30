@@ -23,7 +23,7 @@
 <?php include "header.php"; ?>
     <div class="content">
         <div class="navigation">
-            <a href="index.php">Projects</a> / <a href="project.php?id=<?php echo $project[id]; ?>"><?php echo $project[name]; ?></a> / <a href="issue.php?id=<?php echo $issue[id]; ?>">Issue #<?php echo $issue[number]; ?></a>
+            <a href="index.php">Home</a> / <a href="list.php">Projects</a> / <a href="project.php?id=<?php echo $project[id]; ?>"><?php echo $project[name]; ?></a> / <a href="issue.php?id=<?php echo $issue[id]; ?>">Issue #<?php echo $issue[number]; ?></a>
         </div>
         <div class="list">
             <form action="issue-edit_post.php?id=<?php echo $_GET[id]; ?>" method="post">
