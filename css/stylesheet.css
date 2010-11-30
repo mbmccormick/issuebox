@@ -307,38 +307,73 @@ a:hover
     padding-bottom: 20px;
 }
 
-.filter-on
+.filterbutton
 {
-    border: solid 4px #888888;
-    background-color: #888888;
-    padding: 1px;
-    border-radius: 4px;
-    -moz-border-radius: 4px;
-    font-size: 12px;
-    text-transform: uppercase;
-    color: #ffffff;
-}
-
-a.filter-on
-{
-    color: #ffffff;
-}
-
-.filter-off
-{
-    border: solid 4px #dddddd;
-    background-color: #dddddd;
-    padding: 1px;
-    border-radius: 4px;
-    -moz-border-radius: 4px;
-    font-size: 12px;
-    text-transform: uppercase;
+    border: 1px solid #D4D4D4;
+    border-bottom-left-radius: 3px 3px;
+    border-bottom-right-radius: 3px 3px;
+    border-top-left-radius: 3px 3px;
+    border-top-right-radius: 3px 3px;
     color: #333;
+    cursor: pointer;
+    display: inline-block;
+    font-family: helvetica, arial, freesans, clean, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    height: 21px;
+    overflow: visible;
+    padding: 0px 0px 0px 3px;
+    text-shadow: white 1px 1px 0px;
+    white-space: nowrap;
 }
 
-a.filter-off
+.filterbutton:hover
 {
-    color: #333;
+    border-bottom-color: #2A65A0;
+    border-color: #518CC6 #518CC6 #2A65A0;
+    color: white;
+    text-decoration: none;
+    text-shadow: rgba(0, 0, 0, 0.296875) -1px -1px 0px;
+}
+
+.webkit .filterbutton
+{
+    background: -webkit-gradient(linear, 0% 100%, 0% 0%, from(#E1E1E1), to(#ffffff));
+}
+
+.webkit .filterbutton:hover
+{
+    background: -webkit-gradient(linear, 0% 100%, 0% 0%, from(#3072B3), to(#599BDC));
+}
+
+.gecko .filterbutton
+{
+    -moz-border-radius: 3px;
+    background: -moz-linear-gradient(center bottom, #E1E1E1 0%, #ffffff 100%);
+}
+
+.gecko .filterbutton:hover
+{
+    background: -moz-linear-gradient(center bottom, #3072B3 0%, #599BDC 100%);
+}
+
+.ie .filterbutton
+{
+    filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#ffffff', EndColorStr='#E1E1E1', GradientType=0);
+}
+
+.ie .filterbutton:hover
+{
+    filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#599BDC', EndColorStr='#3072B3', GradientType=0);
+}
+
+.filterbutton span
+{
+    display: block;
+    height: 21px;
+    line-height: 21px;
+    padding: 0px 9px 0px 7px;
+    text-transform: uppercase;
 }
 
 small
