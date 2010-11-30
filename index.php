@@ -17,9 +17,20 @@
 ?>
 <?php include "header.php"; ?>
     <div class="content">
-        <div class="navigation">
-            <a href="index.php">Home</a>
-        </div>
+         <table cellpadding="0" cellspacing="0" style="width: 100%; padding-bottom: 20px;">
+            <tr>
+                <td valign="middle">
+                    <div class="navigation" style="padding: 0px;">
+                        <a href="index.php">Home</a>
+                    </div>
+                </td>
+                <td valign="middle" align="right">
+                    <div class="filter">
+                        <a class="filter-on" title="Click here to go to projects." href="list.php">Projects →</a>
+                    </div>
+                </td>
+            </tr>
+        </table>
         <div class="list">
             <?php
 
