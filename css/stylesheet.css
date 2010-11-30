@@ -415,8 +415,3 @@ form label, form .label, label.standard
     line-height:1.5em !important;
     margin:1em 0 !important;
 }
-
-.activity td[colspan=2]
-{
-    padding-bottom: 3px;
-}
