@@ -41,7 +41,10 @@
     
     function FriendlyString($string, $length = 160)
     {
-        return substr($string, 0, ($length - 3)) . "...";
+        if (strlen($string) > $length)
+            return substr($string, 0, ($length - 3)) . "...";
+        else
+            return substr($string);
     }
     
     function LogActivity($itemtype = 0, $itemid = 0, $actiontype = 0)
