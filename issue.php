@@ -42,10 +42,8 @@
                         <td valign="middle" align="right">
                             <?php
                             
-                                if ($issue[isclosed] == "0")
-                                    echo "<span class='filter-on'>Open</span>";
-                                else
-                                    echo "<span class='filter-on'>Closed</span>";
+                                if ($issue[isclosed] == "1")
+                                    echo "<em class='closed'>Closed</span>";
                             
                             ?>
                         </td>
