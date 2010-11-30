@@ -445,6 +445,23 @@ a:hover
     text-transform: uppercase;
 }
 
+em.closed
+{
+    background: #999;
+    border-bottom-left-radius: 3px 3px;
+    border-bottom-right-radius: 3px 3px;
+    border-top-left-radius: 3px 3px;
+    border-top-right-radius: 3px 3px;
+    color: white;
+    float: right;
+    font-size: 11px;
+    font-style: normal;
+    padding: 2px 5px;
+    position: relative;
+    text-transform: uppercase;
+    top: 2px;
+}
+
 small
 {
     color: #999;

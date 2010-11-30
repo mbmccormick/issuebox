@@ -70,10 +70,8 @@
                     echo "<h3>#$row[number]&nbsp;&nbsp;<a href='issue.php?id=$row[id]'>" . $row[title] . "</a></h3>";
                     echo "</td>\n";
                     echo "<td valign='middle' align='right'>\n";
-                    if ($row[isclosed] == "0")
-                        echo "<span class='filter-on'>Open</span>";
-                    else
-                        echo "<span class='filter-on'>Closed</span>";
+                    if ($row[isclosed] == "1")
+                        echo "<em class='closed'>Closed</span>";
                     echo "</td>\n";
                     echo "</tr>\n";
                     echo "</table>\n";
