@@ -51,8 +51,8 @@
     {
         try
         {
-            require_once "config.php";
-            require_once "security.php";
+            include "config.php";
+            include "security.php";
 
             $con = mysql_connect($Server, $Username, $Password);
             if (!$con)
