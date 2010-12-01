@@ -46,6 +46,7 @@
     {
         $headline = "";
         $description = "";
+        $now = date("Y-m-d H:i:s");
         
         if ($itemtype == "1")
         {
@@ -66,6 +67,7 @@
             }
             
             $description = $project[description];
+            $now = $project[createddate];
         }
         else if ($itemtype == "2")
         {
@@ -89,6 +91,7 @@
             }
             
             $description = $issue[body];
+            $now = $issue[createddate];
         }
         else if ($itemtype == "3")
         {
@@ -112,11 +115,11 @@
             }
             
             $description = $comment[body];
+            $now = $comment[createddate];
         }
 
-        $now = date("Y-m-d H:i:s");
-        $sql = "INSERT INTO activity (headline, description, actiontype, createdby, createddate) VALUES
-                    ('" . mysql_real_escape_string($headline) . "', '" . mysql_real_escape_string($description) . "', '$actiontype', '" . $_SESSION["CurrentUser_ID"] . "', '$now')";
+        $sql = "INSERT INTO activity (headline, description, itemtype, actiontype, createdby, createddate) VALUES
+                    ('" . mysql_real_escape_string($headline) . "', '" . mysql_real_escape_string($description) . "', '$itemtype', '$actiontype', '" . $_SESSION["CurrentUser_ID"] . "', '$now')";
         if (!mysql_query($sql))
         {
             die('Error: ' . mysql_error());

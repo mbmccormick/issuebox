@@ -136,8 +136,8 @@
         }
 
         $now = date("Y-m-d H:i:s");
-        $sql = "INSERT INTO activity (headline, description, actiontype, createdby, createddate) VALUES
-                    ('" . mysql_real_escape_string($headline) . "', '" . mysql_real_escape_string($description) . "', '$actiontype', '" . $_SESSION["CurrentUser_ID"] . "', '$now')";
+        $sql = "INSERT INTO activity (headline, description, itemtype, actiontype, createdby, createddate) VALUES
+                    ('" . mysql_real_escape_string($headline) . "', '" . mysql_real_escape_string($description) . "', '$itemtype', '$actiontype', '" . $_SESSION["CurrentUser_ID"] . "', '$now')";
         if (!mysql_query($sql,$con))
         {
             die('Error: ' . mysql_error());
