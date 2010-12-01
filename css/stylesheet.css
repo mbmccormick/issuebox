@@ -6,7 +6,7 @@ body
     padding: 30px;
     margin: 0px auto;
     width: 800px;
-    background: url("bg.png") repeat-y scroll center center #F5F5F5;
+    background: url(../img/bg.png) repeat-y scroll center center #F5F5F5;
 }
 
 a
