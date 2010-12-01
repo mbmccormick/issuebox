@@ -43,7 +43,12 @@
                     
                     echo "<tr>\n";
                     echo "<td rowspan='2' valign='top' style='width: 25px;'>\n";
-                    echo "<img src='img/project" . $row[actiontype] . ".png' alt='$row[actiontype]' />\n";
+                    if ($row[itemtype] == "1")
+                        echo "<img src='img/project" . $row[actiontype] . ".png' alt='$row[actiontype]' />\n";
+                    else if ($row[itemtype] == "2")
+                        echo "<img src='img/issue" . $row[actiontype] . ".png' alt='$row[actiontype]' />\n";
+                    else if ($row[itemtype] == "3")
+                        echo "<img src='img/comment" . $row[actiontype] . ".png' alt='$row[actiontype]' />\n";
                     echo "</td>\n";
                     echo "<td colspan='2' style='padding-bottom: 7px;'>\n";
                     echo "<b><a href='user-edit.php?id=" . $user[id] . "'>" . $user[username] . "</a> " . $row[headline] . " about " . FriendlyDate(1, strtotime($row[createddate])) . "</b>\n";
