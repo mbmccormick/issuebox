@@ -39,7 +39,7 @@
         return implode(' ',$result).' ago'; 
     }
     
-    function FriendlyString($string, $length = 160)
+    function FriendlyString($string, $length = 180)
     {
         if (strlen($string) > $length)
             return substr($string, 0, ($length - 3)) . "...";
