@@ -70,7 +70,7 @@
         
         if ($itemtype == "1")
         {
-            $sql = mysql_query("SELECT * FROM project WHERE id = '$row[itemid]'");
+            $sql = mysql_query("SELECT * FROM project WHERE id = '$itemid'");
             $project = mysql_fetch_array($sql);
             
             if ($actiontype == "1")
@@ -90,7 +90,7 @@
         }
         else if ($itemtype == "2")
         {
-            $sql = mysql_query("SELECT * FROM issue WHERE id = '$row[itemid]'");
+            $sql = mysql_query("SELECT * FROM issue WHERE id = '$itemid'");
             $issue = mysql_fetch_array($sql);
             
             $sql = mysql_query("SELECT * FROM project WHERE id = '$issue[projectid]'");
@@ -113,18 +113,11 @@
         }
         else if ($itemtype == "3")
         {
-            $sql = mysql_query("SELECT * FROM comment WHERE id = '$row[itemid]'");
+            $sql = mysql_query("SELECT * FROM comment WHERE id = '$itemid'");
             $comment = mysql_fetch_array($sql);
             
             $sql = mysql_query("SELECT * FROM issue WHERE id = '$comment[issueid]'");
             $issue = mysql_fetch_array($sql);
-            
-            echo "<tr>\n";
-            echo "<td rowspan='2' valign='top' style='width: 25px;'>\n";
-            echo "<img src='img/comment" . $row[actiontype] . ".png' alt='$row[actiontype]' />\n";
-            echo "</td>\n";
-            echo "<td colspan='2' style='padding-bottom: 7px;'>\n";
-            echo "<b><a href='user-edit.php?id=" . $user[id] . "'>" . $user[username] . "</a> ";
             
             if ($actiontype == "1")
             {
