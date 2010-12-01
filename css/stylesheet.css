@@ -539,3 +539,25 @@ form label, form .label, label.standard
     line-height:1.5em !important;
     margin:1em 0 !important;
 }
+
+.btn-projects .icon
+{
+    background: url(../img/minibutton_icons.png) no-repeat 0px 0px;
+    float: left;
+    height: 22px;
+    margin-left: -4px;
+    position: relative;
+    top: -1px;
+    width: 18px;
+}
+
+.btn-projects .icon
+{
+    background-position: -180px 0px;
+    width: 16px;
+}
+
+.btn-projects:hover .icon
+{
+    background-position: -180px -25px;
+}
