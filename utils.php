@@ -64,10 +64,87 @@
         catch (Exception $e)
         {
         }
+        
+        $headline = "";
+        $description = "";
+        
+        if ($itemtype == "1")
+        {
+            $sql = mysql_query("SELECT * FROM project WHERE id = '$row[itemid]'");
+            $project = mysql_fetch_array($sql);
+            
+            if ($actiontype == "1")
+            {
+                $headline = "created project <a href='project.php?id=$project[id]'>" . $project[name] . "</a>";
+            }
+            else if ($actiontype == "2")
+            {
+                $headline = "updated project <a href='project.php?id=$project[id]'>" . $project[name] . "</a>";
+            }
+            else if ($actiontype == "3")
+            {
+                $headline = "deleted project <a href='project.php?id=$project[id]'>" . $project[name] . "</a>";
+            }
+            
+            $description = $project[description];
+        }
+        else if ($itemtype == "2")
+        {
+            $sql = mysql_query("SELECT * FROM issue WHERE id = '$row[itemid]'");
+            $issue = mysql_fetch_array($sql);
+            
+            $sql = mysql_query("SELECT * FROM project WHERE id = '$issue[projectid]'");
+            $project = mysql_fetch_array($sql);
+            
+            if ($actiontype == "1")
+            {
+                $headline = "created <a href='issue.php?id=$issue[id]'>issue " . $issue[number] . "</a> on <a href='project-edit.php?id=$project[id]'>" . $project[name] . "</a>";
+            }
+            else if ($actiontype == "2")
+            {
+                $headline = "updated <a href='issue.php?id=$issue[id]'>issue " . $issue[number] . "</a> on <a href='project-edit.php?id=$project[id]'>" . $project[name] . "</a>";
+            }
+            else if ($actiontype == "3")
+            {
+                $headline = "deleted <a href='issue.php?id=$issue[id]'>issue " . $issue[number] . "</a> on <a href='project-edit.php?id=$project[id]'>" . $project[name] . "</a>";
+            }
+            
+            $description = $issue[body];
+        }
+        else if ($itemtype == "3")
+        {
+            $sql = mysql_query("SELECT * FROM comment WHERE id = '$row[itemid]'");
+            $comment = mysql_fetch_array($sql);
+            
+            $sql = mysql_query("SELECT * FROM issue WHERE id = '$comment[issueid]'");
+            $issue = mysql_fetch_array($sql);
+            
+            echo "<tr>\n";
+            echo "<td rowspan='2' valign='top' style='width: 25px;'>\n";
+            echo "<img src='img/comment" . $row[actiontype] . ".png' alt='$row[actiontype]' />\n";
+            echo "</td>\n";
+            echo "<td colspan='2' style='padding-bottom: 7px;'>\n";
+            echo "<b><a href='user-edit.php?id=" . $user[id] . "'>" . $user[username] . "</a> ";
+            
+            if ($actiontype == "1")
+            {
+                $headline = "commented on <a href='issue.php?id=$issue[id]'>issue " . $issue[number] . "</a>";
+            }
+            else if ($actiontype == "2")
+            {
+                $headline = "updated a comment on <a href='issue.php?id=$issue[id]'>issue " . $issue[number] . "</a>";
+            }
+            else if ($actiontype == "3")
+            {
+                $headline = "deleted a comment on <a href='issue.php?id=$issue[id]'>issue " . $issue[number] . "</a>";
+            }
+            
+            $description = $comment[body];
+        }
 
         $now = date("Y-m-d H:i:s");
-        $sql = "INSERT INTO activity (itemtype, itemid, actiontype, createdby, createddate) VALUES
-                    ('$itemtype', '$itemid', '$actiontype', '" . $_SESSION["CurrentUser_ID"] . "', '$now')";
+        $sql = "INSERT INTO activity (headline, description, actiontype, createdby, createddate) VALUES
+                    ('$headline', '$description', '$actiontype', '" . $_SESSION["CurrentUser_ID"] . "', '$now')";
         if (!mysql_query($sql,$con))
         {
             die('Error: ' . mysql_error());
