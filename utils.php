@@ -144,7 +144,7 @@
 
         $now = date("Y-m-d H:i:s");
         $sql = "INSERT INTO activity (headline, description, actiontype, createdby, createddate) VALUES
-                    ('$headline', '$description', '$actiontype', '" . $_SESSION["CurrentUser_ID"] . "', '$now')";
+                    ('" . mysql_real_escape_string($headline) . "', '" . mysql_real_escape_string($description) . "', '$actiontype', '" . $_SESSION["CurrentUser_ID"] . "', '$now')";
         if (!mysql_query($sql,$con))
         {
             die('Error: ' . mysql_error());
