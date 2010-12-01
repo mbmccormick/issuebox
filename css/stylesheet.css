@@ -170,7 +170,7 @@ a:hover
 
 .button:hover
 {
-    border-bottom-color: #0770A0;
+    border-bottom-color: #2A65A0;
     color: white;
     text-shadow: rgba(0, 0, 0, 0.296875) -1px -1px 0px;
 }
@@ -184,7 +184,7 @@ a:hover
 
 .webkit .button:hover
 {
-    background: -webkit-gradient(linear, 0% 100%, 0% 0%, from(#0770A0), to(#0CA6DD));
+    background: -webkit-gradient(linear, 0% 100%, 0% 0%, from(#3072B3), to(#599BDC));
 }
 
 .gecko .button
@@ -196,7 +196,7 @@ a:hover
 
 .gecko .button:hover
 {
-    background: -moz-linear-gradient(center bottom, #0770A0 0%, #0CA6DD 100%);
+    background: -moz-linear-gradient(center bottom, #3072B3 0%, #599BDC 100%);
 }
 
 .ie .button
@@ -206,7 +206,7 @@ a:hover
 
 .ie .button:hover
 {
-    filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#0CA6DD', EndColorStr='#0770A0', GradientType=0);
+    filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#599BDC', EndColorStr='#3072B3', GradientType=0);
 }
 
 .button span
