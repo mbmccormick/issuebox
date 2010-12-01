@@ -25,7 +25,7 @@
     
     LogActivity(1, $_GET[id], 3);
     
-    header("Location: index.php");
+    header("Location: list.php");
     exit;
     
 ?>
