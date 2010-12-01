@@ -542,10 +542,10 @@ form label, form .label, label.standard
 
 .btn-projects .icon
 {
-    background: url(../img/minibutton_icons.png) no-repeat 0px 0px;
-    float: left;
+    background: url(../img/minibutton_icons.png) no-repeat 0px 0px;    
+    float: right;
     height: 22px;
-    margin-left: -4px;
+    margin-right: -16px;
     position: relative;
     top: -1px;
     width: 18px;
