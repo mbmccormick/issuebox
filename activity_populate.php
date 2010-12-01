@@ -79,15 +79,15 @@
             
             if ($actiontype == "1")
             {
-                $headline = "created <a href='issue.php?id=$issue[id]'>issue " . $issue[number] . "</a> on <a href='project-edit.php?id=$project[id]'>" . $project[name] . "</a>";
+                $headline = "created <a href='issue.php?id=$issue[id]'>issue " . $issue[number] . "</a> on <a href='project.php?id=$project[id]'>" . $project[name] . "</a>";
             }
             else if ($actiontype == "2")
             {
-                $headline = "updated <a href='issue.php?id=$issue[id]'>issue " . $issue[number] . "</a> on <a href='project-edit.php?id=$project[id]'>" . $project[name] . "</a>";
+                $headline = "updated <a href='issue.php?id=$issue[id]'>issue " . $issue[number] . "</a> on <a href='project.php?id=$project[id]'>" . $project[name] . "</a>";
             }
             else if ($actiontype == "3")
             {
-                $headline = "deleted <a href='issue.php?id=$issue[id]'>issue " . $issue[number] . "</a> on <a href='project-edit.php?id=$project[id]'>" . $project[name] . "</a>";
+                $headline = "deleted <a href='issue.php?id=$issue[id]'>issue " . $issue[number] . "</a> on <a href='project.php?id=$project[id]'>" . $project[name] . "</a>";
             }
             
             $description = $issue[body];
