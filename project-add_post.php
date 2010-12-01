@@ -16,10 +16,9 @@
     
     
     $now = date("Y-m-d H:i:s");
-    $nowlcl = date("Y-m-d H:i:s", strtotime("+3 hour", strtotime($now)));
-
+    
     $sql = "INSERT INTO project (name, description, createdby, createddate) VALUES
-            ('" . mysql_real_escape_string($_POST[name]) . "', '" . mysql_real_escape_string($_POST[description]) . "', '$CurrentUser_ID', '" . $nowlcl . "')";
+            ('" . mysql_real_escape_string($_POST[name]) . "', '" . mysql_real_escape_string($_POST[description]) . "', '$CurrentUser_ID', '" . $now . "')";
     if (!mysql_query($sql,$con))
     {
         die('Error: ' . mysql_error());

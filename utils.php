@@ -52,8 +52,7 @@
         try
         {
             include "config.php";
-            require_once "security.php";
-
+            
             $con = mysql_connect($Server, $Username, $Password);
             if (!$con)
             {
@@ -68,7 +67,7 @@
 
         $now = date("Y-m-d H:i:s");
         $sql = "INSERT INTO activity (itemtype, itemid, actiontype, createdby, createddate) VALUES
-                    ('$itemtype', '$itemid', '$actiontype', '$CurrentUser_ID', '$now')";
+                    ('$itemtype', '$itemid', '$actiontype', '" . $_SESSION["CurrentUser_ID"] . "', '$now')";
         if (!mysql_query($sql,$con))
         {
             die('Error: ' . mysql_error());
