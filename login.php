@@ -27,8 +27,10 @@
             </form>  
         </div>
         <div class="standard-form help">
-            <b>Forgot your password?</b><br />
-            <a href="password-reset.php">Click here to reset your password.</a>
+            <b>Forget your password?</b><br />
+            <p>
+                <a href="password-reset.php">Click here to reset your password.</a>
+            </p>
         </div>
     </div>
 <?php include "footer.php"; ?>
