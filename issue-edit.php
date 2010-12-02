@@ -40,10 +40,10 @@
                     </table>
                     <br />
                     <b>Title</b><br />
-                    <input type="text" name="title" style="width: 750px;" value="<?php echo $issue[title]; ?>" /><br />
+                    <input type="text" name="title" style="width: 710px;" value="<?php echo $issue[title]; ?>" /><br />
                     <br />
                     <b>Body</b><br />                    
-                    <textarea name="body" style="width: 750px;" rows="8"><?php echo $issue[body]; ?></textarea>
+                    <textarea name="body" style="width: 710px;" rows="8"><?php echo $issue[body]; ?></textarea>
                 </div>
                 <br />
                 <button type="submit" class="button">

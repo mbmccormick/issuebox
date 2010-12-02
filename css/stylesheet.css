@@ -5,7 +5,7 @@ body
     color: #333333;
     padding: 30px;
     margin: 0px auto;
-    width: 800px;
+    width: 760px;
     background: url(../img/bg.png) repeat-y scroll center center #F5F5F5;
 }
 
@@ -77,21 +77,21 @@ a:hover
 {
     white-space: nowrap;
     overflow: hidden;
-    max-width: 540px;
+    max-width: 500px;
 }
 
 .project p
 {
     white-space: nowrap;
     overflow: hidden;
-    max-width: 540px;
+    max-width: 500px;
 }
 
 .issue h3
 {
     white-space: nowrap;
     overflow: hidden;
-    max-width: 700px;
+    max-width: 660px;
 }
 
 .list-item h3
