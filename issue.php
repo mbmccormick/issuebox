@@ -100,7 +100,7 @@
                 </table>
                 <br />
                 <form action="comment-add_post.php?issueid=<?php echo $issue[id]; ?>" method="post">
-                    <textarea name="body" style="width: 750px;" rows="8"></textarea>
+                    <textarea name="body" style="width: 710px;" rows="8"></textarea>
                     <br />
                     <br />
                     <button onclick="this.form.action = this.form.action + '&close=1';" type="submit" name="commentandclose" class="button">

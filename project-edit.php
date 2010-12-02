@@ -28,10 +28,10 @@
                     <h3>Edit Project</h3>
                     <br />                    
                     <b>Name</b><br />
-                    <input type="text" name="name" style="width: 750px;" value="<?php echo $project[name]; ?>" /><br />
+                    <input type="text" name="name" style="width: 710px;" value="<?php echo $project[name]; ?>" /><br />
                     <br />
                     <b>Description</b><br />                    
-                    <textarea name="description" style="width: 750px;" rows="5"><?php echo $project[description]; ?></textarea>                        
+                    <textarea name="description" style="width: 710px;" rows="5"><?php echo $project[description]; ?></textarea>                        
                 </div>
                 <br />
                 <button type="submit" class="button">

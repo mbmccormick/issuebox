@@ -17,13 +17,13 @@
                     <h3>New User</h3>
                     <br />
                     <b>Username</b><br />
-                    <input type="text" name="username" style="width: 750px;" /><br />
+                    <input type="text" name="username" style="width: 710px;" /><br />
                     <br />
                     <b>Password</b><br />                    
-                    <input type="text" name="password" style="width: 750px;" /><br />
+                    <input type="text" name="password" style="width: 710px;" /><br />
                     <br />
                     <b>Email</b><br />                    
-                    <input type="text" name="email" style="width: 750px;" /><br />
+                    <input type="text" name="email" style="width: 710px;" /><br />
                 </div>
                 <br />
                 <button type="submit" class="button">

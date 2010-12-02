@@ -114,10 +114,10 @@
                 <br />
                 <form action="issue-add_post.php?projectid=<?php echo $project[id]; ?>" method="post">
                     <b>Title</b><br />
-                    <input type="text" name="title" style="width: 750px;" /><br />
+                    <input type="text" name="title" style="width: 710px;" /><br />
                     <br />
                     <b>Body</b><br />                    
-                    <textarea name="body" style="width: 750px;" rows="8"></textarea>
+                    <textarea name="body" style="width: 710px;" rows="8"></textarea>
                     <br />
                     <br />
                     <button type="submit" class="button">
