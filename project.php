@@ -112,7 +112,7 @@
                     </tr>
                 </table>
                 <br />
-                <form action="issue-add_post.php?projectid=<?php echo $project[id]; ?>" method="post">
+                <form action="issue-add.php?projectid=<?php echo $project[id]; ?>" method="post">
                     <b>Title</b><br />
                     <input type="text" name="title" style="width: 710px;" /><br />
                     <br />
@@ -129,7 +129,7 @@
             <button type="button" class="button" onclick="location.href='project-edit.php?id=<?php echo $project[id]; ?>';">
                 <span>Edit Project</span>
             </button>
-            <button type="button" class="button" onclick="confirm('Are you sure you want to delete this project and all of its issues?') ? location.href='project-delete_post.php?id=<?php echo $project[id]; ?>' : false;">
+            <button type="button" class="button" onclick="confirm('Are you sure you want to delete this project and all of its issues?') ? location.href='project-delete.php?id=<?php echo $project[id]; ?>' : false;">
                 <span>Delete</span>
             </button>
         </div>        

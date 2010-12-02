@@ -13,8 +13,7 @@
     }
 
     mysql_select_db($Database, $con);
-    
-    
+        
     $now = date("Y-m-d H:i:s");
     
     $sql = "INSERT INTO comment (issueid, body, createdby, createddate) VALUES

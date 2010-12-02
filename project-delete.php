@@ -13,9 +13,8 @@
     }
 
     mysql_select_db($Database, $con);
-    
-    
-    $sql = "DELETE FROM comment WHERE id = '$_GET[id]'";    
+        
+    $sql = "DELETE FROM project WHERE id = '$_GET[id]'";    
     if (!mysql_query($sql,$con))
     {
         die('Error: ' . mysql_error());
@@ -23,9 +22,9 @@
 
     mysql_close($con);
     
-    LogActivity(3, $_GET[id], 3);
+    LogActivity(1, $_GET[id], 3);
     
-    header("Location: issue.php?id=$_GET[issueid]");
+    header("Location: list.php");
     exit;
     
 ?>

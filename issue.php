@@ -53,7 +53,7 @@
                 <br />
                 <div class="options">
                     <a class="minibutton" href='issue-edit.php?id=<?php echo $issue[id]; ?>'><span>Edit</span></a>
-                    <a class="minibutton" onclick="return confirm('Are you sure you want to delete this issue and all of its comments?');" href='issue-delete_post.php?id=<?php echo $issue[id]; ?>&projectid=<?php echo $issue[projectid]; ?>'><span>Delete</span></a>
+                    <a class="minibutton" onclick="return confirm('Are you sure you want to delete this issue and all of its comments?');" href='issue-delete.php?id=<?php echo $issue[id]; ?>&projectid=<?php echo $issue[projectid]; ?>'><span>Delete</span></a>
                     &nbsp;&nbsp;<span class="date">Created about <?php echo FriendlyDate(1, strtotime($issue[createddate])); ?></span> by <a href="user-edit.php?id=<?php echo $user[id]; ?>"><?php echo $user[username]; ?></a>
                 </div>
                 <script type="text/javascript">
@@ -73,7 +73,7 @@
                     echo "<div id='comment$row[id]' class='wikiStyle'>" . $row[body] . "</div>\n";
                     echo "<br />\n";
                     echo "<div class='options'>\n";
-                    echo "<a class='minibutton' onclick=\"return confirm('Are you sure you want to delete this comment?');\" href='comment-delete_post.php?id=$row[id]&issueid=$row[issueid]'><span>Delete</span></a>\n";
+                    echo "<a class='minibutton' onclick=\"return confirm('Are you sure you want to delete this comment?');\" href='comment-delete.php?id=$row[id]&issueid=$row[issueid]'><span>Delete</span></a>\n";
                     echo "&nbsp;&nbsp;" . date("F j, Y", strtotime($row[createddate]));
                     echo " by <a href='user-edit.php?id=$user[id]'>$user[username]</a>";
                     echo "</div>\n";
@@ -99,7 +99,7 @@
                     </tr>
                 </table>
                 <br />
-                <form action="comment-add_post.php?issueid=<?php echo $issue[id]; ?>" method="post">
+                <form action="comment-add.php?issueid=<?php echo $issue[id]; ?>" method="post">
                     <textarea name="body" style="width: 710px;" rows="8"></textarea>
                     <br />
                     <br />

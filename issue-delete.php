@@ -1,6 +1,7 @@
 <?php
 
     require "config.php";
+    require "utils.php";
     require_once "security.php";
     
     authorize();
@@ -12,9 +13,14 @@
     }
 
     mysql_select_db($Database, $con);
+        
+    $sql = "DELETE FROM comment WHERE issueid = '$_GET[id]'";    
+    if (!mysql_query($sql,$con))
+    {
+        die('Error: ' . mysql_error());
+    }
     
-    
-    $sql = "DELETE FROM user WHERE id = '$_GET[id]'";    
+    $sql = "DELETE FROM issue WHERE id = '$_GET[id]'";    
     if (!mysql_query($sql,$con))
     {
         die('Error: ' . mysql_error());
@@ -22,7 +28,9 @@
 
     mysql_close($con);
     
-    header("Location: user.php");
+    LogActivity(2, $_GET[id], 3);
+    
+    header("Location: project.php?id=$_GET[projectid]");
     exit;
     
 ?>
