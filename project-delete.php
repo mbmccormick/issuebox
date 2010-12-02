@@ -19,6 +19,23 @@
     {
         die('Error: ' . mysql_error());
     }
+    
+    $sql = "SELECT * FROM issue WHERE projectid = '$_GET[id]'";    
+    $result = mysql_query($sql);
+    while($row = mysql_fetch_array($result))
+    {
+        $sql = "DELETE FROM comment WHERE issueid = '$row[id]'";    
+        if (!mysql_query($sql,$con))
+        {
+            die('Error: ' . mysql_error());
+        }
+    }
+    
+    $sql = "DELETE FROM issue WHERE projectid = '$_GET[id]'";    
+    if (!mysql_query($sql,$con))
+    {
+        die('Error: ' . mysql_error());
+    }
 
     mysql_close($con);
     
