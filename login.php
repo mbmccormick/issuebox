@@ -6,7 +6,10 @@
 ?>
 <?php include "header.php"; ?>
     <div class="content">
-        <div id="login" class="standard_form">
+        <div class="navigation">
+            <a href="login.php">Login</a>
+        </div>
+        <div class="standard-form">
             <h2>Login</h2>
             <br />
             <form action="login_post.php" method="post">
