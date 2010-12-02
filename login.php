@@ -26,5 +26,8 @@
                 </label>
             </form>  
         </div>
+        <div class="standard-form help">
+            <a href="password-reset.php">Password Reset</a>
+        </div>
     </div>
 <?php include "footer.php"; ?>

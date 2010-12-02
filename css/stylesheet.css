@@ -486,6 +486,11 @@ small
     padding: 0px;
 }
 
+.help
+{
+    background-color: #ffffff;
+}
+
 form input.text, form input[type=text], form textarea, form input.password, form input[type=password]
 {
     border: 1px solid #888;
@@ -515,19 +520,6 @@ form label, form .label, label.standard
     background-color: whiteSmoke;
     border-radius: 5px;
     -moz-border-radius: 5px;
-}
-
-#login-header
-{
-    margin: 0px auto;
-    text-align: center;
-    padding-top: 100px;
-}
-
-#login-footer
-{
-    margin: 0px auto;
-    text-align: center;
 }
 
 .wikiStyle p
