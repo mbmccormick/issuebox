@@ -3,6 +3,20 @@
     require "config.php";
     require_once "security.php";
 
+    if (isset($_POST) == true)
+    {
+        if (login($_POST[username], $_POST[password]) == true)
+        {
+            header("Location: index.php");
+            exit;
+        }
+        else
+        {
+            header("Location: login.php?msg=Invalid login credentials.");
+            exit;
+        }
+    }
+    
 ?>
 <?php include "header.php"; ?>
     <div class="content">
@@ -12,7 +26,7 @@
         <div class="standard-form">
             <h2>Login</h2>
             <br />
-            <form action="login_post.php" method="post">
+            <form action="<?php echo $_SERVER[PHP_SELF]; ?>" method="post">
                 <label for="Username">
                     Username<br />
                     <input class="text" name="username" style="width: 25em;" type="text" />
