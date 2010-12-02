@@ -3,7 +3,7 @@
     require "config.php";
     require_once "security.php";
 
-    if (isset($_POST) == true)
+    if ($_SERVER[REQUEST_METHOD] === "POST")
     {
         if (login($_POST[username], $_POST[password]) == true)
         {
