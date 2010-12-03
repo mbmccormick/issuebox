@@ -238,7 +238,7 @@ a:hover
     font-weight: bold;
     height: 21px;
     overflow: visible;
-    padding: 1px 0px 0px 3px;
+    padding: 0px 0px 0px 3px;
     text-shadow: white 1px 1px 0px;
     white-space: nowrap;
 }
@@ -328,7 +328,7 @@ a:hover
     font-weight: bold;
     height: 21px;
     overflow: visible;
-    padding: 2px 0px 1px 3px;
+    padding: 1px 0px 1px 3px;
     text-shadow: white 1px 1px 0px;
     white-space: nowrap;
 }
@@ -397,7 +397,7 @@ a:hover
     font-weight: bold;
     height: 21px;
     overflow: visible;
-    padding: 2px 0px 1px 3px;
+    padding: 1px 0px 1px 3px;
     text-shadow: rgba(0, 0, 0, 0.296875) -1px -1px 0px;
     white-space: nowrap;
 }
