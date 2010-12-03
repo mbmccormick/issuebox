@@ -398,7 +398,9 @@ a:hover
 
 .filter-on
 {
-    border: 1px solid #777777;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #666666 #888888 #888888 #666666;
     border-radius: 3px;
     color: white;
     cursor: pointer;
