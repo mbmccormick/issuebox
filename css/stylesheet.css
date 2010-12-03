@@ -463,6 +463,11 @@ em.closed
     font-weight: bold;
 }
 
+.mac em.closed
+{
+    padding: 4px 5px 2px 5px;
+}
+
 small
 {
     color: #999;
