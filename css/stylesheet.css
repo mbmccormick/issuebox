@@ -255,6 +255,7 @@ a:hover
 .webkit .minibutton
 {
     background: -webkit-gradient(linear, 0% 100%, 0% 0%, from(#E1E1E1), to(#ffffff));
+    padding: 1px 0px 0px 3px;
 }
 
 .webkit .minibutton:hover
@@ -266,6 +267,7 @@ a:hover
 {
     -moz-border-radius: 3px;
     background: -moz-linear-gradient(center bottom, #E1E1E1 0%, #ffffff 100%);
+    padding: 0px 0px 1px 3px;
 }
 
 .gecko .minibutton:hover
