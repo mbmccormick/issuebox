@@ -349,10 +349,12 @@ a:hover
 
 .filter-off:hover
 {
-    border-color: #919191;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #666666 #888888 #888888 #666666;
     color: white;
     text-decoration: none;
-    text-shadow: rgba(0, 0, 0, 0.296875) -1px -1px 0px;
+    text-shadow: rgba(0, 0, 0, 0.296875) 1px 1px 0px;
 }
 
 .webkit .filter-off
@@ -417,7 +419,7 @@ a:hover
 
 .filter-on:hover
 {
-    border-color: #D4D4D4;
+    border: 1px solid #D4D4D4;
     color: #333;
     text-decoration: none;
     text-shadow: white 1px 1px 0px;
