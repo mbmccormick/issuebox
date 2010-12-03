@@ -349,7 +349,7 @@ a:hover
 
 .webkit .filter-off:hover
 {
-    background: -webkit-gradient(linear, 0% 100%, 0% 0%, from(#808080), to(#BABABA));
+    background: -webkit-gradient(linear, 0% 100%, 0% 0%, from(#999999), to(#888888));
 }
 
 .gecko .filter-off
@@ -360,7 +360,7 @@ a:hover
 
 .gecko .filter-off:hover
 {
-    background: -moz-linear-gradient(center bottom, #808080 0%, #BABABA 100%);
+    background: -moz-linear-gradient(center bottom, #999999 0%, #888888 100%);
 }
 
 .ie .filter-off
@@ -370,7 +370,7 @@ a:hover
 
 .ie .filter-off:hover
 {
-    filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#BABABA', EndColorStr='#808080', GradientType=0);
+    filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#888888', EndColorStr='#999999', GradientType=0);
 }
 
 .filter-off span
@@ -384,7 +384,7 @@ a:hover
 
 .filter-on
 {
-    border: 1px solid #919191;
+    border: 1px solid #777777;
     border-bottom-left-radius: 3px 3px;
     border-bottom-right-radius: 3px 3px;
     border-top-left-radius: 3px 3px;
@@ -398,14 +398,13 @@ a:hover
     height: 21px;
     overflow: visible;
     padding: 1px 0px 1px 3px;
-    text-shadow: rgba(0, 0, 0, 0.296875) -1px -1px 0px;
+    text-shadow: rgba(0, 0, 0, 0.296875) 1px 1px 0px;
     white-space: nowrap;
 }
 
 .filter-on:hover
 {
-    border-bottom-color: #D4D4D4;
-    border-color: #D4D4D4 #D4D4D4 #D4D4D4;
+    border-color: #D4D4D4;
     color: #333;
     text-decoration: none;
     text-shadow: white 1px 1px 0px;
@@ -413,7 +412,7 @@ a:hover
 
 .webkit .filter-on
 {
-    background: -webkit-gradient(linear, 0% 100%, 0% 0%, from(#808080), to(#BABABA));
+    background: -webkit-gradient(linear, 0% 100%, 0% 0%, from(#999999), to(#888888));
 }
 
 .webkit .filter-on:hover
@@ -424,7 +423,7 @@ a:hover
 .gecko .filter-on
 {
     -moz-border-radius: 3px;
-    background: -moz-linear-gradient(center bottom, #808080 0%, #BABABA 100%);
+    background: -moz-linear-gradient(center bottom, #999999 0%, #888888 100%);
 }
 
 .gecko .filter-on:hover
@@ -434,7 +433,7 @@ a:hover
 
 .ie .filter-on
 {
-    filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#BABABA', EndColorStr='#808080', GradientType=0);
+    filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#888888', EndColorStr='#999999', GradientType=0);
 }
 
 .ie .filter-on:hover
