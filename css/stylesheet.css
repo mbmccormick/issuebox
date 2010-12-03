@@ -43,7 +43,7 @@ a:hover
 {
     font-size: 12px;
     padding-top: 30px;
-    padding-bottom: 30px;
+    padding-bottom: 20px;
 }
 
 .content
@@ -127,6 +127,21 @@ a:hover
     text-align: center;
     font-size: 9px;
     margin-left: 5px;
+}
+
+.webkit .counter
+{
+    background: -webkit-gradient(linear, 0% 100%, 0% 0%, from(#777777), to(#999999));
+}
+
+.gecko .counter
+{
+    background: -moz-linear-gradient(center bottom, #777777 0%, #999999 100%);
+}
+
+.ie .counter
+{
+    filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#999999', EndColorStr='#777777', GradientType=0);
 }
 
 .counter big
