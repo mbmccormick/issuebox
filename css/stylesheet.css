@@ -316,10 +316,7 @@ a:hover
 .filter-off
 {
     border: 1px solid #D4D4D4;
-    border-bottom-left-radius: 3px 3px;
-    border-bottom-right-radius: 3px 3px;
-    border-top-left-radius: 3px 3px;
-    border-top-right-radius: 3px 3px;
+    border-radius: 3px;
     color: #333;
     cursor: pointer;
     display: inline-block;
@@ -335,8 +332,7 @@ a:hover
 
 .filter-off:hover
 {
-    border-bottom-color: #919191;
-    border-color: #919191 #919191 #919191;
+    border-color: #919191;
     color: white;
     text-decoration: none;
     text-shadow: rgba(0, 0, 0, 0.296875) -1px -1px 0px;
@@ -345,6 +341,7 @@ a:hover
 .webkit .filter-off
 {
     background: -webkit-gradient(linear, 0% 100%, 0% 0%, from(#E1E1E1), to(#ffffff));
+    padding: 1px 0px 0px 3px;
 }
 
 .webkit .filter-off:hover
@@ -385,10 +382,7 @@ a:hover
 .filter-on
 {
     border: 1px solid #777777;
-    border-bottom-left-radius: 3px 3px;
-    border-bottom-right-radius: 3px 3px;
-    border-top-left-radius: 3px 3px;
-    border-top-right-radius: 3px 3px;
+    border-radius: 3px;
     color: white;
     cursor: pointer;
     display: inline-block;
@@ -413,6 +407,7 @@ a:hover
 .webkit .filter-on
 {
     background: -webkit-gradient(linear, 0% 100%, 0% 0%, from(#999999), to(#888888));
+    padding: 1px 0px 0px 3px;
 }
 
 .webkit .filter-on:hover
