@@ -10,3 +10,6 @@
 [submodule "js/jquery"]
 	path = js/jquery
 	url = git://github.com/jquery/jquery.git
+[submodule "js/form"]
+	path = js/form
+	url = git://github.com/malsup/form.git
