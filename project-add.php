@@ -26,7 +26,7 @@
             die('Error: ' . mysql_error());
         }
         
-        $sql = mysql_query("SELECT * FROM project ORDER BY createddate DESC LIMIT 1");
+        $sql = mysql_query("SELECT * FROM project WHERE id = '" . mysql_insert_id() . "'");
         $result = mysql_fetch_array($sql);
         
         mysql_close($con);
