@@ -23,7 +23,7 @@
         die('Error: ' . mysql_error());
     }
     
-    if (isset($_POST[commentandclose] == true)
+    if (isset($_POST[commentandclose]) == true)
     {
         $sql = "UPDATE issue SET isclosed = '1' WHERE id='$_GET[issueid]'";
         if (!mysql_query($sql,$con))
@@ -44,6 +44,10 @@
     
     if ($_POST[returnObject] == "true")
     {
+        if (isset($_POST[commentandclose]) == true)
+        {
+            echo "<div id='issueclosed'></div>\n";
+        }
         echo "<div class='list-item comment'>\n";
                         
         echo "<div id='comment$result[id]' class='wikiStyle'>" . $result[body] . "</div>\n";

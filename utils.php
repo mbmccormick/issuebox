@@ -124,8 +124,8 @@
         }
 
         $now = date("Y-m-d H:i:s");
-        $sql = "INSERT INTO activity (headline, description, itemtype, actiontype, createdby, createddate) VALUES
-                    ('" . mysql_real_escape_string($headline) . "', '" . mysql_real_escape_string($description) . "', '$itemtype', '$actiontype', '" . $_SESSION["CurrentUser_ID"] . "', '$now')";
+        $sql = "INSERT INTO activity (headline, description, itemid, itemtype, actiontype, createdby, createddate) VALUES
+                    ('" . mysql_real_escape_string($headline) . "', '" . mysql_real_escape_string($description) . "', '$itemid', '$itemtype', '$actiontype', '" . $_SESSION["CurrentUser_ID"] . "', '$now')";
         if (!mysql_query($sql,$con))
         {
             die('Error: ' . mysql_error());
@@ -150,7 +150,7 @@
         {
         }
         
-        $sql = "DELETE FROM activity WHERE itemtype = '$itemtype', itemid = '$itemid'";    
+        $sql = "DELETE FROM activity WHERE itemtype = '$itemtype' AND itemid = '$itemid'";    
         if (!mysql_query($sql,$con))
         {
             die('Error: ' . mysql_error());

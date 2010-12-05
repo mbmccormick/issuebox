@@ -126,14 +126,14 @@
         $(document).ready(function() { 
             $("#comment-new").ajaxForm({ 
                 data: { returnObject: "true" },
-                success: showResponse
+                success: onSuccess
             }); 
         });
         
-        function showResponse(responseText, statusText, xhr, $form) { 
+        function onSuccess(responseText, statusText, xhr, $form) { 
             $(".list-holder").append(responseText);
             $(".list-holder .list-item").last().hide().slideDown();
-            $("#comment-new textarea[name=body]").val("");
+            $("#comment-new").resetForm();
         }
         
     </script>
