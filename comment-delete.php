@@ -22,7 +22,7 @@
 
     mysql_close($con);
     
-    LogActivity(3, $_GET[id], 3);
+    PurgeActivity(3, $_GET[id]);
     
     header("Location: issue.php?id=$_GET[issueid]");
     exit;

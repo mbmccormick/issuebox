@@ -81,10 +81,6 @@
             {
                 $headline = "updated project <a href='project.php?id=$project[id]'>" . $project[name] . "</a>";
             }
-            else if ($actiontype == "3")
-            {
-                $headline = "deleted project <a href='project.php?id=$project[id]'>" . $project[name] . "</a>";
-            }
             
             $description = $project[description];
         }
@@ -103,10 +99,6 @@
             else if ($actiontype == "2")
             {
                 $headline = "updated <a href='issue.php?id=$issue[id]'>issue " . $issue[number] . "</a> on <a href='project.php?id=$project[id]'>" . $project[name] . "</a>";
-            }
-            else if ($actiontype == "3")
-            {
-                $headline = "deleted <a href='issue.php?id=$issue[id]'>issue " . $issue[number] . "</a> on <a href='project.php?id=$project[id]'>" . $project[name] . "</a>";
             }
             
             $description = $issue[body];
@@ -127,10 +119,6 @@
             {
                 $headline = "updated a comment on <a href='issue.php?id=$issue[id]'>issue " . $issue[number] . "</a>";
             }
-            else if ($actiontype == "3")
-            {
-                $headline = "deleted a comment on <a href='issue.php?id=$issue[id]'>issue " . $issue[number] . "</a>";
-            }
             
             $description = $comment[body];
         }
@@ -138,6 +126,31 @@
         $now = date("Y-m-d H:i:s");
         $sql = "INSERT INTO activity (headline, description, itemtype, actiontype, createdby, createddate) VALUES
                     ('" . mysql_real_escape_string($headline) . "', '" . mysql_real_escape_string($description) . "', '$itemtype', '$actiontype', '" . $_SESSION["CurrentUser_ID"] . "', '$now')";
+        if (!mysql_query($sql,$con))
+        {
+            die('Error: ' . mysql_error());
+        }
+    }
+    
+    function PurgeActivity($itemtype, $itemid)
+    {
+        try
+        {
+            include "config.php";
+            
+            $con = mysql_connect($Server, $Username, $Password);
+            if (!$con)
+            {
+                die("Could not connect to $Server: " . mysql_error());
+            }
+
+            mysql_select_db($Database, $con);
+        }
+        catch (Exception $e)
+        {
+        }
+        
+        $sql = "DELETE FROM activity WHERE itemtype = '$itemtype', itemid = '$itemid'";    
         if (!mysql_query($sql,$con))
         {
             die('Error: ' . mysql_error());

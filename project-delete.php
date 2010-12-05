@@ -39,7 +39,7 @@
 
     mysql_close($con);
     
-    LogActivity(1, $_GET[id], 3);
+    PurgeActivity(1, $_GET[id]);
     
     header("Location: list.php");
     exit;

@@ -28,7 +28,7 @@
 
     mysql_close($con);
     
-    LogActivity(2, $_GET[id], 3);
+    PurgeActivity(2, $_GET[id]);
     
     header("Location: project.php?id=$_GET[projectid]");
     exit;
