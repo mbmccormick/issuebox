@@ -1,6 +1,7 @@
 <?php
 
     require "config.php";
+    require "utils.php";
     require_once "security.php";
     
     authorize();
