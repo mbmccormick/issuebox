@@ -1,6 +1,7 @@
 <?php
 
     require "config.php";
+    require "utils.php";
     require_once "security.php";
 
     if ($_SERVER[REQUEST_METHOD] === "POST")
