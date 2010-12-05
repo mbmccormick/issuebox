@@ -36,7 +36,9 @@
                     <input class="text" name="password" style="width: 25em;" type="password" />
                 </label>
                 <label>
-                    <input type="submit" value="Log in">
+                    <button type="submit" class="button">
+                        <span>Log In</span>
+                    </button>
                 </label>
             </form>  
         </div>
