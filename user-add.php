@@ -34,6 +34,7 @@
     
 ?>
 <?php include "header.php"; ?>
+    <?php SetPageTitle("New User"); ?>
     <div class="content">
         <div class="navigation">
             <a href="index.php">Home</a> / <a href="settings.php">Settings</a> / <a href="user.php">Users</a> / <a href="user-add.php">New User</a>

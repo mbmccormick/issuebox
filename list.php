@@ -15,6 +15,7 @@
 
 ?>
 <?php include "header.php"; ?>
+    <?php SetPageTitle("Projects"); ?>
     <div class="content">
         <div class="navigation">
             <a href="index.php">Home</a> / <a href="list.php">Projects</a>

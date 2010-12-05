@@ -39,6 +39,7 @@
 
 ?>
 <?php include "header.php"; ?>
+    <?php SetPageTitle("New Project"); ?>
     <div class="content">
         <div class="navigation">
             <a href="index.php">Home</a> / <a href="list.php">Projects</a> / <a href="project-add.php">New Project</a>
