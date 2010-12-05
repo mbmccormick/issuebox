@@ -19,6 +19,7 @@
     
 ?>
 <?php include "header.php"; ?>
+    <?php SetPageTitle("Login"); ?>
     <div class="content">
         <div class="navigation">
             <a href="login.php">Login</a>

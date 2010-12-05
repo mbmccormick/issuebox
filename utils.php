@@ -3,7 +3,7 @@
     function SetPageTitle($title)
     {
         echo "<script type='text/javascript'>\n";
-        echo "document.title = '$title';\n";
+        echo "document.title = 'Issue Tracker - $title';\n";
         echo "</script>\n";
     }
 

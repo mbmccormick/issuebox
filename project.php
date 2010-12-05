@@ -25,6 +25,7 @@
     
 ?>
 <?php include "header.php"; ?>
+    <?php SetPageTitle($project[name]); ?>
     <div class="content">
         <table cellpadding="0" cellspacing="0" style="width: 100%; padding-bottom: 20px;">
             <tr>

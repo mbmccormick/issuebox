@@ -38,6 +38,7 @@
 
 ?>
 <?php include "header.php"; ?>
+    <?php SetPageTitle($project[name]); ?>
     <div class="content">
         <div class="navigation">
             <a href="index.php">Home</a> / <a href="list.php">Projects</a> / <a href="project-edit.php?id=<?php echo $_GET[id]; ?>">Edit Project</a>
