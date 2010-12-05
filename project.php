@@ -100,7 +100,9 @@
                 }
 
             ?>
-            <div class="list-item issue">
+            <div class="list-holder">
+            </div>
+            <div class="list-item issue-new">
                 <table cellpadding="0" cellspacing="0" style="width: 100%;">
                     <tr>
                         <td valign="middle">
@@ -112,7 +114,7 @@
                     </tr>
                 </table>
                 <br />
-                <form action="issue-add.php?projectid=<?php echo $project[id]; ?>" method="post">
+                <form id="issue-new" action="issue-add.php?projectid=<?php echo $project[id]; ?>" method="post">
                     <b>Title</b><br />
                     <input type="text" name="title" style="width: 710px;" /><br />
                     <br />
@@ -134,4 +136,21 @@
             </button>
         </div>        
     </div>
+    <script type="text/javascript"> 
+    
+        $(document).ready(function() { 
+            $("#issue-new").ajaxForm({ 
+                data: { returnObject: "true" },
+                success: showResponse
+            }); 
+        });
+        
+        function showResponse(responseText, statusText, xhr, $form) { 
+            $(".list-holder").append(responseText);
+            $(".list-holder .list-item").last().hide().slideDown();
+            $("#issue-new input[name=title]").val("");
+            $("#issue-new textarea[name=body]").val("");
+        }
+        
+    </script>
 <?php include "footer.php"; ?>

@@ -32,14 +32,38 @@
         }
     }
     
-    $sql = mysql_query("SELECT * FROM comment ORDER BY createddate DESC LIMIT 1");
+    $sql = mysql_query("SELECT * FROM comment WHERE id = '" . mysql_insert_id() . "'");
     $result = mysql_fetch_array($sql);
+    
+    $sql = mysql_query("SELECT * FROM user WHERE id = '$result[createdby]'");
+    $user = mysql_fetch_array($sql);
     
     mysql_close($con);
     
     LogActivity(3, $result[id], 1);
     
-    header("Location: issue.php?id=$_GET[issueid]");
-    exit;
+    if ($_POST[returnObject] == "true")
+    {
+        echo "<div class='list-item comment'>\n";
+                        
+        echo "<div id='comment$result[id]' class='wikiStyle'>" . $result[body] . "</div>\n";
+        echo "<br />\n";
+        echo "<div class='options'>\n";
+        echo "<a class='minibutton' onclick=\"return confirm('Are you sure you want to delete this comment?');\" href='comment-delete.php?id=$result[id]&issueid=$result[issueid]'><span>Delete</span></a>\n";
+        echo "&nbsp;&nbsp;" . date("F j, Y", strtotime($result[createddate]));
+        echo " by <a href='user-edit.php?id=$user[id]'>$user[username]</a>";
+        echo "</div>\n";
+        
+        echo "<script type='text/javascript'>\n";
+        echo "document.getElementById('comment$result[id]').innerHTML = converter.makeHtml(document.getElementById('comment$result[id]').innerHTML);\n";
+        echo "</script>\n";
+        
+        echo "</div>\n";
+    }
+    else
+    {
+        header("Location: issue.php?id=$_GET[issueid]");
+        exit;
+    }
     
 ?>

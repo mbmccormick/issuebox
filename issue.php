@@ -87,6 +87,8 @@
 
             ?>
             <?php if ($issue[isclosed] == "0") { ?>
+            <div class="list-holder">
+            </div>
             <div class="list-item comment-new">
                 <table cellpadding="0" cellspacing="0" style="width: 100%;">
                     <tr>
@@ -99,7 +101,7 @@
                     </tr>
                 </table>
                 <br />
-                <form action="comment-add.php?issueid=<?php echo $issue[id]; ?>" method="post">
+                <form id="comment-new" action="comment-add.php?issueid=<?php echo $issue[id]; ?>" method="post">
                     <textarea name="body" style="width: 710px;" rows="8"></textarea>
                     <br />
                     <br />
@@ -118,4 +120,20 @@
             <?php } ?>
         </div>        
     </div>
+    <script type="text/javascript"> 
+    
+        $(document).ready(function() { 
+            $("#comment-new").ajaxForm({ 
+                data: { returnObject: "true" },
+                success: showResponse
+            }); 
+        });
+        
+        function showResponse(responseText, statusText, xhr, $form) { 
+            $(".list-holder").append(responseText);
+            $(".list-holder .list-item").last().hide().slideDown();
+            $("#comment-new textarea[name=body]").val("");
+        }
+        
+    </script>
 <?php include "footer.php"; ?>

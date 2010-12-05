@@ -28,14 +28,55 @@
         die('Error: ' . mysql_error());
     }
 
-    $sql = mysql_query("SELECT * FROM issue ORDER BY createddate DESC LIMIT 1");
+    $sql = mysql_query("SELECT * FROM issue WHERE id = '" . mysql_insert_id() . "'");
     $result = mysql_fetch_array($sql);
     
+    $sql = mysql_query("SELECT * FROM user WHERE id = '$result[createdby]'");
+    $user = mysql_fetch_array($sql);
+        
     mysql_close($con);
     
     LogActivity(2, $result[id], 1);
     
-    header("Location: project.php?id=$_GET[projectid]");
-    exit;
+    if ($_POST[returnObject] == "true")
+    {
+        $sql = mysql_query("SELECT COUNT(*) AS rowcount FROM comment WHERE issueid = '$result[id]'");
+        $return = mysql_fetch_array($sql);
+        $count = $return[rowcount];
+        
+        echo "<div class='list-item issue'>\n";
+                    
+        echo "<table cellpadding='0' cellspacing='0' style='width: 100%;'>\n";
+        echo "<tr>\n";
+        echo "<td valign='middle'>\n";
+        echo "<h3>#$result[number]&nbsp;&nbsp;<a href='issue.php?id=$result[id]'>" . $result[title] . "</a></h3>";
+        echo "</td>\n";
+        echo "<td valign='middle' align='right'>\n";
+        if ($result[isclosed] == "1")
+            echo "<em class='closed'>Closed</span>";
+        echo "</td>\n";
+        echo "</tr>\n";
+        echo "</table>\n";
+        echo "<div id='issue$result[number]' class='wikiStyle'>" . $result[body] . "</div>\n";
+        echo "<br />\n";
+        echo "<div class='options'>\n";
+        if ($count == 1)
+            echo "<a href='issue.php?id=$result[id]'>$count comment</a>\n";
+        else
+            echo "<a href='issue.php?id=$result[id]'>$count comments</a>\n";
+        echo "&nbsp;Created about " . FriendlyDate(1, strtotime($result[createddate])) . " by <a href='user-edit.php?id=$user[id]'>$user[username]</a>";
+        echo "</div>\n";
+        
+        echo "<script type='text/javascript'>\n";
+        echo "document.getElementById('issue$result[number]').innerHTML = converter.makeHtml(document.getElementById('issue$result[number]').innerHTML);\n";
+        echo "</script>\n";
+        
+        echo "</div>\n";
+    }
+    else
+    {
+        header("Location: project.php?id=$_GET[projectid]");
+        exit;
+    }    
     
 ?>
