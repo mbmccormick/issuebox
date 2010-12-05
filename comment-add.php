@@ -23,7 +23,7 @@
         die('Error: ' . mysql_error());
     }
     
-    if ($_GET[close] == "1")
+    if (isset($_POST[commentandclose] == true)
     {
         $sql = "UPDATE issue SET isclosed = '1' WHERE id='$_GET[issueid]'";
         if (!mysql_query($sql,$con))
