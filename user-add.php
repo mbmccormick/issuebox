@@ -19,11 +19,19 @@
         
         $now = date("Y-m-d H:i:s");
         
-        $sql = "INSERT INTO user (username, password, email, createddate) VALUES
-                ('" . mysql_real_escape_string($_POST[username]) . "', '" . md5(mysql_real_escape_string($_POST[password])) . "', '" . mysql_real_escape_string($_POST[email]) . "', '" . $now . "')";
-        if (!mysql_query($sql,$con))
+        if ($user[password] == $user[passwordconfirm])
         {
-            die('Error: ' . mysql_error());
+            $sql = "INSERT INTO user (username, password, email, createddate) VALUES
+                    ('" . mysql_real_escape_string($_POST[username]) . "', '" . md5(mysql_real_escape_string($_POST[password])) . "', '" . mysql_real_escape_string($_POST[email]) . "', '" . $now . "')";
+            if (!mysql_query($sql,$con))
+            {
+                die('Error: ' . mysql_error());
+            }
+        }
+        else
+        {
+            header("Location: user-add.php?msg=Your passwords do not match!");
+            exit;
         }
         
         mysql_close($con);
@@ -47,11 +55,15 @@
                     <b>Username</b><br />
                     <input type="text" name="username" style="width: 710px;" /><br />
                     <br />
-                    <b>Password</b><br />                    
-                    <input type="text" name="password" style="width: 710px;" /><br />
-                    <br />
                     <b>Email</b><br />                    
                     <input type="text" name="email" style="width: 710px;" /><br />
+                    <br />
+                    <br />
+                    <b>Password</b><br />                    
+                    <input type="password" name="password" style="width: 710px;" /><br />
+                    <br />
+                    <b>Confirm Password</b><br />                    
+                    <input type="password" name="passwordconfirm" style="width: 710px;" /><br />
                 </div>
                 <br />
                 <button type="submit" class="button">
