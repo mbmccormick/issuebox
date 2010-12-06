@@ -44,7 +44,7 @@
             <a href="index.php">Home</a> / <a href="list.php">Projects</a> / <a href="project-edit.php?id=<?php echo $_GET[id]; ?>">Edit Project</a>
         </div>
         <div class="list">
-            <form action="<?php echo $_SERVER[PHP_SELF]; ?>?id=<?php echo $_GET[id]; ?>" method="post">
+            <form id="project-edit" action="<?php echo $_SERVER[PHP_SELF]; ?>?id=<?php echo $_GET[id]; ?>" method="post">
                 <div class="list-item project">
                     <h3>Edit Project</h3>
                     <br />                    
@@ -64,4 +64,25 @@
             </form>
         </div>
     </div>
+    <script type="text/javascript">
+        
+        $("#project-edit").submit(function validate() {
+            var formData = $("#project-edit").serializeArray();
+            for (var i=0; i < formData.length; i++) { 
+                if (!formData[i].value) { 
+                    $(document).showMessage({
+                        thisMessage: ["Please complete all fields, check your input, and try again."],
+                        className: "error",
+                        opacity: 80,
+                        displayNavigation: false,
+                        autoClose: true,
+                        delayTime: 5000
+                    });
+                    
+                    return false;
+                }
+            }
+        });
+        
+    </script>
 <?php include "footer.php"; ?>

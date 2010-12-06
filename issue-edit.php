@@ -46,7 +46,7 @@
             <a href="index.php">Home</a> / <a href="list.php">Projects</a> / <a href="project.php?id=<?php echo $project[id]; ?>"><?php echo $project[name]; ?></a> / <a href="issue.php?id=<?php echo $issue[id]; ?>">Issue #<?php echo $issue[number]; ?></a>
         </div>
         <div class="list">
-            <form action="<?php echo $_SERVER[PHP_SELF]; ?>?id=<?php echo $_GET[id]; ?>" method="post">
+            <form id="issue-edit" action="<?php echo $_SERVER[PHP_SELF]; ?>?id=<?php echo $_GET[id]; ?>" method="post">
                 <div class="list-item issue">
                     <table cellpadding="0" cellspacing="0" style="width: 100%;">
                         <tr>
@@ -75,4 +75,25 @@
             </form>
         </div>
     </div>
+    <script type="text/javascript">
+        
+        $("#issue-edit").submit(function validate() {
+            var formData = $("#issue-edit").serializeArray();
+            for (var i=0; i < formData.length; i++) { 
+                if (!formData[i].value) { 
+                    $(document).showMessage({
+                        thisMessage: ["Please complete all fields, check your input, and try again."],
+                        className: "error",
+                        opacity: 80,
+                        displayNavigation: false,
+                        autoClose: true,
+                        delayTime: 5000
+                    });
+                    
+                    return false;
+                }
+            }
+        });
+        
+    </script>
 <?php include "footer.php"; ?>

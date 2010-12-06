@@ -126,9 +126,27 @@
         $(document).ready(function() { 
             $("#comment-new").ajaxForm({ 
                 data: { returnObject: "true" },
+                beforeSubmit: onBeforeSubmit,
                 success: onSuccess
             }); 
         });
+        
+        function onBeforeSubmit(formData, jqForm, options) {
+            for (var i=0; i < formData.length; i++) { 
+                if (!formData[i].value) { 
+                    $(document).showMessage({
+                        thisMessage: ["Please complete all fields, check your input, and try again."],
+                        className: "error",
+                        opacity: 80,
+                        displayNavigation: false,
+                        autoClose: true,
+                        delayTime: 5000
+                    });
+                    
+                    return false;
+                }
+            }
+        }
         
         function onSuccess(responseText, statusText, xhr, $form) { 
             $(".list-holder").append(responseText);

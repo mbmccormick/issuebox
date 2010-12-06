@@ -45,7 +45,7 @@
             <a href="index.php">Home</a> / <a href="list.php">Projects</a> / <a href="project-add.php">New Project</a>
         </div>
         <div class="list">
-            <form action="<?php echo $_SERVER[PHP_SELF]; ?>" method="post">
+            <form id="project-new" action="<?php echo $_SERVER[PHP_SELF]; ?>" method="post">
                 <div class="list-item issue">
                     <h3>New Project</h3>
                     <br />
@@ -62,4 +62,25 @@
             </form>
         </div>
     </div>
+    <script type="text/javascript">
+        
+        $("#project-new").submit(function validate() {
+            var formData = $("#project-new").serializeArray();
+            for (var i=0; i < formData.length; i++) { 
+                if (!formData[i].value) { 
+                    $(document).showMessage({
+                        thisMessage: ["Please complete all fields, check your input, and try again."],
+                        className: "error",
+                        opacity: 80,
+                        displayNavigation: false,
+                        autoClose: true,
+                        delayTime: 5000
+                    });
+                    
+                    return false;
+                }
+            }
+        });
+        
+    </script>
 <?php include "footer.php"; ?>

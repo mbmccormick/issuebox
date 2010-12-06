@@ -40,7 +40,7 @@
             <a href="index.php">Home</a> / <a href="settings.php">Settings</a> / <a href="user.php">Users</a> / <a href="user-add.php">New User</a>
         </div>
         <div class="list">
-            <form action="<?php echo $_SERVER[PHP_SELF]; ?>" method="post">
+            <form id="user-new" action="<?php echo $_SERVER[PHP_SELF]; ?>" method="post">
                 <div class="list-item user">
                     <h3>New User</h3>
                     <br />
@@ -60,4 +60,25 @@
             </form>
         </div>
     </div>
+    <script type="text/javascript">
+        
+        $("#user-new").submit(function validate() {
+            var formData = $("#user-new").serializeArray();
+            for (var i=0; i < formData.length; i++) { 
+                if (!formData[i].value) { 
+                    $(document).showMessage({
+                        thisMessage: ["Please complete all fields, check your input, and try again."],
+                        className: "error",
+                        opacity: 80,
+                        displayNavigation: false,
+                        autoClose: true,
+                        delayTime: 5000
+                    });
+                    
+                    return false;
+                }
+            }
+        });
+        
+    </script>
 <?php include "footer.php"; ?>

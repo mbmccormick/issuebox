@@ -569,3 +569,11 @@ form label, form .label, label.standard
 {
     background-position: -180px -25px;
 }
+
+.error
+{
+    background-color: #FE2E2E;
+    color: white;
+    font: normal normal 500 large/normal Arial, Helvetica, clean, sans-serif;
+    text-align: center;
+}

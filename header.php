@@ -12,6 +12,7 @@
   <script type="text/javascript" src="js/github-flavored-markdown/scripts/showdown.js"></script>
   <script type="text/javascript" src="js/jquery/jquery-1.4.4.js"></script>
   <script type="text/javascript" src="js/form/jquery.form.js"></script>
+  <script type="text/javascript" src="js/showMessage/jquery.showMessage-2.1.min.js"></script>
 </head> 
 <body> 
     <?php 

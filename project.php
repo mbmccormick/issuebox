@@ -142,11 +142,29 @@
         $(document).ready(function() { 
             $("#issue-new").ajaxForm({ 
                 data: { returnObject: "true" },
-                success: showResponse
+                beforeSubmit: onBeforeSubmit,
+                success: onSuccess
             }); 
         });
         
-        function showResponse(responseText, statusText, xhr, $form) { 
+        function onBeforeSubmit(formData, jqForm, options) {
+            for (var i=0; i < formData.length; i++) { 
+                if (!formData[i].value) { 
+                    $(document).showMessage({
+                        thisMessage: ["Please complete all fields, check your input, and try again."],
+                        className: "error",
+                        opacity: 80,
+                        displayNavigation: false,
+                        autoClose: true,
+                        delayTime: 5000
+                    });
+                    
+                    return false;
+                }
+            }
+        }
+        
+        function onSuccess(responseText, statusText, xhr, $form) { 
             $(".list-holder").append(responseText);
             $(".list-holder .list-item").last().hide().slideDown();
             $("#issue-new input[name=title]").val("");

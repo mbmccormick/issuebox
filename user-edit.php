@@ -59,7 +59,7 @@
             <a href="index.php">Home</a> / <a href="settings.php">Settings</a> / <a href="user.php">Users</a> / <a href="user-edit.php?id=<?php echo $user[id]; ?>"><?php echo $user[username]; ?></a>
         </div>
         <div class="list">
-            <form action="<?php echo $_SERVER[PHP_SELF]; ?>?id=<?php echo $user[id]; ?>" method="post">
+            <form id="user-edit" action="<?php echo $_SERVER[PHP_SELF]; ?>?id=<?php echo $user[id]; ?>" method="post">
                 <div class="list-item user">
                     <h3>Edit User</h3>
                     <br />
@@ -90,4 +90,25 @@
             </form>
         </div>
     </div>
+    <script type="text/javascript">
+        
+        $("#user-edit").submit(function validate() {
+            var formData = $("#user-edit").serializeArray();
+            for (var i=0; i < formData.length; i++) { 
+                if (!formData[i].value) { 
+                    $(document).showMessage({
+                        thisMessage: ["Please complete all fields, check your input, and try again."],
+                        className: "error",
+                        opacity: 80,
+                        displayNavigation: false,
+                        autoClose: true,
+                        delayTime: 5000
+                    });
+                    
+                    return false;
+                }
+            }
+        });
+        
+    </script>
 <?php include "footer.php"; ?>
