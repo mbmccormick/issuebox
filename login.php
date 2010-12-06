@@ -50,4 +50,27 @@
             <a href="password-reset.php">Click here to reset your password.</a>
         </div>
     </div>
+    <?php
+    
+        if (isset($_GET[msg]) == true)
+        {
+        
+    ?>
+    <script type="text/javascript">
+    
+        $(document).showMessage({
+            thisMessage: ["<?php echo $_GET[msg]; ?>"],
+            className: "error",
+            opacity: 80,
+            displayNavigation: false,
+            autoClose: true,
+            delayTime: 5000
+        });
+    
+    </script>
+    <?php
+    
+        }
+        
+    ?>
 <?php include "footer.php"; ?>
