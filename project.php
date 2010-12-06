@@ -169,6 +169,15 @@
             $(".list-holder .list-item").last().hide().slideDown();
             $("#issue-new input[name=title]").val("");
             $("#issue-new textarea[name=body]").val("");
+            
+            $(document).showMessage({
+                thisMessage: ["Your issue was created successfully!"],
+                className: "success",
+                opacity: 80,
+                displayNavigation: false,
+                autoClose: true,
+                delayTime: 5000
+            });
         }
         
     </script>

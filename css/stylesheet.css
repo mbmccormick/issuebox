@@ -577,3 +577,11 @@ form label, form .label, label.standard
     font: normal normal 500 large/normal Arial, Helvetica, clean, sans-serif;
     text-align: center;
 }
+
+.success
+{
+    background-color: #2EBF41;
+    color: white;
+    font: normal normal 500 large/normal Arial, Helvetica, clean, sans-serif;
+    text-align: center;
+}
