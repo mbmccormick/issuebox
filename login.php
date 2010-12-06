@@ -58,13 +58,15 @@
     ?>
     <script type="text/javascript">
     
-        $(document).showMessage({
+        $(document).ready(function() { 
+            $(document).showMessage({
             thisMessage: ["<?php echo $_GET[msg]; ?>"],
             className: "error",
             opacity: 80,
             displayNavigation: false,
             autoClose: true,
             delayTime: 5000
+            });
         });
     
     </script>
