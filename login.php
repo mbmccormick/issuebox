@@ -13,7 +13,7 @@
         }
         else
         {
-            header("Location: login.php?msg=Invalid login credentials.");
+            header("Location: login.php?msg=Please check your login credentials and try again.");
             exit;
         }
     }
