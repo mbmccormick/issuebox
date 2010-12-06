@@ -152,6 +152,15 @@
             $(".list-holder").append(responseText);
             $(".list-holder .list-item").last().hide().slideDown();
             $("#comment-new").resetForm();
+            
+            $(document).showMessage({
+                thisMessage: ["Your comment was created successfully!"],
+                className: "success",
+                opacity: 80,
+                displayNavigation: false,
+                autoClose: true,
+                delayTime: 5000
+            });
         }
         
     </script>
