@@ -204,7 +204,7 @@
                 $("#closed-indicator").fadeIn();
             }
             
-            $(".list-holder .list-item").last().$(".comment > .options > a.minibutton").click(onCommentDeleteClick);
+            $(".comment > .options > a.minibutton").click(onCommentDeleteClick);
         }
         
         <?php
