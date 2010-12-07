@@ -132,6 +132,7 @@
         });
         
         function onBeforeSubmit(formData, jqForm, options) {
+            var formData = $("#comment-new").serializeArray();
             for (var i=0; i < formData.length; i++) { 
                 if (!formData[i].value) { 
                     $(document).showMessage({
