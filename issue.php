@@ -138,6 +138,15 @@
                 {
                     $.get($(this).attr("postback"), function(data) {
                         sender.fadeOut();
+                        
+                        $(document).showMessage({
+                            thisMessage: ["Your comment was deleted successfully!"],
+                            className: "success",
+                            opacity: 80,
+                            displayNavigation: false,
+                            autoClose: true,
+                            delayTime: 5000
+                        });
                     });
                 }
             });
