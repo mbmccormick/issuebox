@@ -78,12 +78,7 @@
             <span>Settings</span>
         </button>
     </div>
-    <?php
-    
-        if (isset($_GET[success]) == true)
-        {
-        
-    ?>
+    <?php if (isset($_GET[success]) == true) { ?>
     <script type="text/javascript">
     
         $(document).ready(function() { 
@@ -98,17 +93,8 @@
         });
     
     </script>
-    <?php
-    
-        }
-        
-    ?>
-    <?php
-    
-        if (isset($_GET[delete]) == true)
-        {
-        
-    ?>
+    <?php } ?>
+    <?php if (isset($_GET[delete]) == true) { ?>
     <script type="text/javascript">
     
         $(document).ready(function() { 
@@ -123,9 +109,5 @@
         });
     
     </script>
-    <?php
-    
-        }
-        
-    ?>
+    <?php } ?>
 <?php include "footer.php"; ?>

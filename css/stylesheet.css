@@ -466,7 +466,7 @@ a:hover
     text-transform: uppercase;
 }
 
-em.closed
+em.closed-indicator
 {
     background: #999;
     border-radius: 3px;
@@ -479,7 +479,7 @@ em.closed
     font-weight: bold;
 }
 
-.mac em.closed
+.mac em.closed-indicator
 {
     padding: 4px 5px 2px 5px;
 }

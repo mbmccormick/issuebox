@@ -35,7 +35,10 @@
                     </div>
                 </td>
                 <td valign="middle" align="right">
-                    <?php include "filter.php"; ?>
+                    <div class="filter">
+                        <a class="filter-on open-indicator" title="Click here to hide open issues."><span>Open</span></a>
+                        <a class="filter-off closed-indicator" title="Click here to show closed issues."><span>Closed</span></a>
+                    </div>
                 </td>
             </tr>
         </table>
@@ -45,14 +48,7 @@
             </script>
             <?php
                 
-                if ($_GET[open] == "1")
-                    $result = mysql_query("SELECT * FROM issue WHERE projectid = '$project[id]' AND isclosed='0' ORDER BY number ASC");
-                if ($_GET[open] == "0")
-                    $result = mysql_query("SELECT * FROM issue WHERE projectid = '$project[id]' AND isclosed='1' ORDER BY number ASC");
-                if ($_GET[open] == "1" && $_GET[closed] == "1")
-                    $result = mysql_query("SELECT * FROM issue WHERE projectid = '$project[id]' AND (isclosed='1' OR isclosed='0') ORDER BY number ASC");  
-                if ($_GET[open] == "0" && $_GET[closed] == "0")
-                    $result = mysql_query("SELECT * FROM issue WHERE projectid = '$project[id]' AND (isclosed='1' AND isclosed='0') ORDER BY number ASC");  
+                $result = mysql_query("SELECT * FROM issue WHERE projectid = '$project[id]' ORDER BY number ASC"); 
                    
                 while($row = mysql_fetch_array($result))
                 {
@@ -62,8 +58,11 @@
                     
                     $sql = mysql_query("SELECT id, username FROM user WHERE id = '$row[createdby]'");
                     $user = mysql_fetch_array($sql);
-                                    
-                    echo "<div class='list-item issue'>\n";
+                    
+                    if ($row[isclosed] == "0")
+                        echo "<div class='list-item issue open'>\n";
+                    else
+                        echo "<div class='list-item issue closed'>\n";
                     
                     echo "<table cellpadding='0' cellspacing='0' style='width: 100%;'>\n";
                     echo "<tr>\n";
@@ -72,7 +71,7 @@
                     echo "</td>\n";
                     echo "<td valign='middle' align='right'>\n";
                     if ($row[isclosed] == "1")
-                        echo "<em class='closed'>Closed</span>";
+                        echo "<em class='closed-indicator'>Closed</span>";
                     echo "</td>\n";
                     echo "</tr>\n";
                     echo "</table>\n";
@@ -140,12 +139,35 @@
     <script type="text/javascript"> 
     
         $(document).ready(function() { 
+            $(".filter a").click(onFilterDisplayClick);
+            
             $("#issue-new").ajaxForm({ 
                 data: { returnObject: "true" },
                 beforeSubmit: onIssueNewSubmit,
                 success: onIssueNewSuccess
             }); 
         });
+        
+        function onFilterDisplayClick() {
+            var sender = $(this);
+            
+            if (sender.attr("class") == "filter-on open-indicator") {
+                sender.attr("class") = "filter-off open-indicator";
+                $(".open").hide();
+            }
+            else if (sender.attr("class") == "filter-off open-indicator") {
+                sender.attr("class") = "filter-on open-indicator";
+                $(".open").show();
+            }
+            else if (sender.attr("class") == "filter-on closed-indicator") {
+                sender.attr("class") = "filter-off closed-indicator";
+                $(".closed").hide();
+            }
+            else if (sender.attr("class") == "filter-off closed-indicator") {
+                sender.attr("class") = "filter-on closed-indicator";
+                $(".closed").show();
+            }
+        }
         
         function onIssueNewSubmit(formData, jqForm, options) {
             for (var i=0; i < formData.length; i++) { 
@@ -180,12 +202,7 @@
             });
         }
         
-        <?php
-    
-            if (isset($_GET[success]) == true)
-            {
-        
-        ?>    
+        <?php if (isset($_GET[success]) == true) { ?>    
         $(document).ready(function() { 
             $(document).showMessage({
             thisMessage: ["This project has been updated successfully!"],
@@ -196,17 +213,8 @@
             delayTime: 5000
             });
         });    
-        <?php
-    
-            }
-            
-        ?>
-        <?php
-    
-            if (isset($_GET[delete]) == true)
-            {
-        
-        ?>    
+        <?php } ?>
+        <?php if (isset($_GET[delete]) == true) { ?>    
         $(document).ready(function() { 
             $(document).showMessage({
             thisMessage: ["Your issue was deleted successfully!"],
@@ -217,10 +225,6 @@
             delayTime: 5000
             });
         });    
-        <?php
-    
-            }
-            
-        ?>
+        <?php } ?>
     </script>
 <?php include "footer.php"; ?>

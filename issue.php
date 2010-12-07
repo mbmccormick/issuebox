@@ -44,9 +44,9 @@
                             <?php
                             
                                 if ($issue[isclosed] == "1")
-                                    echo "<em class='closed'>Closed</span>";
+                                    echo "<em class='closed-indicator'>Closed</span>";
                                 else
-                                    echo "<em id='closed-indicator' class='closed' style='display: none;'>Closed</span>";
+                                    echo "<em class='closed-indicator' style='display: none;'>Closed</span>";
                             
                             ?>
                         </td>
@@ -201,18 +201,13 @@
                 
                 $(".comment-new").hide();
                 $(".list").append("<div class='list-item comment-new'><p>This issue is closed, and no more comments can be added.</p></div>").hide().fadeIn();
-                $("#closed-indicator").fadeIn();
+                $(".closed-indicator").fadeIn();
             }
             
             $(".comment > .options > a.minibutton").click(onCommentDeleteClick);
         }
         
-        <?php
-    
-            if (isset($_GET[success]) == true)
-            {
-        
-        ?>    
+        <?php if (isset($_GET[success]) == true) { ?>    
         $(document).ready(function() { 
             $(document).showMessage({
             thisMessage: ["This issue has been updated successfully!"],
@@ -223,17 +218,8 @@
             delayTime: 5000
             });
         });    
-        <?php
-    
-            }
-            
-        ?>
-        <?php
-    
-            if (isset($_GET[delete]) == true)
-            {
-        
-        ?>    
+        <?php } ?>
+        <?php if (isset($_GET[delete]) == true) { ?>    
         $(document).ready(function() { 
             $(document).showMessage({
             thisMessage: ["Your issue has been deleted successfully!"],
@@ -244,10 +230,6 @@
             delayTime: 5000
             });
         });    
-        <?php
-    
-            }
-            
-        ?>
+        <?php } ?>
     </script>
 <?php include "footer.php"; ?>

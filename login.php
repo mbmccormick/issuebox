@@ -50,12 +50,7 @@
             <a href="password-reset.php">Click here to reset your password.</a>
         </div>
     </div>
-    <?php
-    
-        if (isset($_GET[msg]) == true)
-        {
-        
-    ?>
+    <?php if (isset($_GET[msg]) == true) { ?>
     <script type="text/javascript">
     
         $(document).ready(function() { 
@@ -70,9 +65,5 @@
         });
     
     </script>
-    <?php
-    
-        }
-        
-    ?>
+    <?php } ?>
 <?php include "footer.php"; ?>

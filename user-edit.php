@@ -110,12 +110,7 @@
             }
         });
         
-        <?php
-    
-            if (isset($_GET[success]) == true)
-            {
-        
-        ?>    
+        <?php if (isset($_GET[success]) == true) { ?>    
         $(document).ready(function() { 
             $(document).showMessage({
             thisMessage: ["This user has been updated successfully!"],
@@ -126,10 +121,6 @@
             delayTime: 5000
             });
         });    
-        <?php
-    
-            }
-            
-        ?>
+        <?php } ?>
     </script>
 <?php include "footer.php"; ?>

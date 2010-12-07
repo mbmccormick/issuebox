@@ -60,25 +60,20 @@
             <span>New User</span>
         </button>
     </div>
-    <?php
+    <?php if (isset($_GET[delete]) == true) { ?>  
+    <script type="text/javascript">
     
-        if (isset($_GET[delete]) == true)
-        {
+        $(document).ready(function() { 
+            $(document).showMessage({
+            thisMessage: ["That user was deleted successfully!"],
+            className: "success",
+            opacity: 80,
+            displayNavigation: false,
+            autoClose: true,
+            delayTime: 5000
+            });
+        });    
     
-    ?>    
-    $(document).ready(function() { 
-        $(document).showMessage({
-        thisMessage: ["That user was deleted successfully!"],
-        className: "success",
-        opacity: 80,
-        displayNavigation: false,
-        autoClose: true,
-        delayTime: 5000
-        });
-    });    
-    <?php
-
-        }
-        
-    ?>
+    </script>
+    <?php } ?>
 <?php include "footer.php"; ?>
