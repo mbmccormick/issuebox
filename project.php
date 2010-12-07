@@ -168,7 +168,7 @@
                 $(".closed").show();
             }
             
-            if ($(".closed").length == 0 && $(".open").length == 0)
+            if ($(".closed:visible").length == 0 && $(".open:visible").length == 0)
             {
                 $(".none").show();
             }
