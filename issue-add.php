@@ -64,7 +64,7 @@
             echo "<a href='issue.php?id=$result[id]'>$count comment</a>\n";
         else
             echo "<a href='issue.php?id=$result[id]'>$count comments</a>\n";
-        echo "&nbsp;Created about " . FriendlyDate(1, strtotime($result[createddate])) . " by <a href='user-edit.php?id=$user[id]'>$user[username]</a>";
+        echo "&nbsp;Created just now by <a href='user-edit.php?id=$user[id]'>$user[username]</a>";
         echo "</div>\n";
         
         echo "<script type='text/javascript'>\n";

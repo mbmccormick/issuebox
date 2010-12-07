@@ -154,14 +154,31 @@
             $(".list-holder .list-item").last().hide().slideDown();
             $("#comment-new").resetForm();
             
-            $(document).showMessage({
-                thisMessage: ["Your comment was created successfully!"],
-                className: "success",
-                opacity: 80,
-                displayNavigation: false,
-                autoClose: true,
-                delayTime: 5000
-            });
+            if ($("#issue-closed").length == 0)
+            {
+                $(document).showMessage({
+                    thisMessage: ["Your comment was created successfully!"],
+                    className: "success",
+                    opacity: 80,
+                    displayNavigation: false,
+                    autoClose: true,
+                    delayTime: 5000
+                });
+            }
+            else
+            {
+                $(document).showMessage({
+                    thisMessage: ["Your comment was created successfully and this issue is now closed!"],
+                    className: "success",
+                    opacity: 80,
+                    displayNavigation: false,
+                    autoClose: true,
+                    delayTime: 5000
+                });
+                
+                $(".comment-new").fadeOut();
+                $(".list").append("<div class='list-item comment-new'><p>This issue is closed, and no more comments can be added.</p></div>").hide().fadeIn();
+            }
         }
         
         <?php

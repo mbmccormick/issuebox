@@ -14,15 +14,6 @@
 
     mysql_select_db($Database, $con);
         
-    $now = date("Y-m-d H:i:s");
-    
-    $sql = "INSERT INTO comment (issueid, body, createdby, createddate) VALUES
-            ('$_GET[issueid]', '" . mysql_real_escape_string($_POST[body]) . "', '$CurrentUser_ID', '" . $now . "')";
-    if (!mysql_query($sql,$con))
-    {
-        die('Error: ' . mysql_error());
-    }
-    
     if (isset($_POST[commentandclose]) == true)
     {
         $sql = "UPDATE issue SET isclosed = '1' WHERE id='$_GET[issueid]'";
@@ -30,6 +21,15 @@
         {
             die('Error: ' . mysql_error());
         }
+    }
+    
+    $now = date("Y-m-d H:i:s");
+    
+    $sql = "INSERT INTO comment (issueid, body, createdby, createddate) VALUES
+            ('$_GET[issueid]', '" . mysql_real_escape_string($_POST[body]) . "', '$CurrentUser_ID', '" . $now . "')";
+    if (!mysql_query($sql,$con))
+    {
+        die('Error: ' . mysql_error());
     }
     
     $sql = mysql_query("SELECT * FROM comment WHERE id = '" . mysql_insert_id() . "'");
@@ -44,6 +44,7 @@
     
     if ($_POST[returnObject] == "true")
     {
+        echo "<div id='issue-closed'></div>\n";
         echo "<div class='list-item comment'>\n";
                         
         echo "<div id='comment$result[id]' class='wikiStyle'>" . $result[body] . "</div>\n";
