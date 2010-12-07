@@ -28,7 +28,7 @@
         
         LogActivity(2, $_GET[id], 2);
         
-        header("Location: issue.php?id=$_GET[id]");
+        header("Location: issue.php?id=$_GET[id]&success=true");
         exit;
     }
     

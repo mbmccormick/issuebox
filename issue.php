@@ -164,5 +164,26 @@
             });
         }
         
+        <?php
+    
+            if (isset($_GET[success]) == true)
+            {
+        
+        ?>    
+        $(document).ready(function() { 
+            $(document).showMessage({
+            thisMessage: ["This issue has been updated successfully!"],
+            className: "success",
+            opacity: 80,
+            displayNavigation: false,
+            autoClose: true,
+            delayTime: 5000
+            });
+        });    
+        <?php
+    
+            }
+            
+        ?>
     </script>
 <?php include "footer.php"; ?>

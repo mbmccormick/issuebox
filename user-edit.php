@@ -44,7 +44,7 @@
         
         mysql_close($con);
         
-        header("Location: user-edit.php?id=$_GET[id]");
+        header("Location: user-edit.php?id=$_GET[id]&success=true");
         exit;
     }
     
@@ -110,5 +110,26 @@
             }
         });
         
+        <?php
+    
+            if (isset($_GET[success]) == true)
+            {
+        
+        ?>    
+        $(document).ready(function() { 
+            $(document).showMessage({
+            thisMessage: ["This user has been updated successfully!"],
+            className: "success",
+            opacity: 80,
+            displayNavigation: false,
+            autoClose: true,
+            delayTime: 5000
+            });
+        });    
+        <?php
+    
+            }
+            
+        ?>        
     </script>
 <?php include "footer.php"; ?>

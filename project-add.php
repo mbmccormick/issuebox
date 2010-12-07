@@ -33,7 +33,7 @@
         
         LogActivity(1, $result[id], 1);
         
-        header("Location: index.php");
+        header("Location: list.php?success=true");
         exit;
     }
 
