@@ -92,10 +92,13 @@
                     echo "</div>\n";
                 }
                 
-                echo "<div class='list-item issue none'>\n";
-                echo "<p>There are no issues to display for this project.</p>\n";
-                echo "</div>\n";
-
+                if (mysql_num_rows($result) == 0)
+                {
+                    echo "<div class='list-item issue none'>\n";
+                    echo "<p>There are no issues to display for this project.</p>\n";
+                    echo "</div>\n";
+                }
+                
             ?>
             <div class="list-item issue none" style="display: none;">
                 <p>There are no issues to display for this project.</p>
