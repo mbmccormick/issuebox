@@ -126,35 +126,35 @@
     <script type="text/javascript"> 
     
         $(document).ready(function() { 
+            $(".comment > .options > a.minibutton").click(onCommentDeleteClick());
+            
             $("#comment-new").ajaxForm({ 
                 data: { returnObject: "true" },
-                beforeSubmit: onBeforeSubmit,
-                success: onSuccess
-            }); 
-            
-            $(".comment > .options > a.minibutton").click(function() { 
-                var sender = $(this).parent().parent();
-                if (confirm("Are you sure you want to delete this comment?") == true)
-                {
-                    $.get($(this).attr("postback"), function(data) {
-                        sender.fadeOut();
-                        
-                        $(document).showMessage({
-                            thisMessage: ["Your comment was deleted successfully!"],
-                            className: "success",
-                            opacity: 80,
-                            displayNavigation: false,
-                            autoClose: true,
-                            delayTime: 5000
-                        });
-                    });
-                }
+                beforeSubmit: onCommentNewSubmit,
+                success: onCommentNewSuccess
             });
         });
         
+        function onCommentDeleteClick() {
+            var sender = $(this).parent().parent();
+            if (confirm("Are you sure you want to delete this comment?") == true)
+            {
+                $.get($(this).attr("postback"), function(data) {
+                    sender.fadeOut();
+                    
+                    $(document).showMessage({
+                        thisMessage: ["Your comment was deleted successfully!"],
+                        className: "success",
+                        opacity: 80,
+                        displayNavigation: false,
+                        autoClose: true,
+                        delayTime: 5000
+                    });
+                });
+            }
+        }
         
-        
-        function onBeforeSubmit(formData, jqForm, options) {
+        function onCommentNewSubmit(formData, jqForm, options) {
             var formData = $("#comment-new").serializeArray();
             for (var i=0; i < formData.length; i++) { 
                 if (!formData[i].value) { 
@@ -172,7 +172,7 @@
             }
         }
         
-        function onSuccess(responseText, statusText, xhr, $form) { 
+        function onCommentNewSuccess(responseText, statusText, xhr, $form) { 
             $(".list-holder").append(responseText);
             $(".list-holder .list-item").last().hide().slideDown();
             $("#comment-new").resetForm();
@@ -203,6 +203,8 @@
                 $(".list").append("<div class='list-item comment-new'><p>This issue is closed, and no more comments can be added.</p></div>").hide().fadeIn();
                 $("#closed-indicator").fadeIn();
             }
+            
+            $(".list-holder .list-item").last().$(".comment > .options > a.minibutton").click(onCommentDeleteClick());
         }
         
         <?php
