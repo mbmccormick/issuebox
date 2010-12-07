@@ -44,7 +44,10 @@
     
     if ($_POST[returnObject] == "true")
     {
-        echo "<div id='issue-closed'></div>\n";
+        if (isset($_POST[commentandclose]) == true)
+        {
+            echo "<div id='issue-closed'></div>\n";
+        }
         echo "<div class='list-item comment'>\n";
                         
         echo "<div id='comment$result[id]' class='wikiStyle'>" . $result[body] . "</div>\n";
