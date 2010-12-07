@@ -131,7 +131,15 @@
                 beforeSubmit: onBeforeSubmit,
                 success: onSuccess
             }); 
+            
+            $(".comment").click(function() { 
+                $.get($(this).children(".options > a:first-child").attr("href"), function(data) {
+                    $(this).fadeOut();
+                });
+            });
         });
+        
+        
         
         function onBeforeSubmit(formData, jqForm, options) {
             var formData = $("#comment-new").serializeArray();
