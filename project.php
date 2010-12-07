@@ -142,12 +142,12 @@
         $(document).ready(function() { 
             $("#issue-new").ajaxForm({ 
                 data: { returnObject: "true" },
-                beforeSubmit: onBeforeSubmit,
-                success: onSuccess
+                beforeSubmit: onIssueNewSubmit,
+                success: onIssueNewSuccess
             }); 
         });
         
-        function onBeforeSubmit(formData, jqForm, options) {
+        function onIssueNewSubmit(formData, jqForm, options) {
             for (var i=0; i < formData.length; i++) { 
                 if (!formData[i].value) { 
                     $(document).showMessage({
@@ -164,7 +164,7 @@
             }
         }
         
-        function onSuccess(responseText, statusText, xhr, $form) { 
+        function onIssueNewSuccess(responseText, statusText, xhr, $form) { 
             $(".list-holder").append(responseText);
             $(".list-holder .list-item").last().hide().slideDown();
             $("#issue-new input[name=title]").val("");
@@ -200,6 +200,27 @@
     
             }
             
-        ?>        
+        ?>
+        <?php
+    
+            if (isset($_GET[delete]) == true)
+            {
+        
+        ?>    
+        $(document).ready(function() { 
+            $(document).showMessage({
+            thisMessage: ["Your issue was deleted successfully!"],
+            className: "success",
+            opacity: 80,
+            displayNavigation: false,
+            autoClose: true,
+            delayTime: 5000
+            });
+        });    
+        <?php
+    
+            }
+            
+        ?>
     </script>
 <?php include "footer.php"; ?>

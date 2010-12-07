@@ -21,7 +21,7 @@
 
     mysql_close($con);
     
-    header("Location: user.php");
+    header("Location: user.php?delete=true");
     exit;
     
 ?>

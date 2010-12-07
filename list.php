@@ -103,4 +103,29 @@
         }
         
     ?>
+    <?php
+    
+        if (isset($_GET[delete]) == true)
+        {
+        
+    ?>
+    <script type="text/javascript">
+    
+        $(document).ready(function() { 
+            $(document).showMessage({
+            thisMessage: ["Your project was deleted successfully!"],
+            className: "success",
+            opacity: 80,
+            displayNavigation: false,
+            autoClose: true,
+            delayTime: 5000
+            });
+        });
+    
+    </script>
+    <?php
+    
+        }
+        
+    ?>
 <?php include "footer.php"; ?>

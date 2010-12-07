@@ -41,7 +41,7 @@
     
     PurgeActivity(1, $_GET[id]);
     
-    header("Location: list.php");
+    header("Location: list.php?delete=true");
     exit;
     
 ?>
