@@ -92,14 +92,14 @@
                     echo "</div>\n";
                 }
                 
-                if (mysql_num_rows($result) == 0)
-                {
-                    echo "<div class='list-item issue'>\n";
-                    echo "<p>There are no open issues for this project.</p>\n";
-                    echo "</div>\n";
-                }
+                echo "<div class='list-item issue none'>\n";
+                echo "<p>There are no issues to display for this project.</p>\n";
+                echo "</div>\n";
 
             ?>
+            <div class="list-item issue none" style="display: none;">
+                <p>There are no issues to display for this project.</p>
+            </div>
             <div class="list-holder">
             </div>
             <div class="list-item issue-new">
@@ -166,6 +166,15 @@
             else if (sender.attr("class") == "filter-off closed-indicator") {
                 sender.attr("class", "filter-on closed-indicator");
                 $(".closed").show();
+            }
+            
+            if ($(".closed").length == 0 && $(".open").length == 0)
+            {
+                $(".none").show();
+            }
+            else
+            {
+                $(".none").hide();
             }
         }
         
