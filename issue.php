@@ -133,7 +133,7 @@
             }); 
             
             $(".comment > .options > a.minibutton").click(function() { 
-                var sender = $(this);
+                var sender = $(this).parent().parent();
                 if (confirm("Are you sure you want to delete this comment?") == true)
                 {
                     $.get($(this).children(".options > a:first-child").attr("postback"), function(data) {
