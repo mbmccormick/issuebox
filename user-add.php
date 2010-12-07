@@ -45,7 +45,7 @@
     <?php SetPageTitle("New User"); ?>
     <div class="content">
         <div class="navigation">
-            <a href="index.php">Home</a> / <a href="settings.php">Settings</a> / <a href="user.php">Users</a> / <a href="user-add.php">New User</a>
+            <a href="settings.php">Settings</a> / <a href="user.php">Users</a> / <a href="user-add.php">New User</a>
         </div>
         <div class="list">
             <form id="user-new" action="<?php echo $_SERVER[PHP_SELF]; ?>" method="post">

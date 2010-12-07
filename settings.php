@@ -11,7 +11,7 @@
     <?php SetPageTitle("Settings"); ?>
     <div class="content">
         <div class="navigation">
-            <a href="index.php">Home</a> / <a href="settings.php">Settings</a>
+            <a href="settings.php">Settings</a>
         </div>
         <div class="list">
             <div class="list-item setting">

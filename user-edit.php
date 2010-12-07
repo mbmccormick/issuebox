@@ -56,7 +56,7 @@
     <?php SetPageTitle($user[username]); ?>
     <div class="content">
         <div class="navigation">
-            <a href="index.php">Home</a> / <a href="settings.php">Settings</a> / <a href="user.php">Users</a> / <a href="user-edit.php?id=<?php echo $user[id]; ?>"><?php echo $user[username]; ?></a>
+            <a href="settings.php">Settings</a> / <a href="user.php">Users</a> / <a href="user-edit.php?id=<?php echo $user[id]; ?>"><?php echo $user[username]; ?></a>
         </div>
         <div class="list">
             <form id="user-edit" action="<?php echo $_SERVER[PHP_SELF]; ?>?id=<?php echo $user[id]; ?>" method="post">

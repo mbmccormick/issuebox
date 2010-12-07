@@ -16,68 +16,116 @@
 
 ?>
 <?php include "header.php"; ?>
-    <?php SetPageTitle("Activity"); ?>
+    <?php SetPageTitle("Projects"); ?>
     <div class="content">
-         <table cellpadding="0" cellspacing="0" style="width: 100%; padding-bottom: 20px;">
-            <tr>
-                <td valign="middle">
-                    <div class="navigation" style="padding: 0px;">
-                        <a href="index.php">Home</a>
-                    </div>
-                </td>
-                <td valign="middle" align="right">
-                    <a class="minibutton btn-projects" title="Click here to go to projects." href="list.php" style="padding: 2px 0px 1px 3px;">
-                        <span>Projects<span class="icon"></span></span>
-                    </a>
-                </td>
-            </tr>
-        </table>
+        <div class="navigation">
+            <a href="index.php">Projects</a>
+        </div>
         <div class="list">
             <?php
 
-                $result = mysql_query("SELECT * FROM activity ORDER BY createddate DESC LIMIT 20");
+                $result = mysql_query("SELECT * FROM project ORDER BY name ASC");
                 while($row = mysql_fetch_array($result))
                 {
-                    $sql = mysql_query("SELECT * FROM user WHERE id = '$row[createdby]'");
-                    $user = mysql_fetch_array($sql);
+                    $sql = mysql_query("SELECT COUNT(*) AS rowcount FROM issue WHERE projectid = '$row[id]' AND isclosed = '0'");
+                    $return = mysql_fetch_array($sql);
+                    $open = $return[rowcount];
                     
-                    echo "<div class='list-item activity'>\n";
-                    echo "<table cellpadding='0' cellspacing='0' style='width: 100%;'>\n";
+                    $sql = mysql_query("SELECT COUNT(*) AS rowcount FROM issue WHERE projectid = '$row[id]' AND isclosed = '1'");
+                    $return = mysql_fetch_array($sql);
+                    $closed = $return[rowcount];
+                                        
+                    echo "<div class='list-item project'>\n";
+                    echo "<table cellpadding='0' cellspacing='0' style='width: 100%;'><tr>\n";
                     
-                    echo "<tr>\n";
-                    echo "<td rowspan='2' valign='top' style='width: 25px;'>\n";
-                    if ($row[itemtype] == "1")
-                        echo "<img src='img/project" . $row[actiontype] . ".png' alt='$row[actiontype]' />\n";
-                    else if ($row[itemtype] == "2")
-                        echo "<img src='img/issue" . $row[actiontype] . ".png' alt='$row[actiontype]' />\n";
-                    else if ($row[itemtype] == "3")
-                        echo "<img src='img/comment" . $row[actiontype] . ".png' alt='$row[actiontype]' />\n";
+                    echo "<td width='100%'>\n";
+                    echo "<h3><a href='project.php?id=$row[id]'>" . $row[name] . "</a></h3><br />\n";
+                    echo "<p>" . $row[description] . "</p>\n";
                     echo "</td>\n";
-                    echo "<td colspan='2' style='padding-bottom: 7px;'>\n";
-                    echo "<b><a href='user-edit.php?id=" . $user[id] . "'>" . $user[username] . "</a> " . $row[headline] . " about " . FriendlyDate(1, strtotime($row[createddate])) . "</b>\n";
-                    echo "</td>\n";
-                    echo "</tr>\n";
-                    echo "<tr>\n";
-                    echo "<td valign='top' style='width: 45px;'>\n";
-                    echo "<img src='http://www.gravatar.com/avatar/" . md5($user[email]) . "?s=30' style='padding: 2px; border: 1px solid #D0D0D0; background-color: #ffffff;' />\n";
-                    echo "</td>\n";
-                    echo "<td valign='top'>\n";
-                    echo "<span class='description'>" . FriendlyString($row[description]) . "</span>\n";
-                    echo "</td>\n";
-                    echo "</tr>\n";                    
                     
-                    echo "</table>\n";
+                    echo "<td>\n";
+                    echo "<div class='counter'>\n";
+                    echo "<big>$open</big>\n";
+                    echo "Open Issues\n";
+                    echo "</div>\n";
+                    echo "</td>\n";
+                    
+                    echo "<td>\n";
+                    echo "<div class='counter'>\n";
+                    echo "<big>$closed</big>\n";
+                    echo "Closed Issues\n";
+                    echo "</div>\n";
+                    echo "</td>\n";    
+                    
+                    echo "</tr></table>\n";
                     echo "</div>\n";
                 }
                 
                 if (mysql_num_rows($result) == 0)
                 {
-                    echo "<div class='list-item activity'>\n";
-                    echo "<p>There is currently no activity to display.</p>\n";
+                    echo "<div class='list-item project'>\n";
+                    echo "<p>There are currently no projects setup.</p>\n";
                     echo "</div>\n";
                 }
 
             ?>
         </div>
+        <br />
+        <button type="button" class="button" onclick="location.href='project-add.php';">
+            <span>New Project</span>
+        </button>
+        <button type="button" class="button" onclick="location.href='settings.php';">
+            <span>Settings</span>
+        </button>
     </div>
+    <?php
+    
+        if (isset($_GET[success]) == true)
+        {
+        
+    ?>
+    <script type="text/javascript">
+    
+        $(document).ready(function() { 
+            $(document).showMessage({
+            thisMessage: ["Your project was created successfully!"],
+            className: "success",
+            opacity: 80,
+            displayNavigation: false,
+            autoClose: true,
+            delayTime: 5000
+            });
+        });
+    
+    </script>
+    <?php
+    
+        }
+        
+    ?>
+    <?php
+    
+        if (isset($_GET[delete]) == true)
+        {
+        
+    ?>
+    <script type="text/javascript">
+    
+        $(document).ready(function() { 
+            $(document).showMessage({
+            thisMessage: ["Your project was deleted successfully!"],
+            className: "success",
+            opacity: 80,
+            displayNavigation: false,
+            autoClose: true,
+            delayTime: 5000
+            });
+        });
+    
+    </script>
+    <?php
+    
+        }
+        
+    ?>
 <?php include "footer.php"; ?>

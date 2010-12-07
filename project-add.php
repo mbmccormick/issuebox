@@ -33,7 +33,7 @@
         
         LogActivity(1, $result[id], 1);
         
-        header("Location: list.php?success=true");
+        header("Location: index.php?success=true");
         exit;
     }
 
@@ -42,7 +42,7 @@
     <?php SetPageTitle("New Project"); ?>
     <div class="content">
         <div class="navigation">
-            <a href="index.php">Home</a> / <a href="list.php">Projects</a> / <a href="project-add.php">New Project</a>
+            <a href="index.php">Projects</a> / <a href="project-add.php">New Project</a>
         </div>
         <div class="list">
             <form id="project-new" action="<?php echo $_SERVER[PHP_SELF]; ?>" method="post">
