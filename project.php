@@ -62,7 +62,7 @@
                     if ($row[isclosed] == "0")
                         echo "<div class='list-item issue open'>\n";
                     else
-                        echo "<div class='list-item issue closed'>\n";
+                        echo "<div class='list-item issue closed' style='display: none;'>\n";
                     
                     echo "<table cellpadding='0' cellspacing='0' style='width: 100%;'>\n";
                     echo "<tr>\n";
