@@ -45,6 +45,8 @@
                             
                                 if ($issue[isclosed] == "1")
                                     echo "<em class='closed'>Closed</span>";
+                                else
+                                    echo "<em id='closed-indicator' class='closed' style='display: none;'>Closed</span>";
                             
                             ?>
                         </td>
@@ -176,8 +178,9 @@
                     delayTime: 5000
                 });
                 
-                $(".comment-new").fadeOut();
+                $(".comment-new").hide();
                 $(".list").append("<div class='list-item comment-new'><p>This issue is closed, and no more comments can be added.</p></div>").hide().fadeIn();
+                $("#closed-indicator").fadeIn();
             }
         }
         
