@@ -108,11 +108,11 @@
                     <textarea name="body" style="width: 710px;" rows="8"></textarea>
                     <br />
                     <br />
-                    <button type="submit" name="commentandclose" class="button">
-                        <span>Comment &amp; Close</span>
-                    </button>
                     <button type="submit" name="comment" class="button">
                         <span>Comment</span>
+                    </button>
+                    <button type="submit" name="commentandclose" class="button">
+                        <span>Comment &amp; Close</span>
                     </button>
                 </form>
             </div>
