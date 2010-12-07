@@ -76,7 +76,7 @@
                     echo "<div id='comment$row[id]' class='wikiStyle'>" . $row[body] . "</div>\n";
                     echo "<br />\n";
                     echo "<div class='options'>\n";
-                    echo "<a class='minibutton' onclick=\"return confirm('Are you sure you want to delete this comment?');\" href='comment-delete.php?id=$row[id]&issueid=$row[issueid]'><span>Delete</span></a>\n";
+                    echo "<a class='minibutton' postback='comment-delete.php?id=$row[id]&issueid=$row[issueid]'><span>Delete</span></a>\n";
                     echo "&nbsp;&nbsp;" . date("F j, Y", strtotime($row[createddate]));
                     echo " by <a href='user-edit.php?id=$user[id]'>$user[username]</a>";
                     echo "</div>\n";
@@ -132,10 +132,13 @@
                 success: onSuccess
             }); 
             
-            $(".comment").click(function() { 
-                $.get($(this).children(".options > a:first-child").attr("href"), function(data) {
-                    $(this).fadeOut();
-                });
+            $(".comment > .options > a.minibutton").click(function() { 
+                if (confirm("Are you sure you want to delete this comment?") == true)
+                {
+                    $.get($(this).children(".options > a:first-child").attr("postback"), function(data) {
+                        $(this).fadeOut();
+                    });
+                }
             });
         });
         
