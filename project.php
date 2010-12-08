@@ -17,12 +17,6 @@
     $result = mysql_query("SELECT * FROM project WHERE id = '$_GET[id]'");
     $project = mysql_fetch_array($result);
     
-    if (!isset($_GET[open]) || $_GET[open] == null)
-        $_GET[open] = "1";
-        
-    if (!isset($_GET[closed]) || $_GET[closed] == null)
-        $_GET[closed] = "0";
-    
 ?>
 <?php include "header.php"; ?>
     <?php SetPageTitle($project[name]); ?>
@@ -156,28 +150,28 @@
             
             if (sender.attr("class") == "filter-on open-indicator") {
                 sender.attr("class", "filter-off open-indicator");
-                $(".open").hide();
+                $(".open").slideUp();
             }
             else if (sender.attr("class") == "filter-off open-indicator") {
                 sender.attr("class", "filter-on open-indicator");
-                $(".open").show();
+                $(".open").slideDown();
             }
             else if (sender.attr("class") == "filter-on closed-indicator") {
                 sender.attr("class", "filter-off closed-indicator");
-                $(".closed").hide();
+                $(".closed").slideUp();
             }
             else if (sender.attr("class") == "filter-off closed-indicator") {
                 sender.attr("class", "filter-on closed-indicator");
-                $(".closed").show();
+                $(".closed").slideDown();
             }
             
             if ($(".closed:visible").length == 0 && $(".open:visible").length == 0)
             {
-                $(".none").show();
+                $(".none").slideDown();
             }
             else
             {
-                $(".none").hide();
+                $(".none").slideUp();
             }
         }
         
