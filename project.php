@@ -194,7 +194,7 @@
         
         function onIssueNewSuccess(responseText, statusText, xhr, $form) { 
             $(".list-holder").append(responseText);
-            $(".list-holder .list-item").last().hide().slideDown();
+            $(".list-holder .list-item").last().hide().fadeIn();
             $("#issue-new input[name=title]").val("");
             $("#issue-new textarea[name=body]").val("");
             

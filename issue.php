@@ -174,7 +174,7 @@
         
         function onCommentNewSuccess(responseText, statusText, xhr, $form) { 
             $(".list-holder").append(responseText);
-            $(".list-holder .list-item").last().hide().slideDown();
+            $(".list-holder .list-item").last().hide().fadeIn();
             $("#comment-new").resetForm();
             
             if ($("#issue-closed").length == 0)
