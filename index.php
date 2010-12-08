@@ -85,7 +85,7 @@
             $(document).showMessage({
             thisMessage: ["Your project was created successfully!"],
             className: "success",
-            opacity: 100,
+            opacity: 95,
             displayNavigation: false,
             autoClose: true,
             delayTime: 5000
@@ -101,7 +101,7 @@
             $(document).showMessage({
             thisMessage: ["Your project was deleted successfully!"],
             className: "success",
-            opacity: 100,
+            opacity: 95,
             displayNavigation: false,
             autoClose: true,
             delayTime: 5000
