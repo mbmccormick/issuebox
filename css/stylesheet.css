@@ -348,6 +348,11 @@ a:hover
     cursor: pointer;
 }
 
+.filter-off:hover
+{
+    text-decoration: none;
+}
+
 .webkit .filter-off
 {
     background: -webkit-gradient(linear, 0% 100%, 0% 0%, from(#E1E1E1), to(#ffffff));
@@ -392,6 +397,11 @@ a:hover
     text-shadow: rgba(0, 0, 0, 0.296875) 1px 1px 0px;
     white-space: nowrap;
     cursor: pointer;
+}
+
+.filter-on:hover
+{
+    text-decoration: none;
 }
 
 .webkit .filter-on
