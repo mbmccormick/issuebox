@@ -169,7 +169,7 @@
 						clearTimeout(showMessage_t);
 					}
 					showMessage_t = setTimeout( function() { 
-								$('#showMessage', window.parent.document).fadeOut();
+								$('#showMessage', window.parent.document).slideUp();
 						}, option.delayTime);
 				}
 			});
@@ -179,7 +179,7 @@
 			if( $('#showMessage', window.parent.document).length )
 			{
 				clearTimeout(showMessage_t);
-				$('#showMessage', window.parent.document).fadeOut();
+				$('#showMessage', window.parent.document).slideUp();
 			}
 		};
 })(jQuery);
