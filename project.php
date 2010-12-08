@@ -150,28 +150,28 @@
             
             if (sender.attr("class") == "filter-on open-indicator") {
                 sender.attr("class", "filter-off open-indicator");
-                $(".open").slideUp();
+                $(".open").hide();
             }
             else if (sender.attr("class") == "filter-off open-indicator") {
                 sender.attr("class", "filter-on open-indicator");
-                $(".open").slideDown();
+                $(".open").show();
             }
             else if (sender.attr("class") == "filter-on closed-indicator") {
                 sender.attr("class", "filter-off closed-indicator");
-                $(".closed").slideUp();
+                $(".closed").hide();
             }
             else if (sender.attr("class") == "filter-off closed-indicator") {
                 sender.attr("class", "filter-on closed-indicator");
-                $(".closed").slideDown();
+                $(".closed").show();
             }
             
             if ($(".closed:visible").length == 0 && $(".open:visible").length == 0)
             {
-                $(".none").slideDown();
+                $(".none").show();
             }
             else
             {
-                $(".none").slideUp();
+                $(".none").hide();
             }
         }
         
