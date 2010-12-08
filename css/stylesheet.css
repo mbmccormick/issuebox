@@ -345,16 +345,7 @@ a:hover
     padding: 1px 0px 1px 3px;
     text-shadow: white 1px 1px 0px;
     white-space: nowrap;
-}
-
-.filter-off:hover
-{
-    border-width: 1px;
-    border-style: solid;
-    border-color: #666666 #888888 #888888 #666666;
-    color: white;
-    text-decoration: none;
-    text-shadow: rgba(0, 0, 0, 0.296875) 1px 1px 0px;
+    cursor: pointer;
 }
 
 .webkit .filter-off
@@ -363,30 +354,15 @@ a:hover
     padding: 1px 0px 0px 3px;
 }
 
-.webkit .filter-off:hover
-{
-    background: -webkit-gradient(linear, 0% 100%, 0% 0%, from(#999999), to(#888888));
-}
-
 .gecko .filter-off
 {
     -moz-border-radius: 3px;
     background: -moz-linear-gradient(center bottom, #E1E1E1 0%, #ffffff 100%);
 }
 
-.gecko .filter-off:hover
-{
-    background: -moz-linear-gradient(center bottom, #999999 0%, #888888 100%);
-}
-
 .ie .filter-off
 {
     filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#ffffff', EndColorStr='#E1E1E1', GradientType=0);
-}
-
-.ie .filter-off:hover
-{
-    filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#888888', EndColorStr='#999999', GradientType=0);
 }
 
 .filter-off span
@@ -415,14 +391,7 @@ a:hover
     padding: 1px 0px 1px 3px;
     text-shadow: rgba(0, 0, 0, 0.296875) 1px 1px 0px;
     white-space: nowrap;
-}
-
-.filter-on:hover
-{
-    border: 1px solid #D4D4D4;
-    color: #333;
-    text-decoration: none;
-    text-shadow: white 1px 1px 0px;
+    cursor: pointer;
 }
 
 .webkit .filter-on
@@ -431,30 +400,15 @@ a:hover
     padding: 1px 0px 0px 3px;
 }
 
-.webkit .filter-on:hover
-{
-    background: -webkit-gradient(linear, 0% 100%, 0% 0%, from(#E1E1E1), to(#ffffff));
-}
-
 .gecko .filter-on
 {
     -moz-border-radius: 3px;
     background: -moz-linear-gradient(center bottom, #999999 0%, #888888 100%);
 }
 
-.gecko .filter-on:hover
-{
-    background: -moz-linear-gradient(center bottom, #E1E1E1 0%, #ffffff 100%);
-}
-
 .ie .filter-on
 {
     filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#888888', EndColorStr='#999999', GradientType=0);
-}
-
-.ie .filter-on:hover
-{
-    filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#ffffff', EndColorStr='#E1E1E1', GradientType=0);
 }
 
 .filter-on span
