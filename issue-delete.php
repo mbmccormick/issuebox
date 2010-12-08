@@ -30,7 +30,7 @@
     
     PurgeActivity(2, $_GET[id]);
     
-    header("Location: project.php?id=$_GET[projectid]&deleted=true");
+    header("Location: project.php?id=$_GET[projectid]&delete=true");
     exit;
     
 ?>
