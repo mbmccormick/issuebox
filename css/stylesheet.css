@@ -215,7 +215,7 @@ a:hover
     background: -webkit-gradient(linear, 0% 100%, 0% 0%, from(#3072B3), to(#599BDC));
 }
 
-.webkit .button:mousedown
+.webkit .button.mousedown
 {
     background: -webkit-gradient(linear, 0% 100%, 0% 0%, from(#599BDC), to(#3072B3));
 }
@@ -225,7 +225,7 @@ a:hover
     background: -webkit-gradient(linear, 0% 100%, 0% 0%, from(#B33630) to(#DC5F59));
 }
 
-.webkit .danger:mousedown
+.webkit .danger.mousedown
 {
     background: -webkit-gradient(linear, 0% 100%, 0% 0%, from(#DC5F59) to(#B33630));
 }
@@ -242,7 +242,7 @@ a:hover
     background: -moz-linear-gradient(center bottom, #3072B3 0%, #599BDC 100%);
 }
 
-.gecko .button:mousedown
+.gecko .button.mousedown
 {
     background: -moz-linear-gradient(center bottom, #599BDC 0%, #3072B3 100%);
 }
@@ -252,7 +252,7 @@ a:hover
     background: -moz-linear-gradient(center bottom, #B33630 0%, #DC5F59 100%);
 }
 
-.gecko .danger:mousedown
+.gecko .danger.mousedown
 {
     background: -moz-linear-gradient(center bottom, #DC5F59 0%, #B33630 100%);
 }
@@ -267,7 +267,7 @@ a:hover
     filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#599BDC', EndColorStr='#3072B3', GradientType=0);
 }
 
-.ie .button:mousedown
+.ie .button.mousedown
 {
     filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#3072B3', EndColorStr='#599BDC', GradientType=0);
 }
@@ -277,7 +277,7 @@ a:hover
     filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#DC5F59', EndColorStr='#B33630', GradientType=0);
 }
 
-.ie .danger:mousedown
+.ie .danger.mousedown
 {
     filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#B33630', EndColorStr='#DC5F59', GradientType=0);
 }
