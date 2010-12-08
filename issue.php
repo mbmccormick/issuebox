@@ -204,6 +204,7 @@
                 $(".closed-indicator").fadeIn();
             }
             
+            $(".comment > .options > a.minibutton").unbind();
             $(".comment > .options > a.minibutton").click(onCommentDeleteClick);
         }
         
