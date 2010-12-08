@@ -81,7 +81,7 @@
                     $(document).showMessage({
                         thisMessage: ["Please complete all fields, check your input, and try again."],
                         className: "error",
-                        opacity: 80,
+                        opacity: 100,
                         displayNavigation: false,
                         autoClose: true,
                         delayTime: 5000

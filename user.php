@@ -67,7 +67,7 @@
             $(document).showMessage({
             thisMessage: ["That user was deleted successfully!"],
             className: "success",
-            opacity: 80,
+            opacity: 100,
             displayNavigation: false,
             autoClose: true,
             delayTime: 5000

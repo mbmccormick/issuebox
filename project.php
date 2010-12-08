@@ -181,7 +181,7 @@
                     $(document).showMessage({
                         thisMessage: ["Please complete all fields, check your input, and try again."],
                         className: "error",
-                        opacity: 80,
+                        opacity: 100,
                         displayNavigation: false,
                         autoClose: true,
                         delayTime: 5000
@@ -201,7 +201,7 @@
             $(document).showMessage({
                 thisMessage: ["Your issue was created successfully!"],
                 className: "success",
-                opacity: 80,
+                opacity: 100,
                 displayNavigation: false,
                 autoClose: true,
                 delayTime: 5000
@@ -213,7 +213,7 @@
             $(document).showMessage({
             thisMessage: ["This project has been updated successfully!"],
             className: "success",
-            opacity: 80,
+            opacity: 100,
             displayNavigation: false,
             autoClose: true,
             delayTime: 5000
@@ -225,7 +225,7 @@
             $(document).showMessage({
             thisMessage: ["Your issue was deleted successfully!"],
             className: "success",
-            opacity: 80,
+            opacity: 100,
             displayNavigation: false,
             autoClose: true,
             delayTime: 5000

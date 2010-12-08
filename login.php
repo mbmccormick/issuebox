@@ -57,7 +57,7 @@
             $(document).showMessage({
             thisMessage: ["<?php echo $_GET[msg]; ?>"],
             className: "error",
-            opacity: 80,
+            opacity: 100,
             displayNavigation: false,
             autoClose: true,
             delayTime: 5000
