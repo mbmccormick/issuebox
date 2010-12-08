@@ -84,7 +84,7 @@
                 <button type="submit" class="button">
                     <span>Save User</span>
                 </button>
-                <button type="button" class="button" onclick="confirm('Are you sure you want to delete this user?') ? location.href='user-delete.php?id=<?php echo $_GET[id]; ?>' : false;">
+                <button type="button" class="button danger" onclick="confirm('Are you sure you want to delete this user?') ? location.href='user-delete.php?id=<?php echo $_GET[id]; ?>' : false;">
                     <span>Delete</span>
                 </button>
             </form>

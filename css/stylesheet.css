@@ -184,9 +184,21 @@ a:hover
     white-space: nowrap;
 }
 
+.button .danger
+{
+    color: #990000;
+}
+
 .button:hover
 {
     border-bottom-color: #2A65A0;
+    color: white;
+    text-shadow: rgba(0, 0, 0, 0.296875) -1px -1px 0px;
+}
+
+.button .danger:hover
+{
+    border-bottom-color: #CD504A;
     color: white;
     text-shadow: rgba(0, 0, 0, 0.296875) -1px -1px 0px;
 }
@@ -203,6 +215,11 @@ a:hover
     background: -webkit-gradient(linear, 0% 100%, 0% 0%, from(#3072B3), to(#599BDC));
 }
 
+.webkit .button .danger:hover
+{
+    background: -webkit-gradient(linear, 0% 100%, 0% 0%, from(#B33630) to(#DC5F59));
+}
+
 .gecko .button
 {
     background: -moz-linear-gradient(center bottom, #E1E1E1 0%, #ffffff 100%);
@@ -215,6 +232,11 @@ a:hover
     background: -moz-linear-gradient(center bottom, #3072B3 0%, #599BDC 100%);
 }
 
+.gecko .button .danger:hover
+{
+    background: -moz-linear-gradient(center bottom, #B33630 0%, #DC5F59 100%);
+}
+
 .ie .button
 {
     filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#ffffff', EndColorStr='#E1E1E1', GradientType=0);
@@ -223,6 +245,11 @@ a:hover
 .ie .button:hover
 {
     filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#599BDC', EndColorStr='#3072B3', GradientType=0);
+}
+
+.ie .button .danger:hover
+{
+    filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#DC5F59', EndColorStr='#B33630', GradientType=0);
 }
 
 .button span

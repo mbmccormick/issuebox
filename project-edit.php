@@ -58,7 +58,7 @@
                 <button type="submit" class="button">
                     <span>Save Project</span>
                 </button>
-                <button type="button" class="button" onclick="confirm('Are you sure you want to delete this project and all of its issues?') ? location.href='issue-delete.php?id=<?php echo $_GET[id]; ?>' : false;">
+                <button type="button" class="button danger" onclick="confirm('Are you sure you want to delete this project and all of its issues?') ? location.href='issue-delete.php?id=<?php echo $_GET[id]; ?>' : false;">
                     <span>Delete</span>
                 </button>
             </form>
