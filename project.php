@@ -138,6 +138,8 @@
         $(document).ready(function() { 
             $(".filter a").click(onFilterDisplayClick);
             
+            checkDisplayNone();
+            
             $("#issue-new").ajaxForm({ 
                 data: { returnObject: "true" },
                 beforeSubmit: onIssueNewSubmit,
@@ -165,14 +167,7 @@
                 $(".closed").show();
             }
             
-            if ($(".closed:visible").length == 0 && $(".open:visible").length == 0)
-            {
-                $(".none").show();
-            }
-            else
-            {
-                $(".none").hide();
-            }
+            checkDisplayNone();
         }
         
         function onIssueNewSubmit(formData, jqForm, options) {
@@ -206,6 +201,17 @@
                 autoClose: true,
                 delayTime: 5000
             });
+        }
+        
+        function checkDisplayNone() {
+            if ($(".closed:visible").length == 0 && $(".open:visible").length == 0)
+            {
+                $(".none").show();
+            }
+            else
+            {
+                $(".none").hide();
+            }
         }
         
         <?php if (isset($_GET[success]) == true) { ?>    
