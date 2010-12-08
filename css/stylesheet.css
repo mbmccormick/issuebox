@@ -573,6 +573,7 @@ form label, form .label, label.standard
 .error
 {
     background-color: #E64343;
+    border-bottom: 3px solid #B53333;
     color: white;
     font: normal normal 500 large/normal Arial, Helvetica, clean, sans-serif;
     text-align: center;
@@ -581,6 +582,7 @@ form label, form .label, label.standard
 .success
 {
     background-color: #42A84F;
+    border-bottom: 3px solid #288033;
     color: white;
     font: normal normal 500 large/normal Arial, Helvetica, clean, sans-serif;
     text-align: center;
