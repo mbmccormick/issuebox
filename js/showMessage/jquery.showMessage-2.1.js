@@ -130,7 +130,7 @@
 						.css({
 								'width':'90%',
 								'margin':'1em auto',
-								'padding':'0.5em'
+								'padding':0
 						});
 					    var showmessageul = $('<ul></ul>')
 								.css({
