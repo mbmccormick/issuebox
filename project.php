@@ -42,7 +42,7 @@
             </script>
             <?php
                 
-                $result = mysql_query("SELECT * FROM issue WHERE projectid = '$project[id]' ORDER BY number ASC"); 
+                $result = mysql_query("SELECT * FROM issue WHERE projectid = '$project[id]' ORDER BY isurgent DESC, number ASC"); 
                    
                 while($row = mysql_fetch_array($result))
                 {
