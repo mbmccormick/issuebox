@@ -128,6 +128,8 @@ a:hover
     font-size: 9px;
     margin-left: 5px;
     text-shadow: #ffffff 0px 1px 0px;
+    border-right: solid 1px #bbbbbb;
+    border-bottom: solid 1px #bbbbbb;
 }
 
 .webkit .counter
