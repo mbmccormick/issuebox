@@ -131,17 +131,17 @@ a:hover
 
 .webkit .counter
 {
-    background: -webkit-gradient(linear, 0% 100%, 0% 0%, from(#777777), to(#999999));
+    background: -webkit-gradient(linear, 0% 100%, 0% 0%, from(#999999), to(#BABABA));
 }
 
 .gecko .counter
 {
-    background: -moz-linear-gradient(center bottom, #777777 0%, #999999 100%);
+    background: -moz-linear-gradient(center bottom, #999999 0%, #BABABA 100%);
 }
 
 .ie .counter
 {
-    filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#999999', EndColorStr='#777777', GradientType=0);
+    filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#BABABA', EndColorStr='#999999', GradientType=0);
 }
 
 .counter big
