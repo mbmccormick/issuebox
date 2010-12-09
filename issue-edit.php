@@ -66,7 +66,7 @@
                     <textarea name="body" style="width: 710px;" rows="8"><?php echo $issue[body]; ?></textarea>
                     <br />
                     <p class="checkbox">
-                        <input type="checkbox" name="isurgent" value="1" <?php if ($issue[isurgent] == "1") { echo "selected='true'"; } ?> /> This is an urgent issue
+                        <input type="checkbox" name="isurgent" value="1" <?php if ($issue[isurgent] == "1") { echo "checked='checked'"; } ?> /> This is an urgent issue
                     </p>
                 </div>
                 <br />
