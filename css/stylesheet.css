@@ -117,7 +117,7 @@ a:hover
 
 .counter
 {
-    background-color: #888;
+    background-color: #666666;
     color: #ffffff;
     text-transform: uppercase;
     padding: 8px;
@@ -127,21 +127,22 @@ a:hover
     text-align: center;
     font-size: 9px;
     margin-left: 5px;
+    text-shadow: #ffffff 0px 1px 0px;
 }
 
 .webkit .counter
 {
-    background: -webkit-gradient(linear, 0% 100%, 0% 0%, from(#999999), to(#BABABA));
+    background: -webkit-gradient(linear, 0% 100%, 0% 0%, from(#C9C9C9), to(#DEDEDE));
 }
 
 .gecko .counter
 {
-    background: -moz-linear-gradient(center bottom, #999999 0%, #BABABA 100%);
+    background: -moz-linear-gradient(center bottom, #C9C9C9 0%, #DEDEDE 100%);
 }
 
 .ie .counter
 {
-    filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#BABABA', EndColorStr='#999999', GradientType=0);
+    filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#DEDEDE', EndColorStr='#C9C9C9', GradientType=0);
 }
 
 .counter big
