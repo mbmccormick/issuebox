@@ -120,7 +120,10 @@
                     <b>Body</b><br />                    
                     <textarea name="body" style="width: 710px;" rows="8"></textarea>
                     <br />
-                    <input type="checkbox" name="isurgent" />This is urgent
+                    <br />
+                    <p class="checkbox">
+                        <input type="checkbox" name="isurgent" />Urgent issue
+                    </p>
                     <br />
                     <br />
                     <button type="submit" class="button">

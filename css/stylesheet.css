@@ -586,6 +586,14 @@ small
     font-size: 12px;
 }
 
+p.checkbox
+{
+    color: #333333;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 15px 0px;
+}
+
 .standard-form
 {
     border: solid 3px #E4E4E4;
