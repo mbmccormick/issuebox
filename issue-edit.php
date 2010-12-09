@@ -18,7 +18,7 @@
     {
         $now = date("Y-m-d H:i:s");
     
-        $sql = "UPDATE issue SET title = '" . mysql_real_escape_string($_POST[title]) . "', body = '" . mysql_real_escape_string($_POST[body]) . "' WHERE id = '$_GET[id]'";
+        $sql = "UPDATE issue SET title = '" . mysql_real_escape_string($_POST[title]) . "', body = '" . mysql_real_escape_string($_POST[body]) . "', isurgent = '" . $_POST[isurgent] . "' WHERE id = '$_GET[id]'";
         if (!mysql_query($sql,$con))
         {
             die('Error: ' . mysql_error());
@@ -64,6 +64,10 @@
                     <br />
                     <b>Body</b><br />                    
                     <textarea name="body" style="width: 710px;" rows="8"><?php echo $issue[body]; ?></textarea>
+                    <br />
+                    <p class="checkbox">
+                        <input type="checkbox" name="isurgent" value="1" <?php if ($issue[isurgent]) == "1") { echo "selected='true'"; ?> /> This is an urgent issue
+                    </p>
                 </div>
                 <br />
                 <button type="submit" class="button">

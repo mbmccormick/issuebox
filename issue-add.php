@@ -20,8 +20,8 @@
         
     $now = date("Y-m-d H:i:s");
     
-    $sql = "INSERT INTO issue (projectid, number, title, body, isclosed, createdby, createddate) VALUES
-            ('$_GET[projectid]', '$next_num', '" . mysql_real_escape_string($_POST[title]) . "', '" . mysql_real_escape_string($_POST[body]) . "', '0', '$CurrentUser_ID', '" . $now . "')";
+    $sql = "INSERT INTO issue (projectid, number, title, body, isclosed, isurgent, createdby, createddate) VALUES
+            ('$_GET[projectid]', '$next_num', '" . mysql_real_escape_string($_POST[title]) . "', '" . mysql_real_escape_string($_POST[body]) . "', '0', '" . $_POST[isurgent] . "', '$CurrentUser_ID', '" . $now . "')";
     
     if (!mysql_query($sql,$con))
     {

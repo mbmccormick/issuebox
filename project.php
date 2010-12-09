@@ -118,10 +118,10 @@
                     <input type="text" name="title" style="width: 710px;" /><br />
                     <br />
                     <b>Body</b><br />                    
-                    <textarea name="body" style="width: 710px;" rows="8"></textarea>
+                    <textarea name="body" style="width: 710px;" rows="6"></textarea>
                     <br />
                     <p class="checkbox">
-                        <input type="checkbox" name="isurgent" /> This is an urgent issue
+                        <input type="checkbox" name="isurgent" value="1" /> This is an urgent issue
                     </p>
                     <br />
                     <button type="submit" class="button">
