@@ -315,6 +315,11 @@ a:hover
     white-space: nowrap;
 }
 
+.minidanger
+{
+    color: #900000;
+}
+
 .minibutton:hover
 {
     border-bottom-color: #2A65A0;
@@ -322,6 +327,12 @@ a:hover
     color: white;
     text-decoration: none;
     text-shadow: rgba(0, 0, 0, 0.296875) -1px -1px 0px;
+}
+
+.minidanger:hover
+{    
+    border-bottom-color: #A0302A;
+    border-color: #C65651 #C65651 #A0302A;
 }
 
 .webkit .minibutton
@@ -333,6 +344,21 @@ a:hover
 .webkit .minibutton:hover
 {
     background: -webkit-gradient(linear, 0% 100%, 0% 0%, from(#3072B3), to(#599BDC));
+}
+
+.webkit .minibutton.mousedown
+{
+    background: -webkit-gradient(linear, 0% 100%, 0% 0%, from(#599BDC), to(#3072B3));
+}
+
+.webkit .minidanger:hover
+{
+    background: -webkit-gradient(linear, 0% 100%, 0% 0%, from(#DC5F59), to(#B33630));
+}
+
+.webkit .minidanger.mousedown
+{
+    background: -webkit-gradient(linear, 0% 100%, 0% 0%, from(#B33630), to(#DC5F59));
 }
 
 .gecko .minibutton
@@ -347,6 +373,21 @@ a:hover
     background: -moz-linear-gradient(center bottom, #3072B3 0%, #599BDC 100%);
 }
 
+.gecko .minibutton.mousedown
+{
+    background: -moz-linear-gradient(center bottom, #599BDC 0%, #3072B3 100%);
+}
+
+.gecko .minidanger:hover
+{
+    background: -moz-linear-gradient(center bottom, #DC5F59 0%, #B33630 100%);
+}
+
+.gecko .minidanger.mousedown
+{
+    background: -moz-linear-gradient(center bottom, #B33630 0%, #DC5F59 100%);
+}
+
 .ie .minubutton
 {
     filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#ffffff', EndColorStr='#E1E1E1', GradientType=0);
@@ -355,6 +396,21 @@ a:hover
 .ie .minubutton:hover
 {
     filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#599BDC', EndColorStr='#3072B3', GradientType=0);
+}
+
+.ie .minubutton.mousedown
+{
+    filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#3072B3', EndColorStr='#599BDC', GradientType=0);
+}
+
+.ie .minubutton:hover
+{
+    filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#B33630', EndColorStr='#DC5F59', GradientType=0);
+}
+
+.ie .minubutton.mousedown
+{
+    filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#DC5F59', EndColorStr='#B33630', GradientType=0);
 }
 
 .minibutton span
