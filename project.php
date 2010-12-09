@@ -120,11 +120,9 @@
                     <b>Body</b><br />                    
                     <textarea name="body" style="width: 710px;" rows="8"></textarea>
                     <br />
-                    <br />
                     <p class="checkbox">
-                        <input type="checkbox" name="isurgent" />Urgent issue
+                        <input type="checkbox" name="isurgent" /> This is an urgent issue
                     </p>
-                    <br />
                     <br />
                     <button type="submit" class="button">
                         <span>Create Issue</span>
