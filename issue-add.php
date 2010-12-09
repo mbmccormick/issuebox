@@ -52,8 +52,10 @@
         echo "<h3>#$result[number]&nbsp;&nbsp;<a href='issue.php?id=$result[id]'>" . $result[title] . "</a></h3>";
         echo "</td>\n";
         echo "<td valign='middle' align='right'>\n";
+        if ($result[isurgent] == "1")
+            echo "<em class='urgent-indicator'>Urgent</span>";
         if ($result[isclosed] == "1")
-            echo "<em class='closed'>Closed</span>";
+            echo "<em class='closed-indicator'>Closed</span>";
         echo "</td>\n";
         echo "</tr>\n";
         echo "</table>\n";
