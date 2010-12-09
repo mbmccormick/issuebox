@@ -157,19 +157,19 @@
             
             if (sender.attr("class") == "filter-on open-indicator") {
                 sender.attr("class", "filter-off open-indicator");
-                $(".open").hide();
+                $(".open").slideUp();
             }
             else if (sender.attr("class") == "filter-off open-indicator") {
                 sender.attr("class", "filter-on open-indicator");
-                $(".open").show();
+                $(".open").slideDown();
             }
             else if (sender.attr("class") == "filter-on closed-indicator") {
                 sender.attr("class", "filter-off closed-indicator");
-                $(".closed").hide();
+                $(".closed").slideUp();
             }
             else if (sender.attr("class") == "filter-off closed-indicator") {
                 sender.attr("class", "filter-on closed-indicator");
-                $(".closed").show();
+                $(".closed").slideDown();
             }
             
             checkDisplayNone();
