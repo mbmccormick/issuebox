@@ -42,6 +42,11 @@
                         </td>
                         <td valign="middle" align="right">
                             <?php
+                                
+                                if ($issue[isurgent] == "1")
+                                    echo "<em class='urgent-indicator'>Urgent</span>";
+                                else
+                                    echo "<em class='urgent-indicator' style='display: none;'>Urgent</span>";
                             
                                 if ($issue[isclosed] == "1")
                                     echo "<em class='closed-indicator'>Closed</span>";

@@ -546,7 +546,7 @@ a:hover
 
 em.closed-indicator
 {
-    background: #999;
+    background: #999999;
     border-radius: 3px;
     -moz-border-radius: 3px;
     color: white;
@@ -558,6 +558,24 @@ em.closed-indicator
 }
 
 .mac em.closed-indicator
+{
+    padding: 4px 5px 2px 5px;
+}
+
+em.urgent-indicator
+{
+    background: #E03B0D;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    color: white;
+    font-size: 11px;
+    font-style: normal;
+    padding: 2px 5px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.mac em.urgent-indicator
 {
     padding: 4px 5px 2px 5px;
 }

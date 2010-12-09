@@ -64,6 +64,8 @@
                     echo "<h3>#$row[number]&nbsp;&nbsp;<a href='issue.php?id=$row[id]'>" . $row[title] . "</a></h3>";
                     echo "</td>\n";
                     echo "<td valign='middle' align='right'>\n";
+                    if ($row[isurgent] == "1")
+                        echo "<em class='urgent-indicator'>Urgent</span>";
                     if ($row[isclosed] == "1")
                         echo "<em class='closed-indicator'>Closed</span>";
                     echo "</td>\n";
@@ -117,6 +119,8 @@
                     <br />
                     <b>Body</b><br />                    
                     <textarea name="body" style="width: 710px;" rows="8"></textarea>
+                    <br />
+                    <input type="checkbox" name="isurgent" />This is urgent
                     <br />
                     <br />
                     <button type="submit" class="button">
