@@ -1,12 +1,9 @@
-[submodule "js/css_browser_selector"]
-	path = js/css_browser_selector
+[submodule "public/js/css_browser_selector"]
+	path = public/js/css_browser_selector
 	url = git://github.com/rafaelp/css_browser_selector.git
-[submodule "js/github-flavored-markdown"]
-	path = js/github-flavored-markdown
+[submodule "public/js/github-flavored-markdown"]
+	path = public/js/github-flavored-markdown
 	url = git://github.com/github/github-flavored-markdown.git
-[submodule "git-update"]
-	path = git-update
-	url = git://github.com/mbmccormick/git-update.git
-[submodule "js/form"]
-	path = js/form
+[submodule "public/js/form"]
+	path = public/js/form
 	url = git://github.com/malsup/form.git

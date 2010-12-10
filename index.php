@@ -1,113 +1,65 @@
 <?php
 
-    require "config.php";
-    require "utils.php";
-    require_once "security.php";
+    require_once "library/limonade.php";
     
-    authorize();
+    require("config/config.php");
+    require("library/utils.php");
+    require("library/security.php");
     
+    /* Establish Database Connection */
     $con = mysql_connect($Server, $Username, $Password);
     if (!$con)
     {
         die("Could not connect: " . mysql_error());
     }
-
-    mysql_select_db($Database, $con);   
-
+    mysql_select_db($Database, $con);
+    
+    /* Modify Configuration Settings */
+    function configure()
+    {
+        option('base_uri', '/nicedog');
+        option('public_dir', 'public/');
+        option('views_dir', 'views/');
+        option('controllers_dir', 'controllers/');
+    }
+    
+    function before()
+    {
+        layout('layout.php');
+    }
+    
+    /* Declare Main Routes */
+    dispatch('/css/:path', 'render_css');
+    dispatch('/img/:path', 'render_img');
+    dispatch('/js/:path', 'render_js');
+    
+    /* Declare Security Routes */
+    dispatch('/login', 'login');
+    dispatch_post('/login/post', 'login_post');
+    dispatch('/logout', 'logout');
+    
+    /* Declare Project Routes */
+    dispatch('/', 'project_list');
+    dispatch('/project/:id', 'project_view');
+    dispatch('/project/add', 'project_add');
+    dispatch_post('/project/add/post', 'project_add_post');
+    dispatch('/project/edit', 'project_edit');
+    dispatch_post('/project/edit/post', 'project_edit_post');
+    dispatch_delete('/project/delete', 'project_delete');
+    
+    /* Declare Issue Routes */
+    dispatch('/issue/view', 'issue_view');
+    dispatch('/issue/add', 'issue_add');
+    dispatch_post('/issue/add/post', 'issue_add_post');
+    dispatch('/issue/edit', 'issue_edit');
+    dispatch_post('/issue/edit/post', 'issue_edit_post');
+    dispatch_delete('/issue/delete', 'issue_delete');
+    
+    /* Declare Comment Routes */
+    dispatch('/comment/add', 'comment_add');
+    dispatch_post('/comment/add/post', 'comment_add_post');
+    dispatch_delete('/comment/delete', 'comment_delete');
+    
+    run();
+    
 ?>
-<?php include "header.php"; ?>
-    <?php SetPageTitle("Projects"); ?>
-    <div class="content">
-        <div class="navigation">
-            <a href="index.php">Projects</a>
-        </div>
-        <div class="list">
-            <?php
-
-                $result = mysql_query("SELECT * FROM project ORDER BY name ASC");
-                while($row = mysql_fetch_array($result))
-                {
-                    $sql = mysql_query("SELECT COUNT(*) AS rowcount FROM issue WHERE projectid = '$row[id]' AND isclosed = '0'");
-                    $return = mysql_fetch_array($sql);
-                    $open = $return[rowcount];
-                    
-                    $sql = mysql_query("SELECT COUNT(*) AS rowcount FROM issue WHERE projectid = '$row[id]' AND isclosed = '1'");
-                    $return = mysql_fetch_array($sql);
-                    $closed = $return[rowcount];
-                                        
-                    echo "<div class='list-item project'>\n";
-                    echo "<table cellpadding='0' cellspacing='0' style='width: 100%;'><tr>\n";
-                    
-                    echo "<td width='100%'>\n";
-                    echo "<h3><a href='project.php?id=$row[id]'>" . $row[name] . "</a></h3><br />\n";
-                    echo "<p>" . $row[description] . "</p>\n";
-                    echo "</td>\n";
-                    
-                    echo "<td>\n";
-                    echo "<div class='counter'>\n";
-                    echo "<big>$open</big>\n";
-                    echo "Open Issues\n";
-                    echo "</div>\n";
-                    echo "</td>\n";
-                    
-                    echo "<td>\n";
-                    echo "<div class='counter'>\n";
-                    echo "<big>$closed</big>\n";
-                    echo "Closed Issues\n";
-                    echo "</div>\n";
-                    echo "</td>\n";    
-                    
-                    echo "</tr></table>\n";
-                    echo "</div>\n";
-                }
-                
-                if (mysql_num_rows($result) == 0)
-                {
-                    echo "<div class='list-item project'>\n";
-                    echo "<p>There are currently no projects setup.</p>\n";
-                    echo "</div>\n";
-                }
-
-            ?>
-        </div>
-        <br />
-        <button type="button" class="button" onclick="location.href='project-add.php';">
-            <span>New Project</span>
-        </button>
-        <button type="button" class="button" onclick="location.href='settings.php';">
-            <span>Settings</span>
-        </button>
-    </div>
-    <?php if (isset($_GET[success]) == true) { ?>
-    <script type="text/javascript">
-    
-        $(document).ready(function() { 
-            $(document).showMessage({
-            thisMessage: ["Your project was created successfully!"],
-            className: "success",
-            opacity: 95,
-            displayNavigation: false,
-            autoClose: true,
-            delayTime: 5000
-            });
-        });
-    
-    </script>
-    <?php } ?>
-    <?php if (isset($_GET[delete]) == true) { ?>
-    <script type="text/javascript">
-    
-        $(document).ready(function() { 
-            $(document).showMessage({
-            thisMessage: ["Your project was deleted successfully!"],
-            className: "success",
-            opacity: 95,
-            displayNavigation: false,
-            autoClose: true,
-            delayTime: 5000
-            });
-        });
-    
-    </script>
-    <?php } ?>
-<?php include "footer.php"; ?>
