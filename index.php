@@ -24,11 +24,6 @@
         layout('layout.php');
     }
     
-    /* Declare Security routes */
-    dispatch('/login', 'login');
-    dispatch_post('/login', 'login_post');
-    dispatch('/logout', 'logout');
-    
     /* Declare Project routes */
     dispatch('/', 'project_list');
     dispatch('/project/add', 'project_add');
@@ -48,6 +43,20 @@
     /* Declare Comment routes */
     dispatch_post('/comment/add', 'comment_add_post');
     dispatch('/comment/:id/delete', 'comment_delete');
+    
+    /* Declare Security routes */
+    dispatch('/login', 'login');
+    dispatch_post('/login', 'login_post');
+    dispatch('/logout', 'logout');
+    
+    /* Declare User routes */
+    dispatch('/user/list', 'user_list');
+    dispatch('/user/add', 'user_add');
+    dispatch_post('/user/add', 'user_add_post');
+    dispatch('/user/:id/edit', 'user_edit');
+    dispatch_post('/user/:id/edit', 'user_edit_post');
+    dispatch('/user/:id/delete', 'user_delete');
+    dispatch('/user/:id', 'user_view');
     
     run();
     
