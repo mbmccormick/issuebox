@@ -56,7 +56,7 @@
                 </tr>
             </table>
             <br />
-            <form id="comment-new" action="comment-add.php?issueid=<?=$issue[id]?>" method="post">
+            <form id="comment-new" action="/comment/add&issueid=<?=$issue[id]?>" method="post">
                 <textarea name="body" style="width: 710px;" rows="8"></textarea>
                 <br />
                 <br />

@@ -37,7 +37,7 @@
             echo "<div id='comment$result[id]' class='wikiStyle'>" . $result[body] . "</div>\n";
             echo "<br />\n";
             echo "<div class='options'>\n";
-            echo "<a class='minibutton' postback='/comment/$result[id]/delete&issueid=$result[issueid]'><span>Delete</span></a>\n";
+            echo "<a class='minibutton minidanger' postback='/comment/$result[id]/delete&issueid=$result[issueid]'><span>Delete</span></a>\n";
             echo "&nbsp;&nbsp;" . date("F j, Y", strtotime($result[createddate]));
             echo " by <a href='/user/$user[id]'>$user[username]</a>";
             echo "</div>\n";

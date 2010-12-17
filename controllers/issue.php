@@ -36,13 +36,6 @@
             $body .= "</div>\n";
         }
         
-        if (mysql_num_rows($result) == 0)
-        {
-            $body .= "<div class='list-item comment none'>\n";
-            $body .= "<p>There are no comments to display for this issue.</p>\n";
-            $body .= "</div>\n";
-        }
-        
         set("title", "Issue #" . $issue[number]);
         set("body", $body);
         set("issue", $issue);
