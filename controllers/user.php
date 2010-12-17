@@ -25,7 +25,7 @@
             $body .= "&nbsp;&nbsp;\n";
             $body .= "</td>\n";
             $body .= "<td valign='middle' style='width: 100%;'>\n";
-            $body .= "<h3><a href='user-edit.php?id=$row[id]'>" . $row[username] . "</a></h3>\n";
+            $body .= "<h3><a href='/user/$row[id]'>" . $row[username] . "</a></h3>\n";
             $body .= "<p>Created on " . date("F j, Y", strtotime($row[createddate])) . "</p>\n";                    
             $body .= "</tr>\n";
             $body .= "</table>\n";

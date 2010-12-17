@@ -50,7 +50,7 @@
     dispatch('/logout', 'logout');
     
     /* Declare User routes */
-    dispatch('/user/list', 'user_list');
+    dispatch('/user', 'user_list');
     dispatch('/user/add', 'user_add');
     dispatch_post('/user/add', 'user_add_post');
     dispatch('/user/:id/edit', 'user_edit');
