@@ -1,6 +1,6 @@
 <div class="content">
     <div class="navigation">
-        <a href="/">Users</a>
+        <a href="/user">Users</a>
     </div>
     <div class="list">
         <?=$body?>
