@@ -64,7 +64,7 @@
         
         PurgeActivity(3, params('id'));
         
-        header("Location: /issue/$_GET[issueid]&delete=true");
+        header("Location: /issue/$_GET[issueid]&success=Your comment was deleted successfully!");
         exit;
     }
 

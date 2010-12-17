@@ -67,7 +67,7 @@
         }
         else
         {
-            header("Location: /user/add&msg=Your passwords do not match!");
+            header("Location: /user/add&error=Your passwords do not match!");
             exit;
         }
         
@@ -115,7 +115,7 @@
         
         mysql_close($con);
         
-        header("Location: /user/$user[id]/edit&success=true");
+        header("Location: /user/$user[id]/edit&success=Your user was updated successfully!");
         exit;
     }
     

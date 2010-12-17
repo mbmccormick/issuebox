@@ -105,7 +105,7 @@
         }
         else
         {
-            header("Location: /project/$_GET[projectid]");
+            header("Location: /project/$_GET[projectid]&success=Your issue was created successfully!");
             exit;
         }
     }
@@ -137,7 +137,7 @@
         
         LogActivity(2, params('id'), 2);
         
-        header("Location: /issue/" . params('id') . "&success=true");
+        header("Location: /issue/" . params('id') . "&success=Your issue was updated successfully!");
         exit;
     }
     
@@ -153,7 +153,7 @@
 
         PurgeActivity(1, params('id'));
         
-        header("Location: /project/$_GET[projectid]&delete=true");
+        header("Location: /project/$_GET[projectid]&success=Your issue was deleted successfully!");
         exit;
     }
 

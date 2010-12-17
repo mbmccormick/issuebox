@@ -137,7 +137,7 @@
         
         LogActivity(1, $result[id], 1);
         
-        header("Location: /&success=true");
+        header("Location: /&success=Your project was created successfully!");
         exit;
     }
     
@@ -164,7 +164,7 @@
         
         LogActivity(1, params('id'), 2);
         
-        header("Location: /project/" . params('id') . "&success=true");
+        header("Location: /project/" . params('id') . "&success=Your project was updated successfully!");
         exit;
     }
     
@@ -188,7 +188,7 @@
 
         PurgeActivity(1, params('id'));
         
-        header("Location: /&delete=true");
+        header("Location: /&success=Your project was deleted successfully!");
         exit;
     }
 

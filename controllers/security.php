@@ -15,7 +15,7 @@
         }
         else
         {
-            header("Location: /login&msg=Please check your login credentials and try again.");
+            header("Location: /login&error=Please check your login credentials and try again.");
             exit;
         }
     }
