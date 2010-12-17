@@ -17,7 +17,7 @@
     /* Modify Configuration Settings */
     function configure()
     {
-        option('base_uri', '/nicedog');
+        option('base_uri', '/');
         option('public_dir', 'public/');
         option('views_dir', 'views/');
         option('controllers_dir', 'controllers/');
