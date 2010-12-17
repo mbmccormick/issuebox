@@ -49,22 +49,6 @@
     
     function LogActivity($itemtype = 0, $itemid = 0, $actiontype = 0)
     {
-        try
-        {
-            include "config.php";
-            
-            $con = mysql_connect($Server, $Username, $Password);
-            if (!$con)
-            {
-                die("Could not connect to $Server: " . mysql_error());
-            }
-
-            mysql_select_db($Database, $con);
-        }
-        catch (Exception $e)
-        {
-        }
-        
         $headline = "";
         $description = "";
         
@@ -126,7 +110,7 @@
         $now = date("Y-m-d H:i:s");
         $sql = "INSERT INTO activity (headline, description, itemid, itemtype, actiontype, createdby, createddate) VALUES
                     ('" . mysql_real_escape_string($headline) . "', '" . mysql_real_escape_string($description) . "', '$itemid', '$itemtype', '$actiontype', '" . $_SESSION["CurrentUser_ID"] . "', '$now')";
-        if (!mysql_query($sql,$con))
+        if (!mysql_query($sql))
         {
             die('Error: ' . mysql_error());
         }
@@ -134,24 +118,8 @@
     
     function PurgeActivity($itemtype, $itemid)
     {
-        try
-        {
-            include "config.php";
-            
-            $con = mysql_connect($Server, $Username, $Password);
-            if (!$con)
-            {
-                die("Could not connect to $Server: " . mysql_error());
-            }
-
-            mysql_select_db($Database, $con);
-        }
-        catch (Exception $e)
-        {
-        }
-        
         $sql = "DELETE FROM activity WHERE itemtype = '$itemtype' AND itemid = '$itemid'";    
-        if (!mysql_query($sql,$con))
+        if (!mysql_query($sql))
         {
             die('Error: ' . mysql_error());
         }

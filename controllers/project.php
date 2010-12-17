@@ -8,7 +8,6 @@
         $project = mysql_fetch_array($result);
         
         $result = mysql_query("SELECT * FROM issue WHERE projectid = '$project[id]' ORDER BY isurgent DESC, number ASC");
-                   
         while($row = mysql_fetch_array($result))
         {
             $sql = mysql_query("SELECT COUNT(*) AS rowcount FROM comment WHERE issueid = '$row[id]'");
@@ -26,7 +25,7 @@
             $body .= "<table cellpadding='0' cellspacing='0' style='width: 100%;'>\n";
             $body .= "<tr>\n";
             $body .= "<td valign='middle'>\n";
-            $body .= "<h3>#$row[number]&nbsp;&nbsp;<a href='issue.php?id=$row[id]'>" . $row[title] . "</a></h3>";
+            $body .= "<h3>#$row[number]&nbsp;&nbsp;<a href='/issue/$row[id]'>" . $row[title] . "</a></h3>";
             $body .= "</td>\n";
             $body .= "<td valign='middle' align='right'>\n";
             if ($row[isurgent] == "1")
@@ -40,10 +39,10 @@
             $body .= "<br />\n";
             $body .= "<div class='options'>\n";
             if ($count == 1)
-                $body .= "<a href='issue.php?id=$row[id]'>$count comment</a>\n";
+                $body .= "<a href='/issue/$row[id]'>$count comment</a>\n";
             else
-                $body .= "<a href='issue.php?id=$row[id]'>$count comments</a>\n";
-            $body .= "&nbsp;Created about " . FriendlyDate(1, strtotime($row[createddate])) . " by <a href='user-edit.php?id=$user[id]'>$user[username]</a>";
+                $body .= "<a href='/issue/$row[id]'>$count comments</a>\n";
+            $body .= "&nbsp;Created about " . FriendlyDate(1, strtotime($row[createddate])) . " by <a href='/user/$user[id]'>$user[username]</a>";
             $body .= "</div>\n";
             
             $body .= "<script type='text/javascript'>\n";
@@ -53,12 +52,6 @@
             $body .= "</div>\n";
         }
         
-        if (mysql_num_rows($result) == 0)
-        {
-            $body .= "<div class='list-item issue none'>\n";
-            $body .= "<p>There are no issues to display for this project.</p>\n";
-            $body .= "</div>\n";
-        }
         
         set("title", $project[name]);
         set("body", $body);
@@ -85,7 +78,7 @@
             $body .= "<table cellpadding='0' cellspacing='0' style='width: 100%;'><tr>\n";
             
             $body .= "<td width='100%'>\n";
-            $body .= "<h3><a href='project.php?id=$row[id]'>" . $row['name'] . "</a></h3><br />\n";
+            $body .= "<h3><a href='/project/$row[id]'>" . $row['name'] . "</a></h3><br />\n";
             $body .= "<p>" . $row['description'] . "</p>\n";
             $body .= "</td>\n";
             
@@ -119,96 +112,84 @@
         return html("project/list.php");
     }
     
-    // function project_add()
-    // {
-        // // authorize();
+    function project_add()
+    {
+        Security_Authorize();
     
-        // $this->title = "Projects";
-        // $this->render('views/project/add.php');
-    // }
+        set("title", "New Project");
+        return html("project/add.php");
+    }
     
-    // function project_add_post()
-    // {
-        // // authorize();
+    function project_add_post()
+    {
+        Security_Authorize();
         
-        // $now = date("Y-m-d H:i:s");
-        // $sql = "INSERT INTO project (name, description, createdby, createddate) VALUES
-                // ('" . mysql_real_escape_string($_POST[name]) . "', '" . mysql_real_escape_string($_POST[description]) . "', '$CurrentUser_ID', '" . $now . "')";
-        // if (!mysql_query($sql,$con))
-        // {
-            // die('Error: ' . mysql_error());
-        // }
+        $now = date("Y-m-d H:i:s");
+        $sql = "INSERT INTO project (name, description, createdby, createddate) VALUES
+                ('" . mysql_real_escape_string($_POST[name]) . "', '" . mysql_real_escape_string($_POST[description]) . "', '$_SESSION[CurrentUser_ID]', '" . $now . "')";
+        if (!mysql_query($sql))
+        {
+            die('Error: ' . mysql_error());
+        }
         
-        // $sql = mysql_query("SELECT * FROM project WHERE id = '" . mysql_insert_id() . "'");
-        // $result = mysql_fetch_array($sql);
+        $sql = mysql_query("SELECT * FROM project WHERE id = '" . mysql_insert_id() . "'");
+        $result = mysql_fetch_array($sql);
         
-        // LogActivity(1, $result[id], 1);
+        LogActivity(1, $result[id], 1);
         
-        // header("Location: index.php?success=true");
-        // exit;
-    // }
+        header("Location: /&success=true");
+        exit;
+    }
     
-    // function project_edit()
-    // {
-        // // authorize();
+    function project_edit()
+    {
+        Security_Authorize();
     
-        // $result = mysql_query("SELECT * FROM project WHERE id = '$_GET[id]'");
-        // $project = mysql_fetch_array($result);
+        $result = mysql_query("SELECT * FROM project WHERE id = '" . params('id') . "'");
+        $project = mysql_fetch_array($result);
         
-        // $this->title = "Projects";
-        // $this->render('views/project/edit.php');
-    // }
+        set("title", "Edit Project");
+        set("project", $project);
+        return html("project/edit.php");
+    }
     
-    // function project_edit_post()
-    // {
-        // // authorize();
+    function project_edit_post()
+    {
+        Security_Authorize();
         
-        // $now = date("Y-m-d H:i:s");
-        // $nowlcl = date("Y-m-d H:i:s", strtotime("+3 hour", strtotime($now)));
+        $now = date("Y-m-d H:i:s");
+        
+        $sql = "UPDATE project SET name = '" . mysql_real_escape_string($_POST[name]) . "', description = '" . mysql_real_escape_string($_POST[description]) . "' WHERE id = '" . params('id') . "'";
+        mysql_query($sql);
+        
+        LogActivity(1, params('id'), 2);
+        
+        header("Location: /project/" . params('id') . "&success=true");
+        exit;
+    }
+    
+    function project_delete()
+    {
+        Security_Authorize();
+    
+        $sql = "DELETE FROM project WHERE id = '" . params('id') . "'";    
+        mysql_query($sql);
+        
+        $sql = "SELECT * FROM issue WHERE projectid = '" . params('id') . "'";    
+        $result = mysql_query($sql);
+        while($row = mysql_fetch_array($result))
+        {
+            $sql = "DELETE FROM comment WHERE issueid = '" . params('id') . "'";    
+            mysql_query($sql);
+        }
+        
+        $sql = "DELETE FROM issue WHERE projectid = '" . params('id') . "'";    
+        mysql_query($sql);
 
-        // $sql = "UPDATE project SET name = '" . mysql_real_escape_string($_POST[name]) . "', description = '" . mysql_real_escape_string($_POST[description]) . "' WHERE id = '$_GET[id]'";
-        // if (!mysql_query($sql,$con))
-        // {
-            // die('Error: ' . mysql_error());
-        // }
+        PurgeActivity(1, params('id'));
         
-        // LogActivity(1, $_GET[id], 2);
-        
-        // header("Location: project.php?id=$_GET[id]&success=true");
-        // exit;
-    // }
-    
-    // function project_delete()
-    // {
-        // // authorize();
-    
-        // $sql = "DELETE FROM project WHERE id = '$_GET[id]'";    
-        // if (!mysql_query($sql,$con))
-        // {
-            // die('Error: ' . mysql_error());
-        // }
-        
-        // $sql = "SELECT * FROM issue WHERE projectid = '$_GET[id]'";    
-        // $result = mysql_query($sql);
-        // while($row = mysql_fetch_array($result))
-        // {
-            // $sql = "DELETE FROM comment WHERE issueid = '$row[id]'";    
-            // if (!mysql_query($sql,$con))
-            // {
-                // die('Error: ' . mysql_error());
-            // }
-        // }
-        
-        // $sql = "DELETE FROM issue WHERE projectid = '$_GET[id]'";    
-        // if (!mysql_query($sql,$con))
-        // {
-            // die('Error: ' . mysql_error());
-        // }
-
-        // PurgeActivity(1, $_GET[id]);
-        
-        // header("Location: index.php?delete=true");
-        // exit;
-    // }
+        header("Location: /&delete=true");
+        exit;
+    }
 
 ?>

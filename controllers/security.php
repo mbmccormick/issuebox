@@ -2,6 +2,7 @@
 
     function login()
     {
+        set("title", "Login");
         return html("security/login.php");
     }
     
@@ -14,7 +15,7 @@
         }
         else
         {
-            header("Location: /login?msg=Please check your login credentials and try again.");
+            header("Location: /login&msg=Please check your login credentials and try again.");
             exit;
         }
     }

@@ -1,9 +1,5 @@
 <?php
 
-    $CurrentUser_ID = $_SESSION["CurrentUser_ID"];
-    $CurrentUser_Username = $_SESSION["CurrentUser_Username"];
-    $CurrentUser_Email = $_SESSION["CurrentUser_Email"];
-    
     function Security_Login($username, $password)
     {
         $sql = mysql_query("SELECT * FROM user WHERE username = '" . mysql_real_escape_string($username) . "' AND password = '" . md5(mysql_real_escape_string($password)) . "'");

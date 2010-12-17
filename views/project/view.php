@@ -3,7 +3,7 @@
         <tr>
             <td valign="middle">
                 <div class="navigation" style="padding: 0px;">
-                    <a href="index.php">Projects</a> / <a href="project.php?id=<?=$project[id]?>"><?=$project[name]?></a>
+                    <a href="/">Projects</a> / <a href="/project/<?=$project[id]?>"><?=$project[name]?></a>
                 </div>
             </td>
             <td valign="middle" align="right">
@@ -36,7 +36,7 @@
                 </tr>
             </table>
             <br />
-            <form id="issue-new" action="issue-add.php?projectid=<?=$project[id]?>" method="post">
+            <form id="issue-new" action="/issue/add&projectid=<?=$project[id]?>" method="post">
                 <b>Title</b><br />
                 <input type="text" name="title" style="width: 710px;" /><br />
                 <br />
@@ -53,10 +53,10 @@
             </form>
         </div>
         <br />
-        <button type="button" class="button" onclick="location.href='project-edit.php?id=<?=$project[id]?>';">
+        <button type="button" class="button" onclick="location.href='/project/<?=$project[id]?>/edit';">
             <span>Edit Project</span>
         </button>
-        <button type="button" class="button danger" onclick="confirm('Are you sure you want to delete this project and all of its issues?') ? location.href='project-delete.php?id=<?=$project[id]?>' : false;">
+        <button type="button" class="button danger" onclick="confirm('Are you sure you want to delete this project and all of its issues?') ? location.href='/project/<?=$project[id]?>/delete' : false;">
             <span>Delete</span>
         </button>
     </div>        
@@ -129,6 +129,8 @@
             autoClose: true,
             delayTime: 5000
         });
+        
+        checkDisplayNone();
     }
     
     function checkDisplayNone() {

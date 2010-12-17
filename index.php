@@ -6,15 +6,11 @@
     require("library/utils.php");
     require("library/security.php");
     
-    /* Establish Database Connection */
+    /* Establish database connection */
     $con = mysql_connect($Server, $Username, $Password);
-    if (!$con)
-    {
-        die("Could not connect: " . mysql_error());
-    }
     mysql_select_db($Database, $con);
     
-    /* Modify Configuration Settings */
+    /* Modify configuration settings */
     function configure()
     {
         option('base_uri', '/');
@@ -28,37 +24,30 @@
         layout('layout.php');
     }
     
-    /* Declare Main Routes */
-    dispatch('/css/:path', 'render_css');
-    dispatch('/img/:path', 'render_img');
-    dispatch('/js/:path', 'render_js');
-    
-    /* Declare Security Routes */
+    /* Declare Security routes */
     dispatch('/login', 'login');
-    dispatch_post('/login/post', 'login_post');
+    dispatch_post('/login', 'login_post');
     dispatch('/logout', 'logout');
     
-    /* Declare Project Routes */
+    /* Declare Project routes */
     dispatch('/', 'project_list');
-    dispatch('/project/:id', 'project_view');
     dispatch('/project/add', 'project_add');
-    dispatch_post('/project/add/post', 'project_add_post');
-    dispatch('/project/edit', 'project_edit');
-    dispatch_post('/project/edit/post', 'project_edit_post');
-    dispatch_delete('/project/delete', 'project_delete');
+    dispatch_post('/project/add', 'project_add_post');
+    dispatch('/project/:id/edit', 'project_edit');
+    dispatch_post('/project/:id/edit', 'project_edit_post');
+    dispatch('/project/:id/delete', 'project_delete');
+    dispatch('/project/:id', 'project_view');
+        
+    /* Declare Issue routes */
+    dispatch_post('/issue/add', 'issue_add_post');
+    dispatch('/issue/:id/edit', 'issue_edit');
+    dispatch_post('/issue/:id/edit', 'issue_edit_post');
+    dispatch('/issue/:id/delete', 'issue_delete');
+    dispatch('/issue/:id', 'issue_view');
     
-    /* Declare Issue Routes */
-    dispatch('/issue/view', 'issue_view');
-    dispatch('/issue/add', 'issue_add');
-    dispatch_post('/issue/add/post', 'issue_add_post');
-    dispatch('/issue/edit', 'issue_edit');
-    dispatch_post('/issue/edit/post', 'issue_edit_post');
-    dispatch_delete('/issue/delete', 'issue_delete');
-    
-    /* Declare Comment Routes */
-    dispatch('/comment/add', 'comment_add');
-    dispatch_post('/comment/add/post', 'comment_add_post');
-    dispatch_delete('/comment/delete', 'comment_delete');
+    /* Declare Comment routes */
+    dispatch_post('/comment/add', 'comment_add_post');
+    dispatch('/comment/:id/delete', 'comment_delete');
     
     run();
     

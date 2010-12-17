@@ -5,7 +5,7 @@
     <div class="standard-form">
         <h2>Login</h2>
         <br />
-        <form action="login/post" method="post">
+        <form action="/login" method="post">
             <label for="Username">
                 Username<br />
                 <input class="text" name="username" style="width: 25em;" type="text" />
