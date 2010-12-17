@@ -9,12 +9,12 @@
     {
         if (Security_Login($_POST[username], $_POST[password]) == true)
         {
-            header("Location: index.php");
+            header("Location: /");
             exit;
         }
         else
         {
-            header("Location: login?msg=Please check your login credentials and try again.");
+            header("Location: /login?msg=Please check your login credentials and try again.");
             exit;
         }
     }
@@ -23,7 +23,7 @@
     {
         if (Security_Logout() == true)
         {
-            header("Location: login");
+            header("Location: /login");
             exit;
         }
     }
