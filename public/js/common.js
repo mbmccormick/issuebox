@@ -34,6 +34,8 @@ $(document).ready(function() {
             autoClose: true,
             delayTime: 5000
         });
+        
+        history.replaceState(null, document.title, getRawUrl());
     }
     
     if (getParameterByName("error") != "") {
@@ -45,15 +47,28 @@ $(document).ready(function() {
             autoClose: true,
             delayTime: 5000
         });
+        
+        history.replaceState(null, document.title, getRawUrl());
     }
 });
+
+function getRawUrl()
+{
+    var regexS = "^(.*)&(?:.*)$";
+    var regex = new RegExp(regexS);
+    var results = regex.exec(window.location.href);
+    if(results == null)
+        return window.location.href;
+    else
+        return results[1];
+}
 
 function getParameterByName(name)
 {
     name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
     var regexS = "[\\?&]"+name+"=([^&#]*)";
-    var regex = new RegExp( regexS );
-    var results = regex.exec( window.location.href );
+    var regex = new RegExp(regexS);
+    var results = regex.exec(window.location.href);
     if(results == null)
         return "";
     else
