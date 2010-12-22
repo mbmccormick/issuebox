@@ -580,6 +580,11 @@ em.urgent-indicator
     padding: 4px 5px 2px 5px;
 }
 
+big.urgent
+{
+    color: #DE683A;
+}
+
 small
 {
     color: #999;

@@ -73,6 +73,10 @@
             $sql = mysql_query("SELECT COUNT(*) AS rowcount FROM issue WHERE projectid = '$row[id]' AND isclosed = '1'");
             $return = mysql_fetch_array($sql);
             $closed = $return['rowcount'];
+            
+            $sql = mysql_query("SELECT COUNT(*) AS rowcount FROM issue WHERE projectid = '$row[id]' AND isclosed = '0' AND isurgent = '1'");
+            $return = mysql_fetch_array($sql);
+            $urgent = $return['rowcount'];
                                 
             $body .= "<div class='list-item project'>\n";
             $body .= "<table cellpadding='0' cellspacing='0' style='width: 100%;'><tr>\n";
@@ -84,7 +88,10 @@
             
             $body .= "<td>\n";
             $body .= "<div class='counter'>\n";
-            $body .= "<big>$open</big>\n";
+            if ($urgent > 0)
+                $body .= "<big class='urgent'>$open</big>\n";
+            else
+                $body .= "<big>$open</big>\n";
             $body .= "Open Issues\n";
             $body .= "</div>\n";
             $body .= "</td>\n";
