@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
 <html xmlns="http://www.w3.org/1999/xhtml" dir=ltr lang=en-US> 
 <head> 
-  <title>Issue Tracker - <?=$title?></title> 
+  <title>Issuebox - <?=$title?></title> 
   <link rel="stylesheet" type="text/css" media="screen,projection" href="/public/css/stylesheet.css" />
   <script type="text/javascript" src="/public/js/jquery/jquery-1.4.4.js"></script>
   <script type="text/javascript" src="/public/js/form/jquery.form.js"></script>
@@ -35,7 +35,7 @@
         
     ?>
     <div class="header">
-        <a href="/">Issue Tracker</a>
+        <a href="/">Issuebox</a>
     </div>
     <?=$content?>
     <div class="footer">

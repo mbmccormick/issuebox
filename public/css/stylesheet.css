@@ -444,6 +444,16 @@ a:hover
     color: #555;
 }
 
+.user-activity
+{
+    background-color: #ffffff;
+}
+
+.user-activity .description
+{
+    color: #555;
+}
+
 .filter-off
 {
     border: 1px solid #D4D4D4;
@@ -695,4 +705,9 @@ form label, form .label, label.standard
     color: white;
     font: normal normal 500 large/normal Arial, Helvetica, clean, sans-serif;
     text-align: center;
+}
+
+.form-actions
+{
+    text-align: right;
 }

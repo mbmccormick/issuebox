@@ -1,12 +1,5 @@
 <?php
 
-    function SetPageTitle($title)
-    {
-        echo "<script type='text/javascript'>\n";
-        echo "document.title = 'Issue Tracker - $title';\n";
-        echo "</script>\n";
-    }
-
     function FriendlyDate($levels = 2, $date1)
     { 
         $blocks = array( 
@@ -59,11 +52,11 @@
             
             if ($actiontype == "1")
             {
-                $headline = "created project <a href='project.php?id=$project[id]'>" . $project[name] . "</a>";
+                $headline = "created project <a href='/project/$project[id]'>" . $project[name] . "</a>";
             }
             else if ($actiontype == "2")
             {
-                $headline = "updated project <a href='project.php?id=$project[id]'>" . $project[name] . "</a>";
+                $headline = "updated project <a href='/project/$project[id]'>" . $project[name] . "</a>";
             }
             
             $description = $project[description];
@@ -78,11 +71,11 @@
             
             if ($actiontype == "1")
             {
-                $headline = "created <a href='issue.php?id=$issue[id]'>issue " . $issue[number] . "</a> on <a href='project.php?id=$project[id]'>" . $project[name] . "</a>";
+                $headline = "created <a href='/issue/$issue[id]'>issue " . $issue[number] . "</a> on <a href='/project/$project[id]'>" . $project[name] . "</a>";
             }
             else if ($actiontype == "2")
             {
-                $headline = "updated <a href='issue.php?id=$issue[id]'>issue " . $issue[number] . "</a> on <a href='project.php?id=$project[id]'>" . $project[name] . "</a>";
+                $headline = "updated <a href='/issue/$issue[id]'>issue " . $issue[number] . "</a> on <a href='/project/$project[id]'>" . $project[name] . "</a>";
             }
             
             $description = $issue[body];
@@ -97,11 +90,11 @@
             
             if ($actiontype == "1")
             {
-                $headline = "commented on <a href='issue.php?id=$issue[id]'>issue " . $issue[number] . "</a>";
+                $headline = "commented on <a href='/issue/$issue[id]'>issue " . $issue[number] . "</a>";
             }
             else if ($actiontype == "2")
             {
-                $headline = "updated a comment on <a href='issue.php?id=$issue[id]'>issue " . $issue[number] . "</a>";
+                $headline = "updated a comment on <a href='/issue/$issue[id]'>issue " . $issue[number] . "</a>";
             }
             
             $description = $comment[body];

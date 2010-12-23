@@ -1,6 +1,6 @@
 <div class="content">
     <div class="navigation">
-        <a href="/user">Users</a> / <a href="/user/<?=$user[id]?>/edit"><?=$user[username]?></a>
+        <a href="/user">Users</a> / <a href="/user/<?=$user[id]?>/edit">Edit User</a>
     </div>
     <div class="list">
         <form id="user-edit" action="/user/<?=$user[id]?>/edit" method="post">

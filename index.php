@@ -58,6 +58,10 @@
     dispatch('/user/:id/delete', 'user_delete');
     dispatch('/user/:id', 'user_view');
     
+    /* Declare Activity routes */
+    dispatch('/activity', 'activity_list');
+    dispatch('/activity/populate', 'activity_populate');
+    
     run();
     
 ?>

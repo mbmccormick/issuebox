@@ -43,13 +43,15 @@
                 <b>Body</b><br />                    
                 <textarea name="body" style="width: 710px;" rows="6"></textarea>
                 <br />
-                <p class="checkbox">
-                    <input type="checkbox" name="isurgent" value="1" /> This is an urgent issue
-                </p>
                 <br />
-                <button type="submit" class="button">
-                    <span>Create Issue</span>
-                </button>
+                <div class="form-actions">
+                    <p class="checkbox" style="float: left; margin-top: 7px;">
+                        <input type="checkbox" name="isurgent" value="1" /> This is an urgent issue
+                    </p>
+                    <button type="submit" class="button">
+                        <span>Create Issue</span>
+                    </button>
+                </div>
             </form>
         </div>
         <br />

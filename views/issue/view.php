@@ -32,9 +32,7 @@
             <div id="issue<?=$issue[number]?>" class="wikiStyle"><?=$issue[body]?></div>
             <br />
             <div class="options">
-                <a class="minibutton" href='/issue/<?=$issue[id]?>/edit'><span>Edit</span></a>
-                <a class="minibutton minidanger" onclick="return confirm('Are you sure you want to delete this issue and all of its comments?');" href='/issue/<?=$issue[id]?>/delete&projectid=<?=$issue[projectid]?>'><span>Delete</span></a>
-                &nbsp;&nbsp;<span class="date">Created about <?=FriendlyDate(1, strtotime($issue[createddate])); ?></span> by <a href="/user/<?=$user[id]?>"><?=$user[username]?></a>
+                <span class="date">Created about <?=FriendlyDate(1, strtotime($issue[createddate])); ?></span> by <a href="/user/<?=$user[id]?>"><?=$user[username]?></a>
             </div>
             <script type="text/javascript">
                 document.getElementById("issue<?=$issue[number]?>").innerHTML = converter.makeHtml(document.getElementById("issue<?=$issue[number]?>").innerHTML);
@@ -60,12 +58,14 @@
                 <textarea name="body" style="width: 710px;" rows="8"></textarea>
                 <br />
                 <br />
-                <button type="submit" name="comment" class="button">
-                    <span>Comment</span>
-                </button>
-                <button type="submit" name="commentandclose" class="button">
-                    <span>Comment &amp; Close</span>
-                </button>
+                <div class="form-actions">
+                    <button type="submit" name="commentandclose" class="button">
+                        <span>Comment &amp; Close</span>
+                    </button>
+                    <button type="submit" name="comment" class="button">
+                        <span>Comment</span>
+                    </button>
+                </div>
             </form>
         </div>
         <?php } else { ?>
@@ -73,6 +73,13 @@
             <p>This issue is closed, and no more comments can be added.</p>
         </div>
         <?php } ?>
+        <br />
+        <button type="button" class="button" onclick="location.href='/issue/<?=$issue[id]?>/edit';">
+            <span>Edit Issue</span>
+        </button>
+        <button type="button" class="button danger" onclick="confirm('Are you sure you want to delete this issue and all of its comments?') ? location.href='/issue/<?=$issue[id]?>/delete' : false;">
+            <span>Delete</span>
+        </button>
     </div>        
 </div>
 <script type="text/javascript"> 

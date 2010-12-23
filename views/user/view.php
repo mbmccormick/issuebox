@@ -1,37 +1,31 @@
 <div class="content">
     <div class="navigation">
-        <a href="/user">Users</a> / <a href="/user/<?=$user[id]?>/edit"><?=$user[username]?></a>
+        <a href="/user">Users</a> / <a href="/user/<?=$user[id]?>"><?=$user[username]?></a>
     </div>
     <div class="list">
-        <form id="user-edit" action="/user/<?=$user[id]?>/edit" method="post">
-            <div class="list-item user">
-                <h3>Edit User</h3>
-                <br />
-                <b>Username</b><br />
-                <input type="text" name="username" style="width: 710px;" value="<?=$user[username]?>" /><br />
-                <br />
-                <b>Email</b><br />                    
-                <input type="text" name="email" style="width: 710px;" value="<?=$user[email]?>" /><br />
-                <br />
-                <br />
-                <b>Current Password</b><br />                    
-                <input type="password" name="currentpassword" style="width: 710px;" /><br />
-                <br />
-                <br />
-                <b>New Password</b><br />                    
-                <input type="password" name="newpassword" style="width: 710px;" /><br />
-                <br />
-                <b>Confirm New Password</b><br />                    
-                <input type="password" name="newpasswordconfirm" style="width: 710px;" /><br />
-            </div>
-            <br />
-            <button type="submit" class="button">
-                <span>Save User</span>
-            </button>
-            <button type="button" class="button danger" onclick="confirm('Are you sure you want to delete this user?') ? location.href='/user/<?=$user[id]?>/delete' : false;">
-                <span>Delete</span>
-            </button>
-        </form>
+        <div class="list-item user">                    
+            <table cellpadding="0" cellspacing="0" style="width: 100%;">
+                <tr>
+                    <td valign="middle">
+                        <img src="http://www.gravatar.com/avatar/<?=md5($user[email])?>?s=45" style="background-color: #ffffff; padding: 2px; border: solid 1px #dddddd;" />
+                    </td>
+                    <td>
+                        &nbsp;&nbsp;
+                    </td>
+                    <td valign="middle" style="width: 100%;">
+                        <h3><a href="/user/<?=$user[id]?>"><?=$user[username]?></a></h3>
+                        <p>Created on <?=date("F j, Y", strtotime($user[createddate]))?></p>
+                    </td>
+                    </tr>
+            </table>        
+        </div>
+        <?=$body?>
+        <button type="button" class="button" onclick="location.href='/user/<?=$user[id]?>/edit';">
+            <span>Edit User</span>
+        </button>
+        <button type="button" class="button danger" onclick="confirm('Are you sure you want to delete this user?') ? location.href='/user/<?=$user[id]?>/delete' : false;">
+            <span>Delete</span>
+        </button>
     </div>
 </div>
 <script type="text/javascript">
