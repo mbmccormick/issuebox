@@ -1,6 +1,6 @@
 <div class="content">
     <div class="navigation">
-        <a href="login.php">Login</a>
+        <a href="/login">Login</a>
     </div>
     <div class="standard-form">
         <h2>Login</h2>
