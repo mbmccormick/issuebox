@@ -442,6 +442,7 @@ a:hover
 .activity .description
 {
     color: #555;
+    line-height: 1.5em;
 }
 
 .user-activity
@@ -452,6 +453,7 @@ a:hover
 .user-activity .description
 {
     color: #555;
+    line-height: 1.5em;
 }
 
 .filter-off
