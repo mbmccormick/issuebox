@@ -55,7 +55,7 @@
             </table>
             <br />
             <form id="comment-new" action="/comment/add&issueid=<?=$issue[id]?>" method="post">
-                <textarea name="body" style="width: 710px;" rows="8"></textarea>
+                <textarea name="body" style="width: 710px;" rows="6"></textarea>
                 <br />
                 <br />
                 <div class="form-actions">
