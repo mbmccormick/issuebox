@@ -44,6 +44,10 @@
     dispatch_post('/comment/add', 'comment_add_post');
     dispatch('/comment/:id/delete', 'comment_delete');
     
+    /* Declare Activity routes */
+    dispatch('/activity', 'activity_list');
+    dispatch('/activity/populate', 'activity_populate');
+    
     /* Declare Security routes */
     dispatch('/login', 'login');
     dispatch_post('/login', 'login_post');
@@ -58,9 +62,8 @@
     dispatch('/user/:id/delete', 'user_delete');
     dispatch('/user/:id', 'user_view');
     
-    /* Declare Activity routes */
-    dispatch('/activity', 'activity_list');
-    dispatch('/activity/populate', 'activity_populate');
+    /* Declare Setting routes */
+    dispatch('/settings', 'setting_list');
     
     run();
     
