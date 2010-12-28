@@ -3,13 +3,13 @@
     function FriendlyDate($levels = 2, $date1)
     { 
         $blocks = array( 
-            array('name'=>'year','amount'    =>    60*60*24*365    ), 
-            array('name'=>'month','amount'    =>    60*60*24*31    ), 
-            array('name'=>'week','amount'    =>    60*60*24*7    ), 
-            array('name'=>'day','amount'    =>    60*60*24    ), 
-            array('name'=>'hour','amount'    =>    60*60        ), 
-            array('name'=>'minute','amount'    =>    60        ), 
-            array('name'=>'second','amount'    =>    1        ) 
+            array('name'=>'year','amount' => 60*60*24*365), 
+            array('name'=>'month','amount' => 60*60*24*31), 
+            array('name'=>'week','amount' => 60*60*24*7), 
+            array('name'=>'day','amount' => 60*60*24), 
+            array('name'=>'hour','amount' => 60*60), 
+            array('name'=>'minute','amount' => 60), 
+            array('name'=>'second','amount' => 1) 
         ); 
         
         $date2 = time();
