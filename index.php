@@ -51,6 +51,8 @@
     /* Declare Security routes */
     dispatch('/login', 'login');
     dispatch_post('/login', 'login_post');
+    dispatch('/login/reset', 'login_reset');
+    dispatch_post('/login/reset', 'login_reset_post');
     dispatch('/logout', 'logout');
     
     /* Declare User routes */
@@ -64,6 +66,8 @@
     
     /* Declare Setting routes */
     dispatch('/settings', 'setting_list');
+    dispatch('/settings/email', 'setting_email');
+    dispatch_post('/settings/email', 'setting_email_post');
     
     run();
     

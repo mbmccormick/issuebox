@@ -7,7 +7,7 @@
             <a href="/user">Manage Users</a>
         </div>
         <div class="list-item setting">
-            <a href="/setting/email">Email Configuration</a>
+            <a href="/settings/email">Email Configuration</a>
         </div>
     </div>
     <br />

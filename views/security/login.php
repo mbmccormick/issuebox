@@ -24,6 +24,6 @@
     <div class="standard-form help">
         <b>Forget your password?</b><br />
         <br />
-        <a href="password-reset.php">Click here to reset your password.</a>
+        <a href="/login/reset">Click here to reset your password.</a>
     </div>
 </div>

@@ -90,11 +90,17 @@
             
             if ($actiontype == "1")
             {
-                $headline = "commented on <a href='/issue/$issue[id]'>issue " . $issue[number] . "</a>";
+                if ($issue[isclosed] == "1")
+                    $headline = "closed <a href='/issue/$issue[id]'>issue " . $issue[number] . "</a>";
+                else
+                    $headline = "commented on <a href='/issue/$issue[id]'>issue " . $issue[number] . "</a>";
             }
             else if ($actiontype == "2")
             {
-                $headline = "updated a comment on <a href='/issue/$issue[id]'>issue " . $issue[number] . "</a>";
+                if ($issue[isclosed] == "1")
+                    $headline = "closed <a href='/issue/$issue[id]'>issue " . $issue[number] . "</a>";
+                else
+                    $headline = "updated a comment on <a href='/issue/$issue[id]'>issue " . $issue[number] . "</a>";
             }
             
             $description = $comment[body];
@@ -116,6 +122,22 @@
         {
             die('Error: ' . mysql_error());
         }
+    }
+    
+    function StartsWith($haystack, $needle, $case=true)
+    {
+        if ($case) 
+        {
+            return (strcmp(substr($haystack, 0, strlen($needle)), $needle)===0);
+        }
+        return (strcasecmp(substr($haystack, 0, strlen($needle)), $needle)===0);
+    }
+    
+    function RetrieveSetting($key)
+    {
+        $sql = mysql_query("SELECT * FROM setting WHERE name = '$key'");
+        $setting = mysql_fetch_array($sql);
+        return $setting[value];
     }
     
 ?>

@@ -20,7 +20,10 @@
             else if ($row[itemtype] == "2")
                 $body .= "<img src='/public/img/issue" . $row[actiontype] . ".png' alt='$row[actiontype]' />\n";
             else if ($row[itemtype] == "3")
-                $body .= "<img src='/public/img/comment" . $row[actiontype] . ".png' alt='$row[actiontype]' />\n";
+                if (StartsWith($row[headline], "closed"))
+                    $body .= "<img src='/public/img/comment" . $row[actiontype] . "c.png' alt='$row[actiontype]' />\n";
+                else
+                    $body .= "<img src='/public/img/comment" . $row[actiontype] . ".png' alt='$row[actiontype]' />\n";
             $body .= "</td>\n";
             $body .= "<td style='padding-bottom: 7px;'>\n";
             $body .= "<b>" . ucfirst($row[headline]) . " about " . FriendlyDate(1, strtotime($row[createddate])) . "</b>\n";
