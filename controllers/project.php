@@ -29,13 +29,13 @@
             $body .= "</td>\n";
             $body .= "<td valign='middle' align='right'>\n";
             if ($row[isurgent] == "1")
-                $body .= "<em class='urgent-indicator'>Urgent</span>";
+                $body .= "<em class='urgent-indicator'>Urgent</em>";
             if ($row[isclosed] == "1")
-                $body .= "<em class='closed-indicator'>Closed</span>";
+                $body .= "<em class='closed-indicator'>Closed</em>";
             $body .= "</td>\n";
             $body .= "</tr>\n";
             $body .= "</table>\n";
-            $body .= "<div id='issue$row[number]' class='wikiStyle'>" . $row[body] . "</div>\n";
+            $body .= "<div id='issue$row[number]' class='wikiStyle'>" . FriendlyString($row[body], 220) . "</div>\n";
             $body .= "<br />\n";
             $body .= "<div class='options'>\n";
             if ($count == 1)

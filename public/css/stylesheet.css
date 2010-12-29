@@ -567,6 +567,7 @@ em.closed-indicator
     padding: 2px 5px;
     text-transform: uppercase;
     font-weight: bold;
+    margin-left: 3px;
 }
 
 .mac em.closed-indicator
@@ -585,6 +586,7 @@ em.urgent-indicator
     padding: 2px 5px;
     text-transform: uppercase;
     font-weight: bold;
+    margin-left: 3px;
 }
 
 .mac em.urgent-indicator
