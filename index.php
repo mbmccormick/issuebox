@@ -24,6 +24,9 @@
         layout('layout.php');
     }
     
+    /* Initialize version number */
+    set("Version", $Version);
+    
     /* Declare Project routes */
     dispatch('/', 'project_list');
     dispatch('/project/add', 'project_add');

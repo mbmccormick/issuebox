@@ -39,7 +39,7 @@
     </div>
     <?=$content?>
     <div class="footer">
-        Copyright &copy; 2010 McCormick Technologies LLC. All rights reserved.
+        Issuebox is built by <a href="http://www.mccormicktechnologies.com/" target="_blank">McCormick Technologies</a>. Version <?=$Version?>.
     </div>
 </body> 
 </html>

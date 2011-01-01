@@ -6,4 +6,7 @@
     $Password = "yourpass";
     $Database = "yourdatabase";
     
+    // application settings
+    $Version = "2010.01.01";
+    
 ?>
