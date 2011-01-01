@@ -35,7 +35,16 @@
         
     ?>
     <div class="header">
-        <a href="/">Issuebox</a>
+        <table cellpadding="0" cellspacing="0"> 
+            <tr valign="middle">
+                <td>
+                    <img src="/public/img/logo.png" />
+                </td>
+                <td>
+                    &nbsp;<a href="/">Issuebox</a>
+                </td>
+            </tr>
+        </table>
     </div>
     <?=$content?>
     <div class="footer">
