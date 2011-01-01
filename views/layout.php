@@ -3,6 +3,7 @@
 <head> 
   <title>Issuebox - <?=$title?></title> 
   <link rel="stylesheet" type="text/css" media="screen,projection" href="/public/css/stylesheet.css" />
+  <link rel="shortcut icon" type="image/x-icon" href="/public/img/logo.ico">
   <script type="text/javascript" src="/public/js/jquery/jquery-1.4.4.js"></script>
   <script type="text/javascript" src="/public/js/form/jquery.form.js"></script>
   <script type="text/javascript" src="/public/js/showMessage/jquery.showMessage-2.1.js"></script>
