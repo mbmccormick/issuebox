@@ -159,7 +159,7 @@
             });
             
             $(".comment-new").hide();
-            $(".list").append("<div class='list-item comment-new'><p>This issue is closed, and no more comments can be added.</p></div>").hide().fadeIn();
+            $(".list-holder").append("<div class='list-item comment-new'><p>This issue is closed, and no more comments can be added.</p></div>").hide().fadeIn();
             $(".closed-indicator").fadeIn();
         }
         
