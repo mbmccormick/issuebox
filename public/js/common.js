@@ -49,8 +49,22 @@ $(document).ready(function() {
         });
         
         history.replaceState(null, document.title, getRawUrl());
+    }    
+    
+    $("#arrow-top").click(function() {
+        $('body,html').animate({ scrollTop:0 }, 800);
+    });
+});
+
+$(window).scroll(function() {
+    if($(this).scrollTop() >= 350) {
+        $('#arrow-top').fadeIn();	
+    }
+    else {
+        $('#arrow-top').fadeOut();
     }
 });
+
 
 function getRawUrl()
 {

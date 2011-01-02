@@ -7,6 +7,7 @@
   <script type="text/javascript" src="/public/js/jquery/jquery-1.4.4.js"></script>
   <script type="text/javascript" src="/public/js/form/jquery.form.js"></script>
   <script type="text/javascript" src="/public/js/showMessage/jquery.showMessage-2.1.js"></script>
+  <script type="text/javascript" src="/public/js/scrollTo/jquery.scrollTo.js"></script>
   <script type="text/javascript" src="/public/js/css_browser_selector/css_browser_selector.js"></script>
   <script type="text/javascript" src="/public/js/github-flavored-markdown/scripts/showdown.js"></script>
   <script type="text/javascript" src="/public/js/common.js"></script>
@@ -50,6 +51,9 @@
     <?=$content?>
     <div class="footer">
         Issuebox is built by <a href="http://www.mccormicktechnologies.com/" target="_blank">McCormick Technologies</a>. Version <?=$Version?>.
+    </div>
+    <div id="arrow-top" style="display: none;">
+        &#9650;
     </div>
 </body> 
 </html>
