@@ -25,7 +25,7 @@
             $body .= "<table cellpadding='0' cellspacing='0' style='width: 100%;'>\n";
             $body .= "<tr>\n";
             $body .= "<td valign='middle'>\n";
-            $body .= "<h3>#$row[number]&nbsp;&nbsp;<a href='/issue/$row[id]'>" . FriendlyString($row[title], 65) . "</a></h3>";
+            $body .= "<h3>#$row[number]&nbsp;&nbsp;<a href='/issue/$row[id]'>" . FriendlyString($row[title], 62) . "</a></h3>";
             $body .= "</td>\n";
             $body .= "<td valign='middle' align='right'>\n";
             if ($row[isurgent] == "1")
@@ -35,7 +35,7 @@
             $body .= "</td>\n";
             $body .= "</tr>\n";
             $body .= "</table>\n";
-            $body .= "<div id='issue$row[number]' class='wikiStyle'>" . FriendlyString($row[body], 220) . "</div>\n";
+            $body .= "<div id='issue$row[number]' class='wikiStyle truncate'>" . $row[body] . "</div>\n";
             $body .= "<br />\n";
             $body .= "<div class='options'>\n";
             if ($count == 1)

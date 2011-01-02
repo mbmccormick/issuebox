@@ -8,6 +8,7 @@
   <script type="text/javascript" src="/public/js/form/jquery.form.js"></script>
   <script type="text/javascript" src="/public/js/showMessage/jquery.showMessage-2.1.js"></script>
   <script type="text/javascript" src="/public/js/scrollTo/jquery.scrollTo.js"></script>
+  <script type="text/javascript" src="/public/js/truncator/jquery.truncator.js"></script>
   <script type="text/javascript" src="/public/js/css_browser_selector/css_browser_selector.js"></script>
   <script type="text/javascript" src="/public/js/github-flavored-markdown/scripts/showdown.js"></script>
   <script type="text/javascript" src="/public/js/common.js"></script>

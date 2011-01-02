@@ -54,6 +54,8 @@ $(document).ready(function() {
     $("#arrow-top").click(function() {
         $('body,html').animate({ scrollTop:0 }, 800);
     });
+    
+    $(".truncate").truncate({max_length: 200, more: "more...", less: "...less"});
 });
 
 $(window).scroll(function() {

@@ -87,7 +87,7 @@
             echo "</td>\n";
             echo "</tr>\n";
             echo "</table>\n";
-            echo "<div id='issue$result[number]' class='wikiStyle'>" . FriendlyString($result[body], 220) . "</div>\n";
+            echo "<div id='issue$result[number]' class='wikiStyle truncate'>" . $result[body] . "</div>\n";
             echo "<br />\n";
             echo "<div class='options'>\n";
             if ($count == 1)

@@ -132,6 +132,8 @@
             delayTime: 5000
         });
         
+        $(".truncate").truncate({max_length: 200, more: "more...", less: "...less"});
+        
         checkDisplayNone();
     }
     
