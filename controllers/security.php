@@ -38,7 +38,7 @@
             $password .= $d ? chr(rand(65, 90)) : chr(rand(48, 57)); 
         }
         
-        if (mail($user[email], "Your New Issuebox Password", "You recently requested a new password for Issuebox. Your new password is " . $password . ".\n\n--\nIssuebox", "From: Issuebox <" . RetrieveSetting("OutgoingEmailAddress") . ">") == true)
+        if (mail($user[email], "Your New Issuebox Password", "You recently requested a new password for Issuebox. Your new password is " . $password . ".\n\n--\nIssuebox", "From: Issuebox <" . RetrieveSetting("ContactEmailAddress") . ">") == true)
         {        
             $sql = "UPDATE user SET password = '". md5($password) . "' WHERE id = '$user[id]'";
             mysql_query($sql);

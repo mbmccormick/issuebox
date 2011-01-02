@@ -38,7 +38,7 @@
                 <div class="standard-form help">
                     <b>Need an account?</b><br />
                     <br />
-                    <a href="mailto:<?php echo RetrieveSetting("OutgoingEmailAddress"); ?>">Click here to contact your administrator.</a>
+                    <a href="mailto:<?php echo RetrieveSetting("ContactEmailAddress"); ?>">Click here to contact your administrator.</a>
                 </div>
             </td>
         </tr>

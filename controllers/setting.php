@@ -13,7 +13,6 @@
         Security_Authorize();
         
         set("title", "Email Configuration");
-        set("outgoingEmailAddress", RetrieveSetting("OutgoingEmailAddress"));
         return html("setting/email.php");
     }
     
@@ -21,7 +20,7 @@
     {
         Security_Authorize();
         
-        $sql = "UPDATE setting SET value = '" . mysql_real_escape_string($_POST[outgoingEmailAddress]) . "' WHERE name = 'OutgoingEmailAddress'";
+        $sql = "UPDATE setting SET value = '" . mysql_real_escape_string($_POST[outgoingEmailAddress]) . "' WHERE name = 'ContactEmailAddress'";
         mysql_query($sql);
         
         header("Location: /settings&success=Your settings were saved successfully!");
