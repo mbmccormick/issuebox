@@ -10,7 +10,7 @@
             <table cellpadding="0" cellspacing="0" style="width: 100%;">
                 <tr>
                     <td valign="middle">
-                        <h3>#<?=$issue[number]?>&nbsp;&nbsp;<a href="/issue/<?=$issue[id]?>"><?=$issue[title]?></a></h3>
+                        <h3>#<?=$issue[number]?>&nbsp;&nbsp;<a href="/issue/<?=$issue[id]?>"><?=FriendlyString($issue[title], 65)?></a></h3>
                     </td>
                     <td valign="middle" align="right">
                         <?php
@@ -77,7 +77,7 @@
         <button type="button" class="button" onclick="location.href='/issue/<?=$issue[id]?>/edit';">
             <span>Edit Issue</span>
         </button>
-        <button type="button" class="button danger" onclick="confirm('Are you sure you want to delete this issue and all of its comments?') ? location.href='/issue/<?=$issue[id]?>/delete' : false;">
+        <button type="button" class="button danger" onclick="confirm('Are you sure you want to delete this issue and all of its comments?') ? location.href='/issue/<?=$issue[id]?>/delete&projectid=<?=$issue[projectid]?>' : false;">
             <span>Delete</span>
         </button>
     </div>        

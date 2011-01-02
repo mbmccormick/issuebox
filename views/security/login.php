@@ -32,14 +32,14 @@
             </td>
             <td style="width: 50%;">
                 <div class="standard-form help">
-                    <b>Need an account?</b><br />
-                    <br />
-                    <a href="mailto:<?php echo RetrieveSetting("OutgoingEmailAddress"); ?>">Click here to contact your administrator.</a>
-                </div>
-                <div class="standard-form help">
                     <b>Forget your password?</b><br />
                     <br />
                     <a href="/login/reset">Click here to reset your password.</a>
+                </div>
+                <div class="standard-form help">
+                    <b>Need an account?</b><br />
+                    <br />
+                    <a href="mailto:<?php echo RetrieveSetting("OutgoingEmailAddress"); ?>">Click here to contact your administrator.</a>
                 </div>
             </td>
         </tr>

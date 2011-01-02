@@ -93,7 +93,7 @@ a:hover
 {
     white-space: nowrap;
     overflow: hidden;
-    max-width: 660px;
+    max-width: 600px;
 }
 
 .list-item h3
@@ -439,6 +439,7 @@ a:hover
 {
     font-weight: bold;
     padding: 5px 0px 25px 0px;
+    max-width: 600px;
 }
 
 .activity .description
@@ -634,12 +635,15 @@ p.checkbox
 .help
 {
     background-color: #ffffff;
+    line-height: 1.4em;
 }
 
 form input.text, form input[type=text], form textarea, form input.password, form input[type=password]
 {
     border: 1px solid #888;
     padding: 5px;
+    font-family: helvetica, arial;
+    text-shadow: rgba(0, 0, 0, 0.0078125) 0px 0px 1px;
 }
 
 form label, form .label, label.standard
@@ -669,8 +673,8 @@ form label, form .label, label.standard
 
 .wikiStyle p
 {
-    line-height:1.5em !important;
-    margin:1em 0 !important;
+    line-height: 1.5em !important;
+    margin: 1em 0 !important;
 }
 
 .btn-projects .icon
