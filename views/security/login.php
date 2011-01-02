@@ -11,17 +11,16 @@
                     <form action="/login" method="post">
                         <label for="Username">
                             Username<br />
-                            <input class="text" name="username" style="width: 25em;" type="text" />
+                            <input class="text" name="username" style="width: 333px;" type="text" />
                         </label>
                         <label for="password">
                             Password<br />
-                            <input class="text" name="password" style="width: 25em;" type="password" />
+                            <input class="text" name="password" style="width: 333px;" type="password" />
                         </label>
-                        <label>
-                            <button type="submit" class="button">
-                                <span>Log In</span>
-                            </button>
-                        </label>
+                        <br />
+                        <button type="submit" class="button">
+                            <span>Log In</span>
+                        </button>
                     </form>  
                 </div>
             </td>

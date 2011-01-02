@@ -11,13 +11,12 @@
                     <form action="/login/reset" method="post">
                         <label for="Username">
                             Email Address<br />
-                            <input class="text" name="email" style="width: 25em;" type="text" />
+                            <input class="text" name="email" style="width: 333px;" type="text" />
                         </label>
-                        <label>
-                            <button type="submit" class="button">
-                                <span>Reset</span>
-                            </button>
-                        </label>
+                        <br />
+                        <button type="submit" class="button">
+                            <span>Reset</span>
+                        </button>
                     </form>  
                 </div>
             </td>
