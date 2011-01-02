@@ -126,13 +126,22 @@
         $result = mysql_query("SELECT * FROM issue WHERE id = '" . params('id') . "'");
         $issue = mysql_fetch_array($result);
         
-        $result = mysql_query("SELECT * FROM project WHERE id = '$issue[projectid]'");
-        $project = mysql_fetch_array($result);
-        
-        set("title", "Edit Issue");
-        set("issue", $issue);
-        set("project", $project);
-        return html("issue/edit.php");
+        if ($issue != null)
+        {
+            $result = mysql_query("SELECT * FROM project WHERE id = '$issue[projectid]'");
+            $project = mysql_fetch_array($result);
+            
+            set("title", "Edit Issue");
+            set("issue", $issue);
+            set("project", $project);
+            return html("issue/edit.php");
+        }
+        else
+        {
+            set("title", "Issue Not Found");
+            set("type", "issue");
+            return html("common/notfound.php");
+        }
     }
     
     function issue_edit_post()

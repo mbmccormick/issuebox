@@ -163,9 +163,18 @@
         $result = mysql_query("SELECT * FROM project WHERE id = '" . params('id') . "'");
         $project = mysql_fetch_array($result);
         
-        set("title", "Edit Project");
-        set("project", $project);
-        return html("project/edit.php");
+        if ($project != null)
+        {
+            set("title", "Edit Project");
+            set("project", $project);
+            return html("project/edit.php");
+        }
+        else
+        {
+            set("title", "Project Not Found");
+            set("type", "project");
+            return html("common/notfound.php");
+        }
     }
     
     function project_edit_post()

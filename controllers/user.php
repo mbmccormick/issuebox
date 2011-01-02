@@ -139,9 +139,18 @@
         $result = mysql_query("SELECT * FROM user WHERE id = '" . params('id') . "'");
         $user = mysql_fetch_array($result);
         
-        set("title", "Edit User");
-        set("user", $user);
-        return html("user/edit.php");
+        if ($user != null)
+        {
+            set("title", "Edit User");
+            set("user", $user);
+            return html("user/edit.php");
+        }
+        else
+        {
+            set("title", "User Not Found");
+            set("type", "user");
+            return html("common/notfound.php");
+        }
     }
     
     function user_edit_post()

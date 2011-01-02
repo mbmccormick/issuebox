@@ -19,9 +19,17 @@
         option('controllers_dir', 'controllers/');
     }
     
+    /* Declare default layout page */
     function before()
     {
         layout('layout.php');
+    }
+    
+    /* Declare default error page */
+    function server_error($errno, $errstr, $errfile=null, $errline=null)
+    {
+        $args = compact('errno', 'errstr', 'errfile', 'errline');   
+        return html("common/error.php", "layout.php", $args);
     }
     
     /* Initialize version number */
