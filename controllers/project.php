@@ -7,56 +7,64 @@
         $result = mysql_query("SELECT * FROM project WHERE id = '" . params('id') . "'");
         $project = mysql_fetch_array($result);
         
-        $result = mysql_query("SELECT * FROM issue WHERE projectid = '$project[id]' ORDER BY isurgent DESC, number ASC");
-        while($row = mysql_fetch_array($result))
+        if ($project != null)
         {
-            $sql = mysql_query("SELECT COUNT(*) AS rowcount FROM comment WHERE issueid = '$row[id]'");
-            $return = mysql_fetch_array($sql);
-            $count = $return[rowcount];
+            $result = mysql_query("SELECT * FROM issue WHERE projectid = '$project[id]' ORDER BY isurgent DESC, number ASC");
+            while($row = mysql_fetch_array($result))
+            {
+                $sql = mysql_query("SELECT COUNT(*) AS rowcount FROM comment WHERE issueid = '$row[id]'");
+                $return = mysql_fetch_array($sql);
+                $count = $return[rowcount];
+                
+                $sql = mysql_query("SELECT id, username FROM user WHERE id = '$row[createdby]'");
+                $user = mysql_fetch_array($sql);
+                
+                if ($row[isclosed] == "0")
+                    $body .= "<div class='list-item issue open'>\n";
+                else
+                    $body .= "<div class='list-item issue closed' style='display: none;'>\n";
+                
+                $body .= "<table cellpadding='0' cellspacing='0' style='width: 100%;'>\n";
+                $body .= "<tr>\n";
+                $body .= "<td valign='middle'>\n";
+                $body .= "<h3>#$row[number]&nbsp;&nbsp;<a href='/issue/$row[id]'>" . FriendlyString($row[title], 62) . "</a></h3>";
+                $body .= "</td>\n";
+                $body .= "<td valign='middle' align='right'>\n";
+                if ($row[isurgent] == "1")
+                    $body .= "<em class='urgent-indicator'>Urgent</em>";
+                if ($row[isclosed] == "1")
+                    $body .= "<em class='closed-indicator'>Closed</em>";
+                $body .= "</td>\n";
+                $body .= "</tr>\n";
+                $body .= "</table>\n";
+                $body .= "<div id='issue$row[number]' class='wikiStyle truncate'>" . $row[body] . "</div>\n";
+                $body .= "<br />\n";
+                $body .= "<div class='options'>\n";
+                if ($count == 1)
+                    $body .= "<a href='/issue/$row[id]'>$count comment</a>\n";
+                else
+                    $body .= "<a href='/issue/$row[id]'>$count comments</a>\n";
+                $body .= "&nbsp;Created about " . FriendlyDate(1, strtotime($row[createddate])) . " by <a href='/user/$user[id]'>$user[username]</a>";
+                $body .= "</div>\n";
+                
+                $body .= "<script type='text/javascript'>\n";
+                $body .= "document.getElementById('issue$row[number]').innerHTML = converter.makeHtml(document.getElementById('issue$row[number]').innerHTML);\n";
+                $body .= "</script>\n";
+                
+                $body .= "</div>\n";
+            }
             
-            $sql = mysql_query("SELECT id, username FROM user WHERE id = '$row[createdby]'");
-            $user = mysql_fetch_array($sql);
-            
-            if ($row[isclosed] == "0")
-                $body .= "<div class='list-item issue open'>\n";
-            else
-                $body .= "<div class='list-item issue closed' style='display: none;'>\n";
-            
-            $body .= "<table cellpadding='0' cellspacing='0' style='width: 100%;'>\n";
-            $body .= "<tr>\n";
-            $body .= "<td valign='middle'>\n";
-            $body .= "<h3>#$row[number]&nbsp;&nbsp;<a href='/issue/$row[id]'>" . FriendlyString($row[title], 62) . "</a></h3>";
-            $body .= "</td>\n";
-            $body .= "<td valign='middle' align='right'>\n";
-            if ($row[isurgent] == "1")
-                $body .= "<em class='urgent-indicator'>Urgent</em>";
-            if ($row[isclosed] == "1")
-                $body .= "<em class='closed-indicator'>Closed</em>";
-            $body .= "</td>\n";
-            $body .= "</tr>\n";
-            $body .= "</table>\n";
-            $body .= "<div id='issue$row[number]' class='wikiStyle truncate'>" . $row[body] . "</div>\n";
-            $body .= "<br />\n";
-            $body .= "<div class='options'>\n";
-            if ($count == 1)
-                $body .= "<a href='/issue/$row[id]'>$count comment</a>\n";
-            else
-                $body .= "<a href='/issue/$row[id]'>$count comments</a>\n";
-            $body .= "&nbsp;Created about " . FriendlyDate(1, strtotime($row[createddate])) . " by <a href='/user/$user[id]'>$user[username]</a>";
-            $body .= "</div>\n";
-            
-            $body .= "<script type='text/javascript'>\n";
-            $body .= "document.getElementById('issue$row[number]').innerHTML = converter.makeHtml(document.getElementById('issue$row[number]').innerHTML);\n";
-            $body .= "</script>\n";
-            
-            $body .= "</div>\n";
+            set("title", $project[name]);
+            set("body", $body);
+            set("project", $project);
+            return html("project/view.php");
         }
-        
-        
-        set("title", $project[name]);
-        set("body", $body);
-        set("project", $project);
-        return html("project/view.php");
+        else
+        {
+            set("title", "Project Not Found");
+            set("type", "project");
+            return html("common/notfound.php");
+        }
     }
     
     function project_list()

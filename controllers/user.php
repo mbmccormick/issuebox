@@ -7,49 +7,58 @@
         $result = mysql_query("SELECT * FROM user WHERE id = '" . params('id') . "'");
         $user = mysql_fetch_array($result);
         
-        $result = mysql_query("SELECT * FROM activity WHERE createdby = '$user[id]' ORDER BY createddate DESC LIMIT 5");
-        while($row = mysql_fetch_array($result))
+        if ($user != null)
         {
-            $body .= "<div class='list-item user-activity'>\n";
-            $body .= "<table cellpadding='0' cellspacing='0' style='width: 100%;'>\n";
+            $result = mysql_query("SELECT * FROM activity WHERE createdby = '$user[id]' ORDER BY createddate DESC LIMIT 5");
+            while($row = mysql_fetch_array($result))
+            {
+                $body .= "<div class='list-item user-activity'>\n";
+                $body .= "<table cellpadding='0' cellspacing='0' style='width: 100%;'>\n";
+                
+                $body .= "<tr>\n";
+                $body .= "<td rowspan='2' valign='top' style='width: 25px;'>\n";
+                if ($row[itemtype] == "1")
+                    $body .= "<img src='/public/img/project" . $row[actiontype] . ".png' alt='$row[actiontype]' />\n";
+                else if ($row[itemtype] == "2")
+                    $body .= "<img src='/public/img/issue" . $row[actiontype] . ".png' alt='$row[actiontype]' />\n";
+                else if ($row[itemtype] == "3")
+                    if (StartsWith($row[headline], "closed"))
+                        $body .= "<img src='/public/img/comment" . $row[actiontype] . "c.png' alt='$row[actiontype]' />\n";
+                    else
+                        $body .= "<img src='/public/img/comment" . $row[actiontype] . ".png' alt='$row[actiontype]' />\n";
+                $body .= "</td>\n";
+                $body .= "<td style='padding-bottom: 7px;'>\n";
+                $body .= "<b>" . ucfirst($row[headline]) . " about " . FriendlyDate(1, strtotime($row[createddate])) . "</b>\n";
+                $body .= "</td>\n";
+                $body .= "</tr>\n";
+                $body .= "<tr>\n";
+                $body .= "<td valign='top'>\n";
+                $body .= "<span class='description'>" . FriendlyString($row[description]) . "</span>\n";
+                $body .= "</td>\n";
+                $body .= "</tr>\n";                    
+                
+                $body .= "</table>\n";
+                $body .= "</div>\n";
+            }
             
-            $body .= "<tr>\n";
-            $body .= "<td rowspan='2' valign='top' style='width: 25px;'>\n";
-            if ($row[itemtype] == "1")
-                $body .= "<img src='/public/img/project" . $row[actiontype] . ".png' alt='$row[actiontype]' />\n";
-            else if ($row[itemtype] == "2")
-                $body .= "<img src='/public/img/issue" . $row[actiontype] . ".png' alt='$row[actiontype]' />\n";
-            else if ($row[itemtype] == "3")
-                if (StartsWith($row[headline], "closed"))
-                    $body .= "<img src='/public/img/comment" . $row[actiontype] . "c.png' alt='$row[actiontype]' />\n";
-                else
-                    $body .= "<img src='/public/img/comment" . $row[actiontype] . ".png' alt='$row[actiontype]' />\n";
-            $body .= "</td>\n";
-            $body .= "<td style='padding-bottom: 7px;'>\n";
-            $body .= "<b>" . ucfirst($row[headline]) . " about " . FriendlyDate(1, strtotime($row[createddate])) . "</b>\n";
-            $body .= "</td>\n";
-            $body .= "</tr>\n";
-            $body .= "<tr>\n";
-            $body .= "<td valign='top'>\n";
-            $body .= "<span class='description'>" . FriendlyString($row[description]) . "</span>\n";
-            $body .= "</td>\n";
-            $body .= "</tr>\n";                    
+            if (mysql_num_rows($result) == 0)
+            {
+                $body .= "<div class='list-item user-activity'>\n";
+                $body .= "<p>There is currently no activity to display.</p>\n";
+                $body .= "</div>\n";
+            }
             
-            $body .= "</table>\n";
-            $body .= "</div>\n";
+            set("title", $user[username]);
+            set("user", $user);
+            set("body", $body);
+            return html("user/view.php");
         }
-        
-        if (mysql_num_rows($result) == 0)
+        else
         {
-            $body .= "<div class='list-item user-activity'>\n";
-            $body .= "<p>There is currently no activity to display.</p>\n";
-            $body .= "</div>\n";
+            set("title", "User Not Found");
+            set("type", "user");
+            return html("common/notfound.php");
         }
-        
-        set("title", $user[username]);
-        set("user", $user);
-        set("body", $body);
-        return html("user/view.php");
     }
     
     function user_list()

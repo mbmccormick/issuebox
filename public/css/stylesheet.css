@@ -640,7 +640,7 @@ p.checkbox
 
 form input.text, form input[type=text], form textarea, form input.password, form input[type=password]
 {
-    border: 1px solid #888;
+    border: 1px solid #C4C4C4;
     padding: 5px;
     font-family: helvetica, arial;
     text-shadow: rgba(0, 0, 0, 0.0078125) 0px 0px 1px;

@@ -7,41 +7,50 @@
         $result = mysql_query("SELECT * FROM issue WHERE id = '" . params('id') . "' ORDER BY id ASC");
         $issue = mysql_fetch_array($result);
 
-        $result = mysql_query("SELECT * FROM project WHERE id = '$issue[projectid]'");
-        $project = mysql_fetch_array($result);
-       
-        $result = mysql_query("SELECT * FROM user WHERE id = '$issue[createdby]'");
-        $user = mysql_fetch_array($result);
-        
-        $result = mysql_query("SELECT * FROM comment WHERE issueid = '$issue[id]' ORDER BY id ASC");
-        while($row = mysql_fetch_array($result))
+        if ($issue != null)
         {
-            $sql = mysql_query("SELECT id, username FROM user WHERE id = '$row[createdby]'");
-            $user = mysql_fetch_array($sql);
+            $result = mysql_query("SELECT * FROM project WHERE id = '$issue[projectid]'");
+            $project = mysql_fetch_array($result);
+           
+            $result = mysql_query("SELECT * FROM user WHERE id = '$issue[createdby]'");
+            $user = mysql_fetch_array($result);
             
-            $body .= "<div class='list-item comment'>\n";
+            $result = mysql_query("SELECT * FROM comment WHERE issueid = '$issue[id]' ORDER BY id ASC");
+            while($row = mysql_fetch_array($result))
+            {
+                $sql = mysql_query("SELECT id, username FROM user WHERE id = '$row[createdby]'");
+                $user = mysql_fetch_array($sql);
+                
+                $body .= "<div class='list-item comment'>\n";
+                
+                $body .= "<div id='comment$row[id]' class='wikiStyle'>" . $row[body] . "</div>\n";
+                $body .= "<br />\n";
+                $body .= "<div class='options'>\n";
+                $body .= "<a class='minibutton minidanger' postback='/comment/$row[id]/delete&issueid=$row[issueid]'><span>Delete</span></a>\n";
+                $body .= "&nbsp;&nbsp;" . date("F j, Y", strtotime($row[createddate]));
+                $body .= " by <a href='/user/$user[id]'>$user[username]</a>";
+                $body .= "</div>\n";
+                
+                $body .= "<script type='text/javascript'>\n";
+                $body .= "document.getElementById('comment$row[id]').innerHTML = converter.makeHtml(document.getElementById('comment$row[id]').innerHTML);\n";
+                $body .= "</script>\n";
+                
+                $body .= "</div>\n";
+            }
             
-            $body .= "<div id='comment$row[id]' class='wikiStyle'>" . $row[body] . "</div>\n";
-            $body .= "<br />\n";
-            $body .= "<div class='options'>\n";
-            $body .= "<a class='minibutton minidanger' postback='/comment/$row[id]/delete&issueid=$row[issueid]'><span>Delete</span></a>\n";
-            $body .= "&nbsp;&nbsp;" . date("F j, Y", strtotime($row[createddate]));
-            $body .= " by <a href='/user/$user[id]'>$user[username]</a>";
-            $body .= "</div>\n";
-            
-            $body .= "<script type='text/javascript'>\n";
-            $body .= "document.getElementById('comment$row[id]').innerHTML = converter.makeHtml(document.getElementById('comment$row[id]').innerHTML);\n";
-            $body .= "</script>\n";
-            
-            $body .= "</div>\n";
+            set("title", "Issue #" . $issue[number]);
+            set("body", $body);
+            set("issue", $issue);
+            set("project", $project);
+            set("user", $user);
+            return html("issue/view.php");
         }
-        
-        set("title", "Issue #" . $issue[number]);
-        set("body", $body);
-        set("issue", $issue);
-        set("project", $project);
-        set("user", $user);
-        return html("issue/view.php");
+        else
+        {
+            set("title", "Issue Not Found");
+            set("type", "issue");
+            return html("common/notfound.php");
+        }
     }
 
     function issue_add_post()
