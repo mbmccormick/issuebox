@@ -7,6 +7,7 @@ body
     margin: 0px auto;
     width: 760px;
     background: url(../img/bg.png) repeat-y scroll center center #F5F5F5;
+    text-shadow: rgba(0, 0, 0, 0.0078125) 0px 0px 1px;
 }
 
 a
