@@ -722,6 +722,11 @@ form label, form .label, label.standard
     text-align: right;
 }
 
+.setting
+{
+    font-weight: bold;
+}
+
 #arrow-top
 {
     background: #DBDBDB;
