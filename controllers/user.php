@@ -135,6 +135,12 @@
     function user_edit()
     {
         Security_Authorize();
+        
+        if ($_SESSION["CurrentUser_ID"] != params('id'))
+        {
+            header("Location: /user/" . params('id') . "&error=You are not authorized to edit this user!");
+            exit;
+        }
     
         $result = mysql_query("SELECT * FROM user WHERE id = '" . params('id') . "'");
         $user = mysql_fetch_array($result);
@@ -156,6 +162,12 @@
     function user_edit_post()
     {
         Security_Authorize();
+        
+        if ($_SESSION["CurrentUser_ID"] != params('id'))
+        {
+            header("Location: /user/" . params('id') . "&error=You are not authorized to edit this user!");
+            exit;
+        }
         
         $result = mysql_query("SELECT * FROM user WHERE id = '" . params('id') . "'");
         $user = mysql_fetch_array($result);
@@ -186,6 +198,12 @@
     function user_delete()
     {
         Security_Authorize();
+        
+        if ($_SESSION["CurrentUser_ID"] != params('id'))
+        {
+            header("Location: /user/" . params('id') . "&error=You are not authorized to delete this user!");
+            exit;
+        }
     
         $sql = "DELETE FROM user WHERE id = '" . params('id') . "'";    
         mysql_query($sql);
