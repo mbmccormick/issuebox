@@ -33,7 +33,7 @@
                 $body .= "</tr>\n";
                 $body .= "<tr>\n";
                 $body .= "<td valign='top'>\n";
-                $body .= "<span class='description'>" . FriendlyString($row[description]) . "</span>\n";
+                $body .= "<span class='description truncate'>" . $row[description] . "</span>\n";
                 $body .= "</td>\n";
                 $body .= "</tr>\n";                    
                 
