@@ -1,5 +1,4 @@
-body
-{
+body {
     font-family: helvetica, arial;
     font-size: 14px;
     color: #333333;
@@ -10,56 +9,48 @@ body
     text-shadow: rgba(0, 0, 0, 0.0078125) 0px 0px 1px;
 }
 
-a
-{
+a {
     color: #4183C4;
     text-decoration: none;
 }
 
-a:hover
-{
-    text-decoration: underline;
+a:hover {
+    text-decoration: underline
 }
 
-.header
-{
+.header {
     font-size: 36px;
     font-weight: bold;
     padding-top: 10px;
     margin-left: -10px;
 }
 
-.header a
-{
+.header a {
     color: #333333;
     text-decoration: none;
 }
 
-.header a:hover
-{
+.header a:hover {
     color: #4183C4;
     text-decoration: none;
 }
 
-.footer
-{
+.footer {
     font-size: 13px;
     padding-top: 30px;
     padding-bottom: 20px;
 }
 
-.content
-{
+.content {
     padding-top: 30px;
     padding-bottom: 30px;
 }
 
-.list
-{
+.list {
+
 }
 
-.list-item
-{
+.list-item {
     border: solid 3px #E4E4E4;
     background-color: whiteSmoke;
     padding: 15px;
@@ -68,57 +59,51 @@ a:hover
     margin-bottom: 20px;
 }
 
-.list-item h3, .list-item p, .issue div, .comment div
-{
+.list-item h3,
+.list-item p,
+.issue div,
+.comment div {
     padding: 0px;
     margin: 0px;
     line-height: 1.5em;
 }
 
-.project h3
-{
+.project h3 {
     white-space: nowrap;
     overflow: hidden;
     max-width: 500px;
 }
 
-.project p
-{
+.project p {
     white-space: nowrap;
     overflow: hidden;
     max-width: 500px;
 }
 
-.issue h3
-{
+.issue h3 {
     white-space: nowrap;
     overflow: hidden;
     max-width: 600px;
 }
 
-.list-item h3
-{
-    font-size: 18px;
+.list-item h3 {
+    font-size: 18px
 }
 
-.comment-new
-{
-    background-color: #ffffff;
+.comment-new {
+    background-color: #ffffff
 }
 
-.comment
-{
+.comment {
     background-color: #ffffff;
     padding-top: 3px;
 }
 
-.user-password
-{
-    background-color: #ffffff;
+.user-password {
+    background-color: #ffffff
 }
 
-.counter
-{
+.counter {
     background-color: #888888;
     color: #666666;
     text-transform: uppercase;
@@ -132,30 +117,25 @@ a:hover
     text-shadow: #ffffff 0px 1px 0px;
 }
 
-.webkit .counter
-{
-    background: -webkit-gradient(linear, 0% 100%, 0% 0%, from(#C9C9C9), to(#DEDEDE));
+.webkit .counter {
+    background: -webkit-gradient(linear, 0% 100%, 0% 0%, from(#C9C9C9), to(#DEDEDE))
 }
 
-.gecko .counter
-{
-    background: -moz-linear-gradient(center bottom, #C9C9C9 0%, #DEDEDE 100%);
+.gecko .counter {
+    background: -moz-linear-gradient(center bottom, #C9C9C9 0%, #DEDEDE 100%)
 }
 
-.ie .counter
-{
-    filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#DEDEDE', EndColorStr='#C9C9C9', GradientType=0);
+.ie .counter {
+    filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#DEDEDE', EndColorStr='#C9C9C9', GradientType=0)
 }
 
-.counter big
-{
+.counter big {
     display: block;
     font-size: 26px;
     font-weight: bold;
 }
 
-.create
-{
+.create {
     border: solid 1px #cccccc;
     background-color: whiteSmoke;
     color: #555;
@@ -165,8 +145,7 @@ a:hover
     width: 150px;
 }
 
-.button
-{
+.button {
     border-bottom: 1px solid #EBEBEB;
     border-bottom-left-radius: 4px 4px;
     border-bottom-right-radius: 4px 4px;
@@ -187,119 +166,98 @@ a:hover
     white-space: nowrap;
 }
 
-.danger
-{
-    color: #990000;
+.danger {
+    color: #990000
 }
 
-.button:hover
-{
+.button:hover {
     border-bottom-color: #2A65A0;
     color: white;
     text-shadow: rgba(0, 0, 0, 0.296875) -1px -1px 0px;
 }
 
-.danger:hover
-{
+.danger:hover {
     border-bottom-color: #CD504A;
     color: white;
     text-shadow: rgba(0, 0, 0, 0.296875) -1px -1px 0px;
 }
 
-.webkit .button
-{
+.webkit .button {
     background: -webkit-gradient(linear, 0% 100%, 0% 0%, from(#E1E1E1), to(#ffffff));
     -webkit-box-shadow: rgba(0, 0, 0, 0.296875) 0px 1px 4px;
     -webkit-font-smoothing: subpixel-antialiased !important;
 }
 
-.webkit .button:hover
-{
-    background: -webkit-gradient(linear, 0% 100%, 0% 0%, from(#3072B3), to(#599BDC));
+.webkit .button:hover {
+    background: -webkit-gradient(linear, 0% 100%, 0% 0%, from(#3072B3), to(#599BDC))
 }
 
-.webkit .button.mousedown
-{
-    background: -webkit-gradient(linear, 0% 100%, 0% 0%, from(#599BDC), to(#3072B3));
+.webkit .button.mousedown {
+    background: -webkit-gradient(linear, 0% 100%, 0% 0%, from(#599BDC), to(#3072B3))
 }
 
-.webkit .danger:hover
-{
-    background: -webkit-gradient(linear, 0% 100%, 0% 0%, from(#B33630), to(#DC5F59));
+.webkit .danger:hover {
+    background: -webkit-gradient(linear, 0% 100%, 0% 0%, from(#B33630), to(#DC5F59))
 }
 
-.webkit .danger.mousedown
-{
-    background: -webkit-gradient(linear, 0% 100%, 0% 0%, from(#DC5F59), to(#B33630));
+.webkit .danger.mousedown {
+    background: -webkit-gradient(linear, 0% 100%, 0% 0%, from(#DC5F59), to(#B33630))
 }
 
-.gecko .button
-{
+.gecko .button {
     background: -moz-linear-gradient(center bottom, #E1E1E1 0%, #ffffff 100%);
     -moz-border-radius: 4px;
     -moz-box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.296875);
 }
 
-.gecko .button:hover
-{
-    background: -moz-linear-gradient(center bottom, #3072B3 0%, #599BDC 100%);
+.gecko .button:hover {
+    background: -moz-linear-gradient(center bottom, #3072B3 0%, #599BDC 100%)
 }
 
-.gecko .button.mousedown
-{
-    background: -moz-linear-gradient(center bottom, #599BDC 0%, #3072B3 100%);
+.gecko .button.mousedown {
+    background: -moz-linear-gradient(center bottom, #599BDC 0%, #3072B3 100%)
 }
 
-.gecko .danger:hover
-{
-    background: -moz-linear-gradient(center bottom, #B33630 0%, #DC5F59 100%);
+.gecko .danger:hover {
+    background: -moz-linear-gradient(center bottom, #B33630 0%, #DC5F59 100%)
 }
 
-.gecko .danger.mousedown
-{
-    background: -moz-linear-gradient(center bottom, #DC5F59 0%, #B33630 100%);
+.gecko .danger.mousedown {
+    background: -moz-linear-gradient(center bottom, #DC5F59 0%, #B33630 100%)
 }
 
-.ie .button
-{
-    filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#ffffff', EndColorStr='#E1E1E1', GradientType=0);
+.ie .button {
+    filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#ffffff', EndColorStr='#E1E1E1', GradientType=0)
 }
 
-.ie .button:hover
-{
-    filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#599BDC', EndColorStr='#3072B3', GradientType=0);
+.ie .button:hover {
+    filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#599BDC', EndColorStr='#3072B3', GradientType=0)
 }
 
-.ie .button.mousedown
-{
-    filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#3072B3', EndColorStr='#599BDC', GradientType=0);
+.ie .button.mousedown {
+    filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#3072B3', EndColorStr='#599BDC', GradientType=0)
 }
 
-.ie .danger:hover
-{
-    filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#DC5F59', EndColorStr='#B33630', GradientType=0);
+.ie .danger:hover {
+    filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#DC5F59', EndColorStr='#B33630', GradientType=0)
 }
 
-.ie .danger.mousedown
-{
-    filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#B33630', EndColorStr='#DC5F59', GradientType=0);
+.ie .danger.mousedown {
+    filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#B33630', EndColorStr='#DC5F59', GradientType=0)
 }
 
-.button span
-{
+.button span {
     display: block;
     height: 34px;
     line-height: 36px;
     padding: 0px 13px;
 }
 
-.gecko .button span
-{
-    margin-top: -3px;
+.gecko .button span {
+    margin-top: -3px
 }
 
-.minibutton
-{
+.minibutton {
     border: 1px solid #D4D4D4;
     border-bottom-left-radius: 3px 3px;
     border-bottom-right-radius: 3px 3px;
@@ -318,13 +276,11 @@ a:hover
     white-space: nowrap;
 }
 
-.minidanger
-{
-    color: #900000;
+.minidanger {
+    color: #900000
 }
 
-.minibutton:hover
-{
+.minibutton:hover {
     border-bottom-color: #2A65A0;
     border-color: #518CC6 #518CC6 #2A65A0;
     color: white;
@@ -332,135 +288,111 @@ a:hover
     text-shadow: rgba(0, 0, 0, 0.296875) -1px -1px 0px;
 }
 
-.minidanger:hover
-{    
+.minidanger:hover {
     border-bottom-color: #A0302A;
     border-color: #C65651 #C65651 #A0302A;
 }
 
-.webkit .minibutton
-{
+.webkit .minibutton {
     background: -webkit-gradient(linear, 0% 100%, 0% 0%, from(#E1E1E1), to(#ffffff));
     padding: 1px 0px 0px 3px;
 }
 
-.webkit .minibutton:hover
-{
-    background: -webkit-gradient(linear, 0% 100%, 0% 0%, from(#3072B3), to(#599BDC));
+.webkit .minibutton:hover {
+    background: -webkit-gradient(linear, 0% 100%, 0% 0%, from(#3072B3), to(#599BDC))
 }
 
-.webkit .minibutton.mousedown
-{
-    background: -webkit-gradient(linear, 0% 100%, 0% 0%, from(#599BDC), to(#3072B3));
+.webkit .minibutton.mousedown {
+    background: -webkit-gradient(linear, 0% 100%, 0% 0%, from(#599BDC), to(#3072B3))
 }
 
-.webkit .minidanger:hover
-{
-    background: -webkit-gradient(linear, 0% 100%, 0% 0%, from(#B33630), to(#DC5F59));
+.webkit .minidanger:hover {
+    background: -webkit-gradient(linear, 0% 100%, 0% 0%, from(#B33630), to(#DC5F59))
 }
 
-.webkit .minidanger.mousedown
-{
-    background: -webkit-gradient(linear, 0% 100%, 0% 0%, from(#DC5F59), to(#B33630));
+.webkit .minidanger.mousedown {
+    background: -webkit-gradient(linear, 0% 100%, 0% 0%, from(#DC5F59), to(#B33630))
 }
 
-.gecko .minibutton
-{
+.gecko .minibutton {
     -moz-border-radius: 3px;
     background: -moz-linear-gradient(center bottom, #E1E1E1 0%, #ffffff 100%);
     padding: 0px 0px 1px 3px;
 }
 
-.gecko .minibutton:hover
-{
-    background: -moz-linear-gradient(center bottom, #3072B3 0%, #599BDC 100%);
+.gecko .minibutton:hover {
+    background: -moz-linear-gradient(center bottom, #3072B3 0%, #599BDC 100%)
 }
 
-.gecko .minibutton.mousedown
-{
-    background: -moz-linear-gradient(center bottom, #599BDC 0%, #3072B3 100%);
+.gecko .minibutton.mousedown {
+    background: -moz-linear-gradient(center bottom, #599BDC 0%, #3072B3 100%)
 }
 
-.gecko .minidanger:hover
-{
-    background: -moz-linear-gradient(center bottom, #B33630 0%, #DC5F59 100%);
+.gecko .minidanger:hover {
+    background: -moz-linear-gradient(center bottom, #B33630 0%, #DC5F59 100%)
 }
 
-.gecko .minidanger.mousedown
-{
-    background: -moz-linear-gradient(center bottom, #DC5F59 0%, #B33630 100%);
+.gecko .minidanger.mousedown {
+    background: -moz-linear-gradient(center bottom, #DC5F59 0%, #B33630 100%)
 }
 
-.ie .minibutton
-{
-    filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#ffffff', EndColorStr='#E1E1E1', GradientType=0);
+.ie .minibutton {
+    filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#ffffff', EndColorStr='#E1E1E1', GradientType=0)
 }
 
-.ie .minibutton:hover
-{
-    filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#599BDC', EndColorStr='#3072B3', GradientType=0);
+.ie .minibutton:hover {
+    filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#599BDC', EndColorStr='#3072B3', GradientType=0)
 }
 
-.ie .minibutton.mousedown
-{
-    filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#3072B3', EndColorStr='#599BDC', GradientType=0);
+.ie .minibutton.mousedown {
+    filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#3072B3', EndColorStr='#599BDC', GradientType=0)
 }
 
-.ie .minidanger:hover
-{
-    filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#DC5F59', EndColorStr='#B33630', GradientType=0);
+.ie .minidanger:hover {
+    filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#DC5F59', EndColorStr='#B33630', GradientType=0)
 }
 
-.ie .minidanger.mousedown
-{
-    filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#B33630', EndColorStr='#DC5F59', GradientType=0);
+.ie .minidanger.mousedown {
+    filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#B33630', EndColorStr='#DC5F59', GradientType=0)
 }
 
-.minibutton span
-{
+.minibutton span {
     display: block;
     height: 21px;
     line-height: 21px;
     padding: 0px 9px 0px 7px;
 }
 
-.options
-{
+.options {
     color: #999999;
     padding-top: 10px;
 }
 
-.options .date
-{
-    margin-bottom: -2px;
+.options .date {
+    margin-bottom: -2px
 }
 
-.navigation
-{
+.navigation {
     font-weight: bold;
     padding: 5px 0px 25px 0px;
     max-width: 600px;
 }
 
-.activity .description
-{
+.activity .description {
     color: #555;
     line-height: 1.5em;
 }
 
-.user-activity
-{
-    background-color: #ffffff;
+.user-activity {
+    background-color: #ffffff
 }
 
-.user-activity .description
-{
+.user-activity .description {
     color: #555;
     line-height: 1.5em;
 }
 
-.filter-off
-{
+.filter-off {
     border: 1px solid #D4D4D4;
     border-radius: 3px;
     color: #333;
@@ -477,30 +409,25 @@ a:hover
     cursor: pointer;
 }
 
-.filter-off:hover
-{
-    text-decoration: none;
+.filter-off:hover {
+    text-decoration: none
 }
 
-.webkit .filter-off
-{
+.webkit .filter-off {
     background: -webkit-gradient(linear, 0% 100%, 0% 0%, from(#E1E1E1), to(#ffffff));
     padding: 1px 0px 0px 3px;
 }
 
-.gecko .filter-off
-{
+.gecko .filter-off {
     -moz-border-radius: 3px;
     background: -moz-linear-gradient(center bottom, #E1E1E1 0%, #ffffff 100%);
 }
 
-.ie .filter-off
-{
-    filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#ffffff', EndColorStr='#E1E1E1', GradientType=0);
+.ie .filter-off {
+    filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#ffffff', EndColorStr='#E1E1E1', GradientType=0)
 }
 
-.filter-off span
-{
+.filter-off span {
     display: block;
     height: 21px;
     line-height: 21px;
@@ -508,8 +435,7 @@ a:hover
     text-transform: uppercase;
 }
 
-.filter-on
-{
+.filter-on {
     border-width: 1px;
     border-style: solid;
     border-color: #666666 #888888 #888888 #666666;
@@ -528,30 +454,25 @@ a:hover
     cursor: pointer;
 }
 
-.filter-on:hover
-{
-    text-decoration: none;
+.filter-on:hover {
+    text-decoration: none
 }
 
-.webkit .filter-on
-{
+.webkit .filter-on {
     background: -webkit-gradient(linear, 0% 100%, 0% 0%, from(#999999), to(#888888));
     padding: 1px 0px 0px 3px;
 }
 
-.gecko .filter-on
-{
+.gecko .filter-on {
     -moz-border-radius: 3px;
     background: -moz-linear-gradient(center bottom, #999999 0%, #888888 100%);
 }
 
-.ie .filter-on
-{
-    filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#888888', EndColorStr='#999999', GradientType=0);
+.ie .filter-on {
+    filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#888888', EndColorStr='#999999', GradientType=0)
 }
 
-.filter-on span
-{
+.filter-on span {
     display: block;
     height: 21px;
     line-height: 21px;
@@ -559,8 +480,7 @@ a:hover
     text-transform: uppercase;
 }
 
-em.closed-indicator
-{
+em.closed-indicator {
     background: #999999;
     border-radius: 3px;
     -moz-border-radius: 3px;
@@ -573,13 +493,11 @@ em.closed-indicator
     margin-left: 3px;
 }
 
-.mac em.closed-indicator
-{
-    padding: 4px 5px 2px 5px;
+.mac em.closed-indicator {
+    padding: 4px 5px 2px 5px
 }
 
-em.urgent-indicator
-{
+em.urgent-indicator {
     background: #DE683A;
     border-radius: 3px;
     -moz-border-radius: 3px;
@@ -592,32 +510,27 @@ em.urgent-indicator
     margin-left: 3px;
 }
 
-.mac em.urgent-indicator
-{
-    padding: 4px 5px 2px 5px;
+.mac em.urgent-indicator {
+    padding: 4px 5px 2px 5px
 }
 
-big.urgent
-{
-    color: #DE683A;
+big.urgent {
+    color: #DE683A
 }
 
-small
-{
+small {
     color: #999;
     font-size: 12px;
 }
 
-p.checkbox
-{
+p.checkbox {
     color: #333333;
     font-size: 14px;
     font-weight: bold;
     margin: 15px 0px;
 }
 
-.standard-form
-{
+.standard-form {
     border: solid 3px #E4E4E4;
     background-color: whiteSmoke;
     padding: 15px;
@@ -626,28 +539,30 @@ p.checkbox
     margin-bottom: 20px;
 }
 
-.standard-form h2
-{
+.standard-form h2 {
     margin: 0px;
     padding: 0px;
 }
 
-.help
-{
+.help {
     background-color: #ffffff;
     line-height: 1.4em;
 }
 
-form input.text, form input[type=text], form textarea, form input.password, form input[type=password]
-{
+form input.text,
+form input[type=text],
+form textarea,
+form input.password,
+form input[type=password] {
     border: 1px solid #C4C4C4;
     padding: 5px;
     font-family: helvetica, arial;
     text-shadow: rgba(0, 0, 0, 0.0078125) 0px 0px 1px;
 }
 
-form label, form .label, label.standard
-{
+form label,
+form .label,
+label.standard {
     color: #666;
     display: block;
     font-size: 110%;
@@ -655,13 +570,11 @@ form label, form .label, label.standard
     margin-top: 1em;
 }
 
-.toolbar
-{
-    font-size: 13px;
+.toolbar {
+    font-size: 13px
 }
 
-.toolbar-menu
-{
+.toolbar-menu {
     float: right;
     margin-top: -40px;
     padding: 10px 7px 3px 5px;
@@ -671,15 +584,13 @@ form label, form .label, label.standard
     -moz-border-radius: 5px;
 }
 
-.wikiStyle p
-{
+.wikiStyle p {
     line-height: 1.5em !important;
     margin: 1em 0 !important;
 }
 
-.btn-projects .icon
-{
-    background: url(../img/minibutton_icons.png) no-repeat 0px 0px;    
+.btn-projects .icon {
+    background: url(../img/minibutton_icons.png) no-repeat 0px 0px;
     float: right;
     height: 22px;
     margin-right: -16px;
@@ -688,19 +599,16 @@ form label, form .label, label.standard
     width: 18px;
 }
 
-.btn-projects .icon
-{
+.btn-projects .icon {
     background-position: -180px 0px;
     width: 16px;
 }
 
-.btn-projects:hover .icon
-{
-    background-position: -180px -25px;
+.btn-projects:hover .icon {
+    background-position: -180px -25px
 }
 
-.error
-{
+.error {
     background-color: #E64343;
     border-bottom: 3px solid #B53333;
     color: white;
@@ -708,8 +616,7 @@ form label, form .label, label.standard
     text-align: center;
 }
 
-.success
-{
+.success {
     background-color: #42A84F;
     border-bottom: 3px solid #288033;
     color: white;
@@ -717,18 +624,15 @@ form label, form .label, label.standard
     text-align: center;
 }
 
-.form-actions
-{
-    text-align: right;
+.form-actions {
+    text-align: right
 }
 
-.setting
-{
-    font-weight: bold;
+.setting {
+    font-weight: bold
 }
 
-#arrow-top
-{
+#arrow-top {
     background: #DBDBDB;
     border-radius: 5px;
     -moz-border-radius: 5px;
