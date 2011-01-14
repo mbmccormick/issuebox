@@ -41,7 +41,7 @@
         <table cellpadding="0" cellspacing="0"> 
             <tr valign="middle">
                 <td>
-                    <img src="/public/img/logo.png" />
+                    <img src="/public/img/logo.png" style="cursor: pointer;" onclick="location.href = '/';" />
                 </td>
                 <td>
                     &nbsp;<a href="/">Issuebox</a>
