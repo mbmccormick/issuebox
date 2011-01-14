@@ -100,9 +100,9 @@
             echo "<br />\n";
             echo "<div class='options'>\n";
             if ($count == 1)
-                echo "<a href='issue.php?id=$result[id]'>$count comment</a>\n";
+                echo "<a href='/issue/$result[id]'>$count comment</a>\n";
             else
-                echo "<a href='issue.php?id=$result[id]'>$count comments</a>\n";
+                echo "<a href='/issue/$result[id]'>$count comments</a>\n";
             echo "&nbsp;Created just now by <a href='/user/$user[id]'>$user[username]</a>";
             echo "</div>\n";
             
