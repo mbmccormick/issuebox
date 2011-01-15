@@ -118,7 +118,7 @@
         if (mysql_num_rows($result) == 0)
         {
             $body .= "<div class='list-item project'>\n";
-            $body .= "<p>There are currently no projects setup.</p>\n";
+            $body .= "<p>There are currently no projects to display.</p>\n";
             $body .= "</div>\n";
         }
         

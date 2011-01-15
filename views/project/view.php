@@ -20,7 +20,7 @@
         </script>
         <?=$body?>
         <div class="list-item issue none" style="display: none;">
-            <p>There are no issues to display for this project.</p>
+            <p>There are currently no issues to display for this project.</p>
         </div>
         <div class="list-holder">
         </div>
