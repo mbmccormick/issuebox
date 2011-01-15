@@ -1,12 +1,12 @@
 <?php
 
     // database configuration
-    $Server = "yourserver.com";
-    $Username = "youruser";
-    $Password = "yourpass";
-    $Database = "yourdatabase";
+    define(Server, "yourserver.com");
+    define(Username, "youruser");
+    define(Password, "yourpass");
+    define(Database, "yourdatabase");
     
     // application settings
-    $Version = "2010.01.01";
+    define(Version, "2010.01.01");
     
 ?>
