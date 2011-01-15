@@ -51,7 +51,7 @@
     </div>
     <?=$content?>
     <div class="footer">
-        Issuebox is built by <a href="http://www.mccormicktechnologies.com/" target="_blank">McCormick Technologies</a>. Version <?=$Version?>.
+        Issuebox is built by <a href="http://www.mccormicktechnologies.com/" target="_blank">McCormick Technologies</a>. Version <?=Version?>.
     </div>
     <div id="arrow-top" style="display: none;">
         &#9650;

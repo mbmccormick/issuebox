@@ -7,8 +7,8 @@
     require("library/security.php");
     
     /* Establish database connection */
-    $con = mysql_connect($Server, $Username, $Password);
-    mysql_select_db($Database, $con);
+    $con = mysql_connect(Server, Username, Password);
+    mysql_select_db(Database, $con);
     
     /* Modify configuration settings */
     function configure()
@@ -31,9 +31,6 @@
         $args = compact('errno', 'errstr', 'errfile', 'errline');   
         return html("common/error.php", "layout.php", $args);
     }
-    
-    /* Initialize version number */
-    set("Version", $Version);
     
     /* Declare Project routes */
     dispatch('/', 'project_list');
