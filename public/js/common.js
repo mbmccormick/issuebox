@@ -55,7 +55,7 @@ $(document).ready(function() {
         $('body,html').animate({ scrollTop:0 }, 800);
     });
     
-    $(".truncate").truncate({max_length: 200, more: "more &gt;&gt;", less: "&lt;&lt; less"});
+    $(".truncate").truncate({max_length: 200, more: "more", less: "less"});
 });
 
 $(window).scroll(function() {
