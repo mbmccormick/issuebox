@@ -4,9 +4,13 @@ body {
     color: #333333;
     padding: 30px;
     margin: 0px auto;
-    width: 760px;
-    background: url(../img/bg.png) repeat-y scroll center center #F5F5F5;
+    width: 780px;
+    background-color: #FFFFFF;
     text-shadow: rgba(0, 0, 0, 0.0078125) 0px 0px 1px;
+}
+
+.mac {
+    text-shadow: none;
 }
 
 a {
@@ -21,12 +25,12 @@ a:hover {
 .header {
     font-size: 36px;
     font-weight: bold;
-    padding-top: 10px;
+    padding-top: 40px;
     margin-left: -10px;
 }
 
 .header a {
-    color: #333333;
+    color: #191919;
     text-decoration: none;
 }
 
@@ -571,17 +575,22 @@ label.standard {
 }
 
 .toolbar {
-    font-size: 13px
+    font-size: 13px;
+    width: 100%;
+    padding: 10px 0px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    background-color: #191919;
 }
 
 .toolbar-menu {
-    float: right;
-    margin-top: -40px;
-    padding: 10px 7px 3px 5px;
-    border: solid 2px #E4E4E4;
-    background-color: whiteSmoke;
-    border-radius: 5px;
-    -moz-border-radius: 5px;
+    width: 780px;
+    margin: 0px auto;
+}
+
+.toolbar-menu a {
+    color: #FFFFFF;
 }
 
 .wikiStyle p {

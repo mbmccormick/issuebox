@@ -77,6 +77,10 @@
     dispatch('/settings/email', 'setting_email');
     dispatch_post('/settings/email', 'setting_email_post');
     
+    /* Declare Hook routes */
+    dispatch_post('/hook/:projectid/git', 'hook_git_post');
+    dispatch_post('/hook/:projectid/svn', 'hook_svn_post');
+    
     run();
     
 ?>

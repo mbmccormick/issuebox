@@ -23,11 +23,15 @@
     <div class="toolbar">
         <table class="toolbar-menu" cellpadding="0" cellspacing="0">
             <tr>
-                <td valign="middle">
-                    <img src="http://www.gravatar.com/avatar/<?php echo md5($_SESSION[CurrentUser_Email]); ?>?s=20" style="border: 1px solid white; margin-right: 3px; margin-top: 3px;" />&nbsp;
+                <td valign="middle" align="left">
+                    <a href="/">Projects</a>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="/activity">Activity</a>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="/help">Help</a>
                 </td>
-                <td valign="middle">
-                    <a href="/user/<?php echo $_SESSION[CurrentUser_ID]; ?>" style="color: #000000;"><?php echo $_SESSION[CurrentUser_Username]; ?></a>&nbsp;&nbsp;/&nbsp;&nbsp;<a href="/logout">Logout</a>
+                <td valign="middle" align="right">
+                    <!--<img src="http://www.gravatar.com/avatar/<?php echo md5($_SESSION[CurrentUser_Email]); ?>?s=20" style="border: 1px solid white; margin-right: 3px; margin-top: 3px;" />--><a href="/user/<?php echo $_SESSION[CurrentUser_ID]; ?>"><?php echo $_SESSION[CurrentUser_Username]; ?></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/logout">Logout</a>
                 </td>
             </tr>
         </table>
