@@ -24,7 +24,7 @@
                 $row = mysql_fetch_array($result);
                 $issueid = $row[id];
                 
-                $sql = "UPDATE issue SET isclosed = '1' WHERE issueid='$issueid'";
+                $sql = "UPDATE issue SET isclosed = '1' WHERE id='$issueid'";
                 mysql_query($sql);
                 
                 $now = date("Y-m-d H:i:s");
