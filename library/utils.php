@@ -71,7 +71,7 @@
             
             if ($actiontype == "1")
             {
-                $headline = "created <a href='/issue/$issue[id]'>issue " . $issue[number] . "</a> on <a href='/project/$project[id]'>" . $project[name] . "</a>";
+                $headline = "opened <a href='/issue/$issue[id]'>issue " . $issue[number] . "</a> on <a href='/project/$project[id]'>" . $project[name] . "</a>";
             }
             else if ($actiontype == "2")
             {
