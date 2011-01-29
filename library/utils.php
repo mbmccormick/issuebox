@@ -18,18 +18,29 @@
         $current_level = 1; 
         $result = array(); 
         foreach($blocks as $block) 
-            { 
-            if ($current_level > $levels) {break;} 
+        { 
+            if ($current_level > $levels) { break; } 
             if ($diff/$block['amount'] >= 1) 
-                { 
+            { 
                 $amount = floor($diff/$block['amount']); 
-                if ($amount>1) {$plural='s';} else {$plural='';} 
+                if ($amount>1) { $plural='s'; } else { $plural=''; } 
                 $result[] = $amount.' '.$block['name'].$plural; 
                 $diff -= $amount*$block['amount']; 
                 $current_level++; 
-                } 
             } 
-        return implode(' ',$result).' ago'; 
+        } 
+         
+        if (strpos(implode(' ', $result), "second") !== false ||
+            strpos(implode(' ', $result), "seconds") !== false ||
+            implode(' ', $result) == "1 minute" ||
+            implode(' ', $result) == "2 minutes")
+        {
+            return "just now"; 
+        }
+        else
+        {
+            return "about " . implode(' ',$result) . " ago"; 
+        }
     }
     
     function FriendlyString($string, $length = 180)

@@ -44,7 +44,7 @@
                     $body .= "<a href='/issue/$row[id]'>$count comment</a>\n";
                 else
                     $body .= "<a href='/issue/$row[id]'>$count comments</a>\n";
-                $body .= "&nbsp;Created about " . FriendlyDate(1, strtotime($row[createddate])) . " by <a href='/user/$user[id]'>$user[username]</a>";
+                $body .= "&nbsp;Created " . FriendlyDate(1, strtotime($row[createddate])) . " by <a href='/user/$user[id]'>$user[username]</a>";
                 $body .= "</div>\n";
                 
                 $body .= "<script type='text/javascript'>\n";

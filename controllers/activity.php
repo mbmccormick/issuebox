@@ -15,7 +15,7 @@
             
             $body .= "<tr>\n";
             $body .= "<td colspan='2' style='padding-bottom: 7px;'>\n";
-            $body .= "<b><a href='/user/" . $user[id] . "'>" . $user[username] . "</a> " . $row[headline] . " about " . FriendlyDate(1, strtotime($row[createddate])) . "</b>\n";
+            $body .= "<b><a href='/user/" . $user[id] . "'>" . $user[username] . "</a> " . $row[headline] . " " . FriendlyDate(1, strtotime($row[createddate])) . "</b>\n";
             $body .= "</td>\n";
             $body .= "</tr>\n";
             $body .= "<tr>\n";
