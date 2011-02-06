@@ -3,7 +3,7 @@
     function login()
     {
         set("title", "Login");
-        return html("security/login.php");
+        return html("security/login.php", "basic.php");
     }
     
     function login_post()
@@ -23,7 +23,7 @@
     function login_reset()
     {
         set("title", "Reset Password");
-        return html("security/reset.php");
+        return html("security/reset.php", "basic.php");
     }
     
     function login_reset_post()

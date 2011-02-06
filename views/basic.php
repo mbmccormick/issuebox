@@ -14,33 +14,8 @@
     <script type="text/javascript" src="/public/js/common.js"></script>
 </head> 
 <body> 
-    <div class="toolbar">
-        <table class="toolbar-menu" cellpadding="0" cellspacing="0">
-            <tr>
-                <td valign="middle" align="left">
-                    <a href="/">Projects</a>
-                    &nbsp;&nbsp;&nbsp;&nbsp;
-                    <a href="/activity">Activity</a>
-                    &nbsp;&nbsp;&nbsp;&nbsp;
-                    <a href="/help">Help</a>
-                </td>
-                <td valign="middle" align="right">
-                    <!--<img src="http://www.gravatar.com/avatar/<?php echo md5($_SESSION[CurrentUser_Email]); ?>?s=20" style="border: 1px solid white; margin-right: 3px; margin-top: 3px;" />--><a href="/user/<?php echo $_SESSION[CurrentUser_ID]; ?>"><?php echo $_SESSION[CurrentUser_Username]; ?></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/logout">Logout</a>
-                </td>
-            </tr>
-        </table>
-    </div>
-    <div class="header">
-        <table cellpadding="0" cellspacing="0"> 
-            <tr valign="middle">
-                <td>
-                    &nbsp;<a href="/">Issuebox</a>
-                </td>
-            </tr>
-        </table>
-    </div>
     <?=$content?>
-    <div class="footer">
+    <div class="footer" style="text-align: center;">
         Issuebox is built by <a href="http://www.mccormicktechnologies.com/" target="_blank">McCormick Technologies</a>. Version <?=Version?>.
     </div>
     <div id="arrow-top" style="display: none;">

@@ -536,16 +536,41 @@ p.checkbox {
 
 .standard-form {
     border: solid 3px #E4E4E4;
-    background-color: whiteSmoke;
-    padding: 15px;
-    border-radius: 8px;
-    -moz-border-radius: 8px;
+    border-top: none;
+    background-color: #FFFFFF;
+    padding: 8px 15px 15px 15px;
+    border-radius: 0px 0px 8px 8px;
+    -moz-border-radius: 0px 0px 8px 8px;
     margin-bottom: 20px;
+    width: 345px;
+    margin: 0px auto;
 }
 
-.standard-form h2 {
+.standard-form-top {
+    border: solid 3px #E4E4E4;
+    border-bottom: solid 1px #E4E4E4;
+    background-color: #F8F8F8;
+    padding: 18px 15px 15px 15px;
+    border-radius: 8px 8px 0px 0px;
+    -moz-border-radius: 8px 8px 0px 0px;
+    width: 345px;
+    margin: 0px auto;
+    margin-top: 50px;
+}
+
+.standard-form-top h2 {
     margin: 0px;
     padding: 0px;
+    font-size: 22px;
+}
+
+.standard-form-top h2 a {
+    color: #191919;
+}
+
+.standard-form-top h2 a:hover {
+    color: #4183C4;
+    text-decoration: none;
 }
 
 .help {
@@ -578,10 +603,25 @@ label.standard {
     font-size: 13px;
     width: 100%;
     padding: 10px 0px;
-    position: absolute;
+    position: fixed;
     left: 0px;
     top: 0px;
-    background-color: #191919;
+    background: #111;
+}
+
+.webkit .toolbar {
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#333), to(#111));
+    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.5);
+}
+
+.gecko .toolbar {
+    background: -moz-linear-gradient(top,#333,#111);
+    -moz-box-shadow: 0 1px 2px rgba(0,0,0,0.5);
+}
+
+.ie .toolbar {
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#333333',endColorstr='#111111');
+    box-shadow: 0 1px 2px rgba(0,0,0,0.5);
 }
 
 .toolbar-menu {
@@ -652,6 +692,6 @@ label.standard {
     padding: 12px 18px 12px 18px;
     position: fixed;
     right: 52px;
-    top: 42px;
+    top: 62px;
     cursor: pointer;
 }

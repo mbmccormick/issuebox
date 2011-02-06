@@ -1,46 +1,39 @@
 <div class="content">
-    <div class="navigation">
-        <a href="/login">Login</a>
+    <div class="standard-form-top">
+        <table cellpadding="0" cellspacing="0" style="width: 100%;">
+            <tr>
+                <td align="left" valign="middle">
+                    <h2><a href="/">Issuebox</a></h2>
+                </td>
+                <td align="right" valign="middle">
+                    &nbsp;
+                </td>
+            </tr>
+        </table>
     </div>
-    <table cellpadding="0" cellspacing="0" style="width: 100%;">
-        <tr valign="top">
-            <td style="width: 50%;">
-                <div class="standard-form">
-                    <h2>Login</h2>
-                    <br />
-                    <form action="/login" method="post">
-                        <label for="Username">
-                            Username<br />
-                            <input class="text" name="username" style="width: 333px;" type="text" />
-                        </label>
-                        <label for="password">
-                            Password<br />
-                            <input class="text" name="password" style="width: 333px;" type="password" />
-                        </label>
-                        <br />
+    <div class="standard-form">
+        <form action="/login" method="post">
+            <label for="Username">
+                Username<br />
+                <input class="text" name="username" style="width: 333px;" type="text" />
+            </label>
+            <label for="password">
+                Password<br />
+                <input class="text" name="password" style="width: 333px;" type="password" />
+            </label>
+            <br />
+            <table cellpadding="0" cellspacing="0" style="width: 100%;">
+                <tr>
+                    <td align="left" valign="middle">
                         <button type="submit" class="button">
                             <span>Log In</span>
                         </button>
-                    </form>  
-                </div>
-            </td>
-            <td>
-                <div class="spacer" style="width: 20px;">
-                    &nbsp;
-                </div>
-            </td>
-            <td style="width: 50%;">
-                <div class="standard-form help">
-                    <b>Forget your password?</b><br />
-                    <br />
-                    <a href="/login/reset">Click here to reset your password.</a>
-                </div>
-                <div class="standard-form help">
-                    <b>Need an account?</b><br />
-                    <br />
-                    <a href="mailto:<?php echo RetrieveSetting("ContactEmailAddress"); ?>">Click here to contact your administrator.</a>
-                </div>
-            </td>
-        </tr>
-    </table>
+                    </td>
+                    <td align="right" valign="middle">
+                        <a href="/login/reset">Forgot your password?</a>
+                    </td>
+                </tr>
+            </table>
+        </form>  
+    </div>
 </div>
