@@ -2,10 +2,7 @@
     <div class="navigation">
         <a href="/">Projects</a> / <a href="/project/<?=$project[id]?>"><?=$project[name]?></a> / <a href="/issue/<?=$issue[id]?>">Issue #<?=$issue[number]?></a>
     </div>
-    <div class="list"> 
-        <script type="text/javascript">            
-            var converter = new Showdown.converter();            
-        </script>
+    <div class="list">
         <div class="list-item issue">
             <table cellpadding="0" cellspacing="0" style="width: 100%;">
                 <tr>
@@ -34,9 +31,6 @@
             <div class="options">
                 <span class="date">Created about <?=FriendlyDate(1, strtotime($issue[createddate])); ?></span> by <a href="/user/<?=$user[id]?>"><?=$user[username]?></a>
             </div>
-            <script type="text/javascript">
-                document.getElementById("issue<?=$issue[number]?>").innerHTML = converter.makeHtml(document.getElementById("issue<?=$issue[number]?>").innerHTML);
-            </script>
         </div>
         <?=$body?>
         <?php if ($issue[isclosed] == "0") { ?>
@@ -55,7 +49,7 @@
             </table>
             <br />
             <form id="comment-new" action="/comment/add&issueid=<?=$issue[id]?>" method="post">
-                <textarea name="body" style="width: 710px;" rows="6"></textarea>
+                <textarea name="body" style="width: 732px;" rows="6"></textarea>
                 <br />
                 <br />
                 <div class="form-actions">
@@ -80,7 +74,7 @@
         <button type="button" class="button danger" onclick="confirm('Are you sure you want to delete this issue and all of its comments?') ? location.href='/issue/<?=$issue[id]?>/delete&projectid=<?=$issue[projectid]?>' : false;">
             <span>Delete</span>
         </button>
-    </div>        
+    </div>
 </div>
 <script type="text/javascript"> 
 
@@ -162,6 +156,8 @@
             $(".list-holder").append("<div class='list-item comment-new'><p>This issue is closed, and no more comments can be added.</p></div>").hide().fadeIn();
             $(".closed-indicator").fadeIn();
         }
+        
+        $(".list-holder .list-item").last().innerHTML = new Showdown.converter().makeHtml($(".list-holder .list-item").last().innerHTML);
         
         $(".comment > .options > a.minibutton").unbind();
         $(".comment > .options > a.minibutton").click(onCommentDeleteClick);

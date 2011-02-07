@@ -47,10 +47,6 @@
                 $body .= "&nbsp;Created " . FriendlyDate(1, strtotime($row[createddate])) . " by <a href='/user/$user[id]'>$user[username]</a>";
                 $body .= "</div>\n";
                 
-                $body .= "<script type='text/javascript'>\n";
-                $body .= "document.getElementById('issue$row[number]').innerHTML = converter.makeHtml(document.getElementById('issue$row[number]').innerHTML);\n";
-                $body .= "</script>\n";
-                
                 $body .= "</div>\n";
             }
             

@@ -22,9 +22,7 @@ $(document).ready(function() {
 			$(this).removeClass('mousedown');
 		}
 	});
-});
 
-$(document).ready(function() {
     if (getParameterByName("success") != "") {
         $(document).showMessage({
             thisMessage: [getParameterByName("success")],
@@ -51,11 +49,15 @@ $(document).ready(function() {
         history.replaceState(null, document.title, getRawUrl());
     }    
     
+    $(".wikiStyle").each(function() {
+        this.innerHTML = new Showdown.converter().makeHtml(this.innerHTML);
+    });
+    
+    $(".truncate").truncate({max_length: 225, more: "more", less: "less"});
+    
     $("#arrow-top").click(function() {
         $('body,html').animate({ scrollTop:0 }, 800);
     });
-    
-    $(".truncate").truncate({max_length: 200, more: "more", less: "less"});
 });
 
 $(window).scroll(function() {

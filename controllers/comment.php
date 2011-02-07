@@ -42,10 +42,6 @@
             echo " by <a href='/user/$user[id]'>$user[username]</a>";
             echo "</div>\n";
             
-            echo "<script type='text/javascript'>\n";
-            echo "document.getElementById('comment$result[id]').innerHTML = converter.makeHtml(document.getElementById('comment$result[id]').innerHTML);\n";
-            echo "</script>\n";
-            
             echo "</div>\n";
         }
         else

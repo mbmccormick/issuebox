@@ -633,9 +633,14 @@ label.standard {
     color: #FFFFFF;
 }
 
+.description p {
+    margin: 0px !important;
+    padding: 0px;
+}
+
 .wikiStyle p {
-    line-height: 1.5em !important;
-    margin: 1em 0 !important;
+    line-height: 1.5em;
+    margin: 1em 0;
 }
 
 .btn-projects .icon {

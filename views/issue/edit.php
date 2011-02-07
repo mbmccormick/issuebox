@@ -17,10 +17,10 @@
                 </table>
                 <br />
                 <b>Title</b><br />
-                <input type="text" name="title" style="width: 710px;" value="<?=$issue[title]?>" /><br />
+                <input type="text" name="title" style="width: 732px;" value="<?=$issue[title]?>" /><br />
                 <br />
                 <b>Body</b><br />                    
-                <textarea name="body" style="width: 710px;" rows="8"><?=$issue[body]?></textarea>
+                <textarea name="body" style="width: 732px;" rows="8"><?=$issue[body]?></textarea>
                 <br />
                 <p class="checkbox">
                     <input type="checkbox" name="isurgent" value="1" <?php if ($issue[isurgent] == "1") { echo "checked='checked'"; } ?> /> This is an urgent issue

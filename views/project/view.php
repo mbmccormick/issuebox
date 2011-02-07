@@ -15,9 +15,6 @@
         </tr>
     </table>
     <div class="list">
-        <script type="text/javascript">            
-            var converter = new Showdown.converter();            
-        </script>
         <?=$body?>
         <div class="list-item issue none" style="display: none;">
             <p>There are currently no issues to display for this project.</p>
@@ -38,10 +35,10 @@
             <br />
             <form id="issue-new" action="/issue/add&projectid=<?=$project[id]?>" method="post">
                 <b>Title</b><br />
-                <input type="text" name="title" style="width: 710px;" /><br />
+                <input type="text" name="title" style="width: 732px;" /><br />
                 <br />
                 <b>Body</b><br />                    
-                <textarea name="body" style="width: 710px;" rows="6"></textarea>
+                <textarea name="body" style="width: 732px;" rows="6"></textarea>
                 <br />
                 <br />
                 <div class="form-actions">
@@ -131,6 +128,8 @@
             autoClose: true,
             delayTime: 5000
         });
+        
+        $(".list-holder .list-item").last().innerHTML = new Showdown.converter().makeHtml($(".list-holder .list-item").last().innerHTML);
         
         $(".truncate").truncate({max_length: 200, more: "more...", less: "...less"});
         

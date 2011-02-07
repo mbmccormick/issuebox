@@ -23,7 +23,7 @@
             $body .= "<img src='http://www.gravatar.com/avatar/" . md5($user[email]) . "?s=30' style='padding: 2px; border: 1px solid #D0D0D0; background-color: #ffffff;' />\n";
             $body .= "</td>\n";
             $body .= "<td valign='top'>\n";
-            $body .= "<span class='description truncate'>" . $row[description] . "</span>\n";
+            $body .= "<span class='wikiStyle description truncate'>" . $row[description] . "</span>\n";
             $body .= "</td>\n";
             $body .= "</tr>\n";                    
             

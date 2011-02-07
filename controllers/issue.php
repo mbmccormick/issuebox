@@ -31,10 +31,6 @@
                 $body .= " by <a href='/user/$user[id]'>$user[username]</a>";
                 $body .= "</div>\n";
                 
-                $body .= "<script type='text/javascript'>\n";
-                $body .= "document.getElementById('comment$row[id]').innerHTML = converter.makeHtml(document.getElementById('comment$row[id]').innerHTML);\n";
-                $body .= "</script>\n";
-                
                 $body .= "</div>\n";
             }
             
@@ -105,10 +101,6 @@
                 echo "<a href='/issue/$result[id]'>$count comments</a>\n";
             echo "&nbsp;Created just now by <a href='/user/$user[id]'>$user[username]</a>";
             echo "</div>\n";
-            
-            echo "<script type='text/javascript'>\n";
-            echo "document.getElementById('issue$result[number]').innerHTML = converter.makeHtml(document.getElementById('issue$result[number]').innerHTML);\n";
-            echo "</script>\n";
             
             echo "</div>\n";
         }
