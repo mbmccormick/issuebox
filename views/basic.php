@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" dir=ltr lang=en-US> 
 <head> 
     <title>Issuebox - <?=$title?></title> 
-    <link rel="stylesheet" type="text/css" media="screen,projection" href="/public/css/stylesheet.css" />
+    <link rel="stylesheet" type="text/css" media="screen,projection" href="/public/css/basic.css" />
     <link rel="shortcut icon" type="image/x-icon" href="/public/img/logo.ico">
     <script type="text/javascript" src="/public/js/jquery/jquery-1.4.4.js"></script>
     <script type="text/javascript" src="/public/js/form/jquery.form.js"></script>
@@ -15,7 +15,7 @@
 </head> 
 <body> 
     <?=$content?>
-    <div class="footer" style="text-align: center;">
+    <div class="footer">
         Issuebox is built by <a href="http://www.mccormicktechnologies.com/" target="_blank">McCormick Technologies</a>. Version <?=Version?>.
     </div>
     <div id="arrow-top" style="display: none;">

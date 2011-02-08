@@ -43,7 +43,7 @@
         }
     }
     
-    function FriendlyString($string, $length = 180)
+    function FriendlyString($string, $length = 100)
     {
         if (strlen($string) > $length)
             return substr($string, 0, ($length - 3)) . "...";

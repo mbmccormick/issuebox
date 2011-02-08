@@ -129,9 +129,7 @@
             delayTime: 5000
         });
         
-        $(".list-holder .list-item").last().innerHTML = new Showdown.converter().makeHtml($(".list-holder .list-item").last().innerHTML);
-        
-        $(".truncate").truncate({max_length: 200, more: "more...", less: "...less"});
+        formatPage();
         
         checkDisplayNone();
     }

@@ -6,3 +6,15 @@
     RewriteCond %{SCRIPT_FILENAME} !-d
     RewriteRule ^(.*)$ index.php?/$1 [NC,L]
 </IfModule>
+
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType image/gif "access plus 2 months"
+    ExpiresByType image/jpeg "access plus 2 months"
+    ExpiresByType image/png "access plus 2 months"
+    ExpiresByType text/css "access plus 2 months"
+    ExpiresByType image/ico "access plus 2 months"
+    ExpiresByType text/javascript "access plus 2 months"
+    ExpiresByType application/x-javascript "access plus 2 months"
+    ExpiresByType application/octet-stream "access plus 2 months"
+</IfModule>

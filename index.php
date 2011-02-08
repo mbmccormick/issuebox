@@ -1,6 +1,7 @@
 <?php
 
     require_once "library/limonade.php";
+    require_once "library/lightopenid/openid.php";
     
     require("config/config.php");
     require("library/utils.php");
@@ -61,6 +62,8 @@
     dispatch_post('/login', 'login_post');
     dispatch('/login/reset', 'login_reset');
     dispatch_post('/login/reset', 'login_reset_post');
+    dispatch('/login/openid/google', 'login_openid_google');
+    dispatch_post('/login/openid/google', 'login_openid_google_post');
     dispatch('/logout', 'logout');
     
     /* Declare User routes */

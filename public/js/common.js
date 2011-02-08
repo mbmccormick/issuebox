@@ -36,6 +36,19 @@ $(document).ready(function() {
         history.replaceState(null, document.title, getRawUrl());
     }
     
+    if (getParameterByName("warning") != "") {
+        $(document).showMessage({
+            thisMessage: [getParameterByName("warning")],
+            className: "warning",
+            opacity: 95,
+            displayNavigation: false,
+            autoClose: true,
+            delayTime: 30000
+        });
+        
+        history.replaceState(null, document.title, getRawUrl());
+    }
+    
     if (getParameterByName("error") != "") {
         $(document).showMessage({
             thisMessage: [getParameterByName("error")],
@@ -47,13 +60,9 @@ $(document).ready(function() {
         });
         
         history.replaceState(null, document.title, getRawUrl());
-    }    
+    }
     
-    $(".wikiStyle").each(function() {
-        this.innerHTML = new Showdown.converter().makeHtml(this.innerHTML);
-    });
-    
-    $(".truncate").truncate({max_length: 225, more: "more", less: "less"});
+    formatPage();
     
     $("#arrow-top").click(function() {
         $('body,html').animate({ scrollTop:0 }, 800);
@@ -69,6 +78,14 @@ $(window).scroll(function() {
     }
 });
 
+function formatPage()
+{
+    $(".wikiStyle").each(function() {
+        this.innerHTML = new Showdown.converter().makeHtml(this.innerHTML);
+    });
+    
+    $(".truncate").truncate({max_length: 205, more: "more", less: "less"});
+}
 
 function getRawUrl()
 {

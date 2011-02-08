@@ -1,3 +1,6 @@
+html {
+}
+
 body {
     font-family: helvetica, arial;
     font-size: 14px;
@@ -22,27 +25,10 @@ a:hover {
     text-decoration: underline
 }
 
-.header {
-    font-size: 36px;
-    font-weight: bold;
-    padding-top: 40px;
-    margin-left: -10px;
-}
-
-.header a {
-    color: #191919;
-    text-decoration: none;
-}
-
-.header a:hover {
-    color: #4183C4;
-    text-decoration: none;
-}
-
 .footer {
     font-size: 13px;
-    padding-top: 30px;
-    padding-bottom: 20px;
+    padding: 30px;
+    text-align: center;
 }
 
 .content {
@@ -50,93 +36,8 @@ a:hover {
     padding-bottom: 30px;
 }
 
-.list {
-
-}
-
-.list-item {
-    border: solid 3px #E4E4E4;
-    background-color: whiteSmoke;
-    padding: 15px;
-    border-radius: 8px;
-    -moz-border-radius: 8px;
-    margin-bottom: 20px;
-}
-
-.list-item h3,
-.list-item p,
-.issue div,
-.comment div {
-    padding: 0px;
-    margin: 0px;
-    line-height: 1.5em;
-}
-
-.project h3 {
-    white-space: nowrap;
-    overflow: hidden;
-    max-width: 500px;
-}
-
-.project p {
-    white-space: nowrap;
-    overflow: hidden;
-    max-width: 500px;
-}
-
-.issue h3 {
-    white-space: nowrap;
-    overflow: hidden;
-    max-width: 600px;
-}
-
-.list-item h3 {
-    font-size: 18px
-}
-
-.comment-new {
-    background-color: #ffffff
-}
-
-.comment {
-    background-color: #ffffff;
-    padding-top: 3px;
-}
-
 .user-password {
     background-color: #ffffff
-}
-
-.counter {
-    background-color: #888888;
-    color: #666666;
-    text-transform: uppercase;
-    padding: 8px;
-    border-radius: 8px;
-    -moz-border-radius: 8px;
-    width: 80px;
-    text-align: center;
-    font-size: 9px;
-    margin-left: 5px;
-    text-shadow: #ffffff 0px 1px 0px;
-}
-
-.webkit .counter {
-    background: -webkit-gradient(linear, 0% 100%, 0% 0%, from(#C9C9C9), to(#DEDEDE))
-}
-
-.gecko .counter {
-    background: -moz-linear-gradient(center bottom, #C9C9C9 0%, #DEDEDE 100%)
-}
-
-.ie .counter {
-    filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#DEDEDE', EndColorStr='#C9C9C9', GradientType=0)
-}
-
-.counter big {
-    display: block;
-    font-size: 26px;
-    font-weight: bold;
 }
 
 .create {
@@ -376,162 +277,9 @@ a:hover {
     margin-bottom: -2px
 }
 
-.navigation {
-    font-weight: bold;
-    padding: 5px 0px 25px 0px;
-    max-width: 600px;
-}
-
-.activity .description {
-    color: #555;
-    line-height: 1.5em;
-}
-
-.user-activity {
-    background-color: #ffffff
-}
-
-.user-activity .description {
-    color: #555;
-    line-height: 1.5em;
-}
-
-.filter-off {
-    border: 1px solid #D4D4D4;
-    border-radius: 3px;
-    color: #333;
-    cursor: pointer;
-    display: inline-block;
-    font-family: helvetica, arial, freesans, clean, sans-serif;
-    font-size: 11px;
-    font-weight: bold;
-    height: 21px;
-    overflow: visible;
-    padding: 1px 0px 1px 3px;
-    text-shadow: white 1px 1px 0px;
-    white-space: nowrap;
-    cursor: pointer;
-}
-
-.filter-off:hover {
-    text-decoration: none
-}
-
-.webkit .filter-off {
-    background: -webkit-gradient(linear, 0% 100%, 0% 0%, from(#E1E1E1), to(#ffffff));
-    padding: 1px 0px 0px 3px;
-}
-
-.gecko .filter-off {
-    -moz-border-radius: 3px;
-    background: -moz-linear-gradient(center bottom, #E1E1E1 0%, #ffffff 100%);
-}
-
-.ie .filter-off {
-    filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#ffffff', EndColorStr='#E1E1E1', GradientType=0)
-}
-
-.filter-off span {
-    display: block;
-    height: 21px;
-    line-height: 21px;
-    padding: 0px 9px 0px 7px;
-    text-transform: uppercase;
-}
-
-.filter-on {
-    border-width: 1px;
-    border-style: solid;
-    border-color: #666666 #888888 #888888 #666666;
-    border-radius: 3px;
-    color: white;
-    cursor: pointer;
-    display: inline-block;
-    font-family: helvetica, arial, freesans, clean, sans-serif;
-    font-size: 11px;
-    font-weight: bold;
-    height: 21px;
-    overflow: visible;
-    padding: 1px 0px 1px 3px;
-    text-shadow: rgba(0, 0, 0, 0.296875) 1px 1px 0px;
-    white-space: nowrap;
-    cursor: pointer;
-}
-
-.filter-on:hover {
-    text-decoration: none
-}
-
-.webkit .filter-on {
-    background: -webkit-gradient(linear, 0% 100%, 0% 0%, from(#999999), to(#888888));
-    padding: 1px 0px 0px 3px;
-}
-
-.gecko .filter-on {
-    -moz-border-radius: 3px;
-    background: -moz-linear-gradient(center bottom, #999999 0%, #888888 100%);
-}
-
-.ie .filter-on {
-    filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#888888', EndColorStr='#999999', GradientType=0)
-}
-
-.filter-on span {
-    display: block;
-    height: 21px;
-    line-height: 21px;
-    padding: 0px 9px 0px 7px;
-    text-transform: uppercase;
-}
-
-em.closed-indicator {
-    background: #999999;
-    border-radius: 3px;
-    -moz-border-radius: 3px;
-    color: white;
-    font-size: 11px;
-    font-style: normal;
-    padding: 2px 5px;
-    text-transform: uppercase;
-    font-weight: bold;
-    margin-left: 3px;
-}
-
-.mac em.closed-indicator {
-    padding: 4px 5px 2px 5px
-}
-
-em.urgent-indicator {
-    background: #DE683A;
-    border-radius: 3px;
-    -moz-border-radius: 3px;
-    color: white;
-    font-size: 11px;
-    font-style: normal;
-    padding: 2px 5px;
-    text-transform: uppercase;
-    font-weight: bold;
-    margin-left: 3px;
-}
-
-.mac em.urgent-indicator {
-    padding: 4px 5px 2px 5px
-}
-
-big.urgent {
-    color: #DE683A
-}
-
 small {
     color: #999;
     font-size: 12px;
-}
-
-p.checkbox {
-    color: #333333;
-    font-size: 14px;
-    font-weight: bold;
-    margin: 15px 0px;
 }
 
 .standard-form {
@@ -573,6 +321,33 @@ p.checkbox {
     text-decoration: none;
 }
 
+.login-form {
+    background-color: #F1F1F1;
+    box-shadow: 1px 1px 3px #606060;
+    -moz-box-shadow: 1px 1px 3px #606060;
+    -webkit-box-shadow: 1px 1px 3px #606060;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    margin: 20px auto;
+    padding: 20px;
+    width: 300px;
+}
+
+.login-form h2 {
+    margin: 0px;
+    padding: 0px;
+    font-size: 22px;
+}
+
+.login-form h2 a {
+    color: #191919;
+}
+
+.login-form h2 a:hover {
+    color: #4183C4;
+    text-decoration: none;
+}
+
 .help {
     background-color: #ffffff;
     line-height: 1.4em;
@@ -587,6 +362,7 @@ form input[type=password] {
     padding: 5px;
     font-family: helvetica, arial;
     text-shadow: rgba(0, 0, 0, 0.0078125) 0px 0px 1px;
+    margin-top: 5px;
 }
 
 form label,
@@ -599,80 +375,25 @@ label.standard {
     margin-top: 1em;
 }
 
-.toolbar {
-    font-size: 13px;
-    width: 100%;
-    padding: 10px 0px;
-    position: fixed;
-    left: 0px;
-    top: 0px;
-    background: #111;
-}
-
-.webkit .toolbar {
-    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#333), to(#111));
-    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.5);
-}
-
-.gecko .toolbar {
-    background: -moz-linear-gradient(top,#333,#111);
-    -moz-box-shadow: 0 1px 2px rgba(0,0,0,0.5);
-}
-
-.ie .toolbar {
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#333333',endColorstr='#111111');
-    box-shadow: 0 1px 2px rgba(0,0,0,0.5);
-}
-
-.toolbar-menu {
-    width: 780px;
-    margin: 0px auto;
-}
-
-.toolbar-menu a {
-    color: #FFFFFF;
-}
-
-.description p {
-    margin: 0px !important;
-    padding: 0px;
-}
-
-.wikiStyle p {
-    line-height: 1.5em;
-    margin: 1em 0;
-}
-
-.btn-projects .icon {
-    background: url(../img/minibutton_icons.png) no-repeat 0px 0px;
-    float: right;
-    height: 22px;
-    margin-right: -16px;
-    position: relative;
-    top: -1px;
-    width: 18px;
-}
-
-.btn-projects .icon {
-    background-position: -180px 0px;
-    width: 16px;
-}
-
-.btn-projects:hover .icon {
-    background-position: -180px -25px
-}
-
-.error {
-    background-color: #E64343;
-    border-bottom: 3px solid #B53333;
+.success {
+    background-color: #42A84F;
+    border-bottom: 3px solid #288033;
     color: white;
     font: normal normal 500 large/normal Arial, Helvetica, clean, sans-serif;
     text-align: center;
 }
 
-.success {
-    background-color: #42A84F;
-    border-bottom: 3px solid #288033;
+.warning {
+    background-color: #E6C843;
+    border-bottom: 3px solid #C2A213;
+    color: white;
+    font: normal normal 500 large/normal Arial, Helvetica, clean, sans-serif;
+    text-align: center;
+}
+
+.error {
+    background-color: #E64343;
+    border-bottom: 3px solid #B53333;
     color: white;
     font: normal normal 500 large/normal Arial, Helvetica, clean, sans-serif;
     text-align: center;
@@ -686,8 +407,14 @@ label.standard {
     font-weight: bold
 }
 
+#google
+{
+    margin-bottom: -3px;
+    margin-right: 3px;
+}
+
 #arrow-top {
-    background: #DBDBDB;
+    background: #FFFFFF;
     border-radius: 5px;
     -moz-border-radius: 5px;
     color: #333333;

@@ -2,6 +2,7 @@
 
     function login()
     {
+        set("identity", $_SESSION[CurrentUser_Identity]);
         set("title", "Login");
         return html("security/login.php", "basic.php");
     }
@@ -10,8 +11,19 @@
     {
         if (Security_Login($_POST[username], $_POST[password]) == true)
         {
-            header("Location: /");
-            exit;
+            if (isset($_SESSION[CurrentUser_Identity]))
+            {
+                $sql = "UPDATE user SET identity = '". $_SESSION[CurrentUser_Identity] . "' WHERE id = '$_SESSION[CurrentUser_ID]'";
+                mysql_query($sql);
+                
+                header("Location: /&success=Your Google Account was linked to Issuebox successfully!");
+                exit;
+            }
+            else
+            {
+                header("Location: /");
+                exit;
+            }
         }
         else
         {
@@ -50,6 +62,44 @@
         {
             header("Location: /login&error=Something went wrong, please contact our support team!");
             exit;
+        }
+    }
+    
+    function login_openid_google()
+    {
+        $openid = new LightOpenID;
+        
+        if($openid->mode == 'cancel')
+        {
+            header("Location: /login&error=Please check your login credentials and try again.");
+            exit;
+        }
+        else
+        {
+            if ($openid->validate() &&
+                Security_Login_OpenID($openid->identity) == true)
+            {
+                header("Location: /");
+                exit;
+            }
+            else
+            {
+                $_SESSION[CurrentUser_Identity] = $openid->identity;
+                header("Location: /login&warning=Please login to Issuebox to finish linking your Google Account.");
+                exit;
+            }
+        }
+    }
+    
+    function login_openid_google_post()
+    {
+        $openid = new LightOpenID;
+        $openid->returnUrl = "http://" . $_SERVER['HTTP_HOST'] . "/?/login/openid/google";
+            
+        if(!$openid->mode)
+        {
+            $openid->identity = "https://www.google.com/accounts/o8/id";
+            header("Location: " . $openid->authUrl());
         }
     }
     

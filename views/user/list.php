@@ -9,7 +9,4 @@
     <button type="button" class="button" onclick="location.href='/user/add';">
         <span>New User</span>
     </button>
-    <button type="button" class="button" onclick="location.href='/settings';">
-        <span>Return to Settings</span>
-    </button>
 </div>

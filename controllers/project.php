@@ -27,7 +27,7 @@
                 $body .= "<table cellpadding='0' cellspacing='0' style='width: 100%;'>\n";
                 $body .= "<tr>\n";
                 $body .= "<td valign='middle'>\n";
-                $body .= "<h3>#$row[number]&nbsp;&nbsp;<a href='/issue/$row[id]'>" . FriendlyString($row[title], 62) . "</a></h3>";
+                $body .= "<h3>#$row[number]&nbsp;&nbsp;<a href='/issue/$row[id]'>" . FriendlyString($row[title], 66) . "</a></h3>";
                 $body .= "</td>\n";
                 $body .= "<td valign='middle' align='right'>\n";
                 if ($row[isurgent] == "1")
@@ -86,8 +86,8 @@
             $body .= "<table cellpadding='0' cellspacing='0' style='width: 100%;'><tr>\n";
             
             $body .= "<td width='100%'>\n";
-            $body .= "<h3><a href='/project/$row[id]'>" . FriendlyString($row['name'], 58) . "</a></h3><br />\n";
-            $body .= "<p>" . FriendlyString($row['description'], 81) . "</p>\n";
+            $body .= "<h3><a href='/project/$row[id]'>" . FriendlyString($row['name'], 62) . "</a></h3><br />\n";
+            $body .= "<p>" . FriendlyString($row['description'], 85) . "</p>\n";
             $body .= "</td>\n";
             
             $body .= "<td>\n";
