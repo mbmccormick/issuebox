@@ -1,20 +1,21 @@
 html {
-    background-image: url("/public/img/bg.jpg");
-    background-attachment: fixed;
+    background-color: #e5e5e5;
+    height: 100%;
 }
 
 body {
     font-family: helvetica, arial;
     font-size: 14px;
     color: #333333;
-    padding: 30px;
+    padding: 0 30px;
     margin: 0px auto;
+    min-height: 100%;
     width: 780px;
     background-color: #FFFFFF;
     text-shadow: rgba(0, 0, 0, 0.0078125) 0px 0px 1px;
-    box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.3);
-    -webkit-box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.3);
-    -moz-box-shadow: 0px -7px 5px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0px -7px 5px 2px rgba(0, 0, 0, 0.1);
 }
 
 .mac {
@@ -33,7 +34,7 @@ a:hover {
 .header {
     font-size: 36px;
     font-weight: bold;
-    padding-top: 40px;
+    padding-top: 70px;
     margin-left: -10px;
 }
 
@@ -49,10 +50,8 @@ a:hover {
 
 .footer {
     font-size: 13px;
-    padding: 40px 30px 40px 30px;
+    padding: 40px 30px 70px 30px;
     color: #999999;
-    background-color: #ECECEC;
-    border-top: solid 1px #cccccc;
     margin: 0px -30px -30px -30px;
 }
 
@@ -551,39 +550,27 @@ p.checkbox {
 
 .standard-form {
     border: solid 3px #E4E4E4;
-    border-top: none;
     background-color: #FFFFFF;
-    padding: 8px 15px 15px 15px;
-    border-radius: 0px 0px 8px 8px;
-    -moz-border-radius: 0px 0px 8px 8px;
+    padding: 15px;
+    border-radius: 8px;
+    -moz-border-radius: 8px;
     margin-bottom: 20px;
     width: 345px;
     margin: 0px auto;
+    margin-bottom: 20px;
 }
 
-.standard-form-top {
-    border: solid 3px #E4E4E4;
-    border-bottom: solid 1px #E4E4E4;
-    background-color: #F8F8F8;
-    padding: 18px 15px 15px 15px;
-    border-radius: 8px 8px 0px 0px;
-    -moz-border-radius: 8px 8px 0px 0px;
-    width: 345px;
-    margin: 0px auto;
-    margin-top: 50px;
-}
-
-.standard-form-top h2 {
+.standard-form h2 {
     margin: 0px;
     padding: 0px;
     font-size: 22px;
 }
 
-.standard-form-top h2 a {
+.standard-form h2 a {
     color: #191919;
 }
 
-.standard-form-top h2 a:hover {
+.standard-form h2 a:hover {
     color: #4183C4;
     text-decoration: none;
 }
@@ -755,10 +742,10 @@ label.standard {
 }
 
 #arrow-top {
-    background: #FFFFFF;
+    background: #CCCCCC;
     border-radius: 5px;
     -moz-border-radius: 5px;
-    color: #333333;
+    color: #191919;
     display: block;
     font-size: 36px;
     opacity: 0.7;
