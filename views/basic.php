@@ -22,5 +22,25 @@
     <div id="arrow-top" style="display: none;">
         &#9650;
     </div>
+    <script type="text/javascript">
+      var uservoiceOptions = {
+        key: 'issuebox',
+        host: 'issuebox.uservoice.com', 
+        forum: '103387',
+        alignment: 'left',
+        background_color:'#000000', 
+        text_color: 'white',
+        hover_color: '#0066CC',
+        lang: 'en',
+        showTab: true
+      };
+      function _loadUserVoice() {
+        var s = document.createElement('script');
+        s.src = ("https:" == document.location.protocol ? "https://" : "http://") + "cdn.uservoice.com/javascripts/widgets/tab.js";
+        document.getElementsByTagName('head')[0].appendChild(s);
+      }
+      _loadSuper = window.onload;
+      window.onload = (typeof window.onload != 'function') ? _loadUserVoice : function() { _loadSuper(); _loadUserVoice(); };
+    </script>
 </body> 
 </html>
