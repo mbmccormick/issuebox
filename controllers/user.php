@@ -4,12 +4,12 @@
     {
         Security_Authorize();
         
-        $result = mysql_query("SELECT * FROM user WHERE id = '" . params('id') . "'");
+        $result = mysql_query("SELECT * FROM user WHERE id='" . params('id') . "'");
         $user = mysql_fetch_array($result);
         
         if ($user != null)
         {
-            $result = mysql_query("SELECT * FROM activity WHERE createdby = '$user[id]' ORDER BY createddate DESC LIMIT 5");
+            $result = mysql_query("SELECT * FROM activity WHERE createdby='$user[id]' ORDER BY createddate DESC LIMIT 5");
             while($row = mysql_fetch_array($result))
             {
                 $body .= "<div class='list-item user-activity'>\n";
@@ -92,6 +92,12 @@
     function user_add()
     {
         Security_Authorize();
+        
+        if ($_SESSION["CurrentUser_IsAdministrator"] == "0")
+        {
+            header("Location: /user/" . params('id') . "&error=You are not authorized to add a new user!");
+            exit;
+        }
     
         set("title", "New User");
         return html("user/add.php");
@@ -101,12 +107,18 @@
     {
         Security_Authorize();
         
+        if ($_SESSION["CurrentUser_IsAdministrator"] == "0")
+        {
+            header("Location: /user/" . params('id') . "&error=You are not authorized to add a new user!");
+            exit;
+        }
+        
         $now = date("Y-m-d H:i:s");
         
         if ($user[password] == $user[passwordconfirm])
         {
-            $sql = "INSERT INTO user (username, password, email, createddate) VALUES
-                    ('" . mysql_real_escape_string($_POST[username]) . "', '" . md5(mysql_real_escape_string($_POST[password])) . "', '" . mysql_real_escape_string($_POST[email]) . "', '" . $now . "')";
+            $sql = "INSERT INTO user (username, password, email, isadministrator, createddate) VALUES
+                    ('" . mysql_real_escape_string($_POST[username]) . "', '" . md5(mysql_real_escape_string($_POST[password])) . "', '" . mysql_real_escape_string($_POST[email]) . "', '" . $_POST[isadministrator] . "','" . $now . "')";
             mysql_query($sql);
         }
         else
@@ -125,13 +137,14 @@
     {
         Security_Authorize();
         
-        if ($_SESSION["CurrentUser_ID"] != params('id'))
+        if ($_SESSION["CurrentUser_IsAdministrator"] == "0" &&
+            $_SESSION["CurrentUser_ID"] != params('id'))
         {
             header("Location: /user/" . params('id') . "&error=You are not authorized to edit this user!");
             exit;
         }
     
-        $result = mysql_query("SELECT * FROM user WHERE id = '" . params('id') . "'");
+        $result = mysql_query("SELECT * FROM user WHERE id='" . params('id') . "'");
         $user = mysql_fetch_array($result);
         
         if ($user != null)
@@ -152,29 +165,29 @@
     {
         Security_Authorize();
         
-        if ($_SESSION["CurrentUser_ID"] != params('id'))
+        if ($_SESSION["CurrentUser_IsAdministrator"] == "0" &&
+            $_SESSION["CurrentUser_ID"] != params('id'))
         {
             header("Location: /user/" . params('id') . "&error=You are not authorized to edit this user!");
             exit;
         }
         
-        $result = mysql_query("SELECT * FROM user WHERE id = '" . params('id') . "'");
+        $result = mysql_query("SELECT * FROM user WHERE id='" . params('id') . "'");
         $user = mysql_fetch_array($result);
         
         $now = date("Y-m-d H:i:s");
-        $nowlcl = date("Y-m-d H:i:s", strtotime("+3 hour", strtotime($now)));
-
+        
         if (md5($_POST[currentpassword]) == $user[password])
         {
             if ($user[newpassword] == $user[newpasswordconfirm])
             {
-                $sql = "UPDATE user SET username = '" . mysql_real_escape_string($_POST[username]) . "', password = '" . md5(mysql_real_escape_string($_POST[newpassword])) . "', email = '" . mysql_real_escape_string($_POST[email]) . "' WHERE id = '$user[id]'";
+                $sql = "UPDATE user SET username='" . mysql_real_escape_string($_POST[username]) . "', password='" . md5(mysql_real_escape_string($_POST[newpassword])) . "', email='" . mysql_real_escape_string($_POST[email]) . "', isadministrator='" . $_POST[isadministrator] . "' WHERE id='$user[id]'";
                 mysql_query($sql);
             }
         }
         else
         {
-            $sql = "UPDATE user SET username = '" . mysql_real_escape_string($_POST[username]) . "', email = '" . mysql_real_escape_string($_POST[email]) . "' WHERE id = '$user[id]'";
+            $sql = "UPDATE user SET username='" . mysql_real_escape_string($_POST[username]) . "', email='" . mysql_real_escape_string($_POST[email]) . "', isadministrator='" . $_POST[isadministrator] . "' WHERE id='$user[id]'";
             mysql_query($sql);
         }
         
@@ -194,7 +207,7 @@
             exit;
         }
     
-        $sql = "DELETE FROM user WHERE id = '" . params('id') . "'";    
+        $sql = "DELETE FROM user WHERE id='" . params('id') . "'";    
         mysql_query($sql);
 
         header("Location: /user");

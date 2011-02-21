@@ -13,7 +13,7 @@
         {
             if (isset($_SESSION[CurrentUser_Identity]))
             {
-                $sql = "UPDATE user SET identity = '". $_SESSION[CurrentUser_Identity] . "' WHERE id = '$_SESSION[CurrentUser_ID]'";
+                $sql = "UPDATE user SET identity='". $_SESSION[CurrentUser_Identity] . "' WHERE id='$_SESSION[CurrentUser_ID]'";
                 mysql_query($sql);
                 
                 header("Location: /&success=Your Google Account was linked to Issuebox successfully!");
@@ -40,7 +40,7 @@
     
     function login_reset_post()
     {
-        $result = mysql_query("SELECT * FROM user WHERE email = '" . $_POST[email] . "'");
+        $result = mysql_query("SELECT * FROM user WHERE email='" . $_POST[email] . "'");
         $user = mysql_fetch_array($result);
         
         $password = "";
@@ -50,9 +50,9 @@
             $password .= $d ? chr(rand(65, 90)) : chr(rand(48, 57)); 
         }
         
-        if (mail($user[email], "Your New Issuebox Password", "You recently requested a new password for Issuebox. Your new password is " . $password . ".\n\n--\nIssuebox", "From: Issuebox <" . RetrieveSetting("ContactEmailAddress") . ">") == true)
+        if (mail($user[email], "Your New Issuebox Password", "You recently requested a new password for Issuebox. Your new password is " . $password . ".\n\n--\nIssuebox", "From: Issuebox <" . EmailAddress . ">") == true)
         {        
-            $sql = "UPDATE user SET password = '". md5($password) . "' WHERE id = '$user[id]'";
+            $sql = "UPDATE user SET password='". md5($password) . "' WHERE id='$user[id]'";
             mysql_query($sql);
             
             header("Location: /login&success=Your password has been reset and a new one was just emailed to you!");

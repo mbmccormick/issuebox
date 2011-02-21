@@ -74,12 +74,7 @@
     dispatch_post('/user/:id/edit', 'user_edit_post');
     dispatch('/user/:id/delete', 'user_delete');
     dispatch('/user/:id', 'user_view');
-    
-    /* Declare Setting routes */
-    dispatch('/settings', 'setting_list');
-    dispatch('/settings/email', 'setting_email');
-    dispatch_post('/settings/email', 'setting_email_post');
-    
+        
     /* Declare Hook routes */
     dispatch_post('/hook/:projectid/git', 'hook_git_post');
     dispatch_post('/hook/:projectid/svn', 'hook_svn_post');

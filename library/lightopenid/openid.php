@@ -9,7 +9,7 @@
  * Step one is authentication with the provider:
  * <code>
  * $openid = new LightOpenID;
- * $openid->identity = 'ID supplied by user';
+ * $openid->identity='ID supplied by user';
  * header('Location: ' . $openid->authUrl());
  * </code>
  * The provider then sends various parameters via GET, one of them is openid_mode.
@@ -371,7 +371,7 @@ class LightOpenID
 
                     preg_match_all('#<Service.*?>(.*?)</Service>#s', $content, $m);
                     foreach($m[1] as $content) {
-                        $content = ' ' . $content; # The space is added, so that strpos doesn't return 0.
+                        $content=' ' . $content; # The space is added, so that strpos doesn't return 0.
 
                         # OpenID 2
                         $ns = preg_quote('http://specs.openid.net/auth/2.0/');
@@ -471,7 +471,7 @@ class LightOpenID
         # We always use SREG 1.1, even if the server is advertising only support for 1.0.
         # That's because it's fully backwards compatibile with 1.0, and some providers
         # advertise 1.0 even if they accept only 1.1. One such provider is myopenid.com
-        $params['openid.ns.sreg'] = 'http://openid.net/extensions/sreg/1.1';
+        $params['openid.ns.sreg']='http://openid.net/extensions/sreg/1.1';
         if ($this->required) {
             $params['openid.sreg.required'] = array();
             foreach ($this->required as $required) {
@@ -496,8 +496,8 @@ class LightOpenID
     {
         $params = array();
         if ($this->required || $this->optional) {
-            $params['openid.ns.ax'] = 'http://openid.net/srv/ax/1.0';
-            $params['openid.ax.mode'] = 'fetch_request';
+            $params['openid.ns.ax']='http://openid.net/srv/ax/1.0';
+            $params['openid.ax.mode']='fetch_request';
             $this->aliases  = array();
             $counts   = array();
             $required = array();
@@ -505,7 +505,7 @@ class LightOpenID
             foreach (array('required','optional') as $type) {
                 foreach ($this->$type as $alias => $field) {
                     if (is_int($alias)) $alias = strtr($field, '/', '_');
-                    $this->aliases[$alias] = 'http://axschema.org/' . $field;
+                    $this->aliases[$alias]='http://axschema.org/' . $field;
                     if (empty($counts[$alias])) $counts[$alias] = 0;
                     $counts[$alias] += 1;
                     ${$type}[] = $alias;
@@ -574,7 +574,7 @@ class LightOpenID
 
         if ($identifier_select) {
             $params['openid.identity'] = $params['openid.claimed_id']
-                 = 'http://specs.openid.net/auth/2.0/identifier_select';
+                ='http://specs.openid.net/auth/2.0/identifier_select';
         } else {
             $params['openid.identity'] = $this->identity;
             $params['openid.claimed_id'] = $this->claimed_id;
@@ -621,7 +621,7 @@ class LightOpenID
             # We're dealing with an OpenID 2.0 server, so let's set an ns
             # Even though we should know location of the endpoint,
             # we still need to verify it by discovery, so $server is not set here
-            $params['openid.ns'] = 'http://specs.openid.net/auth/2.0';
+            $params['openid.ns']='http://specs.openid.net/auth/2.0';
         } elseif (isset($this->data['openid_claimed_id'])
             && $this->data['openid_claimed_id'] != $this->data['openid_identity']
         ) {
@@ -651,7 +651,7 @@ class LightOpenID
 
         }
 
-        $params['openid.mode'] = 'check_authentication';
+        $params['openid.mode']='check_authentication';
 
         $response = $this->request($server, 'POST', $params);
 
@@ -664,7 +664,7 @@ class LightOpenID
         if (isset($this->data['openid_ns_ax'])
             && $this->data['openid_ns_ax'] != 'http://openid.net/srv/ax/1.0'
         ) { # It's the most likely case, so we'll check it before
-            $alias = 'ax';
+            $alias='ax';
         } else {
             # 'ax' prefix is either undefined, or points to another extension,
             # so we search for another prefix
@@ -685,7 +685,7 @@ class LightOpenID
 
         $attributes = array();
         foreach ($this->data as $key => $value) {
-            $keyMatch = 'openid_' . $alias . '_value_';
+            $keyMatch='openid_' . $alias . '_value_';
             if (substr($key, 0, strlen($keyMatch)) != $keyMatch) {
                 continue;
             }
@@ -708,7 +708,7 @@ class LightOpenID
         $attributes = array();
         $sreg_to_ax = array_flip(self::$ax_to_sreg);
         foreach ($this->data as $key => $value) {
-            $keyMatch = 'openid_sreg_';
+            $keyMatch='openid_sreg_';
             if (substr($key, 0, strlen($keyMatch)) != $keyMatch) {
                 continue;
             }

@@ -11,6 +11,7 @@
             $_SESSION["CurrentUser_ID"] = $row[id];
             $_SESSION["CurrentUser_Username"] = $row[username];
             $_SESSION["CurrentUser_Email"] = $row[email];
+            $_SESSION["CurrentUser_IsAdministrator"] = $row[isadministrator];
         
             return true;
         }
@@ -31,6 +32,7 @@
             $_SESSION["CurrentUser_ID"] = $row[id];
             $_SESSION["CurrentUser_Username"] = $row[username];
             $_SESSION["CurrentUser_Email"] = $row[email];
+            $_SESSION["CurrentUser_IsAdministrator"] = $row[isadministrator];
         
             return true;
         }

@@ -14,94 +14,94 @@
  * @param string $message 
  * @return boolean
  */
-function assert_true($value, $message = '<1> should be TRUE')
+function assert_true($value, $message='<1> should be TRUE')
 {
    test_run_assertion();
    return assert('$value === TRUE; //'.$message);
 }
 
-function assert_false($value, $message = '<1> should be FALSE')
+function assert_false($value, $message='<1> should be FALSE')
 {
    test_run_assertion();
    return assert('$value === FALSE; //'.$message);
 }
 
-function assert_null($value, $message = '<1> should be NULL')
+function assert_null($value, $message='<1> should be NULL')
 {
    test_run_assertion();
    return assert('$value === NULL; //'.$message);
 }
 
-function assert_not_null($value, $message = '<1> should not be NULL')
+function assert_not_null($value, $message='<1> should not be NULL')
 {
    test_run_assertion();
    return assert('$value !== NULL; //'.$message);
 }
 
-function assert_empty($value, $message = '<1> should be empty')
+function assert_empty($value, $message='<1> should be empty')
 {
    test_run_assertion();
    return assert('empty($value); //'.$message);
 }
 
-function assert_not_empty($value, $message = '<1> should not be empty')
+function assert_not_empty($value, $message='<1> should not be empty')
 {
    test_run_assertion();
    return assert('!empty($value); //'.$message);
 }
 
-function assert_equal($expected, $value, $message = '<1> should be equal to <2>')
+function assert_equal($expected, $value, $message='<1> should be equal to <2>')
 {
    test_run_assertion();
    return assert('$expected == $value; //'.$message);
 }
 
-function assert_not_equal($expected, $value, $message = '<1> should not equal to <2>')
+function assert_not_equal($expected, $value, $message='<1> should not equal to <2>')
 {
    test_run_assertion();
    return assert('$expected != $value; //'.$message);
 }
 
-function assert_identical($expected, $value, $message = '<1> should be identical to <2>')
+function assert_identical($expected, $value, $message='<1> should be identical to <2>')
 {
    test_run_assertion();
    return assert('$expected === $value; //'.$message);
 }
 
-function assert_not_identical($expected, $value, $message = '<1> should not be identical to <2>')
+function assert_not_identical($expected, $value, $message='<1> should not be identical to <2>')
 {
    test_run_assertion();
    return assert('$expected !== $value; //'.$message);
 }
 
-function assert_match($pattern, $string, $message = '<2> expected to match regular expression <1>') {
+function assert_match($pattern, $string, $message='<2> expected to match regular expression <1>') {
    test_run_assertion();
    return assert('preg_match($pattern, $string); //'.$message);
 }
  
-function assert_no_match($pattern, $string, $message = '<2> expected to not match regular expression <1>') {
+function assert_no_match($pattern, $string, $message='<2> expected to not match regular expression <1>') {
    test_run_assertion();
    return assert('!preg_match($pattern, $string); //'.$message);
 }
 
-function assert_type($type, $value, $message = '<1> is not of type <2>') {
+function assert_type($type, $value, $message='<1> is not of type <2>') {
   test_run_assertion();
-  $predicate = 'is_' . strtolower(is_string($type) ? $type : gettype($type));
+  $predicate='is_' . strtolower(is_string($type) ? $type : gettype($type));
   return assert('$predicate($value); //'.$message);
 }
  
-function assert_instance_of($class, $object, $message = '<2> is not an instance of class <1>') {
+function assert_instance_of($class, $object, $message='<2> is not an instance of class <1>') {
    test_run_assertion();
    return assert('$object instanceof $class; //'.$message);
 }
  
-function assert_length_of($value, $length, $message = '<1> expected to be of length <2>') {
+function assert_length_of($value, $length, $message='<1> expected to be of length <2>') {
    test_run_assertion();
    $count = is_string($value) ? 'strlen' : 'count';
    return assert('$count($value) == $length; //'.$message);
 }
 
-function assert_trigger_error($callable, $args = array(), $message = '<1> should trigger an error') {
+function assert_trigger_error($callable, $args = array(), $message='<1> should trigger an error') {
   test_run_assertion();
   $trigger_errors = count($GLOBALS["limonade"]["test_errors"]);
   set_error_handler("test_error_handler");

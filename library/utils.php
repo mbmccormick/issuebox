@@ -58,7 +58,7 @@
         
         if ($itemtype == "1")
         {
-            $sql = mysql_query("SELECT * FROM project WHERE id = '$itemid'");
+            $sql = mysql_query("SELECT * FROM project WHERE id='$itemid'");
             $project = mysql_fetch_array($sql);
             
             if ($actiontype == "1")
@@ -74,10 +74,10 @@
         }
         else if ($itemtype == "2")
         {
-            $sql = mysql_query("SELECT * FROM issue WHERE id = '$itemid'");
+            $sql = mysql_query("SELECT * FROM issue WHERE id='$itemid'");
             $issue = mysql_fetch_array($sql);
             
-            $sql = mysql_query("SELECT * FROM project WHERE id = '$issue[projectid]'");
+            $sql = mysql_query("SELECT * FROM project WHERE id='$issue[projectid]'");
             $project = mysql_fetch_array($sql);
             
             if ($actiontype == "1")
@@ -93,10 +93,10 @@
         }
         else if ($itemtype == "3")
         {
-            $sql = mysql_query("SELECT * FROM comment WHERE id = '$itemid'");
+            $sql = mysql_query("SELECT * FROM comment WHERE id='$itemid'");
             $comment = mysql_fetch_array($sql);
             
-            $sql = mysql_query("SELECT * FROM issue WHERE id = '$comment[issueid]'");
+            $sql = mysql_query("SELECT * FROM issue WHERE id='$comment[issueid]'");
             $issue = mysql_fetch_array($sql);
             
             if ($actiontype == "1")
@@ -128,7 +128,7 @@
     
     function PurgeActivity($itemtype, $itemid)
     {
-        $sql = "DELETE FROM activity WHERE itemtype = '$itemtype' AND itemid = '$itemid'";    
+        $sql = "DELETE FROM activity WHERE itemtype='$itemtype' AND itemid='$itemid'";    
         if (!mysql_query($sql))
         {
             die('Error: ' . mysql_error());
@@ -142,13 +142,6 @@
             return (strcmp(substr($haystack, 0, strlen($needle)), $needle)===0);
         }
         return (strcasecmp(substr($haystack, 0, strlen($needle)), $needle)===0);
-    }
-    
-    function RetrieveSetting($key)
-    {
-        $sql = mysql_query("SELECT * FROM setting WHERE name = '$key'");
-        $setting = mysql_fetch_array($sql);
-        return $setting[value];
     }
     
 ?>

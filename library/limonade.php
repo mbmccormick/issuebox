@@ -582,7 +582,7 @@ function error($errno = null, $function = null)
  * @param mixed $debug_args extra data provided for debugging
  * @return void
  */
-function halt($errno = SERVER_ERROR, $msg = '', $debug_args = null)
+function halt($errno = SERVER_ERROR, $msg='', $debug_args = null)
 {
   $args = func_get_args();
   $error = array_shift($args);
@@ -759,7 +759,7 @@ function error_server_error_output($errno, $errstr, $errfile, $errline)
  */
 function error_layout($layout = false)
 {
-  static $o_layout = 'default_layout.php';
+  static $o_layout='default_layout.php';
   if($layout !== false)
   {
     option('error_views_dir', option('views_dir'));
@@ -1062,11 +1062,11 @@ function request_uri($env = null)
   $uri = rtrim($uri, "/"); # removes ending /
   if(empty($uri))
   {
-    $uri = '/';
+    $uri='/';
   }
   else if($uri[0] != '/')
   {
-    $uri = '/' . $uri; # add a leading slash
+    $uri='/' . $uri; # add a leading slash
   }
   return rawurldecode($uri);
 }
@@ -1374,7 +1374,7 @@ function route_find($method, $path)
  * @param string $locals 
  * @return string
  */
-function render($content_or_func, $layout = '', $locals = array())
+function render($content_or_func, $layout='', $locals = array())
 {
   $args = func_get_args();
   $content_or_func = array_shift($args);
@@ -1452,7 +1452,7 @@ function partial($content_or_func, $locals = array())
  * @param string $locals 
  * @return string
  */ 
-function html($content_or_func, $layout = '', $locals = array())
+function html($content_or_func, $layout='', $locals = array())
 {
   if(!headers_sent()) header('Content-Type: text/html; charset='.strtolower(option('encoding')));
   $args = func_get_args();
@@ -1495,7 +1495,7 @@ function xml($data)
  * @param string $locals 
  * @return string
  */
-function css($content_or_func, $layout = '', $locals = array())
+function css($content_or_func, $layout='', $locals = array())
 {
   if(!headers_sent()) header('Content-Type: text/css; charset='.strtolower(option('encoding')));
   $args = func_get_args();
@@ -1510,7 +1510,7 @@ function css($content_or_func, $layout = '', $locals = array())
  * @param string $locals 
  * @return string
  */
-function js($content_or_func, $layout = '', $locals = array())
+function js($content_or_func, $layout='', $locals = array())
 {
   if(!headers_sent()) header('Content-Type: application/javascript; charset='.strtolower(option('encoding')));
   $args = func_get_args();
@@ -1525,7 +1525,7 @@ function js($content_or_func, $layout = '', $locals = array())
  * @param string $locals 
  * @return string
  */
-function txt($content_or_func, $layout = '', $locals = array())
+function txt($content_or_func, $layout='', $locals = array())
 {
   if(!headers_sent()) header('Content-Type: text/plain; charset='.strtolower(option('encoding')));
   $args = func_get_args();
@@ -1569,7 +1569,7 @@ function render_file($filename, $return = false)
   if(file_exists($filename))
   {
     $content_type = mime_type(file_extension($filename));
-    $header = 'Content-type: '.$content_type;
+    $header='Content-type: '.$content_type;
     if(file_is_text($filename)) $header .= '; charset='.strtolower(option('encoding'));
     if(!headers_sent()) header($header);
     return file_read($filename, $return);
@@ -1906,11 +1906,11 @@ function require_once_dir($path, $pattern = "*.php", $prevents_output = true)
 function debug($var, $output_as_html = true)
 { 
   if ( is_null($var) ) { return '<span class="null-value">[NULL]</span>'; };
-  $out = '';
+  $out='';
   switch ($var) 
   { 
     case empty($var):
-      $out = '[empty value]';
+      $out='[empty value]';
       break;
     
     case is_array($var):
@@ -2413,7 +2413,7 @@ function file_mime_content_type($filename)
 function file_read_chunked($filename, $retbytes = true)
 {
   $chunksize = 1*(1024*1024); // how many bytes per chunk
-  $buffer    = '';
+  $buffer   ='';
   $cnt       = 0;
   $handle    = fopen($filename, 'rb');
   if ($handle === false) return false;
@@ -2444,8 +2444,8 @@ function file_read_chunked($filename, $retbytes = true)
 function file_path($path)
 {
   $args = func_get_args();
-  $ds = '/'; 
-  $win_ds = '\\';
+  $ds='/'; 
+  $win_ds='\\';
   $n_path = count($args) > 1 ? implode($ds, $args) : $path;
   if(strpos($n_path, $win_ds) !== false) $n_path = str_replace( $win_ds, $ds, $n_path );
   $n_path = preg_replace( "#$ds+#", $ds, $n_path);
@@ -2573,7 +2573,7 @@ if(!function_exists('array_replace'))
  */
 function filter_var_url($str)
 {
-  $regexp = '@^https?://([-[:alnum:]]+\.)+[a-zA-Z]{2,6}(:[0-9]+)?(.*)?$@';
+  $regexp='@^https?://([-[:alnum:]]+\.)+[a-zA-Z]{2,6}(:[0-9]+)?(.*)?$@';
   $options = array( "options" => array("regexp" => $regexp ));
   return preg_match($regexp, $str) ? $str : false;
 }

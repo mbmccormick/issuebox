@@ -6,7 +6,7 @@
         
         if (isset($_POST[commentandclose]) == true)
         {
-            $sql = "UPDATE issue SET isclosed = '1' WHERE id='$_GET[issueid]'";
+            $sql = "UPDATE issue SET isclosed='1' WHERE id='$_GET[issueid]'";
             mysql_query($sql);
         }
         
@@ -16,10 +16,10 @@
                 ('$_GET[issueid]', '" . mysql_real_escape_string($_POST[body]) . "', '$_SESSION[CurrentUser_ID]', '" . $now . "')";
         mysql_query($sql);
         
-        $sql = mysql_query("SELECT * FROM comment WHERE id = '" . mysql_insert_id() . "'");
+        $sql = mysql_query("SELECT * FROM comment WHERE id='" . mysql_insert_id() . "'");
         $result = mysql_fetch_array($sql);
         
-        $sql = mysql_query("SELECT * FROM user WHERE id = '$result[createdby]'");
+        $sql = mysql_query("SELECT * FROM user WHERE id='$result[createdby]'");
         $user = mysql_fetch_array($sql);
         
         mysql_close($con);
@@ -55,7 +55,7 @@
     {
         Security_Authorize();
     
-        $sql = "DELETE FROM comment WHERE id = '" . params('id') . "'";    
+        $sql = "DELETE FROM comment WHERE id='" . params('id') . "'";    
         mysql_query($sql);
         
         PurgeActivity(3, params('id'));

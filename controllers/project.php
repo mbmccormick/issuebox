@@ -4,19 +4,19 @@
     {
         Security_Authorize();
         
-        $result = mysql_query("SELECT * FROM project WHERE id = '" . params('id') . "'");
+        $result = mysql_query("SELECT * FROM project WHERE id='" . params('id') . "'");
         $project = mysql_fetch_array($result);
         
         if ($project != null)
         {
-            $result = mysql_query("SELECT * FROM issue WHERE projectid = '$project[id]' ORDER BY isurgent DESC, number ASC");
+            $result = mysql_query("SELECT * FROM issue WHERE projectid='$project[id]' ORDER BY isurgent DESC, number ASC");
             while($row = mysql_fetch_array($result))
             {
-                $sql = mysql_query("SELECT COUNT(*) AS rowcount FROM comment WHERE issueid = '$row[id]'");
+                $sql = mysql_query("SELECT COUNT(*) AS rowcount FROM comment WHERE issueid='$row[id]'");
                 $return = mysql_fetch_array($sql);
                 $count = $return[rowcount];
                 
-                $sql = mysql_query("SELECT id, username FROM user WHERE id = '$row[createdby]'");
+                $sql = mysql_query("SELECT id, username FROM user WHERE id='$row[createdby]'");
                 $user = mysql_fetch_array($sql);
                 
                 if ($row[isclosed] == "0")
@@ -70,15 +70,15 @@
         $result = mysql_query("SELECT * FROM project ORDER BY name ASC");
         while($row = mysql_fetch_array($result))
         {
-            $sql = mysql_query("SELECT COUNT(*) AS rowcount FROM issue WHERE projectid = '$row[id]' AND isclosed = '0'");
+            $sql = mysql_query("SELECT COUNT(*) AS rowcount FROM issue WHERE projectid='$row[id]' AND isclosed='0'");
             $return = mysql_fetch_array($sql);
             $open = $return['rowcount'];
             
-            $sql = mysql_query("SELECT COUNT(*) AS rowcount FROM issue WHERE projectid = '$row[id]' AND isclosed = '1'");
+            $sql = mysql_query("SELECT COUNT(*) AS rowcount FROM issue WHERE projectid='$row[id]' AND isclosed='1'");
             $return = mysql_fetch_array($sql);
             $closed = $return['rowcount'];
             
-            $sql = mysql_query("SELECT COUNT(*) AS rowcount FROM issue WHERE projectid = '$row[id]' AND isclosed = '0' AND isurgent = '1'");
+            $sql = mysql_query("SELECT COUNT(*) AS rowcount FROM issue WHERE projectid='$row[id]' AND isclosed='0' AND isurgent='1'");
             $return = mysql_fetch_array($sql);
             $urgent = $return['rowcount'];
                                 
@@ -143,7 +143,7 @@
             die('Error: ' . mysql_error());
         }
         
-        $sql = mysql_query("SELECT * FROM project WHERE id = '" . mysql_insert_id() . "'");
+        $sql = mysql_query("SELECT * FROM project WHERE id='" . mysql_insert_id() . "'");
         $result = mysql_fetch_array($sql);
         
         LogActivity(1, $result[id], 1);
@@ -156,7 +156,7 @@
     {
         Security_Authorize();
     
-        $result = mysql_query("SELECT * FROM project WHERE id = '" . params('id') . "'");
+        $result = mysql_query("SELECT * FROM project WHERE id='" . params('id') . "'");
         $project = mysql_fetch_array($result);
         
         if ($project != null)
@@ -179,7 +179,7 @@
         
         $now = date("Y-m-d H:i:s");
         
-        $sql = "UPDATE project SET name = '" . mysql_real_escape_string($_POST[name]) . "', description = '" . mysql_real_escape_string($_POST[description]) . "' WHERE id = '" . params('id') . "'";
+        $sql = "UPDATE project SET name='" . mysql_real_escape_string($_POST[name]) . "', description='" . mysql_real_escape_string($_POST[description]) . "' WHERE id='" . params('id') . "'";
         mysql_query($sql);
         
         LogActivity(1, params('id'), 2);
@@ -192,18 +192,18 @@
     {
         Security_Authorize();
     
-        $sql = "DELETE FROM project WHERE id = '" . params('id') . "'";    
+        $sql = "DELETE FROM project WHERE id='" . params('id') . "'";    
         mysql_query($sql);
         
-        $sql = "SELECT * FROM issue WHERE projectid = '" . params('id') . "'";    
+        $sql = "SELECT * FROM issue WHERE projectid='" . params('id') . "'";    
         $result = mysql_query($sql);
         while($row = mysql_fetch_array($result))
         {
-            $sql = "DELETE FROM comment WHERE issueid = '" . params('id') . "'";    
+            $sql = "DELETE FROM comment WHERE issueid='" . params('id') . "'";    
             mysql_query($sql);
         }
         
-        $sql = "DELETE FROM issue WHERE projectid = '" . params('id') . "'";    
+        $sql = "DELETE FROM issue WHERE projectid='" . params('id') . "'";    
         mysql_query($sql);
 
         PurgeActivity(1, params('id'));

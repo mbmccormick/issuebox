@@ -26,6 +26,9 @@
                             <br />
                             <b>Confirm New Password</b><br />                    
                             <input type="password" name="newpasswordconfirm" style="width: 333px;" /><br />
+                            <br />
+                            <br />
+                            <input type="checkbox" name="isadministrator" value="1" <?php if ($user[isadministrator] == "1") { echo "checked='checked'"; } ?> <?php if ($_SESSION["CurrentUser_IsAdministrator"] == "0" || $_SESSION["CurrentUser_ID"] == $user[id]) { echo "disabled='true'"; } ?>  /> <b>Is Administrator</b>
                         </div>
                         <br />
                         <button type="submit" class="button">
@@ -62,6 +65,8 @@
     $("#user-edit").submit(function validate() {
         var formData = $("#user-edit").serializeArray();
         for (var i=0; i < formData.length; i++) { 
+            if (formData[i].contains("password")) continue;
+            
             if (!formData[i].value) { 
                 $(document).showMessage({
                     thisMessage: ["Please complete all fields, check your input, and try again."],

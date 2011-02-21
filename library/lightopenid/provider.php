@@ -37,12 +37,12 @@ abstract class LightOpenIDProvider
     # -----
     # Can we support DH?
     protected $dh = true;
-    protected $ns = 'http://specs.openid.net/auth/2.0';
+    protected $ns='http://specs.openid.net/auth/2.0';
     protected $data, $assoc;
     
     # Default DH parameters as defined in the specification.
     protected $default_modulus;
-    protected $default_gen = 'Ag==';
+    protected $default_gen='Ag==';
     
     # AX <-> SREG transform
     protected $ax_to_sreg = array(
@@ -181,7 +181,7 @@ abstract class LightOpenIDProvider
             $length = 256;
         }
         
-        $secret = '';
+        $secret='';
         for($i = 0; $i < $length; $i++) {
             $secret .= mt_rand(0,255);
         }
@@ -195,7 +195,7 @@ abstract class LightOpenIDProvider
      */
     protected function keygen($length)
     {
-        $key = '';
+        $key='';
         for($i = 1; $i < $length; $i++) {
             $key .= mt_rand(0,9);
         }
@@ -225,19 +225,19 @@ abstract class LightOpenIDProvider
         
         # We choose GMP if avaiable, and bcmath otherwise
         if(function_exists('gmp_add')) {
-            $this->add = 'gmp_add';
-            $this->mul = 'gmp_mul';
-            $this->pow = 'gmp_pow';
-            $this->mod = 'gmp_mod';
-            $this->div = 'gmp_div';
-            $this->powmod = 'gmp_powm';
+            $this->add='gmp_add';
+            $this->mul='gmp_mul';
+            $this->pow='gmp_pow';
+            $this->mod='gmp_mod';
+            $this->div='gmp_div';
+            $this->powmod='gmp_powm';
         } elseif(function_exists('bcadd')) {
-            $this->add = 'bcadd';
-            $this->mul = 'bcmul';
-            $this->pow = 'bcpow';
-            $this->mod = 'bcmod';
-            $this->div = 'bcdiv';
-            $this->powmod = 'bcpowmod';
+            $this->add='bcadd';
+            $this->mul='bcmul';
+            $this->pow='bcpow';
+            $this->mod='bcmod';
+            $this->div='bcdiv';
+            $this->powmod='bcpowmod';
         } else {
             # If neither are avaiable, we can't use DH
             $this->dh = false;
@@ -386,7 +386,7 @@ abstract class LightOpenIDProvider
     protected function ax()
     {
         # Namespace prefix that the fields must have.
-        $ns = 'http://axschema.org/';
+        $ns='http://axschema.org/';
         
         # First, we must find out what alias is used for AX.
         # Let's check the most likely one
@@ -394,7 +394,7 @@ abstract class LightOpenIDProvider
         if (isset($this->data['openid_ns_ax'])
             && $this->data['openid_ns_ax'] == 'http://openid.net/srv/ax/1.0'
         ) {
-            $alias = 'ax';
+            $alias='ax';
         } else {
             foreach($this->data as $name => $value) {
                 if ($value == 'http://openid.net/srv/ax/1.0'
@@ -592,7 +592,7 @@ abstract class LightOpenIDProvider
     {
         $this->assoc = array();
         # We use sha1 by default.
-        $this->assoc['hash']   = 'sha1';
+        $this->assoc['hash']  ='sha1';
         $this->assoc['mac']    = $this->shared_secret('sha1');
         $this->assoc['handle'] = $this->assoc_handle();
     }
@@ -743,11 +743,11 @@ abstract class LightOpenIDProvider
     {
         if(!$attributes) return array();
         
-        $ns = 'http://axschema.org/';
+        $ns='http://axschema.org/';
 
         $response = array();
         if(isset($this->data['ax'])) {
-            $response['ns.ax'] = 'http://openid.net/srv/ax/1.0';
+            $response['ns.ax']='http://openid.net/srv/ax/1.0';
             foreach($attributes as $name => $value) {
                 $alias = strtr($name, '/', '_');
                 $response['ax.type.' . $alias] = $ns . $name;
@@ -773,7 +773,7 @@ abstract class LightOpenIDProvider
      */
     protected function keyValueForm($params)
     {
-        $str = '';
+        $str='';
         foreach($params as $name => $value) {
             $str .= "$name:$value\n";
         }

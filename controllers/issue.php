@@ -4,21 +4,21 @@
     {
         Security_Authorize();
         
-        $result = mysql_query("SELECT * FROM issue WHERE id = '" . params('id') . "' ORDER BY id ASC");
+        $result = mysql_query("SELECT * FROM issue WHERE id='" . params('id') . "' ORDER BY id ASC");
         $issue = mysql_fetch_array($result);
 
         if ($issue != null)
         {
-            $result = mysql_query("SELECT * FROM project WHERE id = '$issue[projectid]'");
+            $result = mysql_query("SELECT * FROM project WHERE id='$issue[projectid]'");
             $project = mysql_fetch_array($result);
            
-            $result = mysql_query("SELECT * FROM user WHERE id = '$issue[createdby]'");
+            $result = mysql_query("SELECT * FROM user WHERE id='$issue[createdby]'");
             $user = mysql_fetch_array($result);
             
-            $result = mysql_query("SELECT * FROM comment WHERE issueid = '$issue[id]' ORDER BY id ASC");
+            $result = mysql_query("SELECT * FROM comment WHERE issueid='$issue[id]' ORDER BY id ASC");
             while($row = mysql_fetch_array($result))
             {
-                $sql = mysql_query("SELECT id, username FROM user WHERE id = '$row[createdby]'");
+                $sql = mysql_query("SELECT id, username FROM user WHERE id='$row[createdby]'");
                 $user = mysql_fetch_array($sql);
                 
                 $body .= "<div class='list-item comment'>\n";
@@ -53,7 +53,7 @@
     {
         Security_Authorize();
         
-        $result = mysql_query("SELECT MAX(number) AS maxnum FROM issue WHERE projectid = '$_GET[projectid]'");
+        $result = mysql_query("SELECT MAX(number) AS maxnum FROM issue WHERE projectid='$_GET[projectid]'");
         $row = mysql_fetch_array($result);
         $next_num = $row[maxnum] + 1;
             
@@ -63,17 +63,17 @@
                 ('$_GET[projectid]', '$next_num', '" . mysql_real_escape_string($_POST[title]) . "', '" . mysql_real_escape_string($_POST[body]) . "', '0', '" . $_POST[isurgent] . "', '$_SESSION[CurrentUser_ID]', '" . $now . "')";
         mysql_query($sql);
 
-        $sql = mysql_query("SELECT * FROM issue WHERE id = '" . mysql_insert_id() . "'");
+        $sql = mysql_query("SELECT * FROM issue WHERE id='" . mysql_insert_id() . "'");
         $result = mysql_fetch_array($sql);
         
-        $sql = mysql_query("SELECT * FROM user WHERE id = '$result[createdby]'");
+        $sql = mysql_query("SELECT * FROM user WHERE id='$result[createdby]'");
         $user = mysql_fetch_array($sql);
             
         LogActivity(2, $result[id], 1);
         
         if ($_POST[returnObject] == "true")
         {
-            $sql = mysql_query("SELECT COUNT(*) AS rowcount FROM comment WHERE issueid = '$result[id]'");
+            $sql = mysql_query("SELECT COUNT(*) AS rowcount FROM comment WHERE issueid='$result[id]'");
             $return = mysql_fetch_array($sql);
             $count = $return[rowcount];
             
@@ -115,12 +115,12 @@
     {
         Security_Authorize();
     
-        $result = mysql_query("SELECT * FROM issue WHERE id = '" . params('id') . "'");
+        $result = mysql_query("SELECT * FROM issue WHERE id='" . params('id') . "'");
         $issue = mysql_fetch_array($result);
         
         if ($issue != null)
         {
-            $result = mysql_query("SELECT * FROM project WHERE id = '$issue[projectid]'");
+            $result = mysql_query("SELECT * FROM project WHERE id='$issue[projectid]'");
             $project = mysql_fetch_array($result);
             
             set("title", "Edit Issue");
@@ -142,7 +142,7 @@
         
         $now = date("Y-m-d H:i:s");
         
-        $sql = "UPDATE issue SET title = '" . mysql_real_escape_string($_POST[title]) . "', body = '" . mysql_real_escape_string($_POST[body]) . "', isurgent = '" . $_POST[isurgent] . "' WHERE id = '" . params('id') . "'";
+        $sql = "UPDATE issue SET title='" . mysql_real_escape_string($_POST[title]) . "', body='" . mysql_real_escape_string($_POST[body]) . "', isurgent='" . $_POST[isurgent] . "' WHERE id='" . params('id') . "'";
         mysql_query($sql);
         
         LogActivity(2, params('id'), 2);
@@ -155,10 +155,10 @@
     {
         Security_Authorize();
     
-        $sql = "DELETE FROM issue WHERE id = '" . params('id') . "'";    
+        $sql = "DELETE FROM issue WHERE id='" . params('id') . "'";    
         mysql_query($sql);
         
-        $sql = "DELETE FROM comment WHERE issueid = '" . params('id') . "'";    
+        $sql = "DELETE FROM comment WHERE issueid='" . params('id') . "'";    
         mysql_query($sql);
 
         PurgeActivity(1, params('id'));

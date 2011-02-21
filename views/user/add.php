@@ -1,6 +1,6 @@
 <div class="content">
     <div class="navigation">
-        <a href="settings.php">Settings</a> / <a href="user.php">Users</a> / <a href="user-add.php">New User</a>
+        <a href="/user">Users</a> / <a href="/user/add">New User</a>
     </div>
     <table cellpadding="0" cellspacing="0" style="width: 100%;">
         <tr valign="top">
@@ -22,6 +22,9 @@
                             <br />
                             <b>Confirm Password</b><br />                    
                             <input type="password" name="passwordconfirm" style="width: 333px;" /><br />
+                            <br />
+                            <br />
+                            <input type="checkbox" name="isadministrator" value="1" /> <b>Is Administrator</b>
                         </div>
                         <br />
                         <button type="submit" class="button">

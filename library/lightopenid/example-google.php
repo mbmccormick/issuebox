@@ -5,7 +5,7 @@ try {
     $openid = new LightOpenID;
     if(!$openid->mode) {
         if(isset($_GET['login'])) {
-            $openid->identity = 'https://www.google.com/accounts/o8/id';
+            $openid->identity='https://www.google.com/accounts/o8/id';
             header('Location: ' . $openid->authUrl());
         }
 ?>
