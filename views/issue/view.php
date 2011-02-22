@@ -7,7 +7,7 @@
             <table cellpadding="0" cellspacing="0" style="width: 100%;">
                 <tr>
                     <td valign="middle">
-                        <h3>#<?=$issue[number]?>&nbsp;&nbsp;<a href="/issue/<?=$issue[id]?>"><?=FriendlyString($issue[title], 66)?></a></h3>
+                        <h3>#<?=$issue[number]?>&nbsp;&nbsp;<a href="/issue/<?=$issue[id]?>"><?=FriendlyString($issue[title], 62)?></a></h3>
                     </td>
                     <td valign="middle" align="right">
                         <?php

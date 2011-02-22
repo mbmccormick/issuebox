@@ -284,39 +284,27 @@ small {
 
 .standard-form {
     border: solid 3px #E4E4E4;
-    border-top: none;
     background-color: #FFFFFF;
-    padding: 8px 15px 15px 15px;
-    border-radius: 0px 0px 8px 8px;
-    -moz-border-radius: 0px 0px 8px 8px;
+    padding: 15px;
+    border-radius: 8px;
+    -moz-border-radius: 8px;
     margin-bottom: 20px;
     width: 345px;
     margin: 0px auto;
+    margin-bottom: 20px;
 }
 
-.standard-form-top {
-    border: solid 3px #E4E4E4;
-    border-bottom: solid 1px #E4E4E4;
-    background-color: #F8F8F8;
-    padding: 18px 15px 15px 15px;
-    border-radius: 8px 8px 0px 0px;
-    -moz-border-radius: 8px 8px 0px 0px;
-    width: 345px;
-    margin: 0px auto;
-    margin-top: 50px;
-}
-
-.standard-form-top h2 {
+.standard-form h2 {
     margin: 0px;
     padding: 0px;
     font-size: 22px;
 }
 
-.standard-form-top h2 a {
+.standard-form h2 a {
     color: #191919;
 }
 
-.standard-form-top h2 a:hover {
+.standard-form h2 a:hover {
     color: #4183C4;
     text-decoration: none;
 }
