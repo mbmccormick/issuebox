@@ -351,6 +351,7 @@ form input[type=password] {
     font-family: helvetica, arial;
     text-shadow: rgba(0, 0, 0, 0.0078125) 0px 0px 1px;
     margin-top: 5px;
+	font-size: 14px;
 }
 
 form label,
