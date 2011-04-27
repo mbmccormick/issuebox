@@ -23,7 +23,7 @@ body {
 }
 
 a {
-    color: #4183C4;
+    color: #3C95D2;
     text-decoration: none;
 }
 
@@ -44,7 +44,7 @@ a:hover {
 }
 
 .header a:hover {
-    color: #4183C4;
+    color: #3C95D2;
     text-decoration: none;
 }
 
@@ -571,7 +571,7 @@ p.checkbox {
 }
 
 .standard-form h2 a:hover {
-    color: #4183C4;
+    color: #3C95D2;
     text-decoration: none;
 }
 
@@ -598,7 +598,7 @@ p.checkbox {
 }
 
 .login-form h2 a:hover {
-    color: #4183C4;
+    color: #3C95D2;
     text-decoration: none;
 }
 

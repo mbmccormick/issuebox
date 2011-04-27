@@ -22,8 +22,6 @@
         $sql = mysql_query("SELECT * FROM user WHERE id='$result[createdby]'");
         $user = mysql_fetch_array($sql);
         
-        mysql_close($con);
-        
         LogActivity(3, $result[id], 1);
         
         if ($_POST[returnObject] == "true")

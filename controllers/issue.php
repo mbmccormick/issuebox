@@ -82,7 +82,7 @@
             echo "<table cellpadding='0' cellspacing='0' style='width: 100%;'>\n";
             echo "<tr>\n";
             echo "<td valign='middle'>\n";
-            echo "<h3>#$result[number]&nbsp;&nbsp;<a href='/issue/$result[id]'>" . $result[title] . "</a></h3>";
+            echo "<h3>#$result[number]&nbsp;&nbsp;<a href='/issue/$result[id]'>" . FriendlyString($result[title], 62) . "</a></h3>";
             echo "</td>\n";
             echo "<td valign='middle' align='right'>\n";
             if ($result[isurgent] == "1")
