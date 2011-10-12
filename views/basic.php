@@ -3,16 +3,16 @@
 <head> 
     <meta charset="utf-8" /> 
     <title>Issuebox - <?=$title?></title> 
-    <link rel="stylesheet" type="text/css" media="screen,projection" href="/public/css/basic.css" />
-    <link rel="shortcut icon" type="image/x-icon" href="/public/img/logo.ico">
-    <script type="text/javascript" src="/public/js/jquery/jquery-1.4.4.js"></script>
-    <script type="text/javascript" src="/public/js/form/jquery.form.js"></script>
-    <script type="text/javascript" src="/public/js/showMessage/jquery.showMessage-2.1.js"></script>
-    <script type="text/javascript" src="/public/js/scrollTo/jquery.scrollTo.js"></script>
-    <script type="text/javascript" src="/public/js/truncator/jquery.truncator.js"></script>
-    <script type="text/javascript" src="/public/js/css_browser_selector/css_browser_selector.js"></script>
-    <script type="text/javascript" src="/public/js/github-flavored-markdown/scripts/showdown.js"></script>
-    <script type="text/javascript" src="/public/js/common.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen,projection" href="<?=option('base_uri')?>public/css/basic.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="<?=option('base_uri')?>public/img/logo.ico">
+    <script type="text/javascript" src="<?=option('base_uri')?>public/js/jquery/jquery-1.4.4.js"></script>
+    <script type="text/javascript" src="<?=option('base_uri')?>public/js/form/jquery.form.js"></script>
+    <script type="text/javascript" src="<?=option('base_uri')?>public/js/showMessage/jquery.showMessage-2.1.js"></script>
+    <script type="text/javascript" src="<?=option('base_uri')?>public/js/scrollTo/jquery.scrollTo.js"></script>
+    <script type="text/javascript" src="<?=option('base_uri')?>public/js/truncator/jquery.truncator.js"></script>
+    <script type="text/javascript" src="<?=option('base_uri')?>public/js/css_browser_selector/css_browser_selector.js"></script>
+    <script type="text/javascript" src="<?=option('base_uri')?>public/js/github-flavored-markdown/scripts/showdown.js"></script>
+    <script type="text/javascript" src="<?=option('base_uri')?>public/js/common.js"></script>
 </head> 
 <body> 
     <?=$content?>
